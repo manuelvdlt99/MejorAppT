@@ -1,0 +1,103 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MejorAppTG1.TestPage"
+             xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
+             Shell.TabBarIsVisible="False"
+             NavigationPage.HasBackButton="False" Shell.BackgroundColor="{StaticResource SecondaryColor1}">
+
+    <ContentPage.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="BorderWidth" Value="0.5"/>
+            <Setter Property="BorderColor" Value="{StaticResource FontColor1}"/>
+            <Setter Property="BackgroundColor" Value="{StaticResource BorderColor3}"/>
+            <Setter Property="TextColor" Value="{StaticResource FontColor1}"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="HeightRequest" Value="60"/>
+            <Setter Property="Margin" Value="20, 5, 20, 0"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Image Source="main_menu_bg.png"
+               Aspect="AspectFill"
+               Opacity="0.5"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand" />
+
+        <Grid RowDefinitions="*,Auto">
+            <ScrollView Grid.Row="0">
+                <VerticalStackLayout Spacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Label x:Name="LblTitulo" TextColor="{StaticResource FontColor1}"
+                           HorizontalOptions="Center"
+                           FontAttributes="Bold" FontSize="21"
+                           Margin="0, 20, 0, 0"
+                           FontFamily="K2D-Regular"/>
+
+                    <Border 
+                        Stroke="{StaticResource FontColor1}" 
+                        StrokeThickness="1" 
+                        BackgroundColor="{StaticResource BorderColor4}" 
+                        Margin="40, 0, 40, 0" 
+                        HeightRequest="50" 
+                        StrokeShape="RoundRectangle 10" 
+                        Opacity="0.75">
+                        <Grid>
+                            <ProgressBar 
+                                BackgroundColor="Transparent" 
+                                ProgressColor="{StaticResource PrimaryColor}" 
+                                x:Name="progressBar" 
+                                Progress="0" 
+                                ScaleY="50" 
+                                HorizontalOptions="Fill" 
+                                VerticalOptions="Fill"/>
+                            <Label 
+                                VerticalTextAlignment="Center" 
+                                HorizontalTextAlignment="Center" 
+                                x:Name="LblProgreso" 
+                                FontSize="20" 
+                                FontAttributes="Bold" 
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center"/>
+                        </Grid>
+                    </Border>
+
+
+                    <Frame HasShadow="True" HeightRequest="200" Margin="20, 0, 20, 0" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="10" Opacity="0.75" BorderColor="{StaticResource SecondaryColor1}">
+                        <Grid>
+                            <FlexLayout Wrap="Wrap">
+                                <Label x:Name="LblPregunta" FontSize="18" />
+                            </FlexLayout>
+                        </Grid>
+                    </Frame>
+
+                    <VerticalStackLayout x:Name="VslBotones">
+                        <Button x:Name="BtnOpcion1" Text="{x:Static strings:Strings.str_TestPage_BtnOption1}" CommandParameter="0" Clicked="OnBtnEncuesta_Clicked" Style="{StaticResource ButtonStyle}" />
+                        <Button x:Name="BtnOpcion2" Text="{x:Static strings:Strings.str_TestPage_BtnOption2}" CommandParameter="1" Clicked="OnBtnEncuesta_Clicked" Style="{StaticResource ButtonStyle}" />
+                        <Button x:Name="BtnOpcion3" Text="{x:Static strings:Strings.str_TestPage_BtnOption3}" CommandParameter="2" Clicked="OnBtnEncuesta_Clicked" Style="{StaticResource ButtonStyle}" />
+                        <Button x:Name="BtnOpcion4" Text="{x:Static strings:Strings.str_TestPage_BtnOption4}" CommandParameter="3" Clicked="OnBtnEncuesta_Clicked" Style="{StaticResource ButtonStyle}" />
+                        <Button x:Name="BtnOpcion5" Text="{x:Static strings:Strings.str_TestPage_BtnOption5}" CommandParameter="4" Clicked="OnBtnEncuesta_Clicked" Style="{StaticResource ButtonStyle}" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <Grid Grid.Row="1" Margin="5,0,5,0" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="BtnAnterior" Clicked="BtnAnterior_Clicked" Grid.Column="0" TextColor="{StaticResource FontColor1}"
+                        Text="{x:Static strings:Strings.str_TestPage_BtnPrevious}" BackgroundColor="{StaticResource SecondaryColor2}" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource PrimaryColor}"
+                        HorizontalOptions="FillAndExpand" Margin="5" HeightRequest="60" FontAttributes="Bold" />
+
+                <Button x:Name="BtnSiguiente" Clicked="BtnSiguiente_Clicked" Grid.Column="1" TextColor="{StaticResource FontColor1}"
+                        Text="{x:Static strings:Strings.str_TestPage_BtnNext}" BackgroundColor="{StaticResource SecondaryColor2}" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource PrimaryColor}"
+                        HorizontalOptions="FillAndExpand" Margin="5" HeightRequest="60" FontAttributes="Bold" />
+            </Grid>
+        </Grid>
+    </Grid>
+
+</ContentPage>

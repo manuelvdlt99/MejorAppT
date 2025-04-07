@@ -1,0 +1,1139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DateFormat" xml:space="preserve">
+    <value>dd 'de' MMMM 'de' yyyy</value>
+  </data>
+  <data name="str_EatingTest" xml:space="preserve">
+    <value>Trastornos de la conducta alimentaria</value>
+  </data>
+  <data name="str_FullTest" xml:space="preserve">
+    <value>Ansiedad (completo)</value>
+  </data>
+  <data name="str_Genders_Woman" xml:space="preserve">
+    <value>Mujer</value>
+  </data>
+  <data name="str_LoginPage_BtnLogIn" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="str_LoginPage_BtnLogin_entryAgeError" xml:space="preserve">
+    <value>Por favor, introduce una edad correcta.</value>
+  </data>
+  <data name="str_LoginPage_BtnLogin_entryAgeError2" xml:space="preserve">
+    <value>La edad debe ser un número entre 12 y 99.</value>
+  </data>
+  <data name="str_LoginPage_BtnLogin_entryNameError" xml:space="preserve">
+    <value>Por favor, introduce un nombre.</value>
+  </data>
+  <data name="str_LoginPage_BtnSignUp" xml:space="preserve">
+    <value>Crear usuario</value>
+  </data>
+  <data name="str_LoginPage_BtnSignUp_Age" xml:space="preserve">
+    <value>Edad:</value>
+  </data>
+  <data name="str_LoginPage_BtnSignUp_Gender" xml:space="preserve">
+    <value>Género:</value>
+  </data>
+  <data name="str_LoginPage_BtnSignUp_Name" xml:space="preserve">
+    <value>Nombre:</value>
+  </data>
+  <data name="str_LoginPage_Instructions" xml:space="preserve">
+    <value>Por favor, inicia sesión o crea un usuario:</value>
+  </data>
+  <data name="str_LoginPage_Motto" xml:space="preserve">
+    <value>Conociendo tu mente, cuidando tu bienestar</value>
+  </data>
+  <data name="str_MainPage_BtnEatingTest" xml:space="preserve">
+    <value>Trastornos de la conducta alimentaria</value>
+  </data>
+  <data name="str_MainPage_BtnEatingTest_ETA" xml:space="preserve">
+    <value>Duración estimada: 3 minutos</value>
+  </data>
+  <data name="str_MainPage_BtnEatingTest_Questions" xml:space="preserve">
+    <value>26 preguntas</value>
+  </data>
+  <data name="str_MainPage_BtnFullTest" xml:space="preserve">
+    <value>Ansiedad (completo)</value>
+  </data>
+  <data name="str_MainPage_BtnFullTest_ETA" xml:space="preserve">
+    <value>Duración estimada: 6 minutos</value>
+  </data>
+  <data name="str_MainPage_BtnFullTest_Questions" xml:space="preserve">
+    <value>48 preguntas</value>
+  </data>
+  <data name="str_MainPage_BtnNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="str_MainPage_BtnQuickTest" xml:space="preserve">
+    <value>Ansiedad (rápido)</value>
+  </data>
+  <data name="str_MainPage_BtnQuickTest_ETA" xml:space="preserve">
+    <value>Duración estimada: 2 minutos</value>
+  </data>
+  <data name="str_MainPage_BtnQuickTest_Questions" xml:space="preserve">
+    <value>20 preguntas</value>
+  </data>
+  <data name="str_MainPage_BtnYes" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="str_MainPage_EatingTestWarning" xml:space="preserve">
+    <value>Si tus preocupaciones con la alimentación están relacionadas con querer ganar más peso o masa muscular, es posible que esta aplicación no sea la indicada para ti en este momento.
+
+Estamos trabajando para abordar estas necesidades en futuras versiones.
+
+Aun así, ¿seguro que quieres realizar el test?</value>
+  </data>
+  <data name="str_MainPage_LblSelectTest" xml:space="preserve">
+    <value>¡Descubre más sobre ti! Selecciona un test y da el primer paso hacia tu bienestar.</value>
+  </data>
+  <data name="str_MainPage_LblWelcome" xml:space="preserve">
+    <value>¡Hola, usuario!</value>
+  </data>
+  <data name="str_MainPage_LblWelcome_Dyn" xml:space="preserve">
+    <value>¡Hola, {0}!</value>
+  </data>
+  <data name="str_MainPage_UnfinishedTest" xml:space="preserve">
+    <value>Test no terminado</value>
+  </data>
+  <data name="str_MainPage_UnfinishedTest_Msg" xml:space="preserve">
+    <value>Tienes un test sin terminar del {0}. ¿Deseas continuarlo?</value>
+  </data>
+  <data name="str_MainPage_Warning" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="str_Genders_Man" xml:space="preserve">
+    <value>Hombre</value>
+  </data>
+  <data name="str_MejorAppT" xml:space="preserve">
+    <value>MejorAppT</value>
+  </data>
+  <data name="str_QuickTest" xml:space="preserve">
+    <value>Ansiedad (rápido)</value>
+  </data>
+  <data name="str_QuickTest_Question1" xml:space="preserve">
+    <value>En los exámenes me sudan las manos o siento rigidez en manos y/o brazos.</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnCheck" xml:space="preserve">
+    <value>Consultar</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnCheck_Msg" xml:space="preserve">
+    <value>Aún no has completado ningún test.</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnCheck_NoResults" xml:space="preserve">
+    <value>No hay resultados</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnCheck_OK" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnClearHistory" xml:space="preserve">
+    <value>Borrar historial</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnClearHistory_Msg" xml:space="preserve">
+    <value>¿Seguro que quieres borrar todo tu historial?</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnClearHistory_Question" xml:space="preserve">
+    <value>¿Borrar historial?</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnDelete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnDelete_Msg" xml:space="preserve">
+    <value>¿Seguro que quieres eliminar este registro?</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnDelete_Question" xml:space="preserve">
+    <value>¿Eliminar registro?</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnLastTest" xml:space="preserve">
+    <value>Consultar último test</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnSignUp_CmbGender" xml:space="preserve">
+    <value>Selecciona tu género</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnSignUp_EntAge" xml:space="preserve">
+    <value>Introduce tu edad</value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnSignUp_EntName" xml:space="preserve">
+    <value>Introduce tu nombre</value>
+  </data>
+  <data name="str_ResultHistoryPage_ChooseOption_Question" xml:space="preserve">
+    <value>¿Qué quieres hacer con este resultado?</value>
+  </data>
+  <data name="str_ResultHistoryPage_ImgProfile_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="str_ResultHistoryPage_ImgProfile_ErrorMsg" xml:space="preserve">
+    <value>Error seleccionando foto: {0}</value>
+  </data>
+  <data name="str_ResultHistoryPage_ImgProfile_ErrorMsg2" xml:space="preserve">
+    <value>Ha ocurrido un problema al seleccionar la foto.</value>
+  </data>
+  <data name="str_ResultHistoryPage_ImgProfile_NoPermission" xml:space="preserve">
+    <value>Permiso para acceder al almacenamiento denegado</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblAge" xml:space="preserve">
+    <value>X años</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblAge_Dyn" xml:space="preserve">
+    <value>{0} años</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblDate" xml:space="preserve">
+    <value>Fecha: </value>
+  </data>
+  <data name="str_ResultHistoryPage_LblGender" xml:space="preserve">
+    <value>Género</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblHistory" xml:space="preserve">
+    <value>Historial de tests</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblNoResults" xml:space="preserve">
+    <value>No se han encontrado registros.</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblTest" xml:space="preserve">
+    <value>Test: </value>
+  </data>
+  <data name="str_ResultHistoryPage_LblUsername" xml:space="preserve">
+    <value>Nombre de usuario</value>
+  </data>
+  <data name="str_Genders_NB" xml:space="preserve">
+    <value>No binario</value>
+  </data>
+  <data name="str_LoginPage_BtnLogin_cmbGenderError" xml:space="preserve">
+    <value>Por favor, selecciona un género.</value>
+  </data>
+  <data name="str_LoginPage_BtnConfirm" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="str_LoginPage_LblSelectUser" xml:space="preserve">
+    <value>Selecciona un usuario:</value>
+  </data>
+  <data name="str_LoginPage_BtnLogIn_NoUsers" xml:space="preserve">
+    <value>No hay usuarios</value>
+  </data>
+  <data name="str_LoginPage_BtnLogIn_WarningMsg" xml:space="preserve">
+    <value>No existe ningún usuario guardado en la aplicación. Por favor, crea un usuario e introduce tus datos para continuar.</value>
+  </data>
+  <data name="str_App_NoConnection" xml:space="preserve">
+    <value>No hay conexión a Internet</value>
+  </data>
+  <data name="str_App_ConnectionBack" xml:space="preserve">
+    <value>Conexión a Internet recuperada</value>
+  </data>
+  <data name="str_App_DataSynced" xml:space="preserve">
+    <value>Datos sincronizados con Firebase</value>
+  </data>
+  <data name="str_Shell_MainMenuTab" xml:space="preserve">
+    <value>Menú principal</value>
+  </data>
+  <data name="str_Shell_MyProfileTab" xml:space="preserve">
+    <value>Mi perfil</value>
+  </data>
+  <data name="str_Shell_TbiLogOut" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
+  <data name="str_Shell_TbiModifyProfile" xml:space="preserve">
+    <value>Modificar perfil</value>
+  </data>
+  <data name="str_Shell_TbiDeleteProfile" xml:space="preserve">
+    <value>Eliminar perfil</value>
+  </data>
+  <data name="str_Shell_AboutPage_Title" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="str_Shell_AboutPage_LblIntro" xml:space="preserve">
+    <value>MejorAppT es una aplicación orientada a la salud mental y el bienestar emocional de los estudiantes. Su objetivo es proporcionar una herramienta accesible y segura para que los alumnos puedan realizar un seguimiento de su salud mental, gestionar el estrés académico y acceder a recursos útiles de autocuidado y bienestar.
+
+Con esta aplicación no se pretende bajo ningún concepto sustituir a ningún tipo de terapia o medicina tradicional. Si padeces síntomas graves, acude a un profesional antes de nada.
+
+Pulsa cualquiera de las siguientes categorías para obtener más información.</value>
+  </data>
+  <data name="str_Shell_AboutPage_ScientificBase" xml:space="preserve">
+    <value>Base académico-científica</value>
+  </data>
+  <data name="str_Shell_AboutPage_ScientificBase_Msg" xml:space="preserve">
+    <value>Todos los tests que en esta aplicación se presentan son una adaptación lo más fidedigna posible de los siguientes estudios:
+• «Propiedades psicométricas de un cuestionario para la evaluación de la ansiedad ante los exámenes en adolescentes»: Rosa Torrano-Martínez, Juan Manuel Ortigosa-Quiles, Antonio Riquelme-Marín y José Antonio López-Pina (Universidad de Murcia)
+• «Comprendiendo el papel de la práctica física y el género en los trastornos alimentarios en estudiantes adolescentes españoles»: Gema Sanchis-Soler, Irene León-Calero, Sergio Sebastia-Amat, María Antonia Parra-Rizo, Miguel García-Jaén (Universidad de Alicante, Universidad Internacional de Valencia, Universidad Miguel Hernández de Elche)</value>
+  </data>
+  <data name="str_Shell_AboutPage_Credits" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="str_Shell_AboutPage_Credits_Msg" xml:space="preserve">
+    <value>Esta aplicación ha sido desarrollada por el departamento de Informática del IES Gregorio Prieto. Concretamente, el equipo de desarrollo lo han conformado los siguientes miembros: Esther Cantón, Francisco Carrero, Alberto Navarro y Manuel Valdepeñas.</value>
+  </data>
+  <data name="str_Shell_BtnClose" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="str_Shell_HelpPage_Title" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
+  <data name="str_Shell_HelpPage_MainHeader" xml:space="preserve">
+    <value>¡Te damos la bienvenida a MejorAppT! Aquí podrás consultar la ayuda más esencial para aprender a usar y navegar por la app. Pulsa cualquiera de las siguientes categorías para obtener más información.</value>
+  </data>
+  <data name="str_Shell_HelpPage_TopBar" xml:space="preserve">
+    <value>Barra de navegación</value>
+  </data>
+  <data name="str_Shell_HelpPage_TopBar_Msg" xml:space="preserve">
+    <value>En la barra superior de navegación, podrás cambiar entre las dos pestañas principales que componen la aplicación: el menú principal y el perfil. Más abajo se entrará en detalle en cada una de estas pestañas.
+• Haciendo clic en (i), podrás ver información acerca de este proyecto, los desarrolladores implicados y los estudios que avalan esta aplicación.
+• Haciendo clic en (?), accederás a la ayuda de la aplicación, como ya habrás podido comprobar por tu cuenta.
+• Por último, si haces clic en el menú de kebab (los tres puntitos en la esquina superior derecha), se desplegará un menú con opciones que te permitirán cerrar sesión, modificar el usuario actual o eliminar el usuario y todos sus datos almacenados.</value>
+  </data>
+  <data name="str_Shell_HelpPage_MainMenu" xml:space="preserve">
+    <value>Menú principal y tests</value>
+  </data>
+  <data name="str_Shell_HelpPage_MainMenu_Msg" xml:space="preserve">
+    <value>Desde el menú principal, podrás realizar uno de los tres tests que se ofertan:
+• Test rápido de ansiedad: consta de 20 preguntas y se puede realizar en aproximadamente 2 minutos.
+• Test completo de ansiedad: consta de 48 preguntas y se puede realizar en aproximadamente 6 minutos.
+• Test de trastornos de la conducta alimentaria: consta de 26 preguntas y se puede realizar en aproximadamente 3 minutos.
+
+En cada test, se presentará cada pregunta individualmente. Cada pregunta consta de 5 posibles respuestas, y debes seleccionar una para poder avanzar a la siguiente pregunta. Tu progreso se irá guardando automáticamente, para que si, por decisión propia o factores externos, se cierra la aplicación, tengas la opción de retomar tu progreso en otro momento.
+Una vez hayas respondido a todas las preguntas, se calculará el resultado final y se mostrarán en pantalla unos consejos acordes a tus respuestas. Tu test quedará guardado en el sistema para poder consultar estos mismos consejos desde tu perfil.</value>
+  </data>
+  <data name="str_Shell_HelpPage_MyProfile_Msg" xml:space="preserve">
+    <value>En la pestaña «Mi perfil», podrás ver los datos del perfil que ha iniciado sesión actualmente en la aplicación (nombre, edad y género). Recuerda que puedes cambiar estos datos o incluso crear un nuevo usuario desde el menú de la esquina superior derecha. También puedes cambiar tu foto de perfil haciendo clic en la propia imagen.
+Justo debajo, aparecerá un listado de los tests que has completado con este usuario ordenados cronológicamente, estando primero el más reciente. Si pulsas en cualquiera de ellos, se mostrarán los consejos asociados a tus respuestas en dicho test.
+Por último, puedes consultar de forma rápida y directa los consejos del último test realizado en el botón «Consultar último test» o borrar todo tu historial y empezar de cero en el botón «Borrar historial».</value>
+  </data>
+  <data name="str_Shell_ModifyPage_Apply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="str_Shell_DeleteProfile_Question" xml:space="preserve">
+    <value>¿Eliminar perfil?</value>
+  </data>
+  <data name="str_Shell_DeleteProfile_Msg" xml:space="preserve">
+    <value>¿Seguro que quieres eliminar tu perfil? ¡Atención, se borrarán todos tus datos! ¡No podrás deshacer esta acción!</value>
+  </data>
+  <data name="str_QuickTest_Question2" xml:space="preserve">
+    <value>Pienso que el profesor/a me está observando constantemente.</value>
+  </data>
+  <data name="str_QuickTest_Question3" xml:space="preserve">
+    <value>Al comenzar a leer el examen se me nubla la vista y no entiendo lo que leo.</value>
+  </data>
+  <data name="str_QuickTest_Question4" xml:space="preserve">
+    <value>Mientras que estoy realizando el examen, pienso que lo estoy haciendo muy mal.</value>
+  </data>
+  <data name="str_QuickTest_Question5" xml:space="preserve">
+    <value>Si llego 5 minutos tarde a un examen ya no entro, me escondo por el instituto o intento marcharme.</value>
+  </data>
+  <data name="str_QuickTest_Question6" xml:space="preserve">
+    <value>Cuando un grupo de compañeros habla del examen antes de que venga el profesor me pongo nervioso/a.</value>
+  </data>
+  <data name="str_QuickTest_Question7" xml:space="preserve">
+    <value>Para mí supone una tranquilidad o alivio cuando, por cualquier razón, se aplaza un examen.</value>
+  </data>
+  <data name="str_QuickTest_Question8" xml:space="preserve">
+    <value>No consigo dormir la noche anterior a un examen.</value>
+  </data>
+  <data name="str_QuickTest_Question9" xml:space="preserve">
+    <value>Pienso que no voy a poder aprobar el examen, aunque haya estudiado.</value>
+  </data>
+  <data name="str_QuickTest_Question10" xml:space="preserve">
+    <value>Al comenzar el examen, nada más leer las preguntas, lo entrego en blanco al profesor y vuelvo a mi sitio.</value>
+  </data>
+  <data name="str_QuickTest_Question11" xml:space="preserve">
+    <value>Cuando estoy haciendo un examen el corazón me late muy deprisa.</value>
+  </data>
+  <data name="str_QuickTest_Question12" xml:space="preserve">
+    <value>Tras haber realizado un examen siento que lo he hecho fatal y pienso en desaparecer o hacerme daño.</value>
+  </data>
+  <data name="str_QuickTest_Question13" xml:space="preserve">
+    <value>Me resulta difícil o imposible ingerir alimentos antes de realizar un examen.</value>
+  </data>
+  <data name="str_QuickTest_Question14" xml:space="preserve">
+    <value>Me pongo malo/a y doy excusas para no hacer un examen.</value>
+  </data>
+  <data name="str_QuickTest_Question15" xml:space="preserve">
+    <value>En las horas/momentos previos al examen siento molestias en el estómago o se me descompone y tengo que ir al baño.</value>
+  </data>
+  <data name="str_QuickTest_Question16" xml:space="preserve">
+    <value>Tardo mucho tiempo en decidirme al contestar la mayoría de las preguntas o en entregar el examen.</value>
+  </data>
+  <data name="str_QuickTest_Question17" xml:space="preserve">
+    <value>Antes de entrar al examen hablo con mucha rapidez y me muevo más de lo habitual.</value>
+  </data>
+  <data name="str_QuickTest_Question18" xml:space="preserve">
+    <value>Durante los exámenes me cuesta concentrarme y a veces me bloqueo.</value>
+  </data>
+  <data name="str_QuickTest_Question19" xml:space="preserve">
+    <value>Establezco un ritual previo al examen y si no puedo cumplirlo, busco alguna excusa y no entro al examen.</value>
+  </data>
+  <data name="str_QuickTest_Question20" xml:space="preserve">
+    <value>Mientras hago un examen no puedo quedarme quieto, suelo morderme las uñas o el bolígrafo.</value>
+  </data>
+  <data name="str_FullTest_Question1" xml:space="preserve">
+    <value>En los exámenes me sudan las manos.</value>
+  </data>
+  <data name="str_FullTest_Question2" xml:space="preserve">
+    <value>Cuando llevo rato haciendo el examen, siento molestias en el estómago y necesidad de defecar.</value>
+  </data>
+  <data name="str_FullTest_Question3" xml:space="preserve">
+    <value>Al comenzar a leer el examen se me nubla la vista y no entiendo lo que leo.</value>
+  </data>
+  <data name="str_FullTest_Question4" xml:space="preserve">
+    <value>Si llego 5 minutos tarde a un examen ya no entro, me escondo por el instituto o intento marcharme.</value>
+  </data>
+  <data name="str_FullTest_Question5" xml:space="preserve">
+    <value>Las condiciones donde se realiza un examen (mucho ruido, calor, frío, sol...) me influyen aumentando mi nerviosismo.</value>
+  </data>
+  <data name="str_FullTest_Question6" xml:space="preserve">
+    <value>Cuando termino un examen me duele la cabeza.</value>
+  </data>
+  <data name="str_FullTest_Question7" xml:space="preserve">
+    <value>Cuando llevo un rato haciendo el examen, yo siento que me falta el aire, mucho calor y sensación de que me voy a desmayar.</value>
+  </data>
+  <data name="str_FullTest_Question8" xml:space="preserve">
+    <value>Me siento nervioso/a si el profesor/a se para junto a mí y ya no puedo seguir contestando.</value>
+  </data>
+  <data name="str_FullTest_Question9" xml:space="preserve">
+    <value>Me pongo nervioso/a al ver al profesor/a con los exámenes antes de entrar al aula.</value>
+  </data>
+  <data name="str_FullTest_Question10" xml:space="preserve">
+    <value>En el examen siento rígidas las manos y/o los brazos.</value>
+  </data>
+  <data name="str_FullTest_Question11" xml:space="preserve">
+    <value>Antes de entrar al examen siento un nudo en el estómago, que desaparece al comenzar a escribir.</value>
+  </data>
+  <data name="str_FullTest_Question12" xml:space="preserve">
+    <value>Al comenzar el examen, nada más leer las preguntas lo entrego al profesor/a en blanco y vuelvo a mi sitio.</value>
+  </data>
+  <data name="str_FullTest_Question13" xml:space="preserve">
+    <value>Después del examen lloro con facilidad, al pensar lo mal que lo he hecho aunque no sepa el resultado.</value>
+  </data>
+  <data name="str_FullTest_Question14" xml:space="preserve">
+    <value>Mientras que estoy realizando el examen, pienso que lo estoy haciendo muy mal.</value>
+  </data>
+  <data name="str_FullTest_Question15" xml:space="preserve">
+    <value>Me siento nervioso/a si los demás comienzan a entregar el examen antes que yo.</value>
+  </data>
+  <data name="str_FullTest_Question16" xml:space="preserve">
+    <value>Pienso que el profesor/a me está observando constantemente.</value>
+  </data>
+  <data name="str_FullTest_Question17" xml:space="preserve">
+    <value>Suelo morderme las uñas o el bolígrafo durante los exámenes.</value>
+  </data>
+  <data name="str_FullTest_Question18" xml:space="preserve">
+    <value>Tengo muchas ganas de ir al cuarto de baño durante el examen.</value>
+  </data>
+  <data name="str_FullTest_Question19" xml:space="preserve">
+    <value>No puedo quedarme quieto/a mientras hago el examen (muevo los pies, el bolígrafo, miro alrededor, miro la hora...).</value>
+  </data>
+  <data name="str_FullTest_Question20" xml:space="preserve">
+    <value>Me pongo malo/a y doy excusas para no hacer un examen.</value>
+  </data>
+  <data name="str_FullTest_Question21" xml:space="preserve">
+    <value>Para mí supone una tranquilidad o alivio cuando, por alguna razón, se aplaza un examen.</value>
+  </data>
+  <data name="str_FullTest_Question22" xml:space="preserve">
+    <value>Pienso que no voy a poder aprobar el examen, aunque haya estudiado.</value>
+  </data>
+  <data name="str_FullTest_Question23" xml:space="preserve">
+    <value>Antes de hacer el examen pienso que no me acuerdo de nada y voy a suspenderlo.</value>
+  </data>
+  <data name="str_FullTest_Question24" xml:space="preserve">
+    <value>No consigo dormir la noche anterior a un examen.</value>
+  </data>
+  <data name="str_FullTest_Question25" xml:space="preserve">
+    <value>Me pone nervioso/a que el aula esté llena de gente.</value>
+  </data>
+  <data name="str_FullTest_Question26" xml:space="preserve">
+    <value>He sentido mareos y ganas de vomitar en un examen.</value>
+  </data>
+  <data name="str_FullTest_Question27" xml:space="preserve">
+    <value>Momentos antes de hacer el examen tengo la boca seca y me cuesta tragar.</value>
+  </data>
+  <data name="str_FullTest_Question28" xml:space="preserve">
+    <value>Si me siento en las primeras filas para hacer el examen, aumenta mi nerviosismo.</value>
+  </data>
+  <data name="str_FullTest_Question29" xml:space="preserve">
+    <value>Si el examen tiene un tiempo fijo para realizarse, aumenta mi nerviosismo y lo hago peor.</value>
+  </data>
+  <data name="str_FullTest_Question30" xml:space="preserve">
+    <value>Me siento nervioso/a en aulas muy grandes.</value>
+  </data>
+  <data name="str_FullTest_Question31" xml:space="preserve">
+    <value>Cuando estoy haciendo un examen el corazón me late muy deprisa.</value>
+  </data>
+  <data name="str_FullTest_Question32" xml:space="preserve">
+    <value>Al entrar en el aula donde se hace el examen me tiemblan las piernas.</value>
+  </data>
+  <data name="str_FullTest_Question33" xml:space="preserve">
+    <value>Me siento nervioso/a en las clases demasiado pequeñas.</value>
+  </data>
+  <data name="str_FullTest_Question34" xml:space="preserve">
+    <value>Cuando un grupo de compañeros habla del examen antes de que venga el profesor me pongo más nervioso/a.</value>
+  </data>
+  <data name="str_FullTest_Question35" xml:space="preserve">
+    <value>Al salir del examen, tengo la sensación de haberlo hecho muy mal.</value>
+  </data>
+  <data name="str_FullTest_Question36" xml:space="preserve">
+    <value>Pienso que me voy a poner nervioso/a y se me va a olvidar todo.</value>
+  </data>
+  <data name="str_FullTest_Question37" xml:space="preserve">
+    <value>Tardo mucho tiempo en decidirme por contestar la mayoría de las preguntas o por entregar el examen.</value>
+  </data>
+  <data name="str_FullTest_Question38" xml:space="preserve">
+    <value>Sentiría nerviosismo si tuviera que realizar un examen de entrevista personal.</value>
+  </data>
+  <data name="str_FullTest_Question39" xml:space="preserve">
+    <value>Sentiría nerviosismo si tuviera que realizar un examen oral en público.</value>
+  </data>
+  <data name="str_FullTest_Question40" xml:space="preserve">
+    <value>Sentiría nerviosismo si tuviera que realizar una exposición de un trabajo en clase.</value>
+  </data>
+  <data name="str_FullTest_Question41" xml:space="preserve">
+    <value>Sentiría nerviosismo si tuviera que realizar un examen escrito con preguntas alternativas.</value>
+  </data>
+  <data name="str_FullTest_Question42" xml:space="preserve">
+    <value>Sentiría nerviosismo si tuviera que realizar un examen escrito con preguntas abiertas.</value>
+  </data>
+  <data name="str_FullTest_Question43" xml:space="preserve">
+    <value>Sentiría nerviosismo si tuviera que realizar un examen escrito de desarrollo de un tema completo.</value>
+  </data>
+  <data name="str_FullTest_Question44" xml:space="preserve">
+    <value>Sentiría nerviosismo si tuviera que realizar un examen escrito tipo oposición ante un tribunal.</value>
+  </data>
+  <data name="str_FullTest_Question45" xml:space="preserve">
+    <value>Sentiría nerviosismo si tuviera que realizar un examen de cultura general.</value>
+  </data>
+  <data name="str_FullTest_Question46" xml:space="preserve">
+    <value>Sentiría nerviosismo si tuviera que realizar un examen de cálculo o problemas matemáticos.</value>
+  </data>
+  <data name="str_FullTest_Question47" xml:space="preserve">
+    <value>Sentiría nerviosismo si tuviera que realizar un examen con pruebas físicas o gimnásticas.</value>
+  </data>
+  <data name="str_FullTest_Question48" xml:space="preserve">
+    <value>Sentiría nerviosismo si tuviera que realizar un examen práctico (escribir a máquina, manejar ordenador, realizar un proyecto, dibujo, etc.).</value>
+  </data>
+  <data name="str_EatingTest_Question1" xml:space="preserve">
+    <value>Me angustia la idea de estar demasiado gordo/a.</value>
+  </data>
+  <data name="str_EatingTest_Question2" xml:space="preserve">
+    <value>Procuro no comer cuando tengo hambre.</value>
+  </data>
+  <data name="str_EatingTest_Question3" xml:space="preserve">
+    <value>La comida es para mí una preocupación habitual.</value>
+  </data>
+  <data name="str_EatingTest_Question4" xml:space="preserve">
+    <value>He sufrido crisis de atracones en las que tenía la sensación de no poder parar de comer.</value>
+  </data>
+  <data name="str_EatingTest_Question5" xml:space="preserve">
+    <value>Corto mis alimentos en pequeños trozos.</value>
+  </data>
+  <data name="str_EatingTest_Question6" xml:space="preserve">
+    <value>Conozco la cantidad de calorías de los alimentos que como.</value>
+  </data>
+  <data name="str_EatingTest_Question7" xml:space="preserve">
+    <value>Procuro no comer alimentos que contengan muchos carbohidratos (pan, arroz, papas, etc.).</value>
+  </data>
+  <data name="str_EatingTest_Question8" xml:space="preserve">
+    <value>Tengo la impresión de que a los demás les gustaría verme comer más.</value>
+  </data>
+  <data name="str_EatingTest_Question9" xml:space="preserve">
+    <value>Vomito después de comer.</value>
+  </data>
+  <data name="str_EatingTest_Question10" xml:space="preserve">
+    <value>Me siento muy culpable después de comer.</value>
+  </data>
+  <data name="str_EatingTest_Question11" xml:space="preserve">
+    <value>Me obsesiona el deseo de estar más delgado/a.</value>
+  </data>
+  <data name="str_EatingTest_Question12" xml:space="preserve">
+    <value>Cuando hago deporte pienso sobre todo en quemar calorías.</value>
+  </data>
+  <data name="str_EatingTest_Question13" xml:space="preserve">
+    <value>Los demás piensan que estoy demasiado delgado/a.</value>
+  </data>
+  <data name="str_EatingTest_Question14" xml:space="preserve">
+    <value>Me preocupa la idea de tener zonas gordas en el cuerpo y/o de tener celulitis.</value>
+  </data>
+  <data name="str_EatingTest_Question15" xml:space="preserve">
+    <value>Tardo más tiempo que los demás en comer.</value>
+  </data>
+  <data name="str_EatingTest_Question16" xml:space="preserve">
+    <value>Procuro no comer alimentos que tengan azúcar.</value>
+  </data>
+  <data name="str_EatingTest_Question17" xml:space="preserve">
+    <value>Como alimentos dietéticos.</value>
+  </data>
+  <data name="str_EatingTest_Question18" xml:space="preserve">
+    <value>Tengo la impresión de que mi vida gira alrededor de la comida.</value>
+  </data>
+  <data name="str_EatingTest_Question19" xml:space="preserve">
+    <value>Tengo un buen autocontrol en lo que se refiere a la comida.</value>
+  </data>
+  <data name="str_EatingTest_Question20" xml:space="preserve">
+    <value>Tengo la sensación de que los demás me presionan para que coma más.</value>
+  </data>
+  <data name="str_EatingTest_Question21" xml:space="preserve">
+    <value>Paso demasiado tiempo pensando en la comida.</value>
+  </data>
+  <data name="str_EatingTest_Question22" xml:space="preserve">
+    <value>No me siento bien después de haber tomado dulces.</value>
+  </data>
+  <data name="str_EatingTest_Question23" xml:space="preserve">
+    <value>Estoy haciendo dieta.</value>
+  </data>
+  <data name="str_EatingTest_Question24" xml:space="preserve">
+    <value>Me gusta tener el estómago vacío.</value>
+  </data>
+  <data name="str_EatingTest_Question25" xml:space="preserve">
+    <value>Me gusta probar platos nuevos, sabrosos y ricos en calorías.</value>
+  </data>
+  <data name="str_EatingTest_Question26" xml:space="preserve">
+    <value>Después de las comidas tengo el impulso de vomitar.</value>
+  </data>
+  <data name="str_TestPage_BtnOption1" xml:space="preserve">
+    <value>Nunca</value>
+  </data>
+  <data name="str_TestPage_BtnOption2" xml:space="preserve">
+    <value>En pocas ocasiones</value>
+  </data>
+  <data name="str_TestPage_BtnOption3" xml:space="preserve">
+    <value>Con cierta frecuencia</value>
+  </data>
+  <data name="str_TestPage_BtnOption4" xml:space="preserve">
+    <value>A menudo o casi siempre</value>
+  </data>
+  <data name="str_TestPage_BtnOption5" xml:space="preserve">
+    <value>Siempre</value>
+  </data>
+  <data name="str_TestPage_BtnPrevious" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="str_TestPage_BtnNext" xml:space="preserve">
+    <value>Siguiente</value>
+  </data>
+  <data name="str_TestPage_EmptyAnswer" xml:space="preserve">
+    <value>Respuesta vacía</value>
+  </data>
+  <data name="str_TestPage_EmptyAnswer_Msg" xml:space="preserve">
+    <value>Por favor, selecciona una opción.</value>
+  </data>
+  <data name="str_TestPage_QuestionCount" xml:space="preserve">
+    <value>Pregunta {0}/{1}</value>
+  </data>
+  <data name="str_TestPage_BtnFinish" xml:space="preserve">
+    <value>Finalizar</value>
+  </data>
+  <data name="str_TestPage_LeaveTest_Warning" xml:space="preserve">
+    <value>Vas a abandonar este test.
+¿Qué harás con este intento?</value>
+  </data>
+  <data name="str_TestPage_LeaveTest_BtnSave" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="str_TestPage_LeaveTest_BtnDelete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="str_TestPage_BtnOption2_2" xml:space="preserve">
+    <value>Casi nunca</value>
+  </data>
+  <data name="str_TestPage_BtnOption3_2" xml:space="preserve">
+    <value>A menudo</value>
+  </data>
+  <data name="str_TestPage_BtnOption4_2" xml:space="preserve">
+    <value>Muy a menudo</value>
+  </data>
+  <data name="str_TestPage_BtnOption2_3" xml:space="preserve">
+    <value>En alguna ocasión</value>
+  </data>
+  <data name="str_TestPage_BtnOption4_3" xml:space="preserve">
+    <value>Casi siempre</value>
+  </data>
+  <data name="str_AnxietyAdvice1_Title" xml:space="preserve">
+    <value>Acepta la incertidumbre</value>
+  </data>
+  <data name="str_AnxietyAdvice1_Content" xml:space="preserve">
+    <value>Acepta que no sabes todo y que es normal sentir dudas ante un examen; esto te ayudará a no sobrecargarte.</value>
+  </data>
+  <data name="str_AnxietyAdvice2_Title" xml:space="preserve">
+    <value>Piensa positivamente</value>
+  </data>
+  <data name="str_AnxietyAdvice2_Content" xml:space="preserve">
+    <value>Trata de mantener una actitud positiva y enfócate en todas las cosas que has aprendido en lugar de preocuparte por lo que no sabes.</value>
+  </data>
+  <data name="str_AnxietyAdvice3_Title" xml:space="preserve">
+    <value>Identifica tus pensamientos tóxicos</value>
+  </data>
+  <data name="str_AnxietyAdvice3_Content" xml:space="preserve">
+    <value>Identifica estos pensamientos sobre los exámenes, como «No voy a aprobar», «Soy un fracaso», etc., te ayudará a cambiarlos.</value>
+  </data>
+  <data name="str_AnxietyAdvice4_Title" xml:space="preserve">
+    <value>Bloquea y cambia tus pensamientos negativos</value>
+  </data>
+  <data name="str_AnxietyAdvice4_Content" xml:space="preserve">
+    <value>Ante un pensamiento negativo di «Para» o «Stop» y trata de ver la situación desde una perspectiva más objetiva; esto te ayudará a ver la realidad de la situación.</value>
+  </data>
+  <data name="str_AnxietyAdvice5_Title" xml:space="preserve">
+    <value>Empodérate</value>
+  </data>
+  <data name="str_AnxietyAdvice5_Content" xml:space="preserve">
+    <value>Estas sencillas posturas corporales dan seguridad y confianza al instante. Ver vídeo:
+https://www.youtube.com/embed/jnOfzrDZYrA</value>
+  </data>
+  <data name="str_AnxietyAdvice6_Title" xml:space="preserve">
+    <value>Acepta la ansiedad</value>
+  </data>
+  <data name="str_AnxietyAdvice6_Content" xml:space="preserve">
+    <value>Tener ansiedad de manera puntual es normal y nos puede ayudar a estar más concentrados. No es un peligro para ti.</value>
+  </data>
+  <data name="str_AnxietyAdvice7_Title" xml:space="preserve">
+    <value>Dialoga contigo mismo</value>
+  </data>
+  <data name="str_AnxietyAdvice7_Content" xml:space="preserve">
+    <value>Lee despacio este texto cuando tengas un ataque de ansiedad: «Todos estos síntomas que estás sintiendo ahora mismo, aunque sean desagradables, NO SON PELIGROSOS, NO VAS A MORIR, NI VAS A PERDER EL CONTROL DE TU RESPIRACIÓN. Esta crisis que estás sintiendo tiene un inicio, un pico máximo y un final. Esto quiere decir que hagas lo que hagas, va a terminar, aunque tú no hagas nada. Así que evita intentar controlar o luchar contra ella, eso lo empeorará.
+En vez de eso, escucha a tu cuerpo e intenta ponerle nombre a todo lo que estás sintiendo ahora mismo. Es tu cuerpo y la respuesta psicofisiológica que se desencadena cuando cree que está en peligro. Por lo tanto, son reacciones normales en mi cuerpo y no va a suceder algo terrible. ASÍ QUE RECUERDA: NO ESTÁS EN PELIGRO Y EN UNOS MINUTOS PASARÁ».</value>
+  </data>
+  <data name="str_AnxietyAdvice8_Title" xml:space="preserve">
+    <value>Cambia tu foco atencional</value>
+  </data>
+  <data name="str_AnxietyAdvice8_Content" xml:space="preserve">
+    <value>Piensa o escribe: 5 cosas que puedas ver en este momento; 4 cosas que puedas tocar; 3 cosas que puedas escuchar; 2 cosas que puedas oler; 1 cosa que puedas saborear.</value>
+  </data>
+  <data name="str_AnxietyAdvice9_Content" xml:space="preserve">
+    <value>Crea una rutina previa al examen, da seguridad y confianza. Ejemplo: siéntate, prepara los bolígrafos, y haz tres inspiraciones lentas y profundas mientras piensas la frase «puedo con todo».</value>
+  </data>
+  <data name="str_AnxietyAdvice9_Title" xml:space="preserve">
+    <value>Establece una rutina</value>
+  </data>
+  <data name="str_AnxietyAdvice10_Title" xml:space="preserve">
+    <value>Practica técnicas de relajación</value>
+  </data>
+  <data name="str_AnxietyAdvice10_Content" xml:space="preserve">
+    <value>Practica técnicas de relajación. Te puede ayudar a reducir la ansiedad y mejorar la capacidad de afrontar situaciones de examen. ¿Quieres conocerlas?
+https://www.youtube.com/embed/F9R-uz9QZ58?si=HA2sN9VasJnKU8jk
+https://www.youtube.com/embed/ycSQVQqzk24?si=Y9TtCqZRvzbN7gUV
+https://www.youtube.com/embed/W5k__liBQzI?si=s2-Ukr5BBSlT6zxd
+https://www.youtube.com/embed/JPfg6QEszNk?si=4mq7WeC2ETNH-qzr</value>
+  </data>
+  <data name="str_AnxietyAdvice11_Title" xml:space="preserve">
+    <value>Usa metáforas</value>
+  </data>
+  <data name="str_AnxietyAdvice11_Content" xml:space="preserve">
+    <value>Lee despacio la siguiente metáfora:
+«Imagina que estás en el mar, un sitio aparentemente tranquilo, y de repente, aparece una gran ola. Cuando se acerca nos da miedo y por instinto nos alejamos de ella, pero al alejarnos, la ola se vuelve más fuerte y atemorizante y aparentemente sigue persiguiéndonos.
+Mientras más te alejas de la ola, más grande se vuelve y terminará siendo más fuerte cuanto más te alejes. En cambio, si no evitas a la ola, el atropello será fuerte al principio, pero luego te secarás y seguirás disfrutando del mar.
+Si viene otra ola gigante y sigues sin evitarla, sin duda será cada vez menor el atropello y el daño.
+Muchas veces los problemas son exactamente igual; nuestros pensamientos, recuerdos o emociones son desagradables de inicio, pero si huimos de ellos, lo único que haremos es hacerlos más grandes y darles más importancia. Sin embargo, si no los evitamos y, al contrario, los aceptamos tal cual son, aunque al inicio nos atormenten un poco, al final se volverán cotidianos y menor importantes, permitiéndonos ser más flexibles y permisivos con nosotros mismos».
+ </value>
+  </data>
+  <data name="str_AnxietyAdvice12_Title" xml:space="preserve">
+    <value>Identifica, bloquea y cambia</value>
+  </data>
+  <data name="str_AnxietyAdvice12_Content" xml:space="preserve">
+    <value>Identifica los pensamientos tóxicos sobre los exámenes, como «No voy a aprobar», «Soy un fracaso». Bloquea esos pensamientos, di «Para» o «Stop». 
+Trata de ver la situación desde una perspectiva más objetiva, esto te ayudará a ver la realidad de la situación.</value>
+  </data>
+  <data name="str_AnxietyAdvice13_Title" xml:space="preserve">
+    <value>Estudia todos los días</value>
+  </data>
+  <data name="str_AnxietyAdvice13_Content" xml:space="preserve">
+    <value>Estudia más veces las cosas, no más tiempo. Espacia las sesiones de estudio de un mismo tema. No te des el atracón solo el día anterior, corres el riesgo de bloquearte y quedarte en blanco.</value>
+  </data>
+  <data name="str_AnxietyAdvice14_Title" xml:space="preserve">
+    <value>Organízate</value>
+  </data>
+  <data name="str_AnxietyAdvice14_Content" xml:space="preserve">
+    <value>Lleva al día tu agenda.
+Prepara un horario de estudio y sigue un plan para cubrir todas las materias.
+Revisa tus técnicas de estudio (pregunta a tu orientador/a si tienes dudas).
+Resuelve con tu profesor todas las dudas de la materia.</value>
+  </data>
+  <data name="str_AnxietyAdvice15_Title" xml:space="preserve">
+    <value>Cuida tus hábitos</value>
+  </data>
+  <data name="str_AnxietyAdvice15_Content" xml:space="preserve">
+    <value>Duerme lo suficiente, sobre todo el día antes del examen (es necesario para una buena concentración); haz ejercicio físico; sigue una dieta equilibrada y saludable (evita las bebidas energizantes y el alcohol).</value>
+  </data>
+  <data name="str_AnxietyAdvice16_Title" xml:space="preserve">
+    <value>Busca apoyo</value>
+  </data>
+  <data name="str_AnxietyAdvice16_Content" xml:space="preserve">
+    <value>Habla con un amigo, familiar o profesor sobre tus preocupaciones y busca su apoyo.</value>
+  </data>
+  <data name="str_AnxietyAdvice17_Title" xml:space="preserve">
+    <value>Busca ayuda profesional</value>
+  </data>
+  <data name="str_AnxietyAdvice17_Content" xml:space="preserve">
+    <value>Si no puedes controlar tu estado de ansiedad y está afectando tu vida diaria, busca ayuda profesional.</value>
+  </data>
+  <data name="str_AnxietyAdvice18_Title" xml:space="preserve">
+    <value>Practica la autoobservación</value>
+  </data>
+  <data name="str_AnxietyAdvice18_Content" xml:space="preserve">
+    <value>Fíjate y apunta en qué momentos tienes ansiedad y estudia el porqué, eso te ayuda a saber cuáles son tus disparadores (varios exámenes la misma semana, por ejemplo) y anteponte a esa ansiedad:
+● Cuándo ha pasado: El lunes al ver que tengo 3 exámenes.
+● Qué estoy sintiendo: Ansiedad, me cuesta respirar...
+● Ahora veo la situación desde fuera (como en los videojuegos de tercera persona) y la explicas
+● Qué puedo hacer para afrontar la situación: enfócate en un examen y cuando termines con otro...; ayúdate de técnicas de respiración y relajación...</value>
+  </data>
+  <data name="str_AnxietyAdvice19_Title" xml:space="preserve">
+    <value>Haz un plan que puedas cumplir</value>
+  </data>
+  <data name="str_AnxietyAdvice19_Content" xml:space="preserve">
+    <value>Si evitas exámenes o ir a clase o estudiar debido a tu ansiedad, establece metas alcanzables.</value>
+  </data>
+  <data name="str_AnxietyAdvice20_Title" xml:space="preserve">
+    <value>Poco a poco</value>
+  </data>
+  <data name="str_AnxietyAdvice20_Content" xml:space="preserve">
+    <value>Empieza por lo más sencillo (estudiar en casa), sigue con asistencia a clase; ve con confianza al examen.</value>
+  </data>
+  <data name="str_ResultsPage_Title" xml:space="preserve">
+    <value>Recomendaciones</value>
+  </data>
+  <data name="str_ResultsPage_LblIntro_Medium" xml:space="preserve">
+    <value>Tus niveles de ansiedad se sitúan dentro del límite de la media. Pero tienes que tener cuidado y seguir observando la sintomatología para evitar que la situación te sobrepase.</value>
+  </data>
+  <data name="str_ResultsPage_LblIntro_High" xml:space="preserve">
+    <value>Tienes unos niveles de ansiedad demasiado altos. Es importante que aprendas a gestionar esa emoción, ya que estos niveles pueden dar lugar a problemas emocionales y de salud importantes.</value>
+  </data>
+  <data name="str_ResultsPage_LblIntro_Low" xml:space="preserve">
+    <value>A pesar de que algunas veces te encuentres más nervioso/a de lo habitual, tu respuesta ante estas situaciones es adecuada y está dentro de la media. Sigue así. 
+Una ansiedad moderada puede ayudarnos a mantenernos concentrados en el estudio, siempre que no se mantenga de manera sostenida en el tiempo, ya que puede dar lugar a quedar fuera de nuestro control.</value>
+  </data>
+  <data name="str_ResultsPage_Category_Prevent" xml:space="preserve">
+    <value>Cosas que puedes hacer antes para no llegar a esta situación:</value>
+  </data>
+  <data name="str_ResultsPage_Category_SeeMore" xml:space="preserve">
+    <value>¿Quieres ampliar?</value>
+  </data>
+  <data name="str_ResultsPage_Category_BadSituation" xml:space="preserve">
+    <value>Si la situación te sobrepasa:</value>
+  </data>
+  <data name="str_ResultsPage_LblIntro_Low_2" xml:space="preserve">
+    <value>A pesar de que algunas veces te encuentres más nervioso/a de lo habitual, tu respuesta ante estas situaciones es adecuada y está dentro de la media. Sigue así.
+Una ansiedad moderada puede ayudarnos a mantenernos concentrados en el estudio, siempre que no se mantenga de manera sostenida en el tiempo, ya que puede dar lugar a quedar fuera de nuestro control.</value>
+  </data>
+  <data name="str_ResultsPage_LblIntro_EatingTest" xml:space="preserve">
+    <value>Gracias por completar el test. A continuación, te ofrecemos recomendaciones basadas en tus respuestas. Estas orientaciones son una guía general para ayudarte a reflexionar sobre tu relación con la alimentación. Recuerda que este test es meramente orientativo y no sustituye una consulta profesional. Si tienes dudas o inquietudes, te recomendamos acudir a un especialista para una evaluación personalizada.</value>
+  </data>
+  <data name="str_EatingAdvice1_Title" xml:space="preserve">
+    <value>No se requiere intervención clínica</value>
+  </data>
+  <data name="str_EatingAdvice1_Content" xml:space="preserve">
+    <value>¡Enhorabuena! Parece que tienes una relación equilibrada con la comida, sigue así.Aunque no estás en riesgo, pensamos sería buena idea que te mantengas alerta por si la relación con la comida cambia.</value>
+  </data>
+  <data name="str_EatingAdvice2_Title" xml:space="preserve">
+    <value>Evaluación clínica urgente</value>
+  </data>
+  <data name="str_EatingAdvice2_Content" xml:space="preserve">
+    <value>Tu relación con la comida no es saludable. Por favor, consulta con un especialista médico lo más rápido posible para que te pueda brindar su ayuda.</value>
+  </data>
+  <data name="str_EatingAdvice3_Title" xml:space="preserve">
+    <value>Evaluación clínica adicional</value>
+  </data>
+  <data name="str_EatingAdvice3_Content" xml:space="preserve">
+    <value>Muchas gracias por usar esta app. No olvides que esto es meramente orientativo, te recomendamos que hables con un profesional de la salud o un consejero para abordar cualquier preocupación que puedas tener sobre tus hábitos alimenticios. Hay indicios de que puedes desarrollar un trastorno de la alimentación.</value>
+  </data>
+  <data name="str_EatingAdvice4_Title" xml:space="preserve">
+    <value>Evaluación exploratoria y seguimiento preventivo</value>
+  </data>
+  <data name="str_EatingAdvice4_Content" xml:space="preserve">
+    <value>Pensamos que la relación con la comida te preocupa en base a tus hábitos alimenticios y emociones que te provoca. Sería muy buena idea que hablaras de este tema con alguien de tu entorno, con criterio y experiencia, con el que tengas confianza.</value>
+  </data>
+  <data name="str_ResultsPage_LinkError" xml:space="preserve">
+    <value>Error al abrir el enlace: {0}</value>
+  </data>
+  <data name="str_ResultsPage_LinkError_Msg" xml:space="preserve">
+    <value>No se puede abrir el enlace. Verifica que sea válido.</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblCurrentPage" xml:space="preserve">
+    <value>Página 1/X</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblCurrentPage_Dyn" xml:space="preserve">
+    <value>Página {0}/{1}</value>
+  </data>
+  <data name="str_ResultsPage_BtnFinish" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="str_AnxietyAdvice21_Title" xml:space="preserve">
+    <value>Técnica Ho'oponopono</value>
+  </data>
+  <data name="str_AnxietyAdvice21_Content" xml:space="preserve">
+    <value>Esta técnica hawaiana busca limpiar memorias y emociones negativas que puedan afectar a nuestras vidas.
+hooponopono.mp3</value>
+  </data>
+  <data name="str_AnxietyAdvice22_Title" xml:space="preserve">
+    <value>Sesión de meditación</value>
+  </data>
+  <data name="str_AnxietyAdvice22_Content" xml:space="preserve">
+    <value>Relájate y conecta con tu interior con esta breve sesión de meditación guiada. Encuentra un lugar tranquilo, acomódate y deja que el audio te guíe hacia la calma interior.
+meditation.mp3</value>
+  </data>
+  <data name="str_AnxietyAdvice23_Title" xml:space="preserve">
+    <value>Música de ambiente</value>
+  </data>
+  <data name="str_AnxietyAdvice23_Content" xml:space="preserve">
+    <value>Música de ambiente creada por nuestro alumnado. Aconsejada para cualquiera de las meditaciones de otros consejos.
+audiorelax.mp3</value>
+  </data>
+  <data name="str_ResultHistoryPage_Loading" xml:space="preserve">
+    <value>Espera, estamos recuperando tus datos.
+¡Será solo un momento!</value>
+  </data>
+  <data name="str_ResultsPage_Loading" xml:space="preserve">
+    <value>Un momento, estamos procesando tus resultados para ofrecerte los mejores consejos.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_Img" xml:space="preserve">
+    <value>Icono de la aplicación MejorAppT</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_AppName" xml:space="preserve">
+    <value>Nombre de la aplicación: MejorAppT</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_Desc" xml:space="preserve">
+    <value>Botón para iniciar sesión con un usuario existente.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_Hint" xml:space="preserve">
+    <value>Haz clic aquí para iniciar sesión con un usuario previamente registrado.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnSignUp_Desc" xml:space="preserve">
+    <value>Botón para crear un nuevo usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnSignUp_Hint" xml:space="preserve">
+    <value>Haz clic aquí para crear un nuevo usuario en la aplicación.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_Name" xml:space="preserve">
+    <value>Campo para introducir un nombre o un nick del usuario a crear.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_ErrorName" xml:space="preserve">
+    <value>Error: el nombre es obligatorio.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_Age_Desc" xml:space="preserve">
+    <value>Campo para introducir la edad del usuario a crear.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_Age_Hint" xml:space="preserve">
+    <value>La edad debe estar comprendida entre los 12 y los 99 años.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_ErrorAge1" xml:space="preserve">
+    <value>Error: la edad es incorrecta.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_ErrorAge2" xml:space="preserve">
+    <value>Error: la edad debe estar dentro del rango permitido de 12 a 99 años.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderPicker_Desc" xml:space="preserve">
+    <value>Selector para elegir el género del usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderPicker_Hint" xml:space="preserve">
+    <value>Selecciona una opción: hombre, mujer o no binario.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderError" xml:space="preserve">
+    <value>Error: debes seleccionar una opción.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_AllGood" xml:space="preserve">
+    <value>Datos confirmados correctamente.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnSignUp" xml:space="preserve">
+    <value>Botón para confirmar los datos del usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_BtnCancel" xml:space="preserve">
+    <value>Botón para cancelar la operación.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_UsersPopup_Title" xml:space="preserve">
+    <value>Selecciona uno de los usuarios que hayas creado.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_UsersPopup_Name" xml:space="preserve">
+    <value>Nombre del usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_UsersPopup_Age" xml:space="preserve">
+    <value>Edad del usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_UsersPopup_Gender" xml:space="preserve">
+    <value>Género del usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_UsersPopup_Image" xml:space="preserve">
+    <value>Foto de perfil del usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_UsersPopup_SelectedUser" xml:space="preserve">
+    <value>Usuario: {0}, con edad: {1} y género: {2}</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_UsersPopup_List" xml:space="preserve">
+    <value>Lista de usuarios disponibles. Selecciona uno para continuar.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_UsersPopup_SelectedUser2" xml:space="preserve">
+    <value>Usuario seleccionado: {0}</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_UserCreated" xml:space="preserve">
+    <value>Usuario {0} creado correctamente.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_NoUsers" xml:space="preserve">
+    <value>No hay usuarios disponibles.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_Success" xml:space="preserve">
+    <value>Usuario {0} seleccionado. Iniciando sesión.</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_ImgProfile" xml:space="preserve">
+    <value>Esta es la imagen de perfil del usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_ImgEditProfile" xml:space="preserve">
+    <value>Icono para editar la imagen de perfil del usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_BtnPrevious" xml:space="preserve">
+    <value>Botón para navegar a los resultados anteriores.</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_BtnNext" xml:space="preserve">
+    <value>Botón para navegar a los resultados siguientes.</value>
+  </data>
+  <data name="str_SemanticProperties_ResultsPage_LblIntro" xml:space="preserve">
+    <value> Más abajo podrás consultar los consejos que hemos elaborado en base a tus respuestas para poder abordar tu salud de la mejor manera posible.</value>
+  </data>
+  <data name="str_SemanticProperties_Shell_MainMenu" xml:space="preserve">
+    <value>Menú principal de la aplicación.</value>
+  </data>
+  <data name="str_SemanticProperties_Shell_ProfileTab" xml:space="preserve">
+    <value>Accede a tu perfil y resultados anteriores.</value>
+  </data>
+  <data name="str_SemanticProperties_Shell_TbiLogOut_Desc" xml:space="preserve">
+    <value>Cerrar sesión en este usuario y volver a la pantalla para iniciar sesion o registrarse.</value>
+  </data>
+  <data name="str_SemanticProperties_Shell_TbiLogOut_Help" xml:space="preserve">
+    <value>Toca aquí para cerrar sesión.</value>
+  </data>
+  <data name="str_SemanticProperties_Shell_TbiModify_Desc" xml:space="preserve">
+    <value>Modificar tus datos personales y preferencias.</value>
+  </data>
+  <data name="str_SemanticProperties_Shell_TbiModify_Help" xml:space="preserve">
+    <value>Toca aquí para abrir la ventana de modificación del perfil.</value>
+  </data>
+  <data name="str_SemanticProperties_Shell_TbiDelete_Desc" xml:space="preserve">
+    <value>Eliminar tu perfil y toda la información asociada.</value>
+  </data>
+  <data name="str_SemanticProperties_Shell_TbiDelete_Help" xml:space="preserve">
+    <value>Toca aquí para eliminar tu perfil. ¡Ten cuidado, esta acción es irreversible!</value>
+  </data>
+  <data name="str_SemanticProperties_Shell_AboutPage_BtnClose" xml:space="preserve">
+    <value>Botón para cerrar el popup de información Acerca de.</value>
+  </data>
+  <data name="str_SemanticProperties_Shell_HelpPage_BtnClose" xml:space="preserve">
+    <value>Botón para cerrar el popup de ayuda.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_Name_Hint" xml:space="preserve">
+    <value>Introduce un nombre o nick.</value>
+  </data>
+  <data name="str_SemanticProperties_TestPage_QuestionCount" xml:space="preserve">
+    <value>Pregunta {0} sobre {1}</value>
+  </data>
+  <data name="str_SemanticProperties_MainPage_Welcome" xml:space="preserve">
+    <value>Te encuentras en el menú principal de la aplicación. Más abajo encontrarás los tres tipos de tests a realizar: test rápido de ansiedad (duración estimada: 2 minutos), test completo de ansiedad (duración estimada: 6 minutos), test para trastornos de la conducta alimentaria (duración estimada: 3 minutos).</value>
+  </data>
+</root>

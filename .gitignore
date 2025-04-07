@@ -1,0 +1,105 @@
+# .NET Core & .NET 5, 6, 7 (general)
+bin/
+obj/
+**/bin/
+**/obj/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Build directories (nombres específicos para plataformas de MAUI)
+build/
+[Bb]uild/
+[Bb]in/
+[Oo]bj/
+
+# .NET MAUI: paquetes NuGet descargados
+packages/
+**/packages/
+*.nupkg
+*.snupkg
+*.nuspec
+
+# Xamarin/MAUI para Android
+.idea/
+*.apk
+*.apks
+*.dex
+*.apk.idsig
+*.ap_
+*.ap__
+*.log
+*.so
+*.jar
+*.aar
+*.aab
+local.properties
+*.keystore
+**/local.properties
+**/*.keystore
+
+# Xamarin/MAUI para iOS
+*.ipa
+*.dSYM/
+project.xcworkspace/
+!default.mode1v3
+!default.mode2v3
+!default.pbxuser
+*.pbxuser
+*.mode1v3
+*.mode2v3
+xcuserdata/
+*.moved-aside
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+
+# Archivos de configuración del usuario de Visual Studio
+.vs/*
+.vscode/
+.vscode/*
+
+# Archivo de configuración de entornos de ejecución local de Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio para Mac
+.idea/
+.vscode/
+*.xcodeproj
+*.plist
+*.mode1v3
+*.mode2v3
+*.pbxuser
+xcuserdata/
+DerivedData/
+*.xcuserstate
+*.moved-aside
+*.pbxproj
+
+# Archivos temporales del sistema operativo
+*.DS_Store
+*.Thumbs.db
+._*
+
+# Archivos de configuración de JetBrains Rider
+.idea/
+.idea/*
+.rider/
+.rider/*
+
+# Archivos de cache de NuGet
+.nuget/
+**/project.nuget.cache
+
+# Archivos de configuración de MSBuild
+msbuild.log
+*.suo
+
+# Otros archivos de logs y de caché
+*.log
+*.cache
+*.tmp
+/.vs
