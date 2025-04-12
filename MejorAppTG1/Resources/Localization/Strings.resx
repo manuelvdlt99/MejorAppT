@@ -1137,4 +1137,7 @@ It will only take a moment!</value>
   <data name="str_SemanticProperties_MainPage_Welcome" xml:space="preserve">
     <value>You are in the app's main menu. Below you will find the three types of tests to take: quick anxiety test (estimated time: 2 minutes), complete anxiety test (estimated time: 6 minutes), eating disorders test (estimated time: 3 minutes).</value>
   </data>
+  <data name="str_UserSelectPopup_ChooseUserToast" xml:space="preserve">
+    <value>Please select an user.</value>
+  </data>
 </root>

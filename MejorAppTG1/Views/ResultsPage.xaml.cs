@@ -12,60 +12,6 @@ namespace MejorAppTG1;
 
 using Microsoft.Maui.Controls;
 
-public class StringToMediaSourceConverter : IValueConverter
-{
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        if (value is string uriString && !string.IsNullOrEmpty(uriString)) {
-            // Convertir la cadena en un MediaSource
-            return MediaSource.FromResource(uriString);
-        }
-        return null;
-    }
-
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        return null;
-    }
-}
-
-public class ContenidoToBackgroundColorConverter : IValueConverter
-{
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        // Si el contenido es nulo o vacío, hacer el fondo transparente.
-        if (value == null || string.IsNullOrEmpty(value.ToString())) {
-            return Colors.Transparent;
-        }
-
-        // Si tiene contenido, establecer el color de fondo predeterminado
-        return (Color)Application.Current.Resources["SecondaryColor1"];
-    }
-
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        return null;
-    }
-}
-
-public class ContenidoToFontColorConverter : IValueConverter
-{
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        if (value == null || string.IsNullOrEmpty(value.ToString())) {
-            return (Color)Application.Current.Resources["FontColor1"];
-        }
-
-        return (Color)Application.Current.Resources["FontColor2"];
-    }
-
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        return null;
-    }
-}
-
-
 public partial class ResultsPage : ContentPage
 {
     private List<Advice> consejosDisponibles = new();

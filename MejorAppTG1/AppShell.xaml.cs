@@ -443,7 +443,7 @@ namespace MejorAppTG1
                     if (currentPage is MainPage mainPage) {
                         mainPage.LoadUserName();
                     }
-                    else if (currentPage is ResultHistoryPage resultHistoryPage) {
+                    else if (currentPage is MyProfilePage resultHistoryPage) {
                         resultHistoryPage.UpdateUserLabels();
                     }
 
@@ -467,8 +467,8 @@ namespace MejorAppTG1
                     await App.Database.DeleteUsuarioAsync(App.CurrentUser);
                     App.CurrentUser = null;
                     Preferences.Clear();
-                    ResultHistoryPage.ResultIndex = 0;
-                    ResultHistoryPage.CurrentPage = 1;
+                    MyProfilePage.ResultIndex = 0;
+                    MyProfilePage.CurrentPage = 1;
                     Application.Current.MainPage = new NavigationPage(new LoginPage());
                 }
             } finally {
@@ -482,8 +482,8 @@ namespace MejorAppTG1
             App.ButtonPressed = true;
             try {
                 Preferences.Clear();
-                ResultHistoryPage.ResultIndex = 0;
-                ResultHistoryPage.CurrentPage = 1;
+                MyProfilePage.ResultIndex = 0;
+                MyProfilePage.CurrentPage = 1;
                 App.CurrentUser = null;
                 Application.Current.MainPage = new NavigationPage(new LoginPage());
             } finally {

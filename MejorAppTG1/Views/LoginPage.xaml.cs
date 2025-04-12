@@ -1,6 +1,8 @@
 using CommunityToolkit.Maui.Views;
 using MejorAppTG1.Models;
 using MejorAppTG1.Resources.Localization;
+using MejorAppTG1.Utils.Converters;
+using MejorAppTG1.Views;
 using Microsoft.Maui.Controls.Shapes;
 using Microsoft.Maui.Storage;
 using System.Globalization;
@@ -157,214 +159,15 @@ internal class SignUpPopup : Popup {
     }
 }
 
-internal class UsersPopup : Popup {
-    public UsersPopup(List<User> usuarios) {
-        var layout = new Grid {
-            HeightRequest = 400,
-            WidthRequest = 350,
-            BackgroundColor = (Color)Application.Current.Resources["SecondaryColor3"],
-            RowDefinitions =
-            {
-                new RowDefinition { Height = GridLength.Auto }, // Título
-                new RowDefinition { Height = GridLength.Star }  // Usuarios
-            }
-        };
-
-        var image = new Image {
-            Source = "fondo_provisional1.jpeg",
-            Aspect = Aspect.AspectFill
-        };
-
-
-        var titulo = new Label {
-            Text = Strings.str_LoginPage_LblSelectUser,
-            FontSize = 22,
-            Margin = new Thickness(0, 20, 0, 5),
-            TextColor = (Color)Application.Current.Resources["FontColor1"],
-            HorizontalOptions = LayoutOptions.Center,
-            FontAttributes = FontAttributes.Bold
-        };
-        SemanticProperties.SetHeadingLevel(titulo, SemanticHeadingLevel.Level1);
-        SemanticProperties.SetDescription(titulo, Strings.str_SemanticProperties_LoginPage_UsersPopup_Title);
-        layout.Add(image);
-        layout.Add(titulo);
-        Grid.SetRow(titulo, 0);
-        Grid.SetRowSpan(image, 2);
-
-        var collectionView = new CollectionView {
-            VerticalScrollBarVisibility = ScrollBarVisibility.Always,
-            SelectionMode = SelectionMode.Single,
-            ItemsSource = usuarios,
-            ItemTemplate = new DataTemplate(() => {
-                var frame = new Frame {
-                    BorderColor = (Color)Application.Current.Resources["ButtonColor2"],
-                    CornerRadius = 10,
-                    Margin = 15,
-                    Padding = 10,
-                    BackgroundColor = (Color)Application.Current.Resources["SecondaryColor4"]
-                };
-
-                var grid = new Grid {
-                    ColumnDefinitions =
-                    {
-                        new ColumnDefinition { Width = GridLength.Star }, // Texto
-                        new ColumnDefinition { Width = GridLength.Auto }  // Icono
-                    },
-                    Padding = new Thickness(10),
-                    VerticalOptions = LayoutOptions.Center
-                };
-
-                var verticalLayout = new VerticalStackLayout {
-                    Spacing = 2,
-                    VerticalOptions = LayoutOptions.Center
-                };
-
-                var nombreLabel = new Label {
-                    FontSize = 20,
-                    TextColor = (Color)Application.Current.Resources["FontColor4"],
-                    FontAttributes = FontAttributes.Bold
-                };
-                nombreLabel.SetBinding(Label.TextProperty, "Nombre");
-                SemanticProperties.SetDescription(nombreLabel, Strings.str_SemanticProperties_LoginPage_UsersPopup_Name);
-
-                var edadLabel = new Label {
-                    FontSize = 15,
-                    TextColor = (Color)Application.Current.Resources["FontColor5"],
-                    FontAttributes = FontAttributes.Bold
-                };
-                edadLabel.SetBinding(Label.TextProperty, "Edad");
-                edadLabel.BindingContextChanged += (sender, e) =>
-                {
-                    var user = (User)((Label)sender).BindingContext;
-                    if (user != null) {
-                        int edad = user.Edad;
-
-                        // Traducir el formato de la edad según el idioma actual
-                        string translatedAgeFormat = Strings.str_ResultHistoryPage_LblAge_Dyn;
-
-                        // Formatear la edad con la cadena traducida
-                        string translatedAge = string.Format(translatedAgeFormat, edad);
-
-                        // Asignar el texto traducido al Label
-                        edadLabel.Text = translatedAge;
-                    }
-                };
-                SemanticProperties.SetDescription(edadLabel, Strings.str_SemanticProperties_LoginPage_UsersPopup_Age);
-
-                var generoLabel = new Label {
-                    FontSize = 12,
-                    TextColor = (Color)Application.Current.Resources["FontColor6"],
-                    FontAttributes = FontAttributes.Bold
-                };
-
-                generoLabel.SetBinding(Label.TextProperty, "Genero");
-                generoLabel.BindingContextChanged += (sender, e) =>
-                {
-                    var user = (User)((Label)sender).BindingContext;
-                    if (user != null) {
-                        // Traducir el género según el idioma actual
-                        string translatedGender = user.Genero switch {
-                            "str_Genders_Man" => Strings.str_Genders_Man,
-                            "str_Genders_Woman" => Strings.str_Genders_Woman,
-                            "str_Genders_NB" => Strings.str_Genders_NB
-                        };
-
-                        // Asignar el texto traducido al Label
-                        generoLabel.Text = translatedGender;
-                    }
-                };
-                SemanticProperties.SetDescription(generoLabel, Strings.str_SemanticProperties_LoginPage_UsersPopup_Gender);
-
-                verticalLayout.Add(nombreLabel);
-                verticalLayout.Add(edadLabel);
-                verticalLayout.Add(generoLabel);
-
-                // Icono a la derecha
-                var icono = new Image {
-                    Source = "profile_icon.png",
-                    BackgroundColor = Colors.Transparent,
-                    HeightRequest = 60,
-                    WidthRequest = 60,
-                    VerticalOptions = LayoutOptions.Center,
-                    HorizontalOptions = LayoutOptions.Center,
-                    Aspect = Aspect.AspectFill,
-                    Clip = new EllipseGeometry {
-                        Center = new Point(30, 30),
-                        RadiusX = 30,
-                        RadiusY = 30
-                    }
-                };
-
-                icono.SetBinding(Image.SourceProperty, new Binding("Imagen", converter: new NullToDefaultImageConverter()));
-                SemanticProperties.SetDescription(icono, Strings.str_SemanticProperties_LoginPage_UsersPopup_Image);
-
-                grid.Add(verticalLayout, 0, 0);
-                grid.Add(icono, 1, 0);
-
-                frame.Content = grid;
-
-                frame.BindingContextChanged += (sender, e) =>
-                {
-                    var currentFrame = (Frame)sender;
-                    if (currentFrame.BindingContext is User user) {
-                        // Formatear la edad con la cadena traducida
-                        string translatedAgeFormat = Strings.str_ResultHistoryPage_LblAge_Dyn;
-                        string translatedAge = string.Format(translatedAgeFormat, user.Edad);
-
-                        // Crear la descripción combinada
-                        string semanticDescription = string.Format(Strings.str_SemanticProperties_LoginPage_UsersPopup_SelectedUser, user.Nombre, translatedAge, Strings.ResourceManager.GetString(user.Genero, CultureInfo.CurrentUICulture));
-
-                        // Asignar la descripción al SemanticProperties.Description del Frame
-                        SemanticProperties.SetDescription(currentFrame, semanticDescription);
-                    }
-                };
-
-                var tapGesture = new TapGestureRecognizer();
-                tapGesture.Tapped += (s, e) => {
-                    App.AnimateFrameInOut(frame);
-                    if (frame.BindingContext is User usuarioSeleccionado) {
-                        Close(usuarioSeleccionado);
-                    }
-                };
-                frame.GestureRecognizers.Add(tapGesture);
-
-                frame.SetBinding(BindingContextProperty, new Binding("."));
-
-                return frame;
-            }),
-            BackgroundColor = Colors.Transparent,
-            VerticalOptions = LayoutOptions.FillAndExpand
-        };
-
-        //SemanticProperties.SetDescription(collectionView, Strings.str_SemanticProperties_LoginPage_UsersPopup_List);
-        collectionView.SelectionChanged += (sender, args) => {
-            if (args.CurrentSelection.FirstOrDefault() is User usuarioSeleccionado) {
-                SemanticScreenReader.Announce(string.Format(Strings.str_SemanticProperties_LoginPage_UsersPopup_SelectedUser2, usuarioSeleccionado.Nombre));
-                Close(usuarioSeleccionado);
-            }
-        };
-
-        layout.Add(collectionView);
-        Grid.SetRow(collectionView, 1);
-        Content = layout;
-    }
-}
-
 public partial class LoginPage : ContentPage {
 
     public LoginPage() {
         InitializeComponent();
         Shell.SetNavBarIsVisible(this, false);
 
-
         if (DeviceInfo.Current.Platform != DevicePlatform.iOS) {
             this.SemanticOrderView.ViewOrder = new List<View> { LblDos, ImageUno, LblTitulo, LblUno };
         }
-
-
-        //Preferences
-        //LoadSavedName();
-
     }
 
     private async void CrearUsuario_Clicked(object sender, EventArgs e) {
@@ -378,20 +181,6 @@ public partial class LoginPage : ContentPage {
                 string newName = inputs.Item1;
                 int newAge = inputs.Item2;
                 string newGender = inputs.Item3;
-
-                /*
-                //guardar preferences del name
-                string name = nickUsuario.Text;
-                Preferences.Set(NameKey, name);
-
-                //guardar preferences de la edad
-                string age = edadUsuario.Text;
-                Preferences.Set(AgeKey, age);
-
-                //guardar preferences del genero
-                string gender = generoUsuario.SelectedItem.ToString();
-                Preferences.Set(GenderKey, gender);
-                */
 
                 User newUser = new User {
                     Nombre = newName,
@@ -414,29 +203,6 @@ public partial class LoginPage : ContentPage {
         }
     }
 
-    // Verificar si está almacenado en las preferencias
-    /*private void LoadSavedName() {
-        if (Preferences.ContainsKey(NameKey)) {
-            string savedName = Preferences.Get(NameKey, string.Empty);
-            nickUsuario.Text = savedName;
-        }
-
-        if (Preferences.ContainsKey(AgeKey)) {
-            string savedAge = Preferences.Get(AgeKey, string.Empty);
-            edadUsuario.Text = savedAge;
-        }
-
-        if (Preferences.ContainsKey(GenderKey)) {
-            string savedGenero = Preferences.Get(GenderKey, string.Empty);
-
-            // Actualizar el Picker para reflejar la selección guardada
-            int savedIndex = generoUsuario.Items.IndexOf(savedGenero);
-            if (savedIndex != -1) {
-                generoUsuario.SelectedIndex = savedIndex;
-            }
-        }
-    }*/
-
     private async void BtnLogIn_Clicked(object sender, EventArgs e) {
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
@@ -448,7 +214,8 @@ public partial class LoginPage : ContentPage {
                 SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_BtnLogIn_NoUsers);
             }
             else {
-                var popup = new UsersPopup(activeUsers);
+                var popup = new UserSelectPopup(activeUsers);
+                App.ButtonPressed = false;
                 var selectedUser = await Application.Current.MainPage.ShowPopupAsync(popup) as User;
 
                 if (selectedUser != null) {
@@ -464,16 +231,5 @@ public partial class LoginPage : ContentPage {
         } finally {
             App.ButtonPressed = false;
         }
-    }
-}
-
-public class NullToDefaultImageConverter : IValueConverter {
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
-        string imagePath = value as string;
-        return string.IsNullOrEmpty(imagePath) ? "profile_icon.png" : imagePath;
-    }
-
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
-        throw new NotImplementedException();
     }
 }

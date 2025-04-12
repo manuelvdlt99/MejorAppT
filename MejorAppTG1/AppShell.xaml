@@ -15,7 +15,7 @@
                          ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" Icon="main_menu_icon.png"
                          SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_Shell_MainMenu}"/>
             <ShellContent Title="{x:Static strings:Strings.str_Shell_MyProfileTab}" Shell.UnselectedColor="Green"
-                         ContentTemplate="{DataTemplate local:ResultHistoryPage}" Route="ResultHistoryPage" Icon="profile_icon.png" 
+                         ContentTemplate="{DataTemplate local:MyProfilePage}" Route="MyProfilePage" Icon="profile_icon.png" 
                          SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_Shell_ProfileTab}"/>
 
         </Tab>

@@ -112,7 +112,7 @@ namespace MejorAppTG1.Resources.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Slowly read the following metaphor:
         ///&quot;Imagine you&apos;re at sea, a seemingly calm place, and suddenly, a massive wave appears. As it approaches you feel afraid and you instinctively run away from it, but by getting away, the wave becomes stronger and more frightening and seemingly continues to chase you.
-        ///The farther you run away from the wave, the bigger it becomes, and the farther you run away, the stronger it gets. However, if you don&apos;t avoid the wave, the crash will be strong at first, but you will eventual [resto de la cadena truncado]&quot;;.
+        ///The farther you run away from the wave, the bigger it becomes, and the farther you run away, the stronger it gets. However, if you don&apos;t avoid the wave, the crash will be strong at first, but you will eventually [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_AnxietyAdvice11_Content {
             get {
@@ -246,7 +246,7 @@ namespace MejorAppTG1.Resources.Localization {
         ///● When it happened: Monday, considering that I have 3 exams.
         ///● What I&apos;m feeling: Anxiety, trouble breathing...
         ///● Now see the situation from the outside (like in a third-person video game) and explain it.
-        ///● What I can do to cope with the situation: Focus on one exam and when you finish with another one...; help yourself  [resto de la cadena truncado]&quot;;.
+        ///● What I can do to cope with the situation: Focus on one exam and when you finish with another one...; help yourself with [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_AnxietyAdvice18_Content {
             get {
@@ -449,7 +449,7 @@ namespace MejorAppTG1.Resources.Localization {
         
         /// <summary>
         ///   Busca una cadena traducida similar a Slowly read this paragraph when you have an anxiety attack: &quot;All these symptoms you are currently feeling, even if they are unpleasant, ARE NOT DANGEROUS, YOU ARE NOT GOING TO DIE, NOR ARE YOU GOING TO LOSE CONTROL OF YOUR BREATHING. This crisis you are feeling has a beginning, a peak and an end. This means that whatever you do, it will end, even if you do nothing. So avoid trying to control or fight it, that will make it worse.
-        ///Instead, listen to your body and try to name whatever you are feeling right no [resto de la cadena truncado]&quot;;.
+        ///Instead, listen to your body and try to name whatever you are feeling right now [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_AnxietyAdvice7_Content {
             get {
@@ -2677,7 +2677,7 @@ namespace MejorAppTG1.Resources.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a All the tests herein presented are adapted as closely as possible from the following studies:
         ///• &quot;Propiedades psicométricas de un cuestionario para la evaluación de la ansiedad ante los exámenes en adolescentes&quot;: Rosa Torrano-Martínez, Juan Manuel Ortigosa-Quiles, Antonio Riquelme-Marín and José Antonio López-Pina (University of Murcia).
-        ///• &quot;Comprendiendo el papel de la práctica física y el género en los trastornos alimentarios en estudiantes adolescentes españoles&quot;: Gema Sanchis-Soler, Irene León-Calero, S [resto de la cadena truncado]&quot;;.
+        ///• &quot;Comprendiendo el papel de la práctica física y el género en los trastornos alimentarios en estudiantes adolescentes españoles&quot;: Gema Sanchis-Soler, Irene León-Calero, Ser [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_Shell_AboutPage_ScientificBase_Msg {
             get {
@@ -2745,7 +2745,7 @@ namespace MejorAppTG1.Resources.Localization {
         ///• Complete anxiety test: consists of 48 questions and can be completed in approximately 6 minutes.
         ///• Eating disorders test: consists of 26 questions and can be completed in approximately 3 minutes.
         ///
-        ///In each test, each question will be presented individually. Each question consists of 5 possible answers, and you must select one to advance to the n [resto de la cadena truncado]&quot;;.
+        ///In each test, each question will be presented individually. Each question consists of 5 possible answers, and you must select one to advance to the next q [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_Shell_HelpPage_MainMenu_Msg {
             get {
@@ -2755,7 +2755,7 @@ namespace MejorAppTG1.Resources.Localization {
         
         /// <summary>
         ///   Busca una cadena traducida similar a In the &quot;My profile&quot; tab, you can see the details of the profile currently logged in to the application (name, age and gender). Remember that you can change these details or even create a new user from the menu in the top right corner. You can also change your profile picture by clicking on the picture itself.
-        ///Just below, you will see a list of the tests you have completed with this user in chronological order, with the most recent one first. If you click on any of them, the tips associated with your answer [resto de la cadena truncado]&quot;;.
+        ///Just below, you will see a list of the tests you have completed with this user in chronological order, with the most recent one first. If you click on any of them, the tips associated with your answers [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_Shell_HelpPage_MyProfile_Msg {
             get {
@@ -2785,7 +2785,7 @@ namespace MejorAppTG1.Resources.Localization {
         ///   Busca una cadena traducida similar a In the top navigation bar, you can change between the two main tabs that make up the app: the main menu and your profile. Below you&apos;ll find more details about each of these tabs.
         ///• By clicking on (i), you can see information about this project, the involved developers and the studies that endorse this app.
         ///• By clicking on (?), you can access the app&apos;s help, as you will have already been able to see for yourself.
-        ///• Finally, by clicking on the kebab menu (the three little dots in the top right corner), yo [resto de la cadena truncado]&quot;;.
+        ///• Finally, by clicking on the kebab menu (the three little dots in the top right corner), you w [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_Shell_HelpPage_TopBar_Msg {
             get {
@@ -3016,6 +3016,15 @@ namespace MejorAppTG1.Resources.Localization {
         internal static string str_TestPage_QuestionCount {
             get {
                 return ResourceManager.GetString("str_TestPage_QuestionCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please select an user..
+        /// </summary>
+        internal static string str_UserSelectPopup_ChooseUserToast {
+            get {
+                return ResourceManager.GetString("str_UserSelectPopup_ChooseUserToast", resourceCulture);
             }
         }
     }

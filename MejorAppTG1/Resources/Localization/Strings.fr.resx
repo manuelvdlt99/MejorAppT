@@ -1136,4 +1136,7 @@ Cela ne prendra qu'un instant !</value>
   <data name="str_SemanticProperties_MainPage_Welcome" xml:space="preserve">
     <value>Bienvenue dans le menu principal de l'application. Vous trouverez ci-dessous les trois types de tests à effectuer : test d'anxiété rapide (durée estimée : 2 minutes), test d'anxiété complet (durée estimée : 6 minutes), test pour les troubles de la conduite alimentaire (durée estimée : 3 minutes).</value>
   </data>
+  <data name="str_UserSelectPopup_ChooseUserToast" xml:space="preserve">
+    <value>Veuillez sélectionner un utilisateur.</value>
+  </data>
 </root>

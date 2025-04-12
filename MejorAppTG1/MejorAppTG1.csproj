@@ -129,6 +129,9 @@
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>Strings.resx</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\MyProfilePage.xaml.cs">
+	    <DependentUpon>MyProfilePage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\ResultsPage.xaml.cs">
 	    <DependentUpon>ResultsPage.xaml</DependentUpon>
 	  </Compile>
@@ -151,7 +154,10 @@
 	  <MauiXaml Update="Views\ResultsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ResultHistoryPage.xaml">
+	  <MauiXaml Update="Views\MyProfilePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\UserSelectPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

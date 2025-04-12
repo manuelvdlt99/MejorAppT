@@ -1136,4 +1136,7 @@ audiorelax.mp3</value>
   <data name="str_SemanticProperties_MainPage_Welcome" xml:space="preserve">
     <value>Te encuentras en el menú principal de la aplicación. Más abajo encontrarás los tres tipos de tests a realizar: test rápido de ansiedad (duración estimada: 2 minutos), test completo de ansiedad (duración estimada: 6 minutos), test para trastornos de la conducta alimentaria (duración estimada: 3 minutos).</value>
   </data>
+  <data name="str_UserSelectPopup_ChooseUserToast" xml:space="preserve">
+    <value>Por favor, selecciona un usuario.</value>
+  </data>
 </root>

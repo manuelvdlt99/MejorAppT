@@ -12,28 +12,7 @@ using System.Numerics;
 
 namespace MejorAppTG1;
 
-public class TranslationKeyConverter : IValueConverter
-{
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        if (value == null) return null;
-
-        // Se espera que `value` sea una clave de recurso como "str_AnsiedadRapido"
-        string key = value.ToString();
-
-        // Buscar la traducción en el archivo de recursos
-        string translation = Strings.ResourceManager.GetString(key, CultureInfo.CurrentUICulture);
-
-        // Si no se encuentra la clave, devolver la clave como fallback
-        return translation ?? key;
-    }
-
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        return null;
-    }
-}
-public partial class ResultHistoryPage : ContentPage
+public partial class MyProfilePage : ContentPage
 {
     private static int resultIndex = 0;
     private static int currentPage = 1;
@@ -43,7 +22,7 @@ public partial class ResultHistoryPage : ContentPage
     public static int ResultIndex { get => resultIndex; set => resultIndex = value; }
     public static int CurrentPage { get => currentPage; set => currentPage = value; }
 
-    public ResultHistoryPage()
+    public MyProfilePage()
     {
         InitializeComponent();
     }
