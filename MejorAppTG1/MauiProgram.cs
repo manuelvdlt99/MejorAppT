@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
 using PanCardView;
+using Maui.FreakyControls.Extensions;
 
 namespace MejorAppTG1
 {
@@ -14,6 +15,7 @@ namespace MejorAppTG1
                 .UseMauiCommunityToolkitMediaElement()
                 .UseCardsView()
                 .UseMauiCommunityToolkit()
+                .InitializeFreakyControls()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

@@ -11,14 +11,21 @@ namespace MejorAppTG1.Views;
 
 public partial class UserSelectPopup : Popup
 {
+    #region Variables
     private User? _selectedUser;
     private Frame? _previousSelectedFrame;
+    private bool _buttonPressed = false;
+    #endregion
+
+    #region Constructores
     public UserSelectPopup(List<User> usuarios)
 	{
 		InitializeComponent();
 		ClvUsuarios.ItemsSource = usuarios;
     }
+    #endregion
 
+    #region Eventos
     private void LblAge_BindingContextChanged(object sender, EventArgs e)
     {
         var edadLabel = sender as Label;
@@ -59,19 +66,20 @@ public partial class UserSelectPopup : Popup
 
     private void BtnCancel_Clicked(object sender, EventArgs e)
     {
-        if (App.ButtonPressed) return;
-        App.ButtonPressed = true;
+        if (_buttonPressed) return;
+        _buttonPressed = true;
         try {
             Close(null);
-        } finally {
-            App.ButtonPressed = false;
+        }
+        finally {
+            _buttonPressed = false;
         }
     }
 
     private void BtnConfirm_Clicked(object sender, EventArgs e)
     {
-        if (App.ButtonPressed) return;
-        App.ButtonPressed = true;
+        if (_buttonPressed) return;
+        _buttonPressed = true;
         try {
             if (_selectedUser == null) {
                 Toast.Make(Strings.str_UserSelectPopup_ChooseUserToast, ToastDuration.Short).Show();
@@ -79,8 +87,9 @@ public partial class UserSelectPopup : Popup
             else {
                 Close(_selectedUser);
             }
-        } finally {
-            App.ButtonPressed = false;
+        }
+        finally {
+            _buttonPressed = false;
         }
     }
 
@@ -97,7 +106,9 @@ public partial class UserSelectPopup : Popup
             _previousSelectedFrame = frame;
         }
     }
+    #endregion
 
+    #region Métodos
     private void ResetFrameColor(Frame frame)
     {
         frame.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
@@ -109,4 +120,5 @@ public partial class UserSelectPopup : Popup
         selectedFrame.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
         selectedFrame.BackgroundColor = (Color)Application.Current.Resources["PrimaryColor"];
     }
+    #endregion
 }

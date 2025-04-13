@@ -148,7 +148,7 @@
     <value>Age:</value>
   </data>
   <data name="str_LoginPage_BtnSignUp_Gender" xml:space="preserve">
-    <value>Gender:</value>
+    <value>Gender</value>
   </data>
   <data name="str_LoginPage_BtnSignUp_Name" xml:space="preserve">
     <value>Name:</value>
@@ -269,10 +269,10 @@ Still, are you sure you want to take the test?</value>
     <value>Select your gender</value>
   </data>
   <data name="str_ResultHistoryPage_BtnSignUp_EntAge" xml:space="preserve">
-    <value>Enter your age</value>
+    <value>Age</value>
   </data>
   <data name="str_ResultHistoryPage_BtnSignUp_EntName" xml:space="preserve">
-    <value>Enter your name</value>
+    <value>Name</value>
   </data>
   <data name="str_ResultHistoryPage_ChooseOption_Question" xml:space="preserve">
     <value>What would you like to do with this entry?</value>

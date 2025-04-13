@@ -148,7 +148,7 @@
     <value>Âge :</value>
   </data>
   <data name="str_LoginPage_BtnSignUp_Gender" xml:space="preserve">
-    <value>Genre :</value>
+    <value>Genre</value>
   </data>
   <data name="str_LoginPage_BtnSignUp_Name" xml:space="preserve">
     <value>Nom d'utilisateur :</value>
@@ -269,10 +269,10 @@ Tout de même, êtes-vous sûr de vouloir faire le test ?</value>
     <value>Sélectionnez votre genre</value>
   </data>
   <data name="str_ResultHistoryPage_BtnSignUp_EntAge" xml:space="preserve">
-    <value>Saisissez votre âge</value>
+    <value>Âge</value>
   </data>
   <data name="str_ResultHistoryPage_BtnSignUp_EntName" xml:space="preserve">
-    <value>Saisissez votre nom</value>
+    <value>Nom</value>
   </data>
   <data name="str_ResultHistoryPage_ChooseOption_Question" xml:space="preserve">
     <value>Que voulez-vous faire de ce résultat ?</value>

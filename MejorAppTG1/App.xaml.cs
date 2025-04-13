@@ -13,29 +13,31 @@ namespace MejorAppTG1
     {
         public const string USER_ID_KEY = "user_id";
         public static bool ButtonPressed = false;
+        public const string SYNC_MODE_OPEN = "open";
+        public const string SYNC_MODE_CLOSE = "close";
 
-        static MejorAppTDatabase database;
-        static FirebaseService firebase;
-        private bool isSyncing = false;
+        private static MejorAppTDatabase _database;
+        private static FirebaseService _firebase;
+        private bool _isSyncing = false;
         public static User CurrentUser { get; set; }
         public static MejorAppTDatabase Database
         {
             get {
-                if (database == null) {
-                    database = new MejorAppTDatabase(Path.Combine(Environment.GetFolderPath(
+                if (_database == null) {
+                    _database = new MejorAppTDatabase(Path.Combine(Environment.GetFolderPath(
                     Environment.SpecialFolder.LocalApplicationData), "MejorAppT.db3"));
                 }
-                return database;
+                return _database;
             }
         }
 
         public static FirebaseService Firebase
         {
             get {
-                if (firebase == null) {
-                    firebase = new FirebaseService("https://mejorappt-g1-default-rtdb.europe-west1.firebasedatabase.app");
+                if (_firebase == null) {
+                    _firebase = new FirebaseService("https://mejorappt-g1-default-rtdb.europe-west1.firebasedatabase.app");
                 }
-                return firebase;
+                return _firebase;
             }
         }
 
@@ -79,30 +81,30 @@ namespace MejorAppTG1
         {
             base.OnStart();
             var cancellationTokenSource = new CancellationTokenSource();
-            StartSyncTask(cancellationTokenSource.Token, "open");
+            StartSyncTask(cancellationTokenSource.Token, SYNC_MODE_OPEN);
         }
 
         protected override void OnSleep()
         {
             var cancellationTokenSource = new CancellationTokenSource();
-            StartSyncTask(cancellationTokenSource.Token, "close");
+            StartSyncTask(cancellationTokenSource.Token, SYNC_MODE_CLOSE);
             base.OnSleep();
         }
 
         private async Task StartSyncTask(CancellationToken cancellationToken, string mode)
         {
-            if (isSyncing) return;
+            if (_isSyncing) return;
 
-            isSyncing = true;
+            _isSyncing = true;
             try {
-                if (mode == "open") {
+                if (mode == SYNC_MODE_OPEN) {
                     await WaitForInternetAndSync(cancellationToken);
                 } else {
                     await CheckInternetAndSync(cancellationToken);
                 }
             }
             finally {
-                isSyncing = false;
+                _isSyncing = false;
             }
         }
 

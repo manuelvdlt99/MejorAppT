@@ -1404,7 +1404,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Gender:.
+        ///   Busca una cadena traducida similar a Gender.
         /// </summary>
         internal static string str_LoginPage_BtnSignUp_Gender {
             get {
@@ -1930,7 +1930,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Enter your age.
+        ///   Busca una cadena traducida similar a Age.
         /// </summary>
         internal static string str_ResultHistoryPage_BtnSignUp_EntAge {
             get {
@@ -1939,7 +1939,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Enter your name.
+        ///   Busca una cadena traducida similar a Name.
         /// </summary>
         internal static string str_ResultHistoryPage_BtnSignUp_EntName {
             get {
