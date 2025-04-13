@@ -1041,7 +1041,7 @@ Cela ne prendra qu'un instant !</value>
     <value>Erreur : vous devez sélectionner une option.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_SignUpPopup_AllGood" xml:space="preserve">
-    <value>Données confirmées avec succès.</value>
+    <value>Données confirmées avec succès. Connexion à l'application.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnSignUp" xml:space="preserve">
     <value>Bouton pour confirmer les données de l'utilisateur.</value>
@@ -1080,7 +1080,7 @@ Cela ne prendra qu'un instant !</value>
     <value>Il n'y a pas d'utilisateurs disponibles.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnLogIn_Success" xml:space="preserve">
-    <value>Utilisateur {0} sélectionné. Connexion.</value>
+    <value>Utilisateur {0} sélectionné.</value>
   </data>
   <data name="str_SemanticProperties_ResultHistoryPage_ImgProfile" xml:space="preserve">
     <value>Il s'agit de l'image de profil de l'utilisateur.</value>
@@ -1138,5 +1138,20 @@ Cela ne prendra qu'un instant !</value>
   </data>
   <data name="str_UserSelectPopup_ChooseUserToast" xml:space="preserve">
     <value>Veuillez sélectionner un utilisateur.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc" xml:space="preserve">
+    <value>Bouton pour se connecter avec l'utilisateur sélectionné.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint" xml:space="preserve">
+    <value>Cliquez ici pour accéder au menu principal avec l'utilisateur sélectionné.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected" xml:space="preserve">
+    <value>Genre sélectionné : Homme.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected" xml:space="preserve">
+    <value>Genre sélectionné : Femme.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected" xml:space="preserve">
+    <value>Genre sélectionné : Non-binaire.</value>
   </data>
 </root>

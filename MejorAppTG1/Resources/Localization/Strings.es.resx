@@ -1041,7 +1041,7 @@ audiorelax.mp3</value>
     <value>Error: debes seleccionar una opción.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_SignUpPopup_AllGood" xml:space="preserve">
-    <value>Datos confirmados correctamente.</value>
+    <value>Datos confirmados correctamente. Entrando en la aplicación.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnSignUp" xml:space="preserve">
     <value>Botón para confirmar los datos del usuario.</value>
@@ -1080,7 +1080,7 @@ audiorelax.mp3</value>
     <value>No hay usuarios disponibles.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnLogIn_Success" xml:space="preserve">
-    <value>Usuario {0} seleccionado. Iniciando sesión.</value>
+    <value>Usuario {0} seleccionado.</value>
   </data>
   <data name="str_SemanticProperties_ResultHistoryPage_ImgProfile" xml:space="preserve">
     <value>Esta es la imagen de perfil del usuario.</value>
@@ -1138,5 +1138,20 @@ audiorelax.mp3</value>
   </data>
   <data name="str_UserSelectPopup_ChooseUserToast" xml:space="preserve">
     <value>Por favor, selecciona un usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc" xml:space="preserve">
+    <value>Botón para iniciar sesión con el usuario que esté actualmente seleccionado.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint" xml:space="preserve">
+    <value>Haz clic aquí para acceder al menú principal con el usuario actualmente seleccionado.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected" xml:space="preserve">
+    <value>Género seleccionado: Hombre.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected" xml:space="preserve">
+    <value>Género seleccionado: Mujer.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected" xml:space="preserve">
+    <value>Género seleccionado: No binario.</value>
   </data>
 </root>

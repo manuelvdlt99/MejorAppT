@@ -104,6 +104,7 @@ public partial class UserSelectPopup : Popup
             _selectedUser = usuarioSeleccionado;
             UpdateSelectedFrameBorder(frame);
             _previousSelectedFrame = frame;
+            SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_BtnLogIn_Success);
         }
     }
     #endregion

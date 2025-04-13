@@ -2221,6 +2221,24 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Button to log in with the currently selected user..
+        /// </summary>
+        internal static string str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Click here to access the main menu with the currently selected user..
+        /// </summary>
+        internal static string str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Button to log in with an existing user..
         /// </summary>
         internal static string str_SemanticProperties_LoginPage_BtnLogIn_Desc {
@@ -2248,7 +2266,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a User {0} selected. Logging in..
+        ///   Busca una cadena traducida similar a User {0} selected..
         /// </summary>
         internal static string str_SemanticProperties_LoginPage_BtnLogIn_Success {
             get {
@@ -2311,7 +2329,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Data successfully confirmed..
+        ///   Busca una cadena traducida similar a Data successfully confirmed. Logging into the app..
         /// </summary>
         internal static string str_SemanticProperties_LoginPage_SignUpPopup_AllGood {
             get {
@@ -2361,6 +2379,33 @@ namespace MejorAppTG1.Resources.Localization {
         internal static string str_SemanticProperties_LoginPage_SignUpPopup_GenderError {
             get {
                 return ResourceManager.GetString("str_SemanticProperties_LoginPage_SignUpPopup_GenderError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gender selected: Female..
+        /// </summary>
+        internal static string str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gender selected: Male..
+        /// </summary>
+        internal static string str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gender selected: Non-binary..
+        /// </summary>
+        internal static string str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected", resourceCulture);
             }
         }
         

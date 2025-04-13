@@ -111,7 +111,8 @@
                         BorderWidth="2"
                         CornerRadius="15"
                         TextColor="{StaticResource FontColor2}"
-                        SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_BtnSignUp}"
+                        SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc}"
+                        SemanticProperties.Hint="{x:Static strings:Strings.str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint}"
                         Clicked="BtnConfirm_Clicked"/>
             </HorizontalStackLayout>
 

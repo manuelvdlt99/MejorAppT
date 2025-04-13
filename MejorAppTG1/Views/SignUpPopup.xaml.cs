@@ -46,6 +46,7 @@ public partial class SignUpPopup : Popup
                 entriesGoodToGo = false;
                 Toast.Make(Strings.str_LoginPage_BtnLogin_entryNameError, ToastDuration.Long).Show(new CancellationTokenSource().Token);
                 UpdateErrorTextInput(EntryName);
+                SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_SignUpPopup_ErrorName);
             } else {
                 UpdateValidTextInput(EntryName);
             }
@@ -58,17 +59,20 @@ public partial class SignUpPopup : Popup
                 entriesGoodToGo = false;
                 Toast.Make(Strings.str_LoginPage_BtnLogin_entryAgeError, ToastDuration.Long).Show(new CancellationTokenSource().Token);
                 UpdateErrorTextInput(EntryAge);
+                SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_SignUpPopup_ErrorAge1);
             }
 
             if (String.IsNullOrWhiteSpace(EntryAge.Text)) {
                 entriesGoodToGo = false;
                 Toast.Make(Strings.str_LoginPage_BtnLogin_entryAgeError, ToastDuration.Long).Show(new CancellationTokenSource().Token);
                 UpdateErrorTextInput(EntryAge);
+                SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_SignUpPopup_ErrorAge1);
             }
             else if (entryAgeNum < 12 || entryAgeNum > 99) {
                 entriesGoodToGo = false;
                 Toast.Make(Strings.str_LoginPage_BtnLogin_entryAgeError2, ToastDuration.Long).Show(new CancellationTokenSource().Token);
                 UpdateErrorTextInput(EntryAge);
+                SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_SignUpPopup_ErrorAge2);
             } else {
                 UpdateValidTextInput(EntryAge);
             }
@@ -77,6 +81,7 @@ public partial class SignUpPopup : Popup
                 entriesGoodToGo = false;
                 Toast.Make(Strings.str_LoginPage_BtnLogin_cmbGenderError, ToastDuration.Long).Show(new CancellationTokenSource().Token);
                 LblGender.TextColor = (Color)Application.Current.Resources["ErrorColor1"];
+                SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_SignUpPopup_GenderError);
             } else {
                 LblGender.TextColor = (Color)Application.Current.Resources["ButtonColor2"];
             }
@@ -101,6 +106,7 @@ public partial class SignUpPopup : Popup
         FrmFemale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
         FrmNB.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
         FrmNB.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
+        SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected);
     }
 
     private void TapGestureRecognizer_Tapped_Female(object sender, TappedEventArgs e)
@@ -113,6 +119,7 @@ public partial class SignUpPopup : Popup
         FrmMale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
         FrmNB.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
         FrmNB.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
+        SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected);
     }
 
     private void TapGestureRecognizer_Tapped_NB(object sender, TappedEventArgs e)
@@ -125,6 +132,7 @@ public partial class SignUpPopup : Popup
         FrmMale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
         FrmFemale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
         FrmFemale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
+        SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected);
     }
 
     private async void TapGestureRecognizer_Tapped_ImgProfile(object sender, TappedEventArgs e)

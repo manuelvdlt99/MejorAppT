@@ -11,7 +11,9 @@ namespace MejorAppTG1;
 
 public partial class LoginPage : ContentPage {
 
-    public LoginPage() {
+    #region Constructores
+    public LoginPage()
+    {
         InitializeComponent();
         Shell.SetNavBarIsVisible(this, false);
 
@@ -19,8 +21,11 @@ public partial class LoginPage : ContentPage {
             this.SemanticOrderView.ViewOrder = new List<View> { LblDos, ImageUno, LblTitulo, LblUno };
         }
     }
+    #endregion
 
-    private async void CrearUsuario_Clicked(object sender, EventArgs e) {
+    #region Eventos
+    private async void CrearUsuario_Clicked(object sender, EventArgs e)
+    {
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
         try {
@@ -49,12 +54,14 @@ public partial class LoginPage : ContentPage {
 
                 SemanticScreenReader.Announce(string.Format(Strings.str_SemanticProperties_LoginPage_UserCreated, newName));
             }
-        } finally {
+        }
+        finally {
             App.ButtonPressed = false;
         }
     }
 
-    private async void BtnLogIn_Clicked(object sender, EventArgs e) {
+    private async void BtnLogIn_Clicked(object sender, EventArgs e)
+    {
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
         try {
@@ -78,8 +85,10 @@ public partial class LoginPage : ContentPage {
                     SemanticScreenReader.Announce(string.Format(Strings.str_SemanticProperties_LoginPage_BtnLogIn_Success, selectedUser.Nombre));
                 }
             }
-        } finally {
+        }
+        finally {
             App.ButtonPressed = false;
         }
     }
+    #endregion
 }

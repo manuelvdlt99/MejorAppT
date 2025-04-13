@@ -1042,7 +1042,7 @@ It will only take a moment!</value>
     <value>Error: a gender must be selected.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_SignUpPopup_AllGood" xml:space="preserve">
-    <value>Data successfully confirmed.</value>
+    <value>Data successfully confirmed. Logging into the app.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnSignUp" xml:space="preserve">
     <value>Button to confirm the user's details.</value>
@@ -1081,7 +1081,7 @@ It will only take a moment!</value>
     <value>There are no users available.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnLogIn_Success" xml:space="preserve">
-    <value>User {0} selected. Logging in.</value>
+    <value>User {0} selected.</value>
   </data>
   <data name="str_SemanticProperties_ResultHistoryPage_ImgProfile" xml:space="preserve">
     <value>This is the user's profile picture.</value>
@@ -1139,5 +1139,20 @@ It will only take a moment!</value>
   </data>
   <data name="str_UserSelectPopup_ChooseUserToast" xml:space="preserve">
     <value>Please select an user.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc" xml:space="preserve">
+    <value>Button to log in with the currently selected user.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint" xml:space="preserve">
+    <value>Click here to access the main menu with the currently selected user.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected" xml:space="preserve">
+    <value>Gender selected: Male.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected" xml:space="preserve">
+    <value>Gender selected: Female.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected" xml:space="preserve">
+    <value>Gender selected: Non-binary.</value>
   </data>
 </root>
