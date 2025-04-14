@@ -344,7 +344,7 @@ Still, are you sure you want to take the test?</value>
     <value>Main menu</value>
   </data>
   <data name="str_Shell_MyProfileTab" xml:space="preserve">
-    <value>My profile</value>
+    <value>My Profile</value>
   </data>
   <data name="str_Shell_TbiLogOut" xml:space="preserve">
     <value>Log out</value>
@@ -1042,7 +1042,7 @@ It will only take a moment!</value>
     <value>Error: a gender must be selected.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_SignUpPopup_AllGood" xml:space="preserve">
-    <value>Data successfully confirmed. Logging into the app.</value>
+    <value>Data successfully confirmed.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnSignUp" xml:space="preserve">
     <value>Button to confirm the user's details.</value>
@@ -1154,5 +1154,26 @@ It will only take a moment!</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected" xml:space="preserve">
     <value>Gender selected: Non-binary.</value>
+  </data>
+  <data name="str_Shell_SettingsPage_Title" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="str_SettingsPage_BtnLanguage" xml:space="preserve">
+    <value>Change language</value>
+  </data>
+  <data name="str_SettingsPage_LblLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="str_LanguagePopup_LblTitle" xml:space="preserve">
+    <value>Select a language</value>
+  </data>
+  <data name="str_SettingsPage_LblData" xml:space="preserve">
+    <value>Data Management</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Desc" xml:space="preserve">
+    <value>Language selector.</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Hint" xml:space="preserve">
+    <value>Click here to change the app's display language.</value>
   </data>
 </root>

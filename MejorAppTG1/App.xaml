@@ -21,6 +21,7 @@
             <Color x:Key="ButtonColor2">Gray</Color>
             <Color x:Key="ButtonColor3">IndianRed</Color>
             <Color x:Key="ButtonColor4">DarkGrey</Color>
+            <Color x:Key="ButtonColor5">#d1adab</Color>
             <Color x:Key="BorderColor1">#009203</Color>
             <Color x:Key="BorderColor2">DarkRed</Color>
             <Color x:Key="BorderColor3">LightGray</Color>

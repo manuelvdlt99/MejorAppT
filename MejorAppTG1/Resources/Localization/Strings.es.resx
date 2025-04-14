@@ -1041,7 +1041,7 @@ audiorelax.mp3</value>
     <value>Error: debes seleccionar una opción.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_SignUpPopup_AllGood" xml:space="preserve">
-    <value>Datos confirmados correctamente. Entrando en la aplicación.</value>
+    <value>Datos confirmados correctamente.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnSignUp" xml:space="preserve">
     <value>Botón para confirmar los datos del usuario.</value>
@@ -1153,5 +1153,26 @@ audiorelax.mp3</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected" xml:space="preserve">
     <value>Género seleccionado: No binario.</value>
+  </data>
+  <data name="str_Shell_SettingsPage_Title" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="str_SettingsPage_BtnLanguage" xml:space="preserve">
+    <value>Cambiar idioma</value>
+  </data>
+  <data name="str_SettingsPage_LblLanguage" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="str_LanguagePopup_LblTitle" xml:space="preserve">
+    <value>Selecciona un idioma</value>
+  </data>
+  <data name="str_SettingsPage_LblData" xml:space="preserve">
+    <value>Gestión de datos</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Desc" xml:space="preserve">
+    <value>Selector de idioma.</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Hint" xml:space="preserve">
+    <value>Haz clic aquí para cambiar el idioma de visualización de la aplicación.</value>
   </data>
 </root>

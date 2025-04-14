@@ -17,27 +17,28 @@
             <RoundRectangle CornerRadius="25"/>
         </Border.StrokeShape>
 
-        <VerticalStackLayout Padding="20" Spacing="15">
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="15">
 
-            <Label 
+                <Label x:Name="LblTitle"
             Text="{x:Static strings:Strings.str_LoginPage_BtnSignUp}" 
             FontSize="20" 
             HorizontalOptions="Center"
             TextColor="{StaticResource FontColor1}"
             SemanticProperties.HeadingLevel="Level1" />
 
-            <Grid>
-                <Frame x:Name="FrmImgProfile" WidthRequest="100" HeightRequest="100" CornerRadius="50">
-                    <Image x:Name="ImgProfile" WidthRequest="100" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center" Source="no_profile_icon.jpg" Aspect="AspectFill" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_ImgProfile}"/>
-                </Frame>
-                <Image x:Name="ImgEditProfile" HorizontalOptions="Center" Source="edit_profile_icon.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_ImgEditProfile}">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_ImgProfile"/>
-                    </Image.GestureRecognizers>
-                </Image>
-            </Grid>
+                <Grid>
+                    <Frame x:Name="FrmImgProfile" WidthRequest="100" HeightRequest="100" CornerRadius="50">
+                        <Image x:Name="ImgProfile" WidthRequest="100" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center" Source="no_profile_icon.jpg" Aspect="AspectFill" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_ImgProfile}"/>
+                    </Frame>
+                    <Image x:Name="ImgEditProfile" HorizontalOptions="Center" Source="edit_profile_icon.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_ImgEditProfile}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_ImgProfile"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
 
-            <freakycontrols:FreakyTextInputLayout ImageSource="profile_icon_entry.png"
+                <freakycontrols:FreakyTextInputLayout ImageSource="profile_icon_entry.png"
             x:Name="EntryName" BorderType="Outlined" BorderStroke="{StaticResource ButtonColor2}" BorderStrokeThickness="1" BorderCornerRadius="25"
             Title="{x:Static strings:Strings.str_ResultHistoryPage_BtnSignUp_EntName}"
             TitleColor="{StaticResource ButtonColor2}"
@@ -46,7 +47,7 @@
             SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_SignUpPopup_Name}"
             SemanticProperties.Hint="{x:Static strings:Strings.str_SemanticProperties_LoginPage_SignUpPopup_Name_Hint}"/>
 
-            <freakycontrols:FreakyTextInputLayout ImageSource="calendar_icon.png"
+                <freakycontrols:FreakyTextInputLayout ImageSource="calendar_icon.png"
             x:Name="EntryAge" BorderType="Outlined" BorderStroke="{StaticResource ButtonColor2}" BorderStrokeThickness="1" BorderCornerRadius="25"
             Title="{x:Static strings:Strings.str_ResultHistoryPage_BtnSignUp_EntAge}" 
             TitleColor="{StaticResource ButtonColor2}"
@@ -56,75 +57,75 @@
             SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_SignUpPopup_Age_Desc}"
             SemanticProperties.Hint="{x:Static strings:Strings.str_SemanticProperties_LoginPage_SignUpPopup_Age_Hint}"/>
 
-            <Label x:Name="LblGender"
+                <Label x:Name="LblGender"
             Text="{x:Static strings:Strings.str_LoginPage_BtnSignUp_Gender}" 
             FontSize="18" Margin="10,0,0,0"
             TextColor="{StaticResource ButtonColor2}"
             SemanticProperties.HeadingLevel="Level1"
             SemanticProperties.Hint="{x:Static strings:Strings.str_SemanticProperties_LoginPage_SignUpPopup_GenderPicker_Hint}"/>
 
-            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Frame x:Name="FrmMale" BorderColor="{StaticResource ButtonColor2}"
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Frame x:Name="FrmMale" BorderColor="{StaticResource ButtonColor2}"
                                CornerRadius="10"
                                Padding="10"
                                BackgroundColor="{StaticResource GradientColor3}"
                                WidthRequest="90"
-                               HeightRequest="90">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Male"/>
-                    </Frame.GestureRecognizers>
+                               HeightRequest="90" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Male"/>
+                        </Frame.GestureRecognizers>
 
-                    <VerticalStackLayout Spacing="10">
-                        <Label 
+                        <VerticalStackLayout Spacing="10">
+                            <Label 
                         Text="{x:Static strings:Strings.str_Genders_Man}" 
                         FontSize="13" 
                         HorizontalOptions="Center"
                         TextColor="{StaticResource ButtonColor2}"/>
-                        <Image Source="male_icon.png" HorizontalOptions="Center" WidthRequest="32" />
-                    </VerticalStackLayout>
-                </Frame>
-                <Frame x:Name="FrmFemale" BorderColor="{StaticResource ButtonColor2}"
+                            <Image Source="male_icon.png" HorizontalOptions="Center" WidthRequest="32" />
+                        </VerticalStackLayout>
+                    </Frame>
+                    <Frame x:Name="FrmFemale" BorderColor="{StaticResource ButtonColor2}"
                    CornerRadius="10"
                    Padding="10"
                    BackgroundColor="{StaticResource GradientColor3}"
                    WidthRequest="90"
-                   HeightRequest="90">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Female"/>
-                    </Frame.GestureRecognizers>
+                   HeightRequest="90" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Female"/>
+                        </Frame.GestureRecognizers>
 
-                    <VerticalStackLayout Spacing="10">
-                        <Label 
+                        <VerticalStackLayout Spacing="10">
+                            <Label 
                         Text="{x:Static strings:Strings.str_Genders_Woman}" 
                         FontSize="13" 
                         HorizontalOptions="Center"
                         TextColor="{StaticResource ButtonColor2}"/>
-                        <Image Source="female_icon.png" HorizontalOptions="Center" WidthRequest="25" />
-                    </VerticalStackLayout>
-                </Frame>
-                <Frame x:Name="FrmNB" BorderColor="{StaticResource ButtonColor2}"
+                            <Image Source="female_icon.png" HorizontalOptions="Center" WidthRequest="25" />
+                        </VerticalStackLayout>
+                    </Frame>
+                    <Frame x:Name="FrmNB" BorderColor="{StaticResource ButtonColor2}"
                    CornerRadius="10"
                    Padding="10"
                    BackgroundColor="{StaticResource GradientColor3}"
                    WidthRequest="90"
-                   HeightRequest="90">
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_NB"/>
-                    </Frame.GestureRecognizers>
+                   HeightRequest="90" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_NB"/>
+                        </Frame.GestureRecognizers>
 
-                    <VerticalStackLayout Spacing="10">
-                        <Label 
+                        <VerticalStackLayout Spacing="10">
+                            <Label 
                         Text="{x:Static strings:Strings.str_Genders_NB}" 
                         FontSize="13" 
                         HorizontalOptions="Center"
                         TextColor="{StaticResource ButtonColor2}"/>
-                        <Image Source="nonbinary_icon.png" HorizontalOptions="Center" WidthRequest="24" />
-                    </VerticalStackLayout>
-                </Frame>
-            </HorizontalStackLayout>
+                            <Image Source="nonbinary_icon.png" HorizontalOptions="Center" WidthRequest="24" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </HorizontalStackLayout>
 
-            <HorizontalStackLayout Margin="0,10,0,0" Spacing="10" HorizontalOptions="Center">
-                <freakycontrols:FreakyButton 
+                <HorizontalStackLayout Margin="0,10,0,0" Spacing="10" HorizontalOptions="Center">
+                    <freakycontrols:FreakyButton 
                 x:Name="BtnCancel"
                 Clicked="BtnCancel_Clicked"
                 Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnCancel}" 
@@ -132,7 +133,7 @@
                 TextColor="{StaticResource FontColor2}"
                 SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_SignUpPopup_BtnCancel}" />
 
-                <freakycontrols:FreakyButton 
+                    <freakycontrols:FreakyButton 
                 x:Name="BtnConfirm"
                 Clicked="BtnConfirm_Clicked"
                 Text="{x:Static strings:Strings.str_LoginPage_BtnConfirm}" 
@@ -142,7 +143,8 @@
                 CornerRadius="15" 
                 TextColor="{StaticResource FontColor2}"
                 SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_BtnSignUp}" />
-            </HorizontalStackLayout>
-        </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
     </Border>
 </toolkit:Popup>

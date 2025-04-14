@@ -2,9 +2,8 @@ using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Views;
 using Maui.FreakyControls;
+using MejorAppTG1.Models;
 using MejorAppTG1.Resources.Localization;
-using Microsoft.Maui.Handlers;
-using System.Xml.Linq;
 
 namespace MejorAppTG1.Views;
 
@@ -21,6 +20,13 @@ public partial class SignUpPopup : Popup
     public SignUpPopup()
     {
         InitializeComponent();
+    }
+
+    public SignUpPopup(User user)
+    {
+        InitializeComponent();
+        LblTitle.Text = Strings.str_Shell_TbiModifyProfile;
+        LoadSelectedUserData(user);
     }
 
     #region Eventos
@@ -216,6 +222,43 @@ public partial class SignUpPopup : Popup
     {
         entry.BorderStroke = (Color)Application.Current.Resources["ButtonColor2"];
         entry.TitleColor = (Color)Application.Current.Resources["ButtonColor2"];
+    }
+
+    private void LoadSelectedUserData(User user)
+    {
+        EntryName.Text = user.Nombre;
+        EntryAge.Text = user.Edad.ToString();
+        _selectedGender = user.Genero;
+        _localPfpPath = user.Imagen;
+        if (_localPfpPath != null) {
+            ImgProfile.Source = ImageSource.FromFile(_localPfpPath);
+        }
+        switch (_selectedGender) {
+            case "str_Genders_Man":
+                FrmMale.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
+                FrmMale.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
+                FrmFemale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
+                FrmFemale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
+                FrmNB.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
+                FrmNB.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
+                break;
+            case "str_Genders_Woman":
+                FrmFemale.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
+                FrmFemale.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
+                FrmMale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
+                FrmMale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
+                FrmNB.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
+                FrmNB.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
+                break;
+            case "str_Genders_NB":
+                FrmNB.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
+                FrmNB.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
+                FrmMale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
+                FrmMale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
+                FrmFemale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
+                FrmFemale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
+                break;
+        }
     }
     #endregion
 }

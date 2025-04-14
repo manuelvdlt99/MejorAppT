@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MejorAppTG1.TestPage"
              xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
+             xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
              Shell.TabBarIsVisible="False"
              NavigationPage.HasBackButton="False" Shell.BackgroundColor="{StaticResource SecondaryColor1}">
 
@@ -89,11 +90,11 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="BtnAnterior" Clicked="BtnAnterior_Clicked" Grid.Column="0" TextColor="{StaticResource FontColor1}"
+                <freakycontrols:FreakyButton x:Name="BtnAnterior" Clicked="BtnAnterior_Clicked" Grid.Column="0" TextColor="{StaticResource FontColor1}"
                         Text="{x:Static strings:Strings.str_TestPage_BtnPrevious}" BackgroundColor="{StaticResource SecondaryColor2}" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource PrimaryColor}"
                         HorizontalOptions="FillAndExpand" Margin="5" HeightRequest="60" FontAttributes="Bold" />
 
-                <Button x:Name="BtnSiguiente" Clicked="BtnSiguiente_Clicked" Grid.Column="1" TextColor="{StaticResource FontColor1}"
+                <freakycontrols:FreakyButton x:Name="BtnSiguiente" Clicked="BtnSiguiente_Clicked" Grid.Column="1" TextColor="{StaticResource FontColor1}"
                         Text="{x:Static strings:Strings.str_TestPage_BtnNext}" BackgroundColor="{StaticResource SecondaryColor2}" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource PrimaryColor}"
                         HorizontalOptions="FillAndExpand" Margin="5" HeightRequest="60" FontAttributes="Bold" />
             </Grid>

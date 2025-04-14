@@ -1314,6 +1314,15 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Select a language.
+        /// </summary>
+        internal static string str_LanguagePopup_LblTitle {
+            get {
+                return ResourceManager.GetString("str_LanguagePopup_LblTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Confirm.
         /// </summary>
         internal static string str_LoginPage_BtnConfirm {
@@ -2329,7 +2338,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Data successfully confirmed. Logging into the app..
+        ///   Busca una cadena traducida similar a Data successfully confirmed..
         /// </summary>
         internal static string str_SemanticProperties_LoginPage_SignUpPopup_AllGood {
             get {
@@ -2581,6 +2590,24 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Language selector..
+        /// </summary>
+        internal static string str_SemanticProperties_SettingsPage_BtnLanguage_Desc {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_SettingsPage_BtnLanguage_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Click here to change the app&apos;s display language..
+        /// </summary>
+        internal static string str_SemanticProperties_SettingsPage_BtnLanguage_Hint {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_SettingsPage_BtnLanguage_Hint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Button to close the About information popup..
         /// </summary>
         internal static string str_SemanticProperties_Shell_AboutPage_BtnClose {
@@ -2676,6 +2703,33 @@ namespace MejorAppTG1.Resources.Localization {
         internal static string str_SemanticProperties_TestPage_QuestionCount {
             get {
                 return ResourceManager.GetString("str_SemanticProperties_TestPage_QuestionCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Change language.
+        /// </summary>
+        internal static string str_SettingsPage_BtnLanguage {
+            get {
+                return ResourceManager.GetString("str_SettingsPage_BtnLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Data Management.
+        /// </summary>
+        internal static string str_SettingsPage_LblData {
+            get {
+                return ResourceManager.GetString("str_SettingsPage_LblData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Language.
+        /// </summary>
+        internal static string str_SettingsPage_LblLanguage {
+            get {
+                return ResourceManager.GetString("str_SettingsPage_LblLanguage", resourceCulture);
             }
         }
         
@@ -2857,11 +2911,20 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a My profile.
+        ///   Busca una cadena traducida similar a My Profile.
         /// </summary>
         internal static string str_Shell_MyProfileTab {
             get {
                 return ResourceManager.GetString("str_Shell_MyProfileTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Settings.
+        /// </summary>
+        internal static string str_Shell_SettingsPage_Title {
+            get {
+                return ResourceManager.GetString("str_Shell_SettingsPage_Title", resourceCulture);
             }
         }
         

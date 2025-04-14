@@ -12,6 +12,7 @@ namespace MejorAppTG1
     public partial class App : Application
     {
         public const string USER_ID_KEY = "user_id";
+        public const string USER_LANGUAGE = "language";
         public static bool ButtonPressed = false;
         public const string SYNC_MODE_OPEN = "open";
         public const string SYNC_MODE_CLOSE = "close";
@@ -45,7 +46,13 @@ namespace MejorAppTG1
         {
             Application.Current.UserAppTheme = AppTheme.Light;
             this.RequestedThemeChanged += (s, e) => { Application.Current.UserAppTheme = AppTheme.Light; };
-            var culture = CultureInfo.CurrentCulture;
+            CultureInfo culture;
+            if (Preferences.ContainsKey(USER_LANGUAGE)) {
+                var userLang = Preferences.Get(USER_LANGUAGE, "en");
+                culture = new(userLang);
+            } else {
+                culture = CultureInfo.CurrentCulture;
+            }
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
             InitializeComponent();

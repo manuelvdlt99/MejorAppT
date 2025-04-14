@@ -1041,7 +1041,7 @@ Cela ne prendra qu'un instant !</value>
     <value>Erreur : vous devez sélectionner une option.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_SignUpPopup_AllGood" xml:space="preserve">
-    <value>Données confirmées avec succès. Connexion à l'application.</value>
+    <value>Données confirmées avec succès.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnSignUp" xml:space="preserve">
     <value>Bouton pour confirmer les données de l'utilisateur.</value>
@@ -1153,5 +1153,26 @@ Cela ne prendra qu'un instant !</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected" xml:space="preserve">
     <value>Genre sélectionné : Non-binaire.</value>
+  </data>
+  <data name="str_Shell_SettingsPage_Title" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="str_SettingsPage_BtnLanguage" xml:space="preserve">
+    <value>Changer de langue</value>
+  </data>
+  <data name="str_SettingsPage_LblLanguage" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="str_LanguagePopup_LblTitle" xml:space="preserve">
+    <value>Sélectionnez une langue</value>
+  </data>
+  <data name="str_SettingsPage_LblData" xml:space="preserve">
+    <value>Gestion des données</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Desc" xml:space="preserve">
+    <value>Sélecteur de langue.</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Hint" xml:space="preserve">
+    <value>Cliquez ici pour changer la langue d'affichage de l'application.</value>
   </data>
 </root>
