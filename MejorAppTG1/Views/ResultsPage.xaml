@@ -4,10 +4,9 @@
              x:Class="MejorAppTG1.ResultsPage"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
-             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
              xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
              Title="ResultadosPage" Shell.TabBarIsVisible="False" NavigationPage.HasBackButton="False"
-             Shell.BackgroundColor="{StaticResource SecondaryColor1}" Appearing="ContentPage_Appearing">
+             Shell.BackgroundColor="{StaticResource SecondaryColor1}" Loaded="ContentPage_Loaded">
 
     <ContentPage.Background>
         <LinearGradientBrush EndPoint="0,1">

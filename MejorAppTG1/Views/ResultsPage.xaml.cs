@@ -17,8 +17,6 @@ public partial class ResultsPage : ContentPage
 {
     #region Variables
     private List<Advice> _consejosDisponibles = new();
-
-    public ObservableCollection<Advice> Consejos { get; set; } = new();
     public ObservableCollection<AdviceCategory> Categories { get; set; } = new();
 
     private Factor _factor1;
@@ -26,6 +24,7 @@ public partial class ResultsPage : ContentPage
     private Factor _factor3;
     private string _tipoTest;
     private int _puntuacionTotal = 0;
+    private bool _loaded = false;
     #endregion
 
     #region Constructores
@@ -42,7 +41,7 @@ public partial class ResultsPage : ContentPage
     #endregion
 
     #region Eventos
-    private async void ContentPage_Appearing(object sender, EventArgs e)
+    private async void ContentPage_Loaded(object sender, EventArgs e)
     {
         try {
             StkLoading.IsVisible = true;
@@ -53,30 +52,13 @@ public partial class ResultsPage : ContentPage
 
             await Task.WhenAll(
                 Task.Run(CalcularPuntuacionTotal),
-                Task.Run(CargarConsejosAsync)
+                Task.Run(CargarCategoriasAsync)
             );
         }
         finally {
             SemanticScreenReader.Announce(LblIntro.Text + Strings.str_SemanticProperties_ResultsPage_LblIntro);
             StkLoading.IsVisible = false;
             GrdData.IsVisible = true;
-        }
-    }
-
-    // Para cambiar el icono de flecha
-    private void Expander_ExpandedChanged(object sender, CommunityToolkit.Maui.Core.ExpandedChangedEventArgs e)
-    {
-        if (sender is Expander expander && expander.BindingContext is Advice consejo)
-        {
-            if (string.IsNullOrEmpty(consejo.Contenido))
-            {
-                expander.IsExpanded = false;
-                return;
-            }
-            else if (consejo.Contenido != null)
-            {
-                consejo.Imagen = expander.IsExpanded ? "flechaarriba.png" : "flechaabajo.png";
-            }
         }
     }
 
@@ -109,13 +91,13 @@ public partial class ResultsPage : ContentPage
         }
     }
 
-    private async void FreakyButton_Clicked(object sender, EventArgs e)
+    private void FreakyButton_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
         try {
             if (sender is FreakyButton button && button.BindingContext is AdviceCategory selectedCategory) {
-                await DisplayAlert(selectedCategory.Name, string.Join(",", selectedCategory.Advices), "ok");
+                Navigation.PushAsync(new AdvicesPage(selectedCategory), true);
             }
         } finally {
             App.ButtonPressed = false;
@@ -137,8 +119,10 @@ public partial class ResultsPage : ContentPage
     }
 
     // Carga los consejos en la pantalla
-    private async Task CargarConsejosAsync()
+    private async Task CargarCategoriasAsync()
     {
+        if (_loaded) return;
+
         if (_tipoTest == App.FULL_TEST_KEY || _tipoTest == App.QUICK_TEST_KEY) {
             using var stream = await FileSystem.OpenAppPackageFileAsync("ConsejosParaAnsiedad.json");
             using var reader = new StreamReader(stream);
@@ -157,6 +141,8 @@ public partial class ResultsPage : ContentPage
                 TCAConsejos();
                 break;
         }
+
+        _loaded = true;
     }
 
     // Método para mostrar los consejos de Ansiedad Rápido

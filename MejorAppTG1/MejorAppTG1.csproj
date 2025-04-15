@@ -152,6 +152,9 @@
 	  <MauiXaml Update="Views\AboutPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\AdvicesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\HelpPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
