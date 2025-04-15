@@ -30,7 +30,7 @@ public partial class LoginPage : ContentPage {
         App.ButtonPressed = true;
         try {
             var popup = new SignUpPopup();
-            var result = await Shell.Current.ShowPopupAsync(popup);
+            var result = await Application.Current.MainPage.ShowPopupAsync(popup);
 
             if (result is ValueTuple<string, int, string, string> inputs) {
                 string newName = inputs.Item1;
@@ -73,7 +73,7 @@ public partial class LoginPage : ContentPage {
             }
             else {
                 var popup = new UserSelectPopup(activeUsers);
-                var selectedUser = await Shell.Current.ShowPopupAsync(popup) as User;
+                var selectedUser = await Application.Current.MainPage.ShowPopupAsync(popup) as User;
 
                 if (selectedUser != null) {
                     App.CurrentUser = selectedUser;

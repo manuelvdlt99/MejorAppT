@@ -105,7 +105,7 @@ public partial class SignUpPopup : Popup
     private void TapGestureRecognizer_Tapped_Male(object sender, TappedEventArgs e)
     {
         App.AnimateFrameInOut(FrmMale);
-        _selectedGender = "str_Genders_Man";
+        _selectedGender = App.GENDERS_MALE_KEY;
         FrmMale.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
         FrmMale.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
         FrmFemale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
@@ -118,7 +118,7 @@ public partial class SignUpPopup : Popup
     private void TapGestureRecognizer_Tapped_Female(object sender, TappedEventArgs e)
     {
         App.AnimateFrameInOut(FrmFemale);
-        _selectedGender = "str_Genders_Woman";
+        _selectedGender = App.GENDERS_FEMALE_KEY;
         FrmFemale.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
         FrmFemale.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
         FrmMale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
@@ -131,7 +131,7 @@ public partial class SignUpPopup : Popup
     private void TapGestureRecognizer_Tapped_NB(object sender, TappedEventArgs e)
     {
         App.AnimateFrameInOut(FrmNB);
-        _selectedGender = "str_Genders_NB";
+        _selectedGender = App.GENDERS_NB_KEY;
         FrmNB.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
         FrmNB.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
         FrmMale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];

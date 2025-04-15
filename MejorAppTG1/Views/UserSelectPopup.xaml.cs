@@ -44,9 +44,9 @@ public partial class UserSelectPopup : Popup
         var user = (User)generoLabel.BindingContext;
         if (user != null) {
             string translatedGender = user.Genero switch {
-                "str_Genders_Man" => Strings.str_Genders_Man,
-                "str_Genders_Woman" => Strings.str_Genders_Woman,
-                "str_Genders_NB" => Strings.str_Genders_NB
+                App.GENDERS_MALE_KEY => Strings.str_Genders_Man,
+                App.GENDERS_FEMALE_KEY => Strings.str_Genders_Woman,
+                App.GENDERS_NB_KEY => Strings.str_Genders_NB
             };
 
             generoLabel.Text = translatedGender;
@@ -113,7 +113,7 @@ public partial class UserSelectPopup : Popup
     private void ResetFrameColor(Frame frame)
     {
         frame.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
-        frame.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor3"];
+        frame.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
     }
 
     private void UpdateSelectedFrameBorder(Frame selectedFrame)
