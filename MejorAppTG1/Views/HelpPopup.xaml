@@ -6,8 +6,7 @@
                xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
                x:Class="MejorAppTG1.Views.HelpPopup"
                Color="Transparent"
-               x:Name="HelpPopupRoot"
-               CanBeDismissedByTappingOutsideOfPopup="False">
+               x:Name="HelpPopupRoot">
 
     <Border Padding="0"
             MaximumWidthRequest="600"

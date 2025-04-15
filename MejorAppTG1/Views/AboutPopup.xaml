@@ -6,8 +6,7 @@
                xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
                x:Class="MejorAppTG1.Views.AboutPopup"
                Color="Transparent"
-               x:Name="AboutPopupRoot"
-               CanBeDismissedByTappingOutsideOfPopup="False">
+               x:Name="AboutPopupRoot">
 
     <Border Padding="0"
         MaximumWidthRequest="600"

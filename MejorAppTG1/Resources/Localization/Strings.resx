@@ -913,13 +913,13 @@ Solve all your doubts about the subject with your teacher.</value>
 Moderate anxiety can help you stay focused on your studies, so long as it is not sustained over time, as it can get out of your control.</value>
   </data>
   <data name="str_ResultsPage_Category_Prevent" xml:space="preserve">
-    <value>Things you can do before getting to this situation:</value>
+    <value>Things you can do before getting to this situation</value>
   </data>
   <data name="str_ResultsPage_Category_SeeMore" xml:space="preserve">
     <value>Would you like to know more?</value>
   </data>
   <data name="str_ResultsPage_Category_BadSituation" xml:space="preserve">
-    <value>If you are in over your head:</value>
+    <value>If you are in over your head</value>
   </data>
   <data name="str_ResultsPage_LblIntro_Low_2" xml:space="preserve">
     <value>Despite sometimes feeling more nervous than usual, your response to these situations is adequate and within the average. Keep it up. 
@@ -1175,5 +1175,11 @@ It will only take a moment!</value>
   </data>
   <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Hint" xml:space="preserve">
     <value>Click here to change the app's display language.</value>
+  </data>
+  <data name="str_ResultsPage_Category_KeepItUp" xml:space="preserve">
+    <value>Things you can do to keep controlling the situation</value>
+  </data>
+  <data name="str_ResultsPage_Category_GeneralAdvice" xml:space="preserve">
+    <value>General advices</value>
   </data>
 </root>

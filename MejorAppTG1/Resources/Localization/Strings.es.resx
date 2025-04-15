@@ -913,13 +913,13 @@ Resuelve con tu profesor todas las dudas de la materia.</value>
 Una ansiedad moderada puede ayudarnos a mantenernos concentrados en el estudio, siempre que no se mantenga de manera sostenida en el tiempo, ya que puede dar lugar a quedar fuera de nuestro control.</value>
   </data>
   <data name="str_ResultsPage_Category_Prevent" xml:space="preserve">
-    <value>Cosas que puedes hacer antes para no llegar a esta situación:</value>
+    <value>Cosas que puedes hacer antes para no llegar a esta situación</value>
   </data>
   <data name="str_ResultsPage_Category_SeeMore" xml:space="preserve">
     <value>¿Quieres ampliar?</value>
   </data>
   <data name="str_ResultsPage_Category_BadSituation" xml:space="preserve">
-    <value>Si la situación te sobrepasa:</value>
+    <value>Si la situación te sobrepasa</value>
   </data>
   <data name="str_ResultsPage_LblIntro_Low_2" xml:space="preserve">
     <value>A pesar de que algunas veces te encuentres más nervioso/a de lo habitual, tu respuesta ante estas situaciones es adecuada y está dentro de la media. Sigue así.
@@ -1174,5 +1174,11 @@ audiorelax.mp3</value>
   </data>
   <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Hint" xml:space="preserve">
     <value>Haz clic aquí para cambiar el idioma de visualización de la aplicación.</value>
+  </data>
+  <data name="str_ResultsPage_Category_KeepItUp" xml:space="preserve">
+    <value>Cosas que puedes hacer para seguir controlando la situación</value>
+  </data>
+  <data name="str_ResultsPage_Category_GeneralAdvice" xml:space="preserve">
+    <value>Consejos generales</value>
   </data>
 </root>

@@ -913,13 +913,13 @@ Résolvez tous vos doutes sur la matière avec votre professeur.</value>
 Une anxiété modérée peut vous aider à rester concentré sur vos études, à condition qu'elle ne se prolonge pas dans le temps, car elle peut devenir incontrôlable.</value>
   </data>
   <data name="str_ResultsPage_Category_Prevent" xml:space="preserve">
-    <value>Ce que vous pouvez faire pour éviter cette situation à l'avance :</value>
+    <value>Ce que vous pouvez faire pour éviter cette situation à l'avance</value>
   </data>
   <data name="str_ResultsPage_Category_SeeMore" xml:space="preserve">
     <value>Souhaitez-vous en savoir plus ?</value>
   </data>
   <data name="str_ResultsPage_Category_BadSituation" xml:space="preserve">
-    <value>Si vous êtes dépassé par les événements :</value>
+    <value>Si vous êtes dépassé par les événements</value>
   </data>
   <data name="str_ResultsPage_LblIntro_Low_2" xml:space="preserve">
     <value>Bien que vous soyez parfois plus nerveux que d'habitude, votre réaction à ces situations est adéquate et dans la moyenne. Restez concentré. 
@@ -1174,5 +1174,11 @@ Cela ne prendra qu'un instant !</value>
   </data>
   <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Hint" xml:space="preserve">
     <value>Cliquez ici pour changer la langue d'affichage de l'application.</value>
+  </data>
+  <data name="str_ResultsPage_Category_KeepItUp" xml:space="preserve">
+    <value>Ce que vous pouvez faire pour continuer de controler la situation</value>
+  </data>
+  <data name="str_ResultsPage_Category_GeneralAdvice" xml:space="preserve">
+    <value>Conseils généraux</value>
   </data>
 </root>

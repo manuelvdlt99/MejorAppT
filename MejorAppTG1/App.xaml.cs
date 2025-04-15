@@ -13,10 +13,25 @@ namespace MejorAppTG1
     {
         public const string USER_ID_KEY = "user_id";
         public const string USER_LANGUAGE = "language";
-        public static bool ButtonPressed = false;
         public const string SYNC_MODE_OPEN = "open";
         public const string SYNC_MODE_CLOSE = "close";
+        public const string TCA_TEST_KEY = "str_EatingTest";
+        public const string QUICK_TEST_KEY = "str_QuickTest";
+        public const string FULL_TEST_KEY = "str_FullTest";
+        public const string FACTORS_1 = "1";
+        public const string FACTORS_2 = "2";
+        public const string FACTORS_3 = "3";
+        public const string FACTORS_4 = "4";
+        public const string GENDERS_MALE_KEY = "str_Genders_Man";
+        public const string GENDERS_FEMALE_KEY = "str_Genders_Woman";
+        public const string GENDERS_NB_KEY = "str_Genders_NB";
+        public const string FACTORS_LEVEL_LOW = "Bajo";
+        public const string FACTORS_LEVEL_LOW_MEDIUM = "Leve-Moderado";
+        public const string FACTORS_LEVEL_MEDIUM = "Medio";
+        public const string FACTORS_LEVEL_MEDIUM_HIGH = "Moderado-Alto";
+        public const string FACTORS_LEVEL_HIGH = "Alto";
 
+        public static bool ButtonPressed = false;
         private static MejorAppTDatabase _database;
         private static FirebaseService _firebase;
         private bool _isSyncing = false;

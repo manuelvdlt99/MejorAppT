@@ -50,7 +50,7 @@
                                CornerRadius="10"
                                Margin="10"
                                Padding="10"
-                               BackgroundColor="{StaticResource SecondaryColor3}"
+                               BackgroundColor="{StaticResource GradientColor3}"
                                WidthRequest="140"
                                HeightRequest="140"
                                BindingContext="{Binding .}"

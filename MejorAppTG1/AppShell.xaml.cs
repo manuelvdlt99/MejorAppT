@@ -44,7 +44,7 @@ namespace MejorAppTG1
             App.ButtonPressed = true;
             try {
                 var popup = new HelpPopup();
-                await Application.Current.MainPage.ShowPopupAsync(popup);
+                await Shell.Current.ShowPopupAsync(popup);
             } finally {
                 App.ButtonPressed = false;
             }
@@ -56,7 +56,7 @@ namespace MejorAppTG1
             App.ButtonPressed = true;
             try {
                 var popup = new AboutPopup();
-                await Application.Current.MainPage.ShowPopupAsync(popup);
+                await Shell.Current.ShowPopupAsync(popup);
             } finally {
                 App.ButtonPressed = false;
             }

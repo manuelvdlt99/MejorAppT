@@ -10,7 +10,7 @@
     <ScrollView>
         <ScrollView.Background>
             <LinearGradientBrush EndPoint="0,1">
-                <GradientStop Color="{StaticResource White}" Offset="0.7" />
+                <GradientStop Color="{StaticResource White}" Offset="0.5" />
                 <GradientStop Color="{StaticResource GradientColor2}" Offset="1" />
             </LinearGradientBrush>
         </ScrollView.Background>

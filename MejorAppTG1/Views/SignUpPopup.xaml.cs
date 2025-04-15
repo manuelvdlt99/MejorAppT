@@ -237,26 +237,14 @@ public partial class SignUpPopup : Popup
             case "str_Genders_Man":
                 FrmMale.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
                 FrmMale.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
-                FrmFemale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
-                FrmFemale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
-                FrmNB.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
-                FrmNB.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
                 break;
             case "str_Genders_Woman":
                 FrmFemale.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
                 FrmFemale.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
-                FrmMale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
-                FrmMale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
-                FrmNB.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
-                FrmNB.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
                 break;
             case "str_Genders_NB":
                 FrmNB.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
                 FrmNB.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
-                FrmMale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
-                FrmMale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
-                FrmFemale.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
-                FrmFemale.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
                 break;
         }
     }

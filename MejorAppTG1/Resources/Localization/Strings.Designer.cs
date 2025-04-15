@@ -2111,7 +2111,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a If you are in over your head:.
+        ///   Busca una cadena traducida similar a If you are in over your head.
         /// </summary>
         internal static string str_ResultsPage_Category_BadSituation {
             get {
@@ -2120,7 +2120,25 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Things you can do before getting to this situation:.
+        ///   Busca una cadena traducida similar a General advices.
+        /// </summary>
+        internal static string str_ResultsPage_Category_GeneralAdvice {
+            get {
+                return ResourceManager.GetString("str_ResultsPage_Category_GeneralAdvice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Things you can do to keep controlling the situation.
+        /// </summary>
+        internal static string str_ResultsPage_Category_KeepItUp {
+            get {
+                return ResourceManager.GetString("str_ResultsPage_Category_KeepItUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Things you can do before getting to this situation.
         /// </summary>
         internal static string str_ResultsPage_Category_Prevent {
             get {

@@ -31,7 +31,7 @@ public partial class SettingsPage : ContentPage
         App.ButtonPressed = true;
         try {
             var popup = new SignUpPopup(App.CurrentUser);
-            var result = await Application.Current.MainPage.ShowPopupAsync(popup);
+            var result = await Shell.Current.ShowPopupAsync(popup);
 
             if (result is ValueTuple<string, int, string, string> inputs) {
                 App.CurrentUser.Nombre = inputs.Item1;
