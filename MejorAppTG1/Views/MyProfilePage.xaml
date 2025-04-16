@@ -42,15 +42,10 @@
                             <ColumnDefinition Width="110"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Image x:Name="ImgProfile" HorizontalOptions="Start" Grid.Column="0" Grid.RowSpan="3" Source="profile_icon_large.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_ImgProfile}">
+                        <Image x:Name="ImgProfile" HorizontalOptions="Start" Grid.Column="0" Grid.RowSpan="3" Source="no_profile_icon.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_ImgProfile}">
                             <Image.Clip>
                                 <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
                             </Image.Clip>
-                        </Image>
-                        <Image x:Name="ImgEditProfile" HorizontalOptions="End" Grid.Column="0" Grid.RowSpan="3" Source="edit_profile_icon.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" Margin="0,0,20,0" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_ImgEditProfile}">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                            </Image.GestureRecognizers>
                         </Image>
                         <Label TextColor="{StaticResource FontColor1}" x:Name="LblUsername" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="0" FontAttributes="Bold" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblUsername}" FontSize="20" LineBreakMode="WordWrap" />
                         <Label TextColor="{StaticResource FontColor1}" x:Name="LblUserAge" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="1" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblAge}" FontSize="20" />
@@ -61,11 +56,10 @@
                     </Grid>
                 </Frame>
 
+                <BoxView Margin="10,0" Grid.Row="1" HeightRequest="1" Color="{StaticResource FontColor1}"/>
                 <Label TextColor="{StaticResource FontColor1}" Grid.Row="2" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblHistory}" FontSize="Title" FontAttributes="Bold"/>
 
                 <HorizontalStackLayout Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Center" Spacing="50">
-                    <Button BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnLastResult" Clicked="BtnLastResult_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnLastTest}" BackgroundColor="{StaticResource PrimaryColor}"/>
-                    <Button BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnClearHistory" Clicked="BtnClearHistory_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnClearHistory}" BackgroundColor="{StaticResource PrimaryColor}"/>
                 </HorizontalStackLayout>
 
                 <Grid Grid.Row="4" HorizontalOptions="Center">

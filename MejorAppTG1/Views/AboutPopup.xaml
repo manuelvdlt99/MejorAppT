@@ -44,6 +44,11 @@
 
                 <!-- Expander 1 -->
                 <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
+                    <toolkit:Expander.Shadow>
+                        <Shadow Brush="Black"
+                                Offset="10,10"
+                                Opacity="0.8" />
+                    </toolkit:Expander.Shadow>
                     <toolkit:Expander.Header>
                         <Grid BackgroundColor="{StaticResource SecondaryColor1}">
                             <Grid.ColumnDefinitions>
@@ -73,6 +78,11 @@
 
                 <!-- Expander 2 -->
                 <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
+                    <toolkit:Expander.Shadow>
+                        <Shadow Brush="Black"
+                                Offset="10,10"
+                                Opacity="0.8" />
+                    </toolkit:Expander.Shadow>
                     <toolkit:Expander.Header>
                         <Grid BackgroundColor="{StaticResource SecondaryColor1}">
                             <Grid.ColumnDefinitions>

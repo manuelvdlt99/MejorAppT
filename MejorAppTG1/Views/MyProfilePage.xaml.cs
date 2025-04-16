@@ -14,19 +14,24 @@ namespace MejorAppTG1;
 
 public partial class MyProfilePage : ContentPage
 {
-    private static int resultIndex = 0;
-    private static int currentPage = 1;
-    private List<Test> finishedTests;
-    private List<Test> fiveTests = new List<Test>();
+    #region Variables
+    private static int _resultIndex = 0;
+    private static int _currentPage = 1;
+    private List<Test> _finishedTests;
+    private List<Test> _fiveTests = new();
 
-    public static int ResultIndex { get => resultIndex; set => resultIndex = value; }
-    public static int CurrentPage { get => currentPage; set => currentPage = value; }
+    public static int ResultIndex { get => _resultIndex; set => _resultIndex = value; }
+    public static int CurrentPage { get => _currentPage; set => _currentPage = value; }
+    #endregion
 
+    #region Constructores
     public MyProfilePage()
     {
         InitializeComponent();
     }
+    #endregion
 
+    #region Eventos
     private async void OnPageAppearing(object sender, EventArgs e)
     {
         try {
@@ -50,6 +55,76 @@ public partial class MyProfilePage : ContentPage
         }
     }
 
+    private async void OnFrameTapped(object sender, EventArgs e)
+    {
+        if (App.ButtonPressed) return;
+        App.ButtonPressed = true;
+        try {
+            App.AnimateFrameInOut(sender);
+
+            var action = await DisplayActionSheet(Strings.str_ResultHistoryPage_ChooseOption_Question, Strings.str_ResultHistoryPage_BtnCancel, null, Strings.str_ResultHistoryPage_BtnCheck, Strings.str_ResultHistoryPage_BtnDelete);
+
+            if (action == Strings.str_ResultHistoryPage_BtnCheck) {
+                ConsultarRegistro(sender);
+            }
+            else if (action == Strings.str_ResultHistoryPage_BtnDelete) {
+                EliminarRegistro(sender);
+            }
+        }
+        finally {
+            App.ButtonPressed = false;
+        }
+    }
+
+    private async void BtnLastResult_Clicked(object sender, EventArgs e)
+    {
+        if (App.ButtonPressed) return;
+        App.ButtonPressed = true;
+        try {
+            if (_finishedTests == null || _finishedTests.Count == 0) {
+                await DisplayAlert(Strings.str_ResultHistoryPage_BtnCheck_NoResults, Strings.str_ResultHistoryPage_BtnCheck_Msg, Strings.str_ResultHistoryPage_BtnCheck_OK);
+            }
+            else {
+                await CalculateFactorsAndShowResults(_finishedTests[0]);
+            }
+        }
+        finally {
+            App.ButtonPressed = false;
+        }
+    }
+
+    private async void BtnPreviousFive_Clicked(object sender, EventArgs e)
+    {
+        if (App.ButtonPressed) return;
+        App.ButtonPressed = true;
+        try {
+            _resultIndex -= 5;
+            _currentPage--;
+            await LoadNextFiveTests();
+            await SlideCollectionView("Left");
+        }
+        finally {
+            App.ButtonPressed = false;
+        }
+    }
+
+    private async void BtnNextFive_Clicked(object sender, EventArgs e)
+    {
+        if (App.ButtonPressed) return;
+        App.ButtonPressed = true;
+        try {
+            _resultIndex += 5;
+            _currentPage++;
+            await LoadNextFiveTests();
+            await SlideCollectionView("Right");
+        }
+        finally {
+            App.ButtonPressed = false;
+        }
+    }
+    #endregion
+
+    #region Métodos
     internal void UpdateUserLabels()
     {
         MainThread.BeginInvokeOnMainThread(() => {
@@ -82,10 +157,10 @@ public partial class MyProfilePage : ContentPage
     {
         MainThread.BeginInvokeOnMainThread(() => {
             CtvResults.ItemsSource = null;
-            fiveTests.Clear();
+            _fiveTests.Clear();
 
             // No puede haber una página -1, evidentemente
-            if (resultIndex == 0) {
+            if (_resultIndex == 0) {
                 BtnPreviousFive.IsEnabled = false;
                 BtnPreviousFive.BorderColor = (Color)Application.Current.Resources["BorderColor3"];
             }
@@ -94,11 +169,11 @@ public partial class MyProfilePage : ContentPage
                 BtnPreviousFive.BorderColor = (Color)Application.Current.Resources["SecondaryColor1"];
             }
 
-            for (int i = resultIndex; i < resultIndex + 5; i++) {
-                if (i < finishedTests.Count) {
-                    Test currentTest = finishedTests[i];
+            for (int i = _resultIndex; i < _resultIndex + 5; i++) {
+                if (i < _finishedTests.Count) {
+                    Test currentTest = _finishedTests[i];
                     if (currentTest != null) {
-                        fiveTests.Add(currentTest);
+                        _fiveTests.Add(currentTest);
                     }
                     // Si i se pasa del último índice de la lista entera en el bucle, es que no hay más entradas. Deshabilita página siguiente y sal del bucle
                 }
@@ -111,7 +186,7 @@ public partial class MyProfilePage : ContentPage
                 // Si por ejemplo solo hay 5 entradas, va a mostrar esas 5 siempre, pero no se pueden comprobar en el bucle las siguientes 5
                 // Hay que comprobar de antemano si podría haber más entradas en una nueva página o no
                 //Ej: i se ha quedado en [4] de 5 entradas totales (la última). Hay que comprobar si i es, efectivamente, el último índice de la lista entera
-                if (i >= finishedTests.Count - 1) {
+                if (i >= _finishedTests.Count - 1) {
                     BtnNextFive.IsEnabled = false;
                     BtnNextFive.BorderColor = (Color)Application.Current.Resources["BorderColor3"];
                 }
@@ -120,17 +195,17 @@ public partial class MyProfilePage : ContentPage
                     BtnNextFive.BorderColor = (Color)Application.Current.Resources["SecondaryColor1"];
                 }
             }
-            CtvResults.ItemsSource = fiveTests;
-            LblCurrentPage.Text = string.Format(Strings.str_ResultHistoryPage_LblCurrentPage_Dyn, currentPage, (int)Math.Ceiling(finishedTests.Count / 5.0));
+            CtvResults.ItemsSource = _fiveTests;
+            LblCurrentPage.Text = string.Format(Strings.str_ResultHistoryPage_LblCurrentPage_Dyn, _currentPage, (int)Math.Ceiling(_finishedTests.Count / 5.0));
         });
     }
 
     private async Task LoadResults()
     {
-        finishedTests = await App.Database.GetFinishedTestsByUserAsync(App.CurrentUser.IdUsuario);
+        _finishedTests = await App.Database.GetFinishedTestsByUserAsync(App.CurrentUser.IdUsuario);
 
         MainThread.BeginInvokeOnMainThread(async () => {
-            if (finishedTests == null || finishedTests.Count == 0) {
+            if (_finishedTests == null || _finishedTests.Count == 0) {
                 CtvResults.IsVisible = false;
                 HslNavigationBtns.IsVisible = false;
                 VslNoResults.IsVisible = true;
@@ -144,42 +219,6 @@ public partial class MyProfilePage : ContentPage
                 await LoadNextFiveTests();
             }
         });
-    }
-
-    private async void BtnClearHistory_Clicked(object sender, EventArgs e)
-    {
-        if (App.ButtonPressed) return;
-        App.ButtonPressed = true;
-        try {
-            bool answer = await DisplayAlert(Strings.str_ResultHistoryPage_BtnClearHistory_Question, Strings.str_ResultHistoryPage_BtnClearHistory_Msg, Strings.str_MainPage_BtnYes, Strings.str_MainPage_BtnNo);
-
-            if (answer) {
-                await App.Database.DeleteTestsByUserAsync(App.CurrentUser.IdUsuario);
-                await LoadResults();
-            }
-        } finally {
-            App.ButtonPressed = false;
-        }
-    }
-
-    private async void OnFrameTapped(object sender, EventArgs e)
-    {
-        if (App.ButtonPressed) return;
-        App.ButtonPressed = true;
-        try {
-            App.AnimateFrameInOut(sender);
-
-            var action = await DisplayActionSheet(Strings.str_ResultHistoryPage_ChooseOption_Question, Strings.str_ResultHistoryPage_BtnCancel, null, Strings.str_ResultHistoryPage_BtnCheck, Strings.str_ResultHistoryPage_BtnDelete);
-
-            if (action == Strings.str_ResultHistoryPage_BtnCheck) {
-                ConsultarRegistro(sender);
-            }
-            else if (action == Strings.str_ResultHistoryPage_BtnDelete) {
-                EliminarRegistro(sender);
-            }
-        } finally {
-            App.ButtonPressed = false;
-        }
     }
 
     private async void ConsultarRegistro(object sender)
@@ -215,111 +254,9 @@ public partial class MyProfilePage : ContentPage
             await LoadResults();
 
             // Si al eliminar este registro se queda la página vacía, vuelve una página para atrás
-            if (resultIndex >= finishedTests.Count) {
+            if (_resultIndex >= _finishedTests.Count) {
                 BtnPreviousFive_Clicked(null, null);
             }
-        }
-    }
-
-    private async void BtnLastResult_Clicked(object sender, EventArgs e)
-    {
-        if (App.ButtonPressed) return;
-        App.ButtonPressed = true;
-        try {
-            if (finishedTests == null || finishedTests.Count == 0) {
-                await DisplayAlert(Strings.str_ResultHistoryPage_BtnCheck_NoResults, Strings.str_ResultHistoryPage_BtnCheck_Msg, Strings.str_ResultHistoryPage_BtnCheck_OK);
-            }
-            else {
-                await CalculateFactorsAndShowResults(finishedTests[0]);
-            }
-        } finally {
-            App.ButtonPressed = false;
-        }
-    }
-
-    private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
-    {
-        if (App.ButtonPressed) return;
-        App.ButtonPressed = true;
-        try {
-            await ImgEditProfile.ScaleTo(1.2, 50);
-            await ImgEditProfile.ScaleTo(1, 50);
-            var status = await Permissions.RequestAsync<Permissions.StorageRead>();
-
-            if (status == PermissionStatus.Granted) {
-                if (MediaPicker.Default.IsCaptureSupported) {
-                    FileResult photo = await MediaPicker.Default.PickPhotoAsync();
-
-                    if (photo != null) {
-                        string localFilePath = GetUniqueFilePath(FileSystem.CacheDirectory, photo.FileName);
-                        App.CurrentUser.Imagen = localFilePath;
-
-                        using Stream sourceStream = await photo.OpenReadAsync();
-                        using FileStream localFileStream = File.OpenWrite(localFilePath);
-                        await sourceStream.CopyToAsync(localFileStream);
-
-                        await App.Database.UpdateUsuarioAsync(App.CurrentUser);
-                        UpdateUserImage();
-                    }
-                }
-            }
-            else {
-                var toast = Toast.Make(Strings.str_ResultHistoryPage_ImgProfile_NoPermission, ToastDuration.Short, 14);
-                await toast.Show(new CancellationTokenSource().Token);
-            }
-        }
-        catch (Exception ex) {
-            Console.WriteLine(string.Format(Strings.str_ResultHistoryPage_ImgProfile_ErrorMsg, ex.Message));
-            await DisplayAlert(Strings.str_ResultHistoryPage_ImgProfile_Error, Strings.str_ResultHistoryPage_ImgProfile_ErrorMsg2, Strings.str_ResultHistoryPage_BtnCheck_OK);
-        } finally {
-            App.ButtonPressed = false;
-        }
-    }
-
-    // Método para evitar que se sobrescriban las imágenes si se llaman igual (al igual que Windows añade (1), (2)...)
-    private string GetUniqueFilePath(string directory, string fileName)
-    {
-        string filePath = Path.Combine(directory, fileName);
-        string fileExtension = Path.GetExtension(fileName);
-        string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
-        int counter = 1;
-
-        // Incrementa el sufijo hasta encontrar un nombre que no exista
-        while (File.Exists(filePath)) {
-            string newFileName = $"{fileNameWithoutExtension} ({counter}){fileExtension}";
-            filePath = Path.Combine(directory, newFileName);
-            counter++;
-        }
-
-        return filePath;
-    }
-
-    private async void BtnPreviousFive_Clicked(object sender, EventArgs e)
-    {
-        if (App.ButtonPressed) return;
-        App.ButtonPressed = true;
-        try {
-            resultIndex -= 5;
-            currentPage--;
-            await LoadNextFiveTests();
-            await SlideCollectionView("Left");
-        } finally {
-            App.ButtonPressed = false;
-        }
-    }
-
-    private async void BtnNextFive_Clicked(object sender, EventArgs e)
-    {
-        if (App.ButtonPressed) return;
-        App.ButtonPressed = true;
-        try {
-            resultIndex += 5;
-            currentPage++;
-            await LoadNextFiveTests();
-            await SlideCollectionView("Right");
-        }
-        finally {
-            App.ButtonPressed = false;
         }
     }
 
@@ -329,4 +266,5 @@ public partial class MyProfilePage : ContentPage
         CtvResults.TranslationX = offset;
         await CtvResults.TranslateTo(0, 0, 300, Easing.CubicOut);
     }
+    #endregion
 }

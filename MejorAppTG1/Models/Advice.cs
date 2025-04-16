@@ -1,12 +1,5 @@
-﻿using System.ComponentModel;
-using System.Text.Json.Serialization;
-using System.Windows.Input;
-
-public class Advice : INotifyPropertyChanged
+﻿public class Advice
 {
-    [JsonIgnore]
-    private string _imagen = "flechaabajo.png"; // Imagen inicial
-
     public string Titulo { get; set; }
     public string Contenido { get; set; }
 
@@ -19,24 +12,5 @@ public class Advice : INotifyPropertyChanged
 
     public bool HasLinks => Enlaces.Any();
     public bool HasAudio => Audios.Any();
-
-    public string Imagen
-    {
-        get => _imagen;
-        set
-        {
-            if (_imagen != value)
-            {
-                _imagen = value;
-                OnPropertyChanged(nameof(Imagen));
-            }
-        }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected virtual void OnPropertyChanged(string propertyName)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
+    public string Imagen { get; set; }
 }

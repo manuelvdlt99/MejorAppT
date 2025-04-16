@@ -1182,4 +1182,7 @@ It will only take a moment!</value>
   <data name="str_ResultsPage_Category_GeneralAdvice" xml:space="preserve">
     <value>General advices</value>
   </data>
+  <data name="str_AdvicesPage_Loading" xml:space="preserve">
+    <value>Loading advices...</value>
+  </data>
 </root>

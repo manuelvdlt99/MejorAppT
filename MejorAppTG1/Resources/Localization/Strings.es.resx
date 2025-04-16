@@ -1181,4 +1181,7 @@ audiorelax.mp3</value>
   <data name="str_ResultsPage_Category_GeneralAdvice" xml:space="preserve">
     <value>Consejos generales</value>
   </data>
+  <data name="str_AdvicesPage_Loading" xml:space="preserve">
+    <value>Cargando consejos...</value>
+  </data>
 </root>

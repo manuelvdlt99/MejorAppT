@@ -785,7 +785,7 @@ Que ferez-vous de cette tentative ?</value>
     <value>Lorsque vous êtes confronté à une pensée négative, dites « Stop » ou « Arrête » et essayez de voir la situation d'un point de vue plus objectif ; cela vous aidera à voir la réalité de la situation.</value>
   </data>
   <data name="str_AnxietyAdvice5_Title" xml:space="preserve">
-    <value>Vous donnez le pouvoir d'agir</value>
+    <value>Donnez-vous le pouvoir d'agir</value>
   </data>
   <data name="str_AnxietyAdvice5_Content" xml:space="preserve">
     <value>Ces simples postures corporelles procurent une sécurité et une confiance instantanées. Voyez la vidéo (en espagnol):
@@ -1180,5 +1180,8 @@ Cela ne prendra qu'un instant !</value>
   </data>
   <data name="str_ResultsPage_Category_GeneralAdvice" xml:space="preserve">
     <value>Conseils généraux</value>
+  </data>
+  <data name="str_AdvicesPage_Loading" xml:space="preserve">
+    <value>Chargement des conseils...</value>
   </data>
 </root>

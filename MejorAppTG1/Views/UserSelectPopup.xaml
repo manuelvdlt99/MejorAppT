@@ -73,6 +73,11 @@
                                     <Image.Clip>
                                         <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20" />
                                     </Image.Clip>
+                                    <Image.Shadow>
+                                        <Shadow Brush="Black"
+                                                Offset="10,10"
+                                                Opacity="0.8" />
+                                    </Image.Shadow>
                                 </Image>
 
                                 <Label FontSize="20" x:Name="LblName"

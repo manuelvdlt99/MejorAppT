@@ -70,6 +70,15 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Loading advices....
+        /// </summary>
+        internal static string str_AdvicesPage_Loading {
+            get {
+                return ResourceManager.GetString("str_AdvicesPage_Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Accept that you don&apos;t know everything and that it&apos;s perfectly fine to feel doubts during an exam. This will help you not overburden yourself..
         /// </summary>
         internal static string str_AnxietyAdvice1_Content {

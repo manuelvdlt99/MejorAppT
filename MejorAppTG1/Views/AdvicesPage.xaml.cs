@@ -1,5 +1,5 @@
 using MejorAppTG1.Models;
-using System.Collections.ObjectModel;
+using PanCardView.EventArgs;
 
 namespace MejorAppTG1;
 
@@ -36,6 +36,12 @@ public partial class AdvicesPage : ContentPage
             SemanticScreenReader.Announce(LblTitle.Text);
             StkLoading.IsVisible = false;
             GrdData.IsVisible = true;
+            if (ClvAdvices.Count <= 1) {
+                BtnRight.IsVisible = false;
+                BtnRight.IsEnabled = false;
+                BtnLeft.IsVisible = false;
+                BtnLeft.IsEnabled = false;
+            }
         }
     }
 
@@ -48,6 +54,38 @@ public partial class AdvicesPage : ContentPage
         }
         finally {
             App.ButtonPressed = false;
+        }
+    }
+
+    private void BtnLeft_Clicked(object sender, EventArgs e)
+    {
+        ClvAdvices_ItemSwiped(ClvAdvices, new ItemSwipedEventArgs(PanCardView.Enums.ItemSwipeDirection.Right, ClvAdvices.SelectedIndex, null));
+        ClvAdvices.SelectedIndex -= 1;
+    }
+
+    private void BtnRight_Clicked(object sender, EventArgs e)
+    {
+        ClvAdvices_ItemSwiped(ClvAdvices, new ItemSwipedEventArgs(PanCardView.Enums.ItemSwipeDirection.Left, ClvAdvices.SelectedIndex, null));
+        ClvAdvices.SelectedIndex += 1;
+    }
+
+    private void ClvAdvices_ItemSwiped(PanCardView.CardsView view, ItemSwipedEventArgs args)
+    {
+        if (args.Index + 1 == view.ItemsCount - 1 && args.Direction == PanCardView.Enums.ItemSwipeDirection.Left) {
+            BtnRight.IsVisible = false;
+            BtnRight.IsEnabled = false;
+            BtnLeft.IsVisible = true;
+            BtnLeft.IsEnabled = true;
+        } else if (args.Index - 1 == 0 && args.Direction == PanCardView.Enums.ItemSwipeDirection.Right) {
+            BtnLeft.IsVisible = false;
+            BtnLeft.IsEnabled = false;
+            BtnRight.IsVisible = true;
+            BtnRight.IsEnabled = true;
+        } else {
+            BtnLeft.IsVisible = true;
+            BtnLeft.IsEnabled = true;
+            BtnRight.IsVisible = true;
+            BtnRight.IsEnabled = true;
         }
     }
     #endregion
