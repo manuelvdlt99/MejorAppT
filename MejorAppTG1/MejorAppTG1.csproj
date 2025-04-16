@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>MejorAppTG1</ApplicationTitle>
+		<ApplicationTitle>MejorAppTG</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.mejorapptg1</ApplicationId>
@@ -38,7 +38,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageIcon>iconoapp.png</PackageIcon>
-		<RepositoryUrl>https://github.com/angelcaballero-iesgp/MejorAppTG1</RepositoryUrl>
+		<RepositoryUrl>https://github.com/manuelvdlt99/MejorAppT</RepositoryUrl>
 		<NeutralLanguage>en</NeutralLanguage>
 		<DefaultLanguage>en</DefaultLanguage>
 	</PropertyGroup>
