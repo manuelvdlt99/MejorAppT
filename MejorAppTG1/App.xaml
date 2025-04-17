@@ -36,6 +36,7 @@
             <Color x:Key="GradientColor1">#eff7d5</Color>
             <Color x:Key="GradientColor2">#d9fad9</Color>
             <Color x:Key="GradientColor3">#f6ffe3</Color>
+            <Color x:Key="LinkColor1">DarkBlue</Color>
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />

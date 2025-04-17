@@ -59,7 +59,8 @@
                 <BoxView Margin="10,0" Grid.Row="1" HeightRequest="1" Color="{StaticResource FontColor1}"/>
                 <Label TextColor="{StaticResource FontColor1}" Grid.Row="2" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblHistory}" FontSize="Title" FontAttributes="Bold"/>
 
-                <HorizontalStackLayout Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Center" Spacing="50">
+                <HorizontalStackLayout Grid.Row="3" HorizontalOptions="End" VerticalOptions="Center" Spacing="50">
+                    <Button BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnLastResult" Clicked="BtnLastResult_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnLastTest}" BackgroundColor="{StaticResource PrimaryColor}"/>
                 </HorizontalStackLayout>
 
                 <Grid Grid.Row="4" HorizontalOptions="Center">

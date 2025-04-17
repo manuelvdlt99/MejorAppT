@@ -2,6 +2,7 @@
 {
     public string Titulo { get; set; }
     public string Contenido { get; set; }
+    public string Imagen { get; set; }
 
     // Lista de enlaces
     public List<string> Enlaces => (Contenido ?? string.Empty).Split('\n').Where(line => line.StartsWith("http")).ToList();
@@ -12,5 +13,5 @@
 
     public bool HasLinks => Enlaces.Any();
     public bool HasAudio => Audios.Any();
-    public string Imagen { get; set; }
+    public bool HasImage => !string.IsNullOrWhiteSpace(Imagen);
 }

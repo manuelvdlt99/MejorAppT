@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>MejorAppTG</ApplicationTitle>
+		<ApplicationTitle>MejorAppT</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.mejorapptg1</ApplicationId>
@@ -112,10 +112,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CardsView.Maui" Version="1.1.0" />
+		<PackageReference Include="CardsView.Maui" Version="1.1.2" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.1.2" />
-		<PackageReference Include="FirebaseDatabase.net" Version="4.2.0" />
+		<PackageReference Include="FirebaseDatabase.net" Version="5.0.0" />
 		<PackageReference Include="FreakyControls" Version="0.5.1" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />

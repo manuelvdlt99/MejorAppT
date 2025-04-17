@@ -41,23 +41,32 @@
                                 <Grid RowDefinitions="Auto,Auto,Auto">
                                     <Label Padding="5" FontSize="18" TextColor="{StaticResource FontColor1}" Text="{Binding Titulo}" FontAttributes="Bold"/>
                                     <!-- Imagen -->
-                                    <Image MaximumWidthRequest="200" VerticalOptions="Center" Source="{Binding Imagen}" Grid.Row="1"/>
+                                    <Image IsVisible="{Binding HasImage}" WidthRequest="300" Margin="0,20" VerticalOptions="Center" Source="{Binding Imagen}" Grid.Row="1"/>
                                     <!-- Enlaces -->
-                                    <Grid RowDefinitions="*,*" IsVisible="{Binding HasLinks}" VerticalOptions="Center" Grid.Row="1">
-                                        <cards:CarouselView HeightRequest="250" WidthRequest="350" ItemsSource="{Binding Enlaces}" IsVisible="{Binding HasLinks}" IndicatorView="indicatorViewVideo">
-                                            <cards:CarouselView.ItemTemplate>
-                                                <DataTemplate>
-                                                    <WebView Margin="0,30,0,0" Source="{Binding .}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
-                                                </DataTemplate>
-                                            </cards:CarouselView.ItemTemplate>
-                                        </cards:CarouselView>
-
-                                        <IndicatorView Margin="0,15,0,10" x:Name="indicatorViewVideo" VerticalOptions="End"
-                                           Grid.Row="1"
-                                           IndicatorColor="{StaticResource ButtonColor4}"
-                                           SelectedIndicatorColor="{StaticResource ButtonColor1}"
-                                           HorizontalOptions="Center" />
-                                    </Grid>
+                                    <CollectionView Grid.Row="1" IsVisible="{Binding HasLinks}" ItemsSource="{Binding Enlaces}" SelectionMode="Single"
+                                            VerticalOptions="FillAndExpand"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalScrollBarVisibility="Always">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Frame BorderColor="{StaticResource ButtonColor2}"
+                                                       CornerRadius="10"
+                                                       Margin="10"
+                                                       Padding="10"
+                                                       BackgroundColor="{StaticResource SecondaryColor3}"
+                                                       HeightRequest="70" HasShadow="True" BindingContextChanged="Frame_BindingContextChanged">
+                                                    <Frame.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                                    </Frame.GestureRecognizers>
+                                                    <Grid ColumnDefinitions="50,*" RowDefinitions="*,*">
+                                                        <Image Grid.RowSpan="2" Source="video_icon.png"/>
+                                                        <Label Margin="20,0,0,0" LineBreakMode="WordWrap" VerticalTextAlignment="Center" Grid.Column="1" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource FontColor1}"/>
+                                                        <Label Margin="20,0,0,0" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="1" TextDecorations="Underline" Text="{x:Static strings:Strings.str_AdvicesPage_BtnYoutube}" FontSize="14" TextColor="{StaticResource LinkColor1}"/>
+                                                    </Grid>
+                                                </Frame>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
                                     <!-- Audios -->
                                     <Grid RowDefinitions="*,*" IsVisible="{Binding HasAudio}" VerticalOptions="Center" Grid.Row="1">
                                         <cards:CarouselView ItemsSource="{Binding Audios}" IsVisible="{Binding HasAudio}" IndicatorView="indicatorViewAudio">

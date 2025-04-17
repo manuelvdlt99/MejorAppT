@@ -46,11 +46,6 @@
 
                 <!-- Expander: TopBar -->
                 <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
-                    <toolkit:Expander.Shadow>
-                        <Shadow Brush="Black"
-                                Offset="10,10"
-                                Opacity="0.8" />
-                    </toolkit:Expander.Shadow>
                     <toolkit:Expander.Header>
                         <Grid BackgroundColor="{StaticResource SecondaryColor1}">
                             <Grid.ColumnDefinitions>
@@ -80,11 +75,6 @@
 
                 <!-- Expander: Main Menu -->
                 <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
-                    <toolkit:Expander.Shadow>
-                        <Shadow Brush="Black"
-                                Offset="10,10"
-                                Opacity="0.8" />
-                    </toolkit:Expander.Shadow>
                     <toolkit:Expander.Header>
                         <Grid BackgroundColor="{StaticResource SecondaryColor1}">
                             <Grid.ColumnDefinitions>
@@ -114,11 +104,6 @@
 
                 <!-- Expander: Profile -->
                 <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
-                    <toolkit:Expander.Shadow>
-                        <Shadow Brush="Black"
-                                Offset="10,10"
-                                Opacity="0.8" />
-                    </toolkit:Expander.Shadow>
                     <toolkit:Expander.Header>
                         <Grid BackgroundColor="{StaticResource SecondaryColor1}">
                             <Grid.ColumnDefinitions>

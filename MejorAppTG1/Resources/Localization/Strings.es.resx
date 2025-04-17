@@ -788,7 +788,7 @@ Por último, puedes consultar de forma rápida y directa los consejos del últim
     <value>Empodérate</value>
   </data>
   <data name="str_AnxietyAdvice5_Content" xml:space="preserve">
-    <value>Estas sencillas posturas corporales dan seguridad y confianza al instante. Ver vídeo:
+    <value>Estas sencillas posturas corporales dan seguridad y confianza al instante.
 https://www.youtube.com/embed/jnOfzrDZYrA</value>
   </data>
   <data name="str_AnxietyAdvice6_Title" xml:space="preserve">
@@ -972,21 +972,21 @@ Una ansiedad moderada puede ayudarnos a mantenernos concentrados en el estudio, 
   </data>
   <data name="str_AnxietyAdvice21_Content" xml:space="preserve">
     <value>Esta técnica hawaiana busca limpiar memorias y emociones negativas que puedan afectar a nuestras vidas.
-hooponopono.mp3</value>
+https://www.youtube.com/embed/hV3A-BzfGZM?si=uQDjLgWi_8LJmmTV</value>
   </data>
   <data name="str_AnxietyAdvice22_Title" xml:space="preserve">
     <value>Sesión de meditación</value>
   </data>
   <data name="str_AnxietyAdvice22_Content" xml:space="preserve">
     <value>Relájate y conecta con tu interior con esta breve sesión de meditación guiada. Encuentra un lugar tranquilo, acomódate y deja que el audio te guíe hacia la calma interior.
-meditation.mp3</value>
+https://www.youtube.com/embed/C6bDxq1S7lw?si=eRZpZsPdmTRhGLxd</value>
   </data>
   <data name="str_AnxietyAdvice23_Title" xml:space="preserve">
     <value>Música de ambiente</value>
   </data>
   <data name="str_AnxietyAdvice23_Content" xml:space="preserve">
     <value>Música de ambiente creada por nuestro alumnado. Aconsejada para cualquiera de las meditaciones de otros consejos.
-audiorelax.mp3</value>
+https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87</value>
   </data>
   <data name="str_ResultHistoryPage_Loading" xml:space="preserve">
     <value>Espera, estamos recuperando tus datos.
@@ -1183,5 +1183,14 @@ audiorelax.mp3</value>
   </data>
   <data name="str_AdvicesPage_Loading" xml:space="preserve">
     <value>Cargando consejos...</value>
+  </data>
+  <data name="str_AdvicesPage_BtnYoutube" xml:space="preserve">
+    <value>Ver en YouTube</value>
+  </data>
+  <data name="str_AdvicesPage_Alert_NoOpenVideo_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="str_AdvicesPage_Alert_NoOpenVideo_Desc" xml:space="preserve">
+    <value>Se ha producido un error al intentar abrir el vídeo en YouTube.</value>
   </data>
 </root>

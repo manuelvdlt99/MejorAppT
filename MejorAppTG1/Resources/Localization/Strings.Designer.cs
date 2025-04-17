@@ -70,6 +70,33 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a An error has occurred while trying to open the video on YouTube..
+        /// </summary>
+        internal static string str_AdvicesPage_Alert_NoOpenVideo_Desc {
+            get {
+                return ResourceManager.GetString("str_AdvicesPage_Alert_NoOpenVideo_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error.
+        /// </summary>
+        internal static string str_AdvicesPage_Alert_NoOpenVideo_Title {
+            get {
+                return ResourceManager.GetString("str_AdvicesPage_Alert_NoOpenVideo_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Watch on YouTube.
+        /// </summary>
+        internal static string str_AdvicesPage_BtnYoutube {
+            get {
+                return ResourceManager.GetString("str_AdvicesPage_BtnYoutube", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Loading advices....
         /// </summary>
         internal static string str_AdvicesPage_Loading {
@@ -328,7 +355,7 @@ namespace MejorAppTG1.Resources.Localization {
         
         /// <summary>
         ///   Busca una cadena traducida similar a This Hawaiian technique seeks to clean negative memories and emotions that may affect our lives. Recording in Spanish:
-        ///hooponopono.mp3.
+        ///https://www.youtube.com/embed/hV3A-BzfGZM?si=uQDjLgWi_8LJmmTV.
         /// </summary>
         internal static string str_AnxietyAdvice21_Content {
             get {
@@ -347,7 +374,7 @@ namespace MejorAppTG1.Resources.Localization {
         
         /// <summary>
         ///   Busca una cadena traducida similar a Relax and connect with your inner self with this short guided meditation session. Find a quiet place, get comfortable and let the audio guide (in Spanish) you to inner calm.
-        ///meditation.mp3.
+        ///https://www.youtube.com/embed/C6bDxq1S7lw?si=eRZpZsPdmTRhGLxd.
         /// </summary>
         internal static string str_AnxietyAdvice22_Content {
             get {
@@ -366,7 +393,7 @@ namespace MejorAppTG1.Resources.Localization {
         
         /// <summary>
         ///   Busca una cadena traducida similar a Ambient music created by our students. Recommended for any of the meditations of other advices.
-        ///audiorelax.mp3.
+        ///https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87.
         /// </summary>
         internal static string str_AnxietyAdvice23_Content {
             get {
@@ -420,7 +447,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a These simple body postures give instant security and confidence. Watch this video (in Spanish):
+        ///   Busca una cadena traducida similar a These simple body postures give instant security and confidence.
         ///https://www.youtube.com/embed/jnOfzrDZYrA.
         /// </summary>
         internal static string str_AnxietyAdvice5_Content {

@@ -788,7 +788,7 @@ What to do with this attempt?</value>
     <value>Empower yourself</value>
   </data>
   <data name="str_AnxietyAdvice5_Content" xml:space="preserve">
-    <value>These simple body postures give instant security and confidence. Watch this video (in Spanish):
+    <value>These simple body postures give instant security and confidence.
 https://www.youtube.com/embed/jnOfzrDZYrA</value>
   </data>
   <data name="str_AnxietyAdvice6_Title" xml:space="preserve">
@@ -973,21 +973,21 @@ Even though you are not at risk, we believe it would be a good idea for you to s
   </data>
   <data name="str_AnxietyAdvice21_Content" xml:space="preserve">
     <value>This Hawaiian technique seeks to clean negative memories and emotions that may affect our lives. Recording in Spanish:
-hooponopono.mp3</value>
+https://www.youtube.com/embed/hV3A-BzfGZM?si=uQDjLgWi_8LJmmTV</value>
   </data>
   <data name="str_AnxietyAdvice22_Title" xml:space="preserve">
     <value>Meditation session</value>
   </data>
   <data name="str_AnxietyAdvice22_Content" xml:space="preserve">
     <value>Relax and connect with your inner self with this short guided meditation session. Find a quiet place, get comfortable and let the audio guide (in Spanish) you to inner calm.
-meditation.mp3</value>
+https://www.youtube.com/embed/C6bDxq1S7lw?si=eRZpZsPdmTRhGLxd</value>
   </data>
   <data name="str_AnxietyAdvice23_Title" xml:space="preserve">
     <value>Ambient music</value>
   </data>
   <data name="str_AnxietyAdvice23_Content" xml:space="preserve">
     <value>Ambient music created by our students. Recommended for any of the meditations of other advices.
-audiorelax.mp3</value>
+https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87</value>
   </data>
   <data name="str_ResultHistoryPage_Loading" xml:space="preserve">
     <value>Hold on, we're retrieving your data.
@@ -1184,5 +1184,14 @@ It will only take a moment!</value>
   </data>
   <data name="str_AdvicesPage_Loading" xml:space="preserve">
     <value>Loading advices...</value>
+  </data>
+  <data name="str_AdvicesPage_BtnYoutube" xml:space="preserve">
+    <value>Watch on YouTube</value>
+  </data>
+  <data name="str_AdvicesPage_Alert_NoOpenVideo_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="str_AdvicesPage_Alert_NoOpenVideo_Desc" xml:space="preserve">
+    <value>An error has occurred while trying to open the video on YouTube.</value>
   </data>
 </root>
