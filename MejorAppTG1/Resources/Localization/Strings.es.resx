@@ -148,7 +148,7 @@
     <value>Edad:</value>
   </data>
   <data name="str_LoginPage_BtnSignUp_Gender" xml:space="preserve">
-    <value>Género:</value>
+    <value>Género</value>
   </data>
   <data name="str_LoginPage_BtnSignUp_Name" xml:space="preserve">
     <value>Nombre:</value>
@@ -269,10 +269,10 @@ Aun así, ¿seguro que quieres realizar el test?</value>
     <value>Selecciona tu género</value>
   </data>
   <data name="str_ResultHistoryPage_BtnSignUp_EntAge" xml:space="preserve">
-    <value>Introduce tu edad</value>
+    <value>Edad</value>
   </data>
   <data name="str_ResultHistoryPage_BtnSignUp_EntName" xml:space="preserve">
-    <value>Introduce tu nombre</value>
+    <value>Nombre</value>
   </data>
   <data name="str_ResultHistoryPage_ChooseOption_Question" xml:space="preserve">
     <value>¿Qué quieres hacer con este resultado?</value>
@@ -788,7 +788,7 @@ Por último, puedes consultar de forma rápida y directa los consejos del últim
     <value>Empodérate</value>
   </data>
   <data name="str_AnxietyAdvice5_Content" xml:space="preserve">
-    <value>Estas sencillas posturas corporales dan seguridad y confianza al instante. Ver vídeo:
+    <value>Estas sencillas posturas corporales dan seguridad y confianza al instante.
 https://www.youtube.com/embed/jnOfzrDZYrA</value>
   </data>
   <data name="str_AnxietyAdvice6_Title" xml:space="preserve">
@@ -913,13 +913,13 @@ Resuelve con tu profesor todas las dudas de la materia.</value>
 Una ansiedad moderada puede ayudarnos a mantenernos concentrados en el estudio, siempre que no se mantenga de manera sostenida en el tiempo, ya que puede dar lugar a quedar fuera de nuestro control.</value>
   </data>
   <data name="str_ResultsPage_Category_Prevent" xml:space="preserve">
-    <value>Cosas que puedes hacer antes para no llegar a esta situación:</value>
+    <value>Cosas que puedes hacer antes para no llegar a esta situación</value>
   </data>
   <data name="str_ResultsPage_Category_SeeMore" xml:space="preserve">
     <value>¿Quieres ampliar?</value>
   </data>
   <data name="str_ResultsPage_Category_BadSituation" xml:space="preserve">
-    <value>Si la situación te sobrepasa:</value>
+    <value>Si la situación te sobrepasa</value>
   </data>
   <data name="str_ResultsPage_LblIntro_Low_2" xml:space="preserve">
     <value>A pesar de que algunas veces te encuentres más nervioso/a de lo habitual, tu respuesta ante estas situaciones es adecuada y está dentro de la media. Sigue así.
@@ -972,21 +972,21 @@ Una ansiedad moderada puede ayudarnos a mantenernos concentrados en el estudio, 
   </data>
   <data name="str_AnxietyAdvice21_Content" xml:space="preserve">
     <value>Esta técnica hawaiana busca limpiar memorias y emociones negativas que puedan afectar a nuestras vidas.
-hooponopono.mp3</value>
+https://www.youtube.com/embed/hV3A-BzfGZM?si=uQDjLgWi_8LJmmTV</value>
   </data>
   <data name="str_AnxietyAdvice22_Title" xml:space="preserve">
     <value>Sesión de meditación</value>
   </data>
   <data name="str_AnxietyAdvice22_Content" xml:space="preserve">
     <value>Relájate y conecta con tu interior con esta breve sesión de meditación guiada. Encuentra un lugar tranquilo, acomódate y deja que el audio te guíe hacia la calma interior.
-meditation.mp3</value>
+https://www.youtube.com/embed/C6bDxq1S7lw?si=eRZpZsPdmTRhGLxd</value>
   </data>
   <data name="str_AnxietyAdvice23_Title" xml:space="preserve">
     <value>Música de ambiente</value>
   </data>
   <data name="str_AnxietyAdvice23_Content" xml:space="preserve">
     <value>Música de ambiente creada por nuestro alumnado. Aconsejada para cualquiera de las meditaciones de otros consejos.
-audiorelax.mp3</value>
+https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87</value>
   </data>
   <data name="str_ResultHistoryPage_Loading" xml:space="preserve">
     <value>Espera, estamos recuperando tus datos.
@@ -1080,7 +1080,7 @@ audiorelax.mp3</value>
     <value>No hay usuarios disponibles.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnLogIn_Success" xml:space="preserve">
-    <value>Usuario {0} seleccionado. Iniciando sesión.</value>
+    <value>Usuario {0} seleccionado.</value>
   </data>
   <data name="str_SemanticProperties_ResultHistoryPage_ImgProfile" xml:space="preserve">
     <value>Esta es la imagen de perfil del usuario.</value>
@@ -1135,5 +1135,62 @@ audiorelax.mp3</value>
   </data>
   <data name="str_SemanticProperties_MainPage_Welcome" xml:space="preserve">
     <value>Te encuentras en el menú principal de la aplicación. Más abajo encontrarás los tres tipos de tests a realizar: test rápido de ansiedad (duración estimada: 2 minutos), test completo de ansiedad (duración estimada: 6 minutos), test para trastornos de la conducta alimentaria (duración estimada: 3 minutos).</value>
+  </data>
+  <data name="str_UserSelectPopup_ChooseUserToast" xml:space="preserve">
+    <value>Por favor, selecciona un usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc" xml:space="preserve">
+    <value>Botón para iniciar sesión con el usuario que esté actualmente seleccionado.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint" xml:space="preserve">
+    <value>Haz clic aquí para acceder al menú principal con el usuario actualmente seleccionado.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected" xml:space="preserve">
+    <value>Género seleccionado: Hombre.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected" xml:space="preserve">
+    <value>Género seleccionado: Mujer.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected" xml:space="preserve">
+    <value>Género seleccionado: No binario.</value>
+  </data>
+  <data name="str_Shell_SettingsPage_Title" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="str_SettingsPage_BtnLanguage" xml:space="preserve">
+    <value>Cambiar idioma</value>
+  </data>
+  <data name="str_SettingsPage_LblLanguage" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="str_LanguagePopup_LblTitle" xml:space="preserve">
+    <value>Selecciona un idioma</value>
+  </data>
+  <data name="str_SettingsPage_LblData" xml:space="preserve">
+    <value>Gestión de datos</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Desc" xml:space="preserve">
+    <value>Selector de idioma.</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Hint" xml:space="preserve">
+    <value>Haz clic aquí para cambiar el idioma de visualización de la aplicación.</value>
+  </data>
+  <data name="str_ResultsPage_Category_KeepItUp" xml:space="preserve">
+    <value>Cosas que puedes hacer para seguir controlando la situación</value>
+  </data>
+  <data name="str_ResultsPage_Category_GeneralAdvice" xml:space="preserve">
+    <value>Consejos generales</value>
+  </data>
+  <data name="str_AdvicesPage_Loading" xml:space="preserve">
+    <value>Cargando consejos...</value>
+  </data>
+  <data name="str_AdvicesPage_BtnYoutube" xml:space="preserve">
+    <value>Ver en YouTube</value>
+  </data>
+  <data name="str_AdvicesPage_Alert_NoOpenVideo_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="str_AdvicesPage_Alert_NoOpenVideo_Desc" xml:space="preserve">
+    <value>Se ha producido un error al intentar abrir el vídeo en YouTube.</value>
   </data>
 </root>

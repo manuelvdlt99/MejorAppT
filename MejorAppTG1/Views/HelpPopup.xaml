@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
+               xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
+               x:Class="MejorAppTG1.Views.HelpPopup"
+               Color="Transparent"
+               x:Name="HelpPopupRoot">
+
+    <Border Padding="0"
+            MaximumWidthRequest="600"
+            MaximumHeightRequest="800"
+        Stroke="{StaticResource FontColor1}"
+        StrokeThickness="5">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="25"/>
+        </Border.StrokeShape>
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="{StaticResource GradientColor2}" Offset="0.1" />
+                <GradientStop Color="{StaticResource White}" Offset="0.8" />
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="10">
+
+                <Label 
+                    Text="{x:Static strings:Strings.str_Shell_HelpPage_Title}"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource FontColor1}"
+                    HorizontalOptions="Center"
+                    Margin="0,20,0,10"
+                    SemanticProperties.HeadingLevel="Level1"
+                    SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_Title}" />
+
+                <Label 
+                    Text="{x:Static strings:Strings.str_Shell_HelpPage_MainHeader}"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource FontColor1}"
+                    Margin="0,10,0,5"
+                    SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_MainHeader}" />
+
+                <!-- Expander: TopBar -->
+                <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
+                    <toolkit:Expander.Header>
+                        <Grid BackgroundColor="{StaticResource SecondaryColor1}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                            Text="{x:Static strings:Strings.str_Shell_HelpPage_TopBar}"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource FontColor3}"
+                            Padding="10"
+                            SemanticProperties.HeadingLevel="Level2"
+                            SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_TopBar}" />
+                            <Image Grid.Column="1" Source="flechaabajo.png" HorizontalOptions="End" HeightRequest="20" Margin="5"/>
+                        </Grid>
+                    </toolkit:Expander.Header>
+                    <Label
+                        Text="{x:Static strings:Strings.str_Shell_HelpPage_TopBar_Msg}"
+                        BackgroundColor="{StaticResource SecondaryColor2}"
+                        FontSize="16"
+                        TextColor="{StaticResource FontColor1}"
+                        HorizontalTextAlignment="Start"
+                        Padding="10"
+                        SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_TopBar_Msg}" />
+                </toolkit:Expander>
+
+                <!-- Expander: Main Menu -->
+                <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
+                    <toolkit:Expander.Header>
+                        <Grid BackgroundColor="{StaticResource SecondaryColor1}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                            Text="{x:Static strings:Strings.str_Shell_HelpPage_MainMenu}"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource FontColor3}"
+                            Padding="10"
+                            SemanticProperties.HeadingLevel="Level2"
+                            SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_MainMenu}" />
+                            <Image Grid.Column="1" Source="flechaabajo.png" HorizontalOptions="End" HeightRequest="20" Margin="5"/>
+                        </Grid>
+                    </toolkit:Expander.Header>
+                    <Label
+                        Text="{x:Static strings:Strings.str_Shell_HelpPage_MainMenu_Msg}"
+                        BackgroundColor="{StaticResource SecondaryColor2}"
+                        FontSize="16"
+                        TextColor="{StaticResource FontColor1}"
+                        HorizontalTextAlignment="Start"
+                        Padding="10"
+                        SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_MainMenu_Msg}" />
+                </toolkit:Expander>
+
+                <!-- Expander: Profile -->
+                <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
+                    <toolkit:Expander.Header>
+                        <Grid BackgroundColor="{StaticResource SecondaryColor1}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                            Text="{x:Static strings:Strings.str_Shell_MyProfileTab}"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource FontColor3}"
+                            Padding="10"
+                            SemanticProperties.HeadingLevel="Level2"
+                            SemanticProperties.Description="{x:Static strings:Strings.str_Shell_MyProfileTab}" />
+                            <Image Grid.Column="1" Source="flechaabajo.png" HorizontalOptions="End" HeightRequest="20" Margin="5"/>
+                        </Grid>
+                    </toolkit:Expander.Header>
+                    <Label
+                        Text="{x:Static strings:Strings.str_Shell_HelpPage_MyProfile_Msg}"
+                        BackgroundColor="{StaticResource SecondaryColor2}"
+                        FontSize="16"
+                        TextColor="{StaticResource FontColor1}"
+                        HorizontalTextAlignment="Start"
+                        Padding="10"
+                        SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_MyProfile_Msg}" />
+                </toolkit:Expander>
+
+                <freakycontrols:FreakyButton 
+                    Text="{x:Static strings:Strings.str_Shell_BtnClose}"
+                    BackgroundColor="{StaticResource ButtonColor3}"
+                    TextColor="{StaticResource FontColor3}"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    CornerRadius="20"
+                    BorderWidth="2"
+                    BorderColor="{StaticResource BorderColor2}"
+                    Margin="0,20,0,0"
+                    x:Name="BtnClose"
+                    Clicked="BtnClose_Clicked"
+                    SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_Shell_HelpPage_BtnClose}" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Border>
+</toolkit:Popup>

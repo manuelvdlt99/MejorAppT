@@ -12,30 +12,48 @@ namespace MejorAppTG1
     public partial class App : Application
     {
         public const string USER_ID_KEY = "user_id";
-        public static bool ButtonPressed = false;
+        public const string USER_LANGUAGE = "language";
+        public const string SYNC_MODE_OPEN = "open";
+        public const string SYNC_MODE_CLOSE = "close";
+        public const string TCA_TEST_KEY = "str_EatingTest";
+        public const string QUICK_TEST_KEY = "str_QuickTest";
+        public const string FULL_TEST_KEY = "str_FullTest";
+        public const string FACTORS_1 = "1";
+        public const string FACTORS_2 = "2";
+        public const string FACTORS_3 = "3";
+        public const string FACTORS_4 = "4";
+        public const string GENDERS_MALE_KEY = "str_Genders_Man";
+        public const string GENDERS_FEMALE_KEY = "str_Genders_Woman";
+        public const string GENDERS_NB_KEY = "str_Genders_NB";
+        public const string FACTORS_LEVEL_LOW = "Bajo";
+        public const string FACTORS_LEVEL_LOW_MEDIUM = "Leve-Moderado";
+        public const string FACTORS_LEVEL_MEDIUM = "Medio";
+        public const string FACTORS_LEVEL_MEDIUM_HIGH = "Moderado-Alto";
+        public const string FACTORS_LEVEL_HIGH = "Alto";
 
-        static MejorAppTDatabase database;
-        static FirebaseService firebase;
-        private bool isSyncing = false;
+        public static bool ButtonPressed = false;
+        private static MejorAppTDatabase _database;
+        private static FirebaseService _firebase;
+        private bool _isSyncing = false;
         public static User CurrentUser { get; set; }
         public static MejorAppTDatabase Database
         {
             get {
-                if (database == null) {
-                    database = new MejorAppTDatabase(Path.Combine(Environment.GetFolderPath(
+                if (_database == null) {
+                    _database = new MejorAppTDatabase(Path.Combine(Environment.GetFolderPath(
                     Environment.SpecialFolder.LocalApplicationData), "MejorAppT.db3"));
                 }
-                return database;
+                return _database;
             }
         }
 
         public static FirebaseService Firebase
         {
             get {
-                if (firebase == null) {
-                    firebase = new FirebaseService("https://mejorappt-g1-default-rtdb.europe-west1.firebasedatabase.app");
+                if (_firebase == null) {
+                    _firebase = new FirebaseService("https://mejorappt-g1-default-rtdb.europe-west1.firebasedatabase.app");
                 }
-                return firebase;
+                return _firebase;
             }
         }
 
@@ -43,7 +61,13 @@ namespace MejorAppTG1
         {
             Application.Current.UserAppTheme = AppTheme.Light;
             this.RequestedThemeChanged += (s, e) => { Application.Current.UserAppTheme = AppTheme.Light; };
-            var culture = CultureInfo.CurrentCulture;
+            CultureInfo culture;
+            if (Preferences.ContainsKey(USER_LANGUAGE)) {
+                var userLang = Preferences.Get(USER_LANGUAGE, "en");
+                culture = new(userLang);
+            } else {
+                culture = CultureInfo.CurrentCulture;
+            }
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
             InitializeComponent();
@@ -79,30 +103,30 @@ namespace MejorAppTG1
         {
             base.OnStart();
             var cancellationTokenSource = new CancellationTokenSource();
-            StartSyncTask(cancellationTokenSource.Token, "open");
+            StartSyncTask(cancellationTokenSource.Token, SYNC_MODE_OPEN);
         }
 
         protected override void OnSleep()
         {
             var cancellationTokenSource = new CancellationTokenSource();
-            StartSyncTask(cancellationTokenSource.Token, "close");
+            StartSyncTask(cancellationTokenSource.Token, SYNC_MODE_CLOSE);
             base.OnSleep();
         }
 
         private async Task StartSyncTask(CancellationToken cancellationToken, string mode)
         {
-            if (isSyncing) return;
+            if (_isSyncing) return;
 
-            isSyncing = true;
+            _isSyncing = true;
             try {
-                if (mode == "open") {
+                if (mode == SYNC_MODE_OPEN) {
                     await WaitForInternetAndSync(cancellationToken);
                 } else {
                     await CheckInternetAndSync(cancellationToken);
                 }
             }
             finally {
-                isSyncing = false;
+                _isSyncing = false;
             }
         }
 

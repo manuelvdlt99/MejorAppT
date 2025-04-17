@@ -4,45 +4,14 @@
              x:Class="MejorAppTG1.ResultsPage"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
-             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+             xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
              Title="ResultadosPage" Shell.TabBarIsVisible="False" NavigationPage.HasBackButton="False"
-             Shell.BackgroundColor="{StaticResource SecondaryColor1}" Appearing="ContentPage_Appearing">
-    <ContentPage.Resources>
-        <Style x:Key="ExpanderStyle" TargetType="toolkit:Expander">
-            <Setter Property="Margin" Value="10,5" />
-        </Style>
-        <Style x:Key="HeaderLabelStyle" TargetType="Label">
-            <Setter Property="FontSize" Value="18" />
-            <Setter Property="TextColor" Value="{StaticResource HeaderColor1}" />
-            <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="Padding" Value="10,5" />
-        </Style>
-        <Style x:Key="ContentLabelStyle" TargetType="Label">
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="TextColor" Value="{StaticResource FontColor1}" />
-            <Setter Property="Padding" Value="10,5" />
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-        <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
-            <Setter Property="TextColor" Value="{StaticResource FontColor2}" />
-            <Setter Property="CornerRadius" Value="10" />
-            <Setter Property="Padding" Value="10" />
-            <Setter Property="FontAttributes" Value="Bold" />
-        </Style>
-        <Style x:Key="OtherLabelStyle" TargetType="Label">
-            <Setter Property="BackgroundColor" Value="Transparent"/>
-            <Setter Property="FontSize" Value="16" />
-            <Setter Property="TextColor" Value="{StaticResource FontColor1}" />
-            <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="Padding" Value="15" />
-        </Style>
-    </ContentPage.Resources>
+             Shell.BackgroundColor="{StaticResource SecondaryColor1}" Loaded="ContentPage_Loaded">
 
     <ContentPage.Background>
         <LinearGradientBrush EndPoint="0,1">
             <GradientStop Color="{StaticResource GradientColor2}" Offset="0.1" />
-            <GradientStop Color="{StaticResource GradientColor3}" Offset="0.2" />
+            <GradientStop Color="{StaticResource GradientColor3}" Offset="0.5" />
         </LinearGradientBrush>
     </ContentPage.Background>
 
@@ -60,80 +29,28 @@
                 <RowDefinition/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <!--<Image Source="fondoapp.jpg" Aspect="AspectFill" Opacity="0.5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />-->
             <ScrollView Grid.Row="0">
                 <StackLayout Padding="15" Spacing="10">
                     <Label TextColor="{StaticResource FontColor1}" FontFamily="K2D-Regular" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultsPage_Title}" FontSize="30" FontAttributes="Bold"/>
-                    <Frame HasShadow="True" BorderColor="{StaticResource SecondaryColor1}" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="20" Padding="20" BackgroundColor="{StaticResource SecondaryColor2}">
-                        <Label x:Name="LblIntro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource FontColor1}"/>
-                    </Frame>
-                    <CollectionView ItemsSource="{Binding Consejos}">
+                    <Label Padding="10" x:Name="LblIntro" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="{StaticResource FontColor1}" FontSize="15"/>
+                    <BoxView HeightRequest="1" Color="{StaticResource FontColor1}"/>
+                    <CollectionView x:Name="ClvCategories" SelectionMode="None" ItemsSource="{Binding Categories}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged" Style="{StaticResource ExpanderStyle}">
-                                    <toolkit:Expander.Header>
-                                        <Grid BackgroundColor="{Binding Contenido, Converter={StaticResource ContenidoToBackgroundColorConverter}}">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="Auto" />
-                                            </Grid.ColumnDefinitions>
-                                            <Label Grid.Column="0" Text="{Binding Titulo}" Style="{StaticResource OtherLabelStyle}" TextColor="{Binding Contenido, Converter={StaticResource ContenidoToFontColorConverter}}" />
-                                            <Image Grid.Column="1" Source="{Binding Imagen}" HorizontalOptions="End" HeightRequest="20" Margin="5"/>
-                                        </Grid>
-                                    </toolkit:Expander.Header>
-                                    <toolkit:Expander.Content>
-                                        <StackLayout Padding="10" BackgroundColor="{StaticResource SecondaryColor2}">
-                                            <!-- Contenido general -->
-                                            <CollectionView VerticalScrollBarVisibility="Always" ItemsSource="{Binding LineasTexto}">
-                                                <CollectionView.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <Label Text="{Binding .}" Style="{StaticResource ContentLabelStyle}" />
-                                                    </DataTemplate>
-                                                </CollectionView.ItemTemplate>
-                                            </CollectionView>
-
-                                            <!-- Enlaces -->
-                                            <Grid RowDefinitions="*,*" IsVisible="{Binding HasLinks}">
-                                                <cards:CarouselView HeightRequest="250" WidthRequest="350" ItemsSource="{Binding Enlaces}" IsVisible="{Binding HasLinks}" IndicatorView="indicatorView">
-                                                    <cards:CarouselView.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <WebView Source="{Binding .}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
-                                                        </DataTemplate>
-                                                    </cards:CarouselView.ItemTemplate>
-                                                </cards:CarouselView>
-
-                                                <IndicatorView Margin="0,15,0,10" x:Name="indicatorView" VerticalOptions="End"
-                                                   Grid.Row="1"
-                                                   IndicatorColor="{StaticResource FontColor3}"
-                                                   SelectedIndicatorColor="{StaticResource ButtonColor4}"
-                                                   HorizontalOptions="Center" />
-                                            </Grid>
-
-                                            <!-- Audios -->
-                                            <Grid RowDefinitions="*,*" IsVisible="{Binding HasAudio}">
-                                                <cards:CarouselView ItemsSource="{Binding Audios}" IsVisible="{Binding HasAudio}" IndicatorView="indicatorViewAudio">
-                                                    <cards:CarouselView.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <toolkit:MediaElement HeightRequest="250" WidthRequest="350" MetadataArtworkUrl="https://c0.wallpaperflare.com/preview/685/967/619/healthy-lifestyle-meditating-nature.jpg" Source="{Binding ., Converter={StaticResource StringToMediaSourceConverter}}" ShouldLoopPlayback="True" />
-                                                        </DataTemplate>
-                                                    </cards:CarouselView.ItemTemplate>
-                                                </cards:CarouselView>
-
-                                                <IndicatorView Margin="0,15,0,10" x:Name="indicatorViewAudio" VerticalOptions="End"
-                                                   Grid.Row="1"
-                                                   IndicatorColor="{StaticResource FontColor3}"
-                                                   SelectedIndicatorColor="{StaticResource ButtonColor4}"
-                                                   HorizontalOptions="Center" />
-                                            </Grid>
-                                        </StackLayout>
-                                    </toolkit:Expander.Content>
-                                </toolkit:Expander>
+                                <freakycontrols:FreakyButton Margin="5" HeightRequest="70" VerticalTextAlignment="Center" LineBreakMode="WordWrap" Padding="10" CornerRadius="12" BackgroundColor="{StaticResource GradientColor2}" FontSize="15" BorderWidth="2" TextColor="{StaticResource FontColor1}" HorizontalTextAlignment="Start" Text="{Binding Name}" BorderColor="{StaticResource FontColor6}" Clicked="FreakyButton_Clicked">
+                                    <freakycontrols:FreakyButton.LeadingIcon>
+                                        <Image Source="{Binding ImagePath}"/>
+                                    </freakycontrols:FreakyButton.LeadingIcon>
+                                    <freakycontrols:FreakyButton.TrailingIcon>
+                                        <Image Source="flechaderecha.png"/>
+                                    </freakycontrols:FreakyButton.TrailingIcon>
+                                </freakycontrols:FreakyButton>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </StackLayout>
             </ScrollView>
-            <Button Grid.Row="1" HorizontalOptions="Fill" x:Name="BtnFinish" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" 
+            <freakycontrols:FreakyButton Grid.Row="1" x:Name="BtnFinish" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" 
             HeightRequest="40" Clicked="BtnFinish_Clicked" Text="{x:Static strings:Strings.str_ResultsPage_BtnFinish}" BackgroundColor="{StaticResource PrimaryColor}" Margin="30, 5, 30, 5" FontAttributes="Bold"/>
         </Grid>
     </Grid>

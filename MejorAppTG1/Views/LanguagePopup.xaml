@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+            xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+            xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
+            x:Class="MejorAppTG1.Views.LanguagePopup"
+            x:Name="LanguagePopupRoot"
+            Color="Transparent">
+
+    <Border Padding="0" HeightRequest="300"
+        WidthRequest="300"
+        Stroke="{StaticResource FontColor1}"
+        BackgroundColor="{StaticResource White}"
+        StrokeThickness="5">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="25"/>
+        </Border.StrokeShape>
+
+        <VerticalStackLayout Spacing="15" Padding="20">
+            <Label Text="{x:Static strings:Strings.str_LanguagePopup_LblTitle}"
+                   FontAttributes="Bold"
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+
+            <CollectionView x:Name="ClvLanguages">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10" HasShadow="False" BorderColor="{StaticResource FontColor3}" CornerRadius="10" BackgroundColor="{StaticResource White}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Frame.GestureRecognizers>
+                            <Label FontSize="16">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Flag}" />
+                                        <Span Text=" " />
+                                        <Span Text="{Binding Name}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </Border>
+</toolkit:Popup>
