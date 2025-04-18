@@ -1,14 +1,9 @@
-using CommunityToolkit.Maui.Alerts;
-using CommunityToolkit.Maui.Core;
 using MejorAppTG1.Models;
 using MejorAppTG1.Resources.Localization;
 using MejorAppTG1.Utils;
-using Microsoft.Maui.Controls;
-using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
+using Microcharts;
+using SkiaSharp;
 using System.Globalization;
-using System.Numerics;
 
 namespace MejorAppTG1;
 
@@ -19,6 +14,14 @@ public partial class MyProfilePage : ContentPage
     private static int _currentPage = 1;
     private List<Test> _finishedTests;
     private List<Test> _fiveTests = new();
+    private Dictionary<string,string> _tests = new Dictionary<string, string>
+        {
+            { Strings.str_QuickTest, App.QUICK_TEST_KEY },
+            { Strings.str_FullTest, App.FULL_TEST_KEY },
+            { Strings.str_EatingTest, App.TCA_TEST_KEY }
+        };
+    /*private DateTime? _dateFrom;
+    private DateTime? _dateUntil;*/
 
     public static int ResultIndex { get => _resultIndex; set => _resultIndex = value; }
     public static int CurrentPage { get => _currentPage; set => _currentPage = value; }
@@ -28,6 +31,13 @@ public partial class MyProfilePage : ContentPage
     public MyProfilePage()
     {
         InitializeComponent();
+        ChartView.Chart = new LineChart();
+        /*DtpFrom.Date = DateTime.UtcNow.AddDays(-120);
+        DtpUntil.Date = DateTime.UtcNow;*/
+        PickTipos.ItemsSource = _tests.Keys.ToList();
+        PickTipos.SelectedIndex = 0;
+        SemanticProperties.SetDescription(PickTipos, Strings.str_SemanticProperties_ResultHistoryPage_PickTipos_Desc);
+        SemanticProperties.SetHint(PickTipos, Strings.str_SemanticProperties_ResultHistoryPage_PickTipos_Hint);
     }
     #endregion
 
@@ -38,10 +48,11 @@ public partial class MyProfilePage : ContentPage
             StkLoading.IsVisible = true;
             GrdData.IsVisible = false;
             await Task.Delay(800);  // Forzar a que se espere un poco antes de cargar, porque de lo contrario el indicador de carga ni siquiera aparece
+            _finishedTests = await App.Database.GetFinishedTestsByUserAsync(App.CurrentUser.IdUsuario);
 
             await Task.WhenAll(
-                Task.Run(() => UpdateUserImage()),
-                Task.Run(() => UpdateUserLabels()),
+                Task.Run(UpdateUserImage),
+                Task.Run(UpdateUserLabels),
                 LoadResults()
             );
         }
@@ -121,6 +132,58 @@ public partial class MyProfilePage : ContentPage
         finally {
             App.ButtonPressed = false;
         }
+    }
+
+    /*private void DtpUntil_DateSelected(object sender, DateChangedEventArgs e)
+    {
+        _dateUntil = e.NewDate;
+    }
+
+    private void DtpFrom_DateSelected(object sender, DateChangedEventArgs e)
+    {
+        _dateFrom = e.NewDate;
+    }
+
+    private async void BtnFilter_Clicked(object sender, EventArgs e)
+    {
+        List<string> selectedTypes = [];
+        if (ChipQuick.IsSelected) {
+            selectedTypes.Add(App.QUICK_TEST_KEY);
+        }
+        if (ChipFull.IsSelected) {
+            selectedTypes.Add(App.FULL_TEST_KEY);
+        }
+        if (ChipTCA.IsSelected) {
+            selectedTypes.Add(App.TCA_TEST_KEY);
+        }
+        _finishedTests = await App.Database.GetFinishedTestsByUserFilteredAsync(App.CurrentUser.IdUsuario, _dateFrom ?? DateTime.MinValue, _dateUntil ?? DateTime.UtcNow, selectedTypes);
+        await LoadResults();
+    }*/
+
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        FrmTabResults.Stroke = (Color)Application.Current.Resources["HeaderColor1"];
+        FrmTabResults.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
+        FrmTabAnalysis.Stroke = (Color)Application.Current.Resources["ButtonColor2"];
+        FrmTabAnalysis.BackgroundColor = (Color)Application.Current.Resources["ButtonColor4"];
+        VslResults.IsVisible = true;
+        VslAnalysis.IsVisible = false;
+    }
+
+    private async void TapGestureRecognizer_Tapped_1(object sender, TappedEventArgs e)
+    {
+        FrmTabAnalysis.Stroke = (Color)Application.Current.Resources["HeaderColor1"];
+        FrmTabAnalysis.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
+        FrmTabResults.Stroke = (Color)Application.Current.Resources["ButtonColor2"];
+        FrmTabResults.BackgroundColor = (Color)Application.Current.Resources["ButtonColor4"];
+        await CreateGraph();
+        VslResults.IsVisible = false;
+        VslAnalysis.IsVisible = true;
+    }
+
+    private void BtnCreateGraph_Clicked(object sender, EventArgs e)
+    {
+        CreateGraph();
     }
     #endregion
 
@@ -202,8 +265,6 @@ public partial class MyProfilePage : ContentPage
 
     private async Task LoadResults()
     {
-        _finishedTests = await App.Database.GetFinishedTestsByUserAsync(App.CurrentUser.IdUsuario);
-
         MainThread.BeginInvokeOnMainThread(async () => {
             if (_finishedTests == null || _finishedTests.Count == 0) {
                 CtvResults.IsVisible = false;
@@ -251,10 +312,11 @@ public partial class MyProfilePage : ContentPage
             Test selectedTest = (Test)((Frame)sender).BindingContext;
 
             await App.Database.DeleteTestAndAnswersAsync(selectedTest);
-            await LoadResults();
+            _finishedTests = await App.Database.GetFinishedTestsByUserAsync(App.CurrentUser.IdUsuario);
+            LoadResults();
 
             // Si al eliminar este registro se queda la página vacía, vuelve una página para atrás
-            if (_resultIndex >= _finishedTests.Count) {
+            if (_resultIndex >= _finishedTests.Count && _resultIndex > 0) {
                 BtnPreviousFive_Clicked(null, null);
             }
         }
@@ -265,6 +327,48 @@ public partial class MyProfilePage : ContentPage
         var offset = direction == "Left" ? -100 : 100;
         CtvResults.TranslationX = offset;
         await CtvResults.TranslateTo(0, 0, 300, Easing.CubicOut);
+    }
+
+    private async Task CreateGraph()
+    {
+        string selectedTest = PickTipos.SelectedItem.ToString();
+        string selectedKey = _tests.FirstOrDefault(x => x.Key == selectedTest).Value;
+        var tests = await App.Database.GetFinishedTestsByUserFilteredAsync(App.CurrentUser.IdUsuario, selectedKey);
+
+        var entriesList = new List<ChartEntry>();
+
+        if (tests.Count > 0) {
+            VslNoResultsGraph.IsVisible = false;
+            BrdChartView.IsVisible = true;
+
+            foreach (var test in tests) {
+                var answers = await App.Database.GetAnswersByTestIdAsync(test.IdTest);
+                int totalPoints = answers.Sum(a => a.ValorRespuesta);
+                var entry = new ChartEntry(totalPoints) {
+                    Label = test.Fecha.ToString("dd/MM/yy"),
+                    ValueLabel = totalPoints.ToString(),
+                    Color = SKColor.Parse("#31be33")
+                };
+
+                entriesList.Add(entry);
+            }
+
+            ChartView.Chart = new LineChart {
+                Entries = [.. entriesList],
+                BackgroundColor = SKColor.Parse("#f6ffe3"),
+                LineMode = LineMode.Straight,
+                LineSize = 4,
+                PointSize = 10,
+                LabelTextSize = 40,
+                LabelOrientation = Orientation.Horizontal,
+                ValueLabelOrientation = Orientation.Vertical
+            };
+        } else {
+            VslNoResultsGraph.IsVisible = true;
+            BrdChartView.IsVisible = false;
+            await VslNoResultsGraph.ScaleTo(1.05, 300, Easing.BounceOut);
+            await VslNoResultsGraph.ScaleTo(1, 300, Easing.BounceIn);
+        }
     }
     #endregion
 }

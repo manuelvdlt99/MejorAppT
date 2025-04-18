@@ -1368,7 +1368,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Log in.
+        ///   Busca una cadena traducida similar a Select user.
         /// </summary>
         internal static string str_LoginPage_BtnLogIn {
             get {
@@ -1930,6 +1930,15 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Create chart.
+        /// </summary>
+        internal static string str_ResultHistoryPage_BtnCreateGraph {
+            get {
+                return ResourceManager.GetString("str_ResultHistoryPage_BtnCreateGraph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Delete.
         /// </summary>
         internal static string str_ResultHistoryPage_BtnDelete {
@@ -2056,6 +2065,15 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Result analysis.
+        /// </summary>
+        internal static string str_ResultHistoryPage_LblAnalysis {
+            get {
+                return ResourceManager.GetString("str_ResultHistoryPage_LblAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Page 1/X.
         /// </summary>
         internal static string str_ResultHistoryPage_LblCurrentPage {
@@ -2115,6 +2133,15 @@ namespace MejorAppTG1.Resources.Localization {
         internal static string str_ResultHistoryPage_LblTest {
             get {
                 return ResourceManager.GetString("str_ResultHistoryPage_LblTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Type: .
+        /// </summary>
+        internal static string str_ResultHistoryPage_LblTipo {
+            get {
+                return ResourceManager.GetString("str_ResultHistoryPage_LblTipo", resourceCulture);
             }
         }
         
@@ -2631,6 +2658,24 @@ namespace MejorAppTG1.Resources.Localization {
         internal static string str_SemanticProperties_ResultHistoryPage_ImgProfile {
             get {
                 return ResourceManager.GetString("str_SemanticProperties_ResultHistoryPage_ImgProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Picker to select a test type..
+        /// </summary>
+        internal static string str_SemanticProperties_ResultHistoryPage_PickTipos_Desc {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_ResultHistoryPage_PickTipos_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Select an option: Anxiety (quick), Anxiety (full), Eating disorders.
+        /// </summary>
+        internal static string str_SemanticProperties_ResultHistoryPage_PickTipos_Hint {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_ResultHistoryPage_PickTipos_Hint", resourceCulture);
             }
         }
         

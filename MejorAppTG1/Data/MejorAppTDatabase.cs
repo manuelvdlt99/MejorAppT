@@ -92,6 +92,14 @@ public class MejorAppTDatabase
             .ToListAsync();
     }
 
+    public Task<List<Test>> GetFinishedTestsByUserFilteredAsync(int userId, string tipo)
+    {
+        return _database.Table<Test>()
+            .Where(t => t.IdUser == userId && t.Terminado && t.Tipo.Equals(tipo))
+            .OrderByDescending(x => x.Fecha)
+            .ToListAsync();
+    }
+
     public async Task<Test> GetTestByIdAsync(int testId)
     {
         return await _database.Table<Test>()

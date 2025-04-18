@@ -130,7 +130,7 @@
     <value>Mujer</value>
   </data>
   <data name="str_LoginPage_BtnLogIn" xml:space="preserve">
-    <value>Iniciar sesión</value>
+    <value>Seleccionar usuario</value>
   </data>
   <data name="str_LoginPage_BtnLogin_entryAgeError" xml:space="preserve">
     <value>Por favor, introduce una edad correcta.</value>
@@ -1192,5 +1192,20 @@ https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87</value>
   </data>
   <data name="str_AdvicesPage_Alert_NoOpenVideo_Desc" xml:space="preserve">
     <value>Se ha producido un error al intentar abrir el vídeo en YouTube.</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblAnalysis" xml:space="preserve">
+    <value>Análisis de resultados</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_PickTipos_Desc" xml:space="preserve">
+    <value>Selector para elegir un tipo de test.</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_PickTipos_Hint" xml:space="preserve">
+    <value>Selecciona una opción: Ansiedad (rápido), Ansiedad (completo), Trastornos de la conducta alimentaria</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblTipo" xml:space="preserve">
+    <value>Tipo: </value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnCreateGraph" xml:space="preserve">
+    <value>Crear gráfico</value>
   </data>
 </root>
