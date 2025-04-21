@@ -130,7 +130,7 @@
     <value>Female</value>
   </data>
   <data name="str_LoginPage_BtnLogIn" xml:space="preserve">
-    <value>Log in</value>
+    <value>Select user</value>
   </data>
   <data name="str_LoginPage_BtnLogin_entryAgeError" xml:space="preserve">
     <value>Please enter a valid age.</value>
@@ -341,7 +341,7 @@ Still, are you sure you want to take the test?</value>
     <value>Data synchronised with Firebase</value>
   </data>
   <data name="str_Shell_MainMenuTab" xml:space="preserve">
-    <value>Main menu</value>
+    <value>Main Menu</value>
   </data>
   <data name="str_Shell_MyProfileTab" xml:space="preserve">
     <value>My Profile</value>
@@ -395,7 +395,7 @@ Click on any of the following categories to get more information.</value>
     <value>In the top navigation bar, you can change between the two main tabs that make up the app: the main menu and your profile. Below you'll find more details about each of these tabs.
 • By clicking on (i), you can see information about this project, the involved developers and the studies that endorse this app.
 • By clicking on (?), you can access the app's help, as you will have already been able to see for yourself.
-• Finally, by clicking on the kebab menu (the three little dots in the top right corner), you will see a menu with options that allow you to log out, modify the current user or delete the user and all stored data.</value>
+• Finally, by clicking on the gear icon, a menu will open with options that will allow you to log out, modify the current user, delete the user and all stored data, delete your test history or even change the language of the application.</value>
   </data>
   <data name="str_Shell_HelpPage_MainMenu" xml:space="preserve">
     <value>Main menu and tests</value>
@@ -410,9 +410,10 @@ In each test, each question will be presented individually. Each question consis
 Once you have answered all the questions, the final result will be calculated and advices will be displayed on screen according to your answers. Your test will be saved in the system so that you can consult these same advices from your profile.</value>
   </data>
   <data name="str_Shell_HelpPage_MyProfile_Msg" xml:space="preserve">
-    <value>In the "My profile" tab, you can see the details of the profile currently logged in to the application (name, age and gender). Remember that you can change these details or even create a new user from the menu in the top right corner. You can also change your profile picture by clicking on the picture itself.
-Just below, you will see a list of the tests you have completed with this user in chronological order, with the most recent one first. If you click on any of them, the tips associated with your answers in that test will be displayed.
-Finally, you can quickly and directly consult the tips of the last test you took by clicking on the ‘Consult last test’ button or delete all your history and start from scratch by clicking on the "Delete history" button.</value>
+    <value>In the "My profile" tab, you can see the details of the profile currently logged in to the application (photo, name, age and gender). Remember that you can change these details or even create a new user from the menu in the top right corner.
+Just below, you will see two tabs: "Test history" and "Result analysis":
+• In the first tab, you will see a list of the tests you have completed with this user in chronological order, with the most recent one first. If you click on any of them, the tips associated with your answers in that test will be displayed. You can quickly and directly consult the tips of the last test you took by clicking on the "Consult last test" button.
+• In the second tab, you will see a line graph showing your actual evolution according to the tests you have taken. Select a type from the drop-down menu and click on the "Create chart" button to consult your data. The information for each test you have taken is displayed chronologically, and at the top you will see an overall rating of your status. The application also has artificial intelligence models that will help you understand where you stand in relation to the general public and help you know whether you are on track or not based on your trends.</value>
   </data>
   <data name="str_Shell_ModifyPage_Apply" xml:space="preserve">
     <value>Apply</value>
@@ -1193,5 +1194,41 @@ It will only take a moment!</value>
   </data>
   <data name="str_AdvicesPage_Alert_NoOpenVideo_Desc" xml:space="preserve">
     <value>An error has occurred while trying to open the video on YouTube.</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblAnalysis" xml:space="preserve">
+    <value>Result analysis</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_PickTipos_Desc" xml:space="preserve">
+    <value>Picker to select a test type.</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_PickTipos_Hint" xml:space="preserve">
+    <value>Select an option: Anxiety (quick), Anxiety (full), Eating disorders</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblTipo" xml:space="preserve">
+    <value>Type: </value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnCreateGraph" xml:space="preserve">
+    <value>Create chart</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_LOW" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_LOW_MEDIUM" xml:space="preserve">
+    <value>Low-Moderate</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_MEDIUM" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_MEDIUM_HIGH" xml:space="preserve">
+    <value>Moderate-High</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_HIGH" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="str_Shell_HelpPage_Advices" xml:space="preserve">
+    <value>Advices page</value>
+  </data>
+  <data name="str_Shell_HelpPage_Advices_Msg" xml:space="preserve">
+    <value>As soon as you finish a test, a new screen will be displayed with recommendations adapted to your test result. First, a general estimate will appear, and then one or more categories of tips will appear. If you click on any of these, you will be redirected to a new screen where the tips associated with that category will be displayed in a carousel format (scrolling from right to left). These tips include relevant images or, in some cases, videos and audios to help you in your situation.</value>
   </data>
 </root>

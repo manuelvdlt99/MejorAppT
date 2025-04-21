@@ -130,7 +130,7 @@
     <value>Mujer</value>
   </data>
   <data name="str_LoginPage_BtnLogIn" xml:space="preserve">
-    <value>Iniciar sesión</value>
+    <value>Seleccionar usuario</value>
   </data>
   <data name="str_LoginPage_BtnLogin_entryAgeError" xml:space="preserve">
     <value>Por favor, introduce una edad correcta.</value>
@@ -395,7 +395,7 @@ Pulsa cualquiera de las siguientes categorías para obtener más información.</
     <value>En la barra superior de navegación, podrás cambiar entre las dos pestañas principales que componen la aplicación: el menú principal y el perfil. Más abajo se entrará en detalle en cada una de estas pestañas.
 • Haciendo clic en (i), podrás ver información acerca de este proyecto, los desarrolladores implicados y los estudios que avalan esta aplicación.
 • Haciendo clic en (?), accederás a la ayuda de la aplicación, como ya habrás podido comprobar por tu cuenta.
-• Por último, si haces clic en el menú de kebab (los tres puntitos en la esquina superior derecha), se desplegará un menú con opciones que te permitirán cerrar sesión, modificar el usuario actual o eliminar el usuario y todos sus datos almacenados.</value>
+• Por último, si haces clic en el icono del engranaje, se abrirá un menú con opciones que te permitirán cerrar sesión, modificar el usuario actual, eliminar el usuario y todos sus datos almacenados, borrar tu historial de tests o incluso cambiar el idioma de la aplicación.</value>
   </data>
   <data name="str_Shell_HelpPage_MainMenu" xml:space="preserve">
     <value>Menú principal y tests</value>
@@ -410,9 +410,10 @@ En cada test, se presentará cada pregunta individualmente. Cada pregunta consta
 Una vez hayas respondido a todas las preguntas, se calculará el resultado final y se mostrarán en pantalla unos consejos acordes a tus respuestas. Tu test quedará guardado en el sistema para poder consultar estos mismos consejos desde tu perfil.</value>
   </data>
   <data name="str_Shell_HelpPage_MyProfile_Msg" xml:space="preserve">
-    <value>En la pestaña «Mi perfil», podrás ver los datos del perfil que ha iniciado sesión actualmente en la aplicación (nombre, edad y género). Recuerda que puedes cambiar estos datos o incluso crear un nuevo usuario desde el menú de la esquina superior derecha. También puedes cambiar tu foto de perfil haciendo clic en la propia imagen.
-Justo debajo, aparecerá un listado de los tests que has completado con este usuario ordenados cronológicamente, estando primero el más reciente. Si pulsas en cualquiera de ellos, se mostrarán los consejos asociados a tus respuestas en dicho test.
-Por último, puedes consultar de forma rápida y directa los consejos del último test realizado en el botón «Consultar último test» o borrar todo tu historial y empezar de cero en el botón «Borrar historial».</value>
+    <value>En la pestaña «Mi perfil», podrás ver los datos del perfil que ha iniciado sesión actualmente en la aplicación (foto, nombre, edad y género). Recuerda que puedes cambiar estos datos o incluso crear un nuevo usuario desde el menú de la esquina superior derecha.
+Justo debajo, verás dos pestañas: «Historial de tests» y «Análisis de resultados»:
+• En la primera pestaña, aparecerá un listado de los tests que has completado con este usuario ordenados cronológicamente, estando primero el más reciente. Si pulsas en cualquiera de ellos, se mostrarán los consejos asociados a tus respuestas en dicho test. Puedes consultar de forma rápida y directa los consejos del último test realizado en el botón «Consultar último test».
+• En la segunda pestaña, verás un gráfico de líneas que mostrará tu evolución real según los tests que hayas realizado. Selecciona un tipo en el desplegable pertinente y haz clic en el botón «Crear gráfico» para consultar tus datos. La información de cada test realizado se muestra de forma cronológica, y en la parte superior figurará un baremo general de tu estado. Asimismo, la aplicación cuenta con modelos de inteligencia artificial que te ayudarán a comprender tu situación respecto al público general y te ayudarán a saber si vas por buen camino o no según tus tendencias.</value>
   </data>
   <data name="str_Shell_ModifyPage_Apply" xml:space="preserve">
     <value>Aplicar</value>
@@ -1192,5 +1193,41 @@ https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87</value>
   </data>
   <data name="str_AdvicesPage_Alert_NoOpenVideo_Desc" xml:space="preserve">
     <value>Se ha producido un error al intentar abrir el vídeo en YouTube.</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblAnalysis" xml:space="preserve">
+    <value>Análisis de resultados</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_PickTipos_Desc" xml:space="preserve">
+    <value>Selector para elegir un tipo de test.</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_PickTipos_Hint" xml:space="preserve">
+    <value>Selecciona una opción: Ansiedad (rápido), Ansiedad (completo), Trastornos de la conducta alimentaria</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblTipo" xml:space="preserve">
+    <value>Tipo: </value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnCreateGraph" xml:space="preserve">
+    <value>Crear gráfico</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_LOW" xml:space="preserve">
+    <value>Bajo</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_LOW_MEDIUM" xml:space="preserve">
+    <value>Leve-Moderado</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_MEDIUM" xml:space="preserve">
+    <value>Medio</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_MEDIUM_HIGH" xml:space="preserve">
+    <value>Moderado-Alto</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_HIGH" xml:space="preserve">
+    <value>Alto</value>
+  </data>
+  <data name="str_Shell_HelpPage_Advices" xml:space="preserve">
+    <value>Página de consejos</value>
+  </data>
+  <data name="str_Shell_HelpPage_Advices_Msg" xml:space="preserve">
+    <value>Nada más finalizar un test, se mostrará una nueva pantalla con recomendaciones adaptadas a tu resultado en el mismo. En primer lugar, aparecerá una estimación general, y más adelante aparecerán una o varias categorías de consejos. Si haces clic en cualquiera de ellas, se te redirigirá a una nueva pantalla donde se mostrarán los consejos asociados a dicha categoría en formato carrusel (desplazándose de derecha a izquierda). Estos consejos incluyen imágenes relevantes o, en algunos casos, vídeos y audios para ayudarte en tu situación.</value>
   </data>
 </root>

@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MejorAppTG1.MyProfilePage"
              xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
+             xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
+             xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
              Shell.BackgroundColor="{StaticResource SecondaryColor1}" Title="MejorAppT" Appearing="OnPageAppearing">
     <ContentPage.Background>
         <LinearGradientBrush EndPoint="0,1">
@@ -21,14 +23,12 @@
                 <ActivityIndicator IsRunning="True" Color="{StaticResource SecondaryColor1}" />
                 <Label x:Name="LblLoading" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultHistoryPage_Loading}" FontSize="18" TextColor="{StaticResource FontColor1}" />
             </StackLayout>
-            <Grid x:Name="GrdData" VerticalOptions="StartAndExpand" IsVisible="False">
+            <Grid x:Name="GrdData" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" IsVisible="False">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition/>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition/>
-                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <Frame Grid.Row="0" CornerRadius="0" Padding="15" BorderColor="Transparent" BackgroundColor="Transparent">
@@ -56,14 +56,57 @@
                     </Grid>
                 </Frame>
 
-                <BoxView Margin="10,0" Grid.Row="1" HeightRequest="1" Color="{StaticResource FontColor1}"/>
-                <Label TextColor="{StaticResource FontColor1}" Grid.Row="2" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblHistory}" FontSize="Title" FontAttributes="Bold"/>
-
-                <HorizontalStackLayout Grid.Row="3" HorizontalOptions="End" VerticalOptions="Center" Spacing="50">
-                    <Button BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnLastResult" Clicked="BtnLastResult_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnLastTest}" BackgroundColor="{StaticResource PrimaryColor}"/>
+                <HorizontalStackLayout Margin="20,0,0,0" Grid.Row="1" HorizontalOptions="StartAndExpand">
+                    <Border Padding="10" x:Name="FrmTabResults" Stroke="{StaticResource HeaderColor1}" BackgroundColor="{StaticResource SecondaryColor2}">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Border.GestureRecognizers>
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="25,25,0,0" />
+                        </Border.StrokeShape>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="history_icon.png" WidthRequest="20"/>
+                            <Label Text="{x:Static strings:Strings.str_ResultHistoryPage_LblHistory}"/>
+                        </HorizontalStackLayout>
+                    </Border>
+                    <Border Padding="10" x:Name="FrmTabAnalysis" Stroke="{StaticResource ButtonColor2}" BackgroundColor="{StaticResource ButtonColor4}">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        </Border.GestureRecognizers>
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="25,25,0,0" />
+                        </Border.StrokeShape>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="analysis_icon.png" WidthRequest="20"/>
+                            <Label Text="{x:Static strings:Strings.str_ResultHistoryPage_LblAnalysis}"/>
+                        </HorizontalStackLayout>
+                    </Border>
                 </HorizontalStackLayout>
+                
+                <BoxView Grid.Row="2" HeightRequest="2" Color="{StaticResource FontColor1}"/>
 
-                <Grid Grid.Row="4" HorizontalOptions="Center">
+                <VerticalStackLayout Grid.Row="3" x:Name="VslResults" Spacing="10" Padding="10" VerticalOptions="Center">
+                    <!--<HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="50">
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Label Text="Desde"/>
+                            <DatePicker x:Name="DtpFrom" BackgroundColor="{StaticResource FontColor3}" DateSelected="DtpFrom_DateSelected"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Label Text="Hasta"/>
+                            <DatePicker x:Name="DtpUntil" BackgroundColor="{StaticResource FontColor3}" DateSelected="DtpUntil_DateSelected"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <FlexLayout Wrap="Wrap" JustifyContent="Center" AlignItems="Center" HorizontalOptions="Center" VerticalOptions="Center">
+                        <freakycontrols:FreakyChip Margin="2,0" FontSize="12" StrokeThickness="2" Stroke="{StaticResource ButtonColor2}" CornerRadius="25" UnselectedBackgroundColor="{StaticResource GradientColor3}" SelectedBackgroundColor="{StaticResource SecondaryColor2}" x:Name="ChipQuick" IsSelected="True" Text="{x:Static strings:Strings.str_QuickTest}" />
+                        <freakycontrols:FreakyChip Margin="2,0" FontSize="12" StrokeThickness="2" Stroke="{StaticResource ButtonColor2}" CornerRadius="25" UnselectedBackgroundColor="{StaticResource GradientColor3}" SelectedBackgroundColor="{StaticResource SecondaryColor2}" x:Name="ChipFull" IsSelected="True" Text="{x:Static strings:Strings.str_FullTest}" />
+                        <freakycontrols:FreakyChip Margin="2,0" FontSize="12" StrokeThickness="2" Stroke="{StaticResource ButtonColor2}" CornerRadius="25" UnselectedBackgroundColor="{StaticResource GradientColor3}" SelectedBackgroundColor="{StaticResource SecondaryColor2}" x:Name="ChipTCA" IsSelected="True" Text="{x:Static strings:Strings.str_EatingTest}" />
+                    </FlexLayout>-->
+
+                    <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="Center" Spacing="50">
+                        <freakycontrols:FreakyButton BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnLastResult" Clicked="BtnLastResult_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnLastTest}" BackgroundColor="{StaticResource PrimaryColor}"/>
+                    </HorizontalStackLayout>
+
                     <VerticalStackLayout x:Name="VslNoResults" IsVisible="False" Spacing="15">
                         <Image Source="no_results_found_icon.png" WidthRequest="75"/>
                         <Label TextColor="{StaticResource FontColor1}" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblNoResults}" x:Name="LblNoResults" HorizontalOptions="Center" VerticalOptions="Center" FontSize="16"/>
@@ -110,13 +153,31 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                </Grid>
 
-                <HorizontalStackLayout IsVisible="False" x:Name="HslNavigationBtns" Grid.Row="5" HorizontalOptions="Center" VerticalOptions="Center">
-                    <Button BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" Margin="0,0,30,0" HeightRequest="40" x:Name="BtnPreviousFive" Clicked="BtnPreviousFive_Clicked" Text="{x:Static strings:Strings.str_TestPage_BtnPrevious}" BackgroundColor="{StaticResource PrimaryColor}" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_BtnPrevious}"/>
-                    <Label x:Name="LblCurrentPage" VerticalTextAlignment="Center" TextColor="{StaticResource FontColor1}" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblCurrentPage}" FontSize="17" FontAttributes="Bold"/>
-                    <Button BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" Margin="30,0,0,0" HeightRequest="40" x:Name="BtnNextFive" Clicked="BtnNextFive_Clicked" Text="{x:Static strings:Strings.str_TestPage_BtnNext}" BackgroundColor="{StaticResource PrimaryColor}" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_BtnNext}"/>
-                </HorizontalStackLayout>
+                    <HorizontalStackLayout IsVisible="False" x:Name="HslNavigationBtns" HorizontalOptions="Center" VerticalOptions="Center">
+                        <freakycontrols:FreakyButton BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" Margin="0,0,30,0" HeightRequest="40" x:Name="BtnPreviousFive" Clicked="BtnPreviousFive_Clicked" Text="{x:Static strings:Strings.str_TestPage_BtnPrevious}" BackgroundColor="{StaticResource PrimaryColor}" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_BtnPrevious}"/>
+                        <Label x:Name="LblCurrentPage" VerticalTextAlignment="Center" TextColor="{StaticResource FontColor1}" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblCurrentPage}" FontSize="17" FontAttributes="Bold"/>
+                        <freakycontrols:FreakyButton BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" Margin="30,0,0,0" HeightRequest="40" x:Name="BtnNextFive" Clicked="BtnNextFive_Clicked" Text="{x:Static strings:Strings.str_TestPage_BtnNext}" BackgroundColor="{StaticResource PrimaryColor}" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_BtnNext}"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout IsVisible="False" Grid.Row="3" x:Name="VslAnalysis" Spacing="10" Padding="10" VerticalOptions="Center">
+                    <HorizontalStackLayout VerticalOptions="Center" Spacing="10">
+                        <Label TextColor="{StaticResource FontColor1}" VerticalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblTipo}"/>
+                        <Picker TitleColor="{StaticResource FontColor1}" TextColor="{StaticResource FontColor1}" x:Name="PickTipos" />
+                    </HorizontalStackLayout>
+                    <Border x:Name="BrdChartView" Stroke="{StaticResource FontColor1}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="25"/>
+                        </Border.StrokeShape>
+                        <micro:ChartView x:Name="ChartView" HeightRequest="400"/>
+                    </Border>
+                    <VerticalStackLayout x:Name="VslNoResultsGraph" IsVisible="False" Spacing="15">
+                        <Image Source="no_results_found_icon.png" WidthRequest="75"/>
+                        <Label TextColor="{StaticResource FontColor1}" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblNoResults}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="16"/>
+                    </VerticalStackLayout>
+                    <freakycontrols:FreakyButton HorizontalOptions="Center" VerticalOptions="Center" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnCreateGraph" Clicked="BtnCreateGraph_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnCreateGraph}" BackgroundColor="{StaticResource PrimaryColor}"/>
+                </VerticalStackLayout>
             </Grid>
         </Grid>
     </ScrollView>
