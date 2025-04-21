@@ -25,11 +25,11 @@ namespace MejorAppTG1
         public const string GENDERS_MALE_KEY = "str_Genders_Man";
         public const string GENDERS_FEMALE_KEY = "str_Genders_Woman";
         public const string GENDERS_NB_KEY = "str_Genders_NB";
-        public const string FACTORS_LEVEL_LOW = "Bajo";
-        public const string FACTORS_LEVEL_LOW_MEDIUM = "Leve-Moderado";
-        public const string FACTORS_LEVEL_MEDIUM = "Medio";
-        public const string FACTORS_LEVEL_MEDIUM_HIGH = "Moderado-Alto";
-        public const string FACTORS_LEVEL_HIGH = "Alto";
+        public const string FACTORS_LEVEL_LOW = "str_FACTORS_LEVEL_LOW";
+        public const string FACTORS_LEVEL_LOW_MEDIUM = "str_FACTORS_LEVEL_LOW_MEDIUM";
+        public const string FACTORS_LEVEL_MEDIUM = "str_FACTORS_LEVEL_MEDIUM";
+        public const string FACTORS_LEVEL_MEDIUM_HIGH = "str_FACTORS_LEVEL_MEDIUM_HIGH";
+        public const string FACTORS_LEVEL_HIGH = "str_FACTORS_LEVEL_HIGH";
 
         public static bool ButtonPressed = false;
         private static MejorAppTDatabase _database;

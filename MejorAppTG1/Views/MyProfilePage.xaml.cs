@@ -3,6 +3,7 @@ using MejorAppTG1.Resources.Localization;
 using MejorAppTG1.Utils;
 using Microcharts;
 using SkiaSharp;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace MejorAppTG1;
@@ -344,9 +345,10 @@ public partial class MyProfilePage : ContentPage
             foreach (var test in tests) {
                 var answers = await App.Database.GetAnswersByTestIdAsync(test.IdTest);
                 int totalPoints = answers.Sum(a => a.ValorRespuesta);
+                var factores = GetFactores(answers, test);
                 var entry = new ChartEntry(totalPoints) {
-                    Label = test.Fecha.ToString("dd/MM/yy"),
-                    ValueLabel = totalPoints.ToString(),
+                    Label = test.Fecha.ToString("dd/MM"),
+                    ValueLabel = Strings.ResourceManager.GetString(GetCategoria(factores), CultureInfo.CurrentUICulture),
                     Color = SKColor.Parse("#31be33")
                 };
 
@@ -359,9 +361,8 @@ public partial class MyProfilePage : ContentPage
                 LineMode = LineMode.Straight,
                 LineSize = 4,
                 PointSize = 10,
-                LabelTextSize = 40,
                 LabelOrientation = Orientation.Horizontal,
-                ValueLabelOrientation = Orientation.Vertical
+                ValueLabelOrientation = Orientation.Horizontal
             };
         } else {
             VslNoResultsGraph.IsVisible = true;
@@ -370,5 +371,49 @@ public partial class MyProfilePage : ContentPage
             await VslNoResultsGraph.ScaleTo(1, 300, Easing.BounceIn);
         }
     }
+
+    private string GetCategoria(List<Factor> factores)
+    {
+        if (factores.Count == 1) {
+            return factores[0].Nivel;
+        }
+
+        var grupos = factores
+        .GroupBy(obj => obj.Nivel)
+        .Select(g => new { Nivel = g.Key, Frecuencia = g.Count() })
+        .ToList();
+
+        int maxFrecuencia = grupos.Max(g => g.Frecuencia);
+        bool todosIguales = grupos.All(g => g.Frecuencia == maxFrecuencia);
+
+        if (!todosIguales) {
+            string categoriaMasComun = grupos
+                .OrderByDescending(g => g.Frecuencia)
+                .First()
+                .Nivel;
+
+            return categoriaMasComun;
+        }
+        else {
+            double avg = factores.Average(obj => obj.Puntuacion);
+            return factores
+                .OrderBy(obj => Math.Abs(obj.Puntuacion - avg))
+                .First().Nivel;
+        }
+    }
+
+    private List<Factor> GetFactores(List<Answer> preguntas, Test tipoTest)
+    {
+        List<Factor> factores = new();
+        if (tipoTest.Tipo.Equals(App.QUICK_TEST_KEY) || tipoTest.Tipo.Equals(App.FULL_TEST_KEY)) {
+            for (int i = 1; i <= 3; i++) {
+                factores.Add(ScoreCalculator.CalculoFactores(preguntas, i.ToString(), tipoTest));
+            }
+        } else {
+            factores.Add(ScoreCalculator.CalculoFactores(preguntas, App.FACTORS_1, tipoTest));
+        }
+        return factores;
+    }
+
     #endregion
 }

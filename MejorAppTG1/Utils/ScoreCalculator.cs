@@ -53,7 +53,7 @@ namespace MejorAppTG1.Utils
 
         private static string CalcularNivel(Test tipoTest, string factor, int totalFactor)
         {
-            string nivel = "";
+            string nivel = string.Empty;
             switch (tipoTest.Tipo) {
                 case App.QUICK_TEST_KEY:
                     nivel = NivelesRapido(totalFactor, factor);

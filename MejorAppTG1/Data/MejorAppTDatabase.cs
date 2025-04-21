@@ -96,7 +96,6 @@ public class MejorAppTDatabase
     {
         return _database.Table<Test>()
             .Where(t => t.IdUser == userId && t.Terminado && t.Tipo.Equals(tipo))
-            .OrderByDescending(x => x.Fecha)
             .ToListAsync();
     }
 

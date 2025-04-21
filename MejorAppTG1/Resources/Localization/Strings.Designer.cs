@@ -882,6 +882,51 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a High.
+        /// </summary>
+        internal static string str_FACTORS_LEVEL_HIGH {
+            get {
+                return ResourceManager.GetString("str_FACTORS_LEVEL_HIGH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Low.
+        /// </summary>
+        internal static string str_FACTORS_LEVEL_LOW {
+            get {
+                return ResourceManager.GetString("str_FACTORS_LEVEL_LOW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Low-Moderate.
+        /// </summary>
+        internal static string str_FACTORS_LEVEL_LOW_MEDIUM {
+            get {
+                return ResourceManager.GetString("str_FACTORS_LEVEL_LOW_MEDIUM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Medium.
+        /// </summary>
+        internal static string str_FACTORS_LEVEL_MEDIUM {
+            get {
+                return ResourceManager.GetString("str_FACTORS_LEVEL_MEDIUM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Moderate-High.
+        /// </summary>
+        internal static string str_FACTORS_LEVEL_MEDIUM_HIGH {
+            get {
+                return ResourceManager.GetString("str_FACTORS_LEVEL_MEDIUM_HIGH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Anxiety (complete).
         /// </summary>
         internal static string str_FullTest {
@@ -2920,6 +2965,24 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Advices page.
+        /// </summary>
+        internal static string str_Shell_HelpPage_Advices {
+            get {
+                return ResourceManager.GetString("str_Shell_HelpPage_Advices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a As soon as you finish a test, a new screen will be displayed with recommendations adapted to your test result. First, a general estimate will appear, and then one or more categories of tips will appear. If you click on any of these, you will be redirected to a new screen where the tips associated with that category will be displayed in a carousel format (scrolling from right to left). These tips include relevant images or, in some cases, videos and audios to help you in your situation..
+        /// </summary>
+        internal static string str_Shell_HelpPage_Advices_Msg {
+            get {
+                return ResourceManager.GetString("str_Shell_HelpPage_Advices_Msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Welcome to MejorAppT! Here you can consult the most essential help to learn how to use and navigate the app. Click on any of the following categories to get more information..
         /// </summary>
         internal static string str_Shell_HelpPage_MainHeader {
@@ -2952,8 +3015,9 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a In the &quot;My profile&quot; tab, you can see the details of the profile currently logged in to the application (name, age and gender). Remember that you can change these details or even create a new user from the menu in the top right corner. You can also change your profile picture by clicking on the picture itself.
-        ///Just below, you will see a list of the tests you have completed with this user in chronological order, with the most recent one first. If you click on any of them, the tips associated with your answers [resto de la cadena truncado]&quot;;.
+        ///   Busca una cadena traducida similar a In the &quot;My profile&quot; tab, you can see the details of the profile currently logged in to the application (photo, name, age and gender). Remember that you can change these details or even create a new user from the menu in the top right corner.
+        ///Just below, you will see two tabs: &quot;Test history&quot; and &quot;Result analysis&quot;:
+        ///• In the first tab, you will see a list of the tests you have completed with this user in chronological order, with the most recent one first. If you click on any of them, the tips associated wit [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_Shell_HelpPage_MyProfile_Msg {
             get {
@@ -2983,7 +3047,7 @@ namespace MejorAppTG1.Resources.Localization {
         ///   Busca una cadena traducida similar a In the top navigation bar, you can change between the two main tabs that make up the app: the main menu and your profile. Below you&apos;ll find more details about each of these tabs.
         ///• By clicking on (i), you can see information about this project, the involved developers and the studies that endorse this app.
         ///• By clicking on (?), you can access the app&apos;s help, as you will have already been able to see for yourself.
-        ///• Finally, by clicking on the kebab menu (the three little dots in the top right corner), you w [resto de la cadena truncado]&quot;;.
+        ///• Finally, by clicking on the gear icon, a menu will open with options that will allow you to l [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_Shell_HelpPage_TopBar_Msg {
             get {
@@ -2992,7 +3056,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Main menu.
+        ///   Busca una cadena traducida similar a Main Menu.
         /// </summary>
         internal static string str_Shell_MainMenuTab {
             get {

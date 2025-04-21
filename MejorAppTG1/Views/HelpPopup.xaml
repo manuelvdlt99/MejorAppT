@@ -102,6 +102,35 @@
                         SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_MainMenu_Msg}" />
                 </toolkit:Expander>
 
+                <!-- Expander: Advices -->
+                <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
+                    <toolkit:Expander.Header>
+                        <Grid BackgroundColor="{StaticResource SecondaryColor1}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                Text="{x:Static strings:Strings.str_Shell_HelpPage_Advices}"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource FontColor3}"
+                                Padding="10"
+                                SemanticProperties.HeadingLevel="Level2"
+                                SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_Advices}" />
+                            <Image Grid.Column="1" Source="flechaabajo.png" HorizontalOptions="End" HeightRequest="20" Margin="5"/>
+                        </Grid>
+                    </toolkit:Expander.Header>
+                    <Label
+                        Text="{x:Static strings:Strings.str_Shell_HelpPage_Advices_Msg}"
+                        BackgroundColor="{StaticResource SecondaryColor2}"
+                        FontSize="16"
+                        TextColor="{StaticResource FontColor1}"
+                        HorizontalTextAlignment="Start"
+                        Padding="10"
+                        SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_Advices_Msg}" />
+                </toolkit:Expander>
+
                 <!-- Expander: Profile -->
                 <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
                     <toolkit:Expander.Header>
