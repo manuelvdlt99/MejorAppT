@@ -12,6 +12,9 @@ namespace MejorAppTG1;
 public partial class LoginPage : ContentPage {
 
     #region Constructores
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="LoginPage"/>.
+    /// </summary>
     public LoginPage()
     {
         InitializeComponent();
@@ -24,6 +27,11 @@ public partial class LoginPage : ContentPage {
     #endregion
 
     #region Eventos
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Crear usuario. Abre un popup modal con el formulario de creación de usuario.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void CrearUsuario_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
@@ -32,34 +40,18 @@ public partial class LoginPage : ContentPage {
             var popup = new SignUpPopup();
             var result = await Application.Current.MainPage.ShowPopupAsync(popup);
 
-            if (result is ValueTuple<string, int, string, string> inputs) {
-                string newName = inputs.Item1;
-                int newAge = inputs.Item2;
-                string newGender = inputs.Item3;
-                string pfpFilePath = inputs.Item4;
-
-                User newUser = new() {
-                    Nombre = newName,
-                    Edad = newAge,
-                    Genero = newGender,
-                    Imagen = pfpFilePath
-                };
-
-                int localId = await App.Database.AddUsuarioAsync(newUser);
-                Preferences.Set(App.USER_ID_KEY, localId);
-                newUser.IdUsuario = localId;
-                App.CurrentUser = newUser;
-
-                Application.Current.MainPage = new AppShell();
-
-                SemanticScreenReader.Announce(string.Format(Strings.str_SemanticProperties_LoginPage_UserCreated, newName));
-            }
+            createUser(result);
         }
         finally {
             App.ButtonPressed = false;
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Seleccionar usuario. Abre un popup modal con todos los usuarios almacenados.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void BtnLogIn_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
@@ -75,19 +67,60 @@ public partial class LoginPage : ContentPage {
                 var popup = new UserSelectPopup(activeUsers);
                 var selectedUser = await Application.Current.MainPage.ShowPopupAsync(popup) as User;
 
-                if (selectedUser != null) {
-                    App.CurrentUser = selectedUser;
-
-                    Preferences.Set(App.USER_ID_KEY, selectedUser.IdUsuario);
-
-                    Application.Current.MainPage = new AppShell();
-
-                    SemanticScreenReader.Announce(string.Format(Strings.str_SemanticProperties_LoginPage_BtnLogIn_Success, selectedUser.Nombre));
-                }
+                selectUser(selectedUser);
             }
         }
         finally {
             App.ButtonPressed = false;
+        }
+    }
+    #endregion
+
+    #region Métodos    
+    /// <summary>
+    /// Almacena los datos del usuario en la base de datos, lo guarda como el usuario actual y abre el menú principal de la aplicación.
+    /// </summary>
+    /// <param name="result">El resultado del formulario de creación de usuario.</param>
+    private async void createUser(object result)
+    {
+        if (result is ValueTuple<string, int, string, string> inputs) {
+            string newName = inputs.Item1;
+            int newAge = inputs.Item2;
+            string newGender = inputs.Item3;
+            string pfpFilePath = inputs.Item4;
+
+            User newUser = new() {
+                Nombre = newName,
+                Edad = newAge,
+                Genero = newGender,
+                Imagen = pfpFilePath
+            };
+
+            int localId = await App.Database.AddUsuarioAsync(newUser);
+            Preferences.Set(App.USER_ID_KEY, localId);
+            newUser.IdUsuario = localId;
+            App.CurrentUser = newUser;
+
+            Application.Current.MainPage = new AppShell();
+
+            SemanticScreenReader.Announce(string.Format(Strings.str_SemanticProperties_LoginPage_UserCreated, newName));
+        }
+    }
+
+    /// <summary>
+    /// Guarda el usuario seleccionado como el actual y abre el menú principal de la aplicación.
+    /// </summary>
+    /// <param name="selectedUser">El usuario seleccionado.</param>
+    private async void selectUser(User selectedUser)
+    {
+        if (selectedUser != null) {
+            App.CurrentUser = selectedUser;
+
+            Preferences.Set(App.USER_ID_KEY, selectedUser.IdUsuario);
+
+            Application.Current.MainPage = new AppShell();
+
+            SemanticScreenReader.Announce(string.Format(Strings.str_SemanticProperties_LoginPage_BtnLogIn_Success, selectedUser.Nombre));
         }
     }
     #endregion

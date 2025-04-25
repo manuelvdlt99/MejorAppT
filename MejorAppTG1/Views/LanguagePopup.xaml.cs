@@ -11,6 +11,9 @@ public partial class LanguagePopup : Popup
     #endregion
 
     #region Constructores
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="LanguagePopup"/>.
+    /// </summary>
     public LanguagePopup()
     {
         InitializeComponent();
@@ -26,7 +29,12 @@ public partial class LanguagePopup : Popup
     }
     #endregion
 
-    #region Eventos
+    #region Eventos    
+    /// <summary>
+    /// Maneja el evento de pulsación sobre un idioma. Si es distinto al actual, almacena el idioma seleccionado en las preferencias y refresca la app desde el menú principal.
+    /// </summary>
+    /// <param name="sender">El idioma pulsado.</param>
+    /// <param name="e">La instancia <see cref="TappedEventArgs"/> que contiene los datos del evento.</param>
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         if (sender is Frame frame && frame.BindingContext is LanguageItem selectedLanguage) {

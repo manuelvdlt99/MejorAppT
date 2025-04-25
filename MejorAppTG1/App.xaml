@@ -6,8 +6,6 @@
              x:Class="MejorAppTG1.App">
     <Application.Resources>
         <ResourceDictionary>
-            <converters:ContenidoToBackgroundColorConverter x:Key="ContenidoToBackgroundColorConverter" />
-            <converters:ContenidoToFontColorConverter x:Key="ContenidoToFontColorConverter" />
             <converters:TranslationKeyConverter x:Key="TranslationKeyConverter" />
             <converters:StringToMediaSourceConverter x:Key="StringToMediaSourceConverter" />
             <converters:NullToDefaultImageConverter x:Key="NullToDefaultImageConverter" />

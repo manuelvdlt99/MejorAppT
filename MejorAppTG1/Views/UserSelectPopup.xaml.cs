@@ -18,6 +18,10 @@ public partial class UserSelectPopup : Popup
     #endregion
 
     #region Constructores
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="UserSelectPopup"/>.
+    /// </summary>
+    /// <param name="usuarios">La lista de usuarios almacenados.</param>
     public UserSelectPopup(List<User> usuarios)
 	{
 		InitializeComponent();
@@ -26,6 +30,11 @@ public partial class UserSelectPopup : Popup
     #endregion
 
     #region Eventos
+    /// <summary>
+    /// Maneja el cambio de contexto de cada texto de edad. Muestra cada edad cargada.
+    /// </summary>
+    /// <param name="sender">El texto detectado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void LblAge_BindingContextChanged(object sender, EventArgs e)
     {
         var edadLabel = sender as Label;
@@ -38,6 +47,11 @@ public partial class UserSelectPopup : Popup
         }
     }
 
+    /// <summary>
+    /// Maneja el cambio de contexto de cada texto de género. Muestra cada género cargado.
+    /// </summary>
+    /// <param name="sender">El texto detectado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void LblGender_BindingContextChanged(object sender, EventArgs e)
     {
         var generoLabel = sender as Label;
@@ -53,6 +67,11 @@ public partial class UserSelectPopup : Popup
         }
     }
 
+    /// <summary>
+    /// Maneja el cambio de contexto de cada tarjeta de usuario. Permite adaptar el lector de pantalla a cada usuario concreto.
+    /// </summary>
+    /// <param name="sender">La tarjeta detectada.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void Frame_BindingContextChanged(object sender, EventArgs e)
     {
         var currentFrame = sender as Frame;
@@ -64,6 +83,11 @@ public partial class UserSelectPopup : Popup
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Cancelar. Cierra el popup.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void BtnCancel_Clicked(object sender, EventArgs e)
     {
         if (_buttonPressed) return;
@@ -76,6 +100,11 @@ public partial class UserSelectPopup : Popup
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Confirmar. Cierra el popup y devuelve el usuario selecionado al formulario que llamó al popup.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void BtnConfirm_Clicked(object sender, EventArgs e)
     {
         if (_buttonPressed) return;
@@ -93,6 +122,11 @@ public partial class UserSelectPopup : Popup
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación sobre una tarjeta. Selecciona el usuario asociado y lo marca en la interfaz.
+    /// </summary>
+    /// <param name="sender">El usuario pulsado.</param>
+    /// <param name="e">La instancia <see cref="TappedEventArgs"/> que contiene los datos del evento.</param>
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         var frame = sender as Frame;
@@ -109,13 +143,21 @@ public partial class UserSelectPopup : Popup
     }
     #endregion
 
-    #region Métodos
+    #region Métodos    
+    /// <summary>
+    /// Restablece un Frame a sus colores iniciales.
+    /// </summary>
+    /// <param name="frame">El Frame a modificar.</param>
     private void ResetFrameColor(Frame frame)
     {
         frame.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
         frame.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
     }
 
+    /// <summary>
+    /// Actualiza los colores del Frame del usuario seleccionado.
+    /// </summary>
+    /// <param name="selectedFrame">El Frame seleccionado.</param>
     private void UpdateSelectedFrameBorder(Frame selectedFrame)
     {
         selectedFrame.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];

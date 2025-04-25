@@ -15,7 +15,13 @@ namespace MejorAppTG1
         private Test _test;
         #endregion
 
-        #region Constructores
+        #region Constructores        
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase <see cref="TestPage"/>.
+        /// </summary>
+        /// <param name="cuestionario">El test actual de la base de datos.</param>
+        /// <param name="questions">Las preguntas del test.</param>
+        /// <param name="unfinished">Si es <c>true</c>, es un test a medias. En caso contrario, es un test nuevo.</param>
         public TestPage(Test cuestionario, List<Question> questions, bool unfinished)
         {
             InitializeComponent();
@@ -45,6 +51,11 @@ namespace MejorAppTG1
         #endregion
 
         #region Eventos
+        /// <summary>
+        /// Maneja el evento de pulsación de cualquier botón de respuesta. Almacena la respuesta en la base de datos.
+        /// </summary>
+        /// <param name="sender">El botón pulsado.</param>
+        /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
         private async void OnBtnEncuesta_Clicked(object sender, EventArgs e)
         {
             var button = (Button)sender;
@@ -72,6 +83,11 @@ namespace MejorAppTG1
             await progressBar.ProgressTo(progress, 150, Easing.SinInOut);
         }
 
+        /// <summary>
+        /// Maneja el evento de pulsación del botón de Anterior. Pasa el formulario a la pregunta anterior.
+        /// </summary>
+        /// <param name="sender">El botón pulsado.</param>
+        /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
         private void BtnAnterior_Clicked(object sender, EventArgs e)
         {
             if (_index > 0) {
@@ -80,6 +96,11 @@ namespace MejorAppTG1
             }
         }
 
+        /// <summary>
+        /// Maneja el evento de pulsación del botón de Siguiente/Finalizar. Pasa el formulario a la siguiente pregunta o, si es la última, calcula los resultados y muestra la pantalla de recomendaciones.
+        /// </summary>
+        /// <param name="sender">El botón pulsado.</param>
+        /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
         private async void BtnSiguiente_Clicked(object sender, EventArgs e)
         {
             if (App.ButtonPressed) return;
@@ -134,7 +155,9 @@ namespace MejorAppTG1
             }
         }
 
-
+        /// <summary>
+        /// Maneja el evento de aparición de la pantalla.
+        /// </summary>
         private void ContentPage_Loaded()
         {
             LblTitulo.Text = Strings.ResourceManager.GetString(_test.Tipo, CultureInfo.CurrentUICulture); ;
@@ -146,6 +169,14 @@ namespace MejorAppTG1
             ActualizarProgreso();
         }
 
+        /// <summary>
+        /// Determina el comportamiento de la aplicación al pulsar el botón de Atrás. Si el usuario ha respondido alguna pregunta, se le pregunta si quiere guardar su test para continuarlo más tarde. Si no cancela la petición, volverá en cualquier caso al menú principal.
+        /// </summary>
+        /// <returns>
+        ///   <see langword="true" /> si se ha realizado la navegación hacia atrás, si no <see langword="false" />.
+        /// </returns>
+        /// <remarks>
+        /// </remarks>
         protected override bool OnBackButtonPressed()
         {
             if ((_selectedButton != null && _index == 0) || _index > 0) { // Si ya ha respondido a la primera pregunta, que muestre la advertencia
@@ -173,7 +204,10 @@ namespace MejorAppTG1
         }
         #endregion
 
-        #region Métodos
+        #region Métodos        
+        /// <summary>
+        /// Inicializa el test.
+        /// </summary>
         private async Task InitializeAsync()
         {
             var savedAnswers = await GetSavedAnswers();
@@ -191,11 +225,18 @@ namespace MejorAppTG1
             ContentPage_Loaded();
         }
 
+        /// <summary>
+        /// Devuelve las respuestas almacenadas del test actual.
+        /// </summary>
+        /// <returns>Una lista con las respuestas.</returns>
         private async Task<List<Answer>> GetSavedAnswers()
         {
             return await App.Database.GetAnswersByTestIdAsync(_test.IdTest);
         }
 
+        /// <summary>
+        /// Cambia la pregunta y actualiza los botones.
+        /// </summary>
         private void ActualizarProgreso()
         {
             LblProgreso.Text = string.Format(Strings.str_TestPage_QuestionCount, (_index + 1), _questions.Count);
@@ -211,6 +252,10 @@ namespace MejorAppTG1
             SemanticScreenReader.Announce(string.Format(Strings.str_SemanticProperties_TestPage_QuestionCount, (_index + 1), _questions.Count));
             SemanticScreenReader.Announce(Strings.ResourceManager.GetString(locId, CultureInfo.CurrentUICulture));
         }
+
+        /// <summary>
+        /// Configura los botones según el índice de la pregunta.
+        /// </summary>
         private void ConfigurarBotones()
         {
             BtnAnterior.IsEnabled = _index > 0;
@@ -223,6 +268,10 @@ namespace MejorAppTG1
                 : Strings.str_TestPage_BtnNext;
         }
 
+        /// <summary>
+        /// Cambia el color de los botones según el valor que se haya seleccionado.
+        /// </summary>
+        /// <param name="valorSeleccionado">El valor seleccionado.</param>
         private void CambiarColorBotones(int valorSeleccionado)
         {
             foreach (var child in VslBotones.Children) {

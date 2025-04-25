@@ -9,7 +9,10 @@ public partial class AboutPopup : Popup
     private bool _buttonPressed = false;
     #endregion
 
-    #region Constructores
+    #region Constructores    
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="AboutPopup"/>.
+    /// </summary>
     public AboutPopup()
     {
         InitializeComponent();
@@ -17,6 +20,11 @@ public partial class AboutPopup : Popup
     #endregion
 
     #region Eventos
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Cerrar. Cierra el popup.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void BtnClose_Clicked(object sender, EventArgs e)
     {
         if (_buttonPressed) return;
@@ -29,6 +37,11 @@ public partial class AboutPopup : Popup
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de abrir/cerrar un Expander.
+    /// </summary>
+    /// <param name="sender">El Expander que ha cambiado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void Expander_ExpandedChanged(object sender, EventArgs e)
     {
         if (sender is Expander expander && expander.Header is Layout headerLayout) {

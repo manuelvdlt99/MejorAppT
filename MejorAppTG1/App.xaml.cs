@@ -1,6 +1,5 @@
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
-using Firebase.Database;
 using MejorAppTG1.Data;
 using MejorAppTG1.Models;
 using MejorAppTG1.Resources.Localization;
@@ -9,33 +8,111 @@ using System.Globalization;
 
 namespace MejorAppTG1
 {
+    /// <summary>
+    /// Clase general que inicializa la aplicación y contiene todos los métodos, objetos y constantes utilizadas en todas (o la mayoría) las partes de la misma.
+    /// </summary>
+    /// <seealso cref="Microsoft.Maui.Controls.Application" />
     public partial class App : Application
     {
+        /// <summary>
+        /// La clave en las preferencias del usuario que ha iniciado sesión.
+        /// </summary>
         public const string USER_ID_KEY = "user_id";
+        /// <summary>
+        /// La clave en las preferencias del idioma seleccionado.
+        /// </summary>
         public const string USER_LANGUAGE = "language";
+        /// <summary>
+        /// Modo de sincronización para cuando se inicia la aplicación.
+        /// </summary>
         public const string SYNC_MODE_OPEN = "open";
+        /// <summary>
+        /// Modo de sincronización para cuando se cierra la aplicación.
+        /// </summary>
         public const string SYNC_MODE_CLOSE = "close";
+        /// <summary>
+        /// Clave en recursos del test de TCA.
+        /// </summary>
         public const string TCA_TEST_KEY = "str_EatingTest";
+        /// <summary>
+        /// Clave en recursos del test de ansiedad rápido.
+        /// </summary>
         public const string QUICK_TEST_KEY = "str_QuickTest";
+        /// <summary>
+        /// Clave en recursos del test de ansiedad completo.
+        /// </summary>
         public const string FULL_TEST_KEY = "str_FullTest";
+        /// <summary>
+        /// Identificador del factor 1 (tests de ansiedad).
+        /// </summary>
         public const string FACTORS_1 = "1";
+        /// <summary>
+        /// Identificador del factor 2 (tests de ansiedad).
+        /// </summary>
         public const string FACTORS_2 = "2";
+        /// <summary>
+        /// Identificador del factor 3 (tests de ansiedad).
+        /// </summary>
         public const string FACTORS_3 = "3";
+        /// <summary>
+        /// Identificador del factor 4 (tests de ansiedad).
+        /// </summary>
         public const string FACTORS_4 = "4";
+        /// <summary>
+        /// Clave en recursos del género masculino.
+        /// </summary>
         public const string GENDERS_MALE_KEY = "str_Genders_Man";
+        /// <summary>
+        /// Clave en recursos del género femenino.
+        /// </summary>
         public const string GENDERS_FEMALE_KEY = "str_Genders_Woman";
+        /// <summary>
+        /// Clave en recursos del género no binario.
+        /// </summary>
         public const string GENDERS_NB_KEY = "str_Genders_NB";
+        /// <summary>
+        /// Clave en recursos del nivel bajo de resultado de test.
+        /// </summary>
         public const string FACTORS_LEVEL_LOW = "str_FACTORS_LEVEL_LOW";
+        /// <summary>
+        /// Clave en recursos del nivel medio-bajo de resultado de test.
+        /// </summary>
         public const string FACTORS_LEVEL_LOW_MEDIUM = "str_FACTORS_LEVEL_LOW_MEDIUM";
+        /// <summary>
+        /// Clave en recursos del nivel medio de resultado de test.
+        /// </summary>
         public const string FACTORS_LEVEL_MEDIUM = "str_FACTORS_LEVEL_MEDIUM";
+        /// <summary>
+        /// Clave en recursos del nivel medio-alto de resultado de test.
+        /// </summary>
         public const string FACTORS_LEVEL_MEDIUM_HIGH = "str_FACTORS_LEVEL_MEDIUM_HIGH";
+        /// <summary>
+        /// Clave en recursos del nivel alto de resultado de test.
+        /// </summary>
         public const string FACTORS_LEVEL_HIGH = "str_FACTORS_LEVEL_HIGH";
 
+        /// <summary>
+        /// Variable global para evitar que se puedan pulsar varios botones o el mismo botón varias veces y provocar errores inesperados. 
+        /// </summary>
         public static bool ButtonPressed = false;
         private static MejorAppTDatabase _database;
         private static FirebaseService _firebase;
         private bool _isSyncing = false;
+
+        /// <summary>
+        /// Permite recuperar o modificar el usuario que ha iniciado sesión actualmente en la aplicación.
+        /// </summary>
+        /// <value>
+        /// El usuario con la sesión activa.
+        /// </value>
         public static User CurrentUser { get; set; }
+
+        /// <summary>
+        /// La base de datos local y offline de SQLite que utiliza la aplicación para almacenar los datos de los usuarios.
+        /// </summary>
+        /// <value>
+        /// La base de datos de SQLite.
+        /// </value>
         public static MejorAppTDatabase Database
         {
             get {
@@ -47,6 +124,12 @@ namespace MejorAppTG1
             }
         }
 
+        /// <summary>
+        /// La base de datos en la nube de Firebase que utiliza la aplicación para almacenar estadísticas de todos los usuarios.
+        /// </summary>
+        /// <value>
+        /// La base de datos de Firebase.
+        /// </value>
         public static FirebaseService Firebase
         {
             get {
@@ -57,6 +140,12 @@ namespace MejorAppTG1
             }
         }
 
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase <see cref="App"/>.
+        /// </summary>
+        /// <remarks>
+        /// Entre otras cosas, este constructor fuerza el modo claro, establece la localización almacenada o predeterminada y, dependiendo de si un usuario tenía su sesión abierta o la cerró, abre el menú principal o la pantalla de inicio.
+        /// </remarks>
         public App()
         {
             Application.Current.UserAppTheme = AppTheme.Light;
@@ -88,11 +177,18 @@ namespace MejorAppTG1
             return window;
         }
 
+        /// <summary>
+        /// Almacena en CurrentUser el usuario que ha iniciado sesión y que está guardado en las preferencias de la aplicación.
+        /// </summary>
         public async void GetCurrentUser()
         {
             App.CurrentUser = await App.Database.GetUserByIdAsync(Preferences.Get(USER_ID_KEY, 0));
         }
 
+        /// <summary>
+        /// Método genérico que permite animar un componente Frame que se le pase con un efecto de pulsación (reduce su tamaño y vuelve a su estado original).
+        /// </summary>
+        /// <param name="sender">El Frame a animar.</param>
         public static async void AnimateFrameInOut(object sender)
         {
             await ((Frame)sender).ScaleTo(0.95, 100, Easing.CubicInOut);    // Reducir un poco el tamaño
@@ -113,6 +209,11 @@ namespace MejorAppTG1
             base.OnSleep();
         }
 
+        /// <summary>
+        /// Inicia la tarea de sincronización de las bases de datos.
+        /// </summary>
+        /// <param name="cancellationToken">Token de cancelación utilizado para la interrupción del proceso.</param>
+        /// <param name="mode">La fase del ciclo de vida de la aplicación ("open" o "close") durante la que se realiza la sincronización.</param>
         private async Task StartSyncTask(CancellationToken cancellationToken, string mode)
         {
             if (_isSyncing) return;
@@ -130,6 +231,10 @@ namespace MejorAppTG1
             }
         }
 
+        /// <summary>
+        /// Comprueba la conexión a Internet cada cinco segundos y, cuando la detecta, inicia el proceso de sincronización de las bases de datos.
+        /// </summary>
+        /// <param name="cancellationToken">Token de cancelación utilizado para la interrupción del proceso.</param>
         public async Task WaitForInternetAndSync(CancellationToken cancellationToken)
         {
             bool noInternet = true;
@@ -158,6 +263,10 @@ namespace MejorAppTG1
             await App.Database.DeleteSyncedTestsWithDeletedUserInLocal();
         }
 
+        /// <summary>
+        /// Compruba la conexión a Internet una única vez y, si la encuentra, inicia el proceso de sincronización de las bases de datos.
+        /// </summary>
+        /// <param name="cancellationToken">Token de cancelación utilizado para la interrupción del proceso.</param>
         public async Task CheckInternetAndSync(CancellationToken cancellationToken)
         {
             if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet) {

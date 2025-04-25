@@ -11,7 +11,11 @@ public partial class AdvicesPage : ContentPage
     private AdviceCategory _category;
     #endregion
 
-    #region Constructores
+    #region Constructores    
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="AdvicesPage"/>.
+    /// </summary>
+    /// <param name="category">La categoría de consejos seleccionada.</param>
     public AdvicesPage(AdviceCategory category)
 	{
 		InitializeComponent();
@@ -20,7 +24,12 @@ public partial class AdvicesPage : ContentPage
     }
     #endregion
 
-    #region Eventos
+    #region Eventos    
+    /// <summary>
+    /// Maneja el evento de aparición de la pantalla. Muestra una pantalla de carga que dura mientras un hilo secundario carga los consejos de la categoría seleccionada.
+    /// </summary>
+    /// <param name="sender">La página que aparece.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void ContentPage_Appearing(object sender, EventArgs e)
     {
         try {
@@ -47,6 +56,11 @@ public partial class AdvicesPage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Volver. Cierra la pantalla actual.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void BtnFinish_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
@@ -59,18 +73,33 @@ public partial class AdvicesPage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación de la flecha izquierda. Mueve el carrusel un paso a la izquierda.
+    /// </summary>
+    /// <param name="sender">La flecha pulsada.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void BtnLeft_Clicked(object sender, EventArgs e)
     {
         ClvAdvices_ItemSwiped(ClvAdvices, new ItemSwipedEventArgs(PanCardView.Enums.ItemSwipeDirection.Right, ClvAdvices.SelectedIndex, null));
         ClvAdvices.SelectedIndex -= 1;
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación de la flecha derecha. Mueve el carrusel un paso a la derecha.
+    /// </summary>
+    /// <param name="sender">La flecha pulsada.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void BtnRight_Clicked(object sender, EventArgs e)
     {
         ClvAdvices_ItemSwiped(ClvAdvices, new ItemSwipedEventArgs(PanCardView.Enums.ItemSwipeDirection.Left, ClvAdvices.SelectedIndex, null));
         ClvAdvices.SelectedIndex += 1;
     }
 
+    /// <summary>
+    /// Maneja el evento de cambiar de elemento en el carrusel deslizando con el dedo a la derecha o a la izquierda. Actualiza las flechas de desplazamiento manual según la posición nueva en la que se encuentre el carrusel.
+    /// </summary>
+    /// <param name="view">El carrusel accionado.</param>
+    /// <param name="args">La instancia <see cref="ItemSwipedEventArgs"/> que contiene los datos del evento.</param>
     private void ClvAdvices_ItemSwiped(PanCardView.CardsView view, ItemSwipedEventArgs args)
     {
         if (args.Index + 1 == view.ItemsCount - 1 && args.Direction == PanCardView.Enums.ItemSwipeDirection.Left) {
@@ -91,6 +120,11 @@ public partial class AdvicesPage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación de un botón de Ver en YouTube. Abre el vídeo asociado al botón pulsado en la aplicación predeterminada del usuario.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         if (sender is Frame frame && frame.BindingContext is string video) {
@@ -104,6 +138,11 @@ public partial class AdvicesPage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Maneja el cambio de contexto de cada botón de Ver en YouTube. Muestra cada vídeo cargado.
+    /// </summary>
+    /// <param name="sender">El botón detectado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void Frame_BindingContextChanged(object sender, EventArgs e)
     {
         if (sender is not Frame frame || frame.BindingContext is not string url)
@@ -120,7 +159,10 @@ public partial class AdvicesPage : ContentPage
     }
     #endregion
 
-    #region Métodos
+    #region Métodos    
+    /// <summary>
+    /// Muestra los consejos de la categoría actual en la pantalla.
+    /// </summary>
     private async Task CargarConsejosAsync()
     {
         MainThread.BeginInvokeOnMainThread(() => {
@@ -129,6 +171,11 @@ public partial class AdvicesPage : ContentPage
         });
     }
 
+    /// <summary>
+    /// Devuelve el título de un vídeo de YouTube por su URL.
+    /// </summary>
+    /// <param name="url">La URL del vídeo.</param>
+    /// <returns></returns>
     private async Task<string> GetYoutubeTitleAsync(string url)
     {
         try {

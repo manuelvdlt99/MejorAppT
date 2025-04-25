@@ -16,20 +16,32 @@ public partial class SignUpPopup : Popup
     #endregion
 
     #region Constructores
-    #endregion
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="SignUpPopup"/>.
+    /// </summary>
     public SignUpPopup()
     {
         InitializeComponent();
     }
 
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="SignUpPopup"/> con un usuario cargado para su modificación.
+    /// </summary>
+    /// <param name="user">El usuario a modificar.</param>
     public SignUpPopup(User user)
     {
         InitializeComponent();
         LblTitle.Text = Strings.str_Shell_TbiModifyProfile;
         LoadSelectedUserData(user);
     }
+    #endregion
 
     #region Eventos
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Cancelar. Cierra el popup.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void BtnCancel_Clicked(object sender, EventArgs e)
     {
         if (_buttonPressed) return;
@@ -41,6 +53,12 @@ public partial class SignUpPopup : Popup
             _buttonPressed = false;
         }
     }
+
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Confirmar. Valida las entradas de datos y, si son correctas, devuelve el resultado al formulario que llamó al popup.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void BtnConfirm_Clicked(object sender, EventArgs e)
     {
         if (_buttonPressed) return;
@@ -102,6 +120,11 @@ public partial class SignUpPopup : Popup
         }
     }
 
+    /// <summary>
+    /// Marca el género Hombre.
+    /// </summary>
+    /// <param name="sender">El Frame pulsado.</param>
+    /// <param name="e">La instancia <see cref="TappedEventArgs"/> que contiene los datos del evento.</param>
     private void TapGestureRecognizer_Tapped_Male(object sender, TappedEventArgs e)
     {
         App.AnimateFrameInOut(FrmMale);
@@ -115,6 +138,11 @@ public partial class SignUpPopup : Popup
         SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected);
     }
 
+    /// <summary>
+    /// Marca el género Mujer.
+    /// </summary>
+    /// <param name="sender">El Frame pulsado.</param>
+    /// <param name="e">La instancia <see cref="TappedEventArgs"/> que contiene los datos del evento.</param>
     private void TapGestureRecognizer_Tapped_Female(object sender, TappedEventArgs e)
     {
         App.AnimateFrameInOut(FrmFemale);
@@ -128,6 +156,11 @@ public partial class SignUpPopup : Popup
         SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected);
     }
 
+    /// <summary>
+    /// Marca el género No binario.
+    /// </summary>
+    /// <param name="sender">El Frame pulsado.</param>
+    /// <param name="e">La instancia <see cref="TappedEventArgs"/> que contiene los datos del evento.</param>
     private void TapGestureRecognizer_Tapped_NB(object sender, TappedEventArgs e)
     {
         App.AnimateFrameInOut(FrmNB);
@@ -141,6 +174,11 @@ public partial class SignUpPopup : Popup
         SemanticScreenReader.Announce(Strings.str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected);
     }
 
+    /// <summary>
+    /// Permite cambiar la foto de perfil del usuario. La aplicación pide permisos y, si el usuario los acepta, puede elegir una imagen personalizada, que se mostrará en la interfaz.
+    /// </summary>
+    /// <param name="sender">La imagen pulsada.</param>
+    /// <param name="e">La instancia <see cref="TappedEventArgs"/> que contiene los datos del evento.</param>
     private async void TapGestureRecognizer_Tapped_ImgProfile(object sender, TappedEventArgs e)
     {
         if (_buttonPressed) return;
@@ -183,9 +221,9 @@ public partial class SignUpPopup : Popup
     /// <summary>
     /// Método para evitar que se sobrescriban las imágenes si se llaman igual (al igual que Windows añade (1), (2)...)
     /// </summary>
-    /// <param name="directory"></param>
-    /// <param name="fileName"></param>
-    /// <returns></returns>
+    /// <param name="directory">El directorio donde se almacenará la imagen.</param>
+    /// <param name="fileName">El nombre original del archivo de la imagen.</param>
+    /// <returns>La ruta completa de la imagen con un nombre único en el sistema de archivos.</returns>
     private string GetUniqueFilePath(string directory, string fileName)
     {
         string filePath = Path.Combine(directory, fileName);
@@ -203,6 +241,9 @@ public partial class SignUpPopup : Popup
         return filePath;
     }
 
+    /// <summary>
+    /// Actualiza la foto de perfil.
+    /// </summary>
     private void UpdateUserImage()
     {
         if (_localPfpPath != null) {
@@ -212,18 +253,30 @@ public partial class SignUpPopup : Popup
         }
     }
 
+    /// <summary>
+    /// Actualiza un componente de entrada de texto dado si sus datos son incorrectos.
+    /// </summary>
+    /// <param name="entry">El componente de entrada de texto.</param>
     private void UpdateErrorTextInput(FreakyTextInputLayout entry)
     {
         entry.BorderStroke = (Color)Application.Current.Resources["ErrorColor1"];
         entry.TitleColor = (Color)Application.Current.Resources["ErrorColor1"];
     }
 
+    /// <summary>
+    /// Actualiza un componente de entrada de texto dado si sus datos son válidos.
+    /// </summary>
+    /// <param name="entry">El componente de entrada de texto.</param>
     private void UpdateValidTextInput(FreakyTextInputLayout entry)
     {
         entry.BorderStroke = (Color)Application.Current.Resources["ButtonColor2"];
         entry.TitleColor = (Color)Application.Current.Resources["ButtonColor2"];
     }
 
+    /// <summary>
+    /// Muestra en la interfaz los datos del usuario actual (si se está modificando).
+    /// </summary>
+    /// <param name="user">El usuario.</param>
     private void LoadSelectedUserData(User user)
     {
         EntryName.Text = user.Nombre;
@@ -234,15 +287,15 @@ public partial class SignUpPopup : Popup
             ImgProfile.Source = ImageSource.FromFile(_localPfpPath);
         }
         switch (_selectedGender) {
-            case "str_Genders_Man":
+            case App.GENDERS_MALE_KEY:
                 FrmMale.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
                 FrmMale.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
                 break;
-            case "str_Genders_Woman":
+            case App.GENDERS_FEMALE_KEY:
                 FrmFemale.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
                 FrmFemale.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
                 break;
-            case "str_Genders_NB":
+            case App.GENDERS_NB_KEY:
                 FrmNB.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
                 FrmNB.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
                 break;
