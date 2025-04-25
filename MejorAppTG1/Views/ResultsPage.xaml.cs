@@ -17,6 +17,12 @@ public partial class ResultsPage : ContentPage
 {
     #region Variables
     private List<Advice> _consejosDisponibles = new();
+    /// <summary>
+    /// Permite recuperar o modificar las categorías de consejos que se mostrarán en la pantalla de recomendaciones.
+    /// </summary>
+    /// <value>
+    /// Las categorías.
+    /// </value>
     public ObservableCollection<AdviceCategory> Categories { get; set; } = new();
 
     private Factor _factor1;
@@ -27,7 +33,14 @@ public partial class ResultsPage : ContentPage
     private bool _loaded = false;
     #endregion
 
-    #region Constructores
+    #region Constructores    
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="ResultsPage"/>.
+    /// </summary>
+    /// <param name="factor1">El factor 1 del test realizado.</param>
+    /// <param name="factor2">El factor 2 del test realizado.</param>
+    /// <param name="factor3">El factor 3 del test realizado.</param>
+    /// <param name="tipoTest">El tipo de test realizado.</param>
     public ResultsPage(Factor factor1, Factor factor2, Factor factor3, string tipoTest)
     {
         _tipoTest = tipoTest;
@@ -41,6 +54,11 @@ public partial class ResultsPage : ContentPage
     #endregion
 
     #region Eventos
+    /// <summary>
+    /// Maneja el evento de aparición de la pantalla. Muestra una pantalla de carga que dura mientras un hilo secundario carga las categorías del test realizado.
+    /// </summary>
+    /// <param name="sender">La página que aparece.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void ContentPage_Loaded(object sender, EventArgs e)
     {
         try {
@@ -62,23 +80,11 @@ public partial class ResultsPage : ContentPage
         }
     }
 
-    private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
-    {
-        /*var label = (Label)sender;
-        var formattedString = label.FormattedText;
-        string url = formattedString.Spans[1].Text;
-
-        if (!string.IsNullOrWhiteSpace(url)) {
-            try {
-                await Launcher.OpenAsync(new Uri(url));
-            }
-            catch (Exception ex) {
-                Console.WriteLine(string.Format(Strings.str_ResultsPage_LinkError, ex.Message));
-                await DisplayAlert(Strings.str_ResultHistoryPage_ImgProfile_Error, Strings.str_ResultsPage_LinkError_Msg, Strings.str_ResultHistoryPage_BtnCheck_OK);
-            }
-        }*/
-    }
-
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Volver. Cierra la pantalla actual.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void BtnFinish_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
@@ -91,6 +97,11 @@ public partial class ResultsPage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación sobre una categoría. Abre la pantalla de consejos de la categoría seleccionada.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void FreakyButton_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
@@ -105,8 +116,10 @@ public partial class ResultsPage : ContentPage
     }
     #endregion
 
-    #region Métodos
-    // Para saber la puntuación total del test
+    #region Métodos    
+    /// <summary>
+    /// Calcula la puntuación total del test realizado.
+    /// </summary>
     private void CalcularPuntuacionTotal()
     {
         if (_tipoTest == App.TCA_TEST_KEY) {
@@ -114,11 +127,11 @@ public partial class ResultsPage : ContentPage
         } else {
             _puntuacionTotal = _factor1.Puntuacion + _factor2.Puntuacion + _factor3.Puntuacion;
         }
-
-        
     }
 
-    // Carga los consejos en la pantalla
+    /// <summary>
+    /// Recupera los consejos del JSON y los procesa dependiendo del tipo de test realizado.
+    /// </summary>
     private async Task CargarCategoriasAsync()
     {
         if (_loaded) return;
@@ -145,7 +158,10 @@ public partial class ResultsPage : ContentPage
         _loaded = true;
     }
 
-    // Método para mostrar los consejos de Ansiedad Rápido
+    /// <summary>
+    /// Calcula y crea las categorías con los consejos asociados según los resultados del test de ansiedad rápido realizado.
+    /// </summary>
+    /// <param name="consejosDisponibles">La lista con todos los consejos disponibles.</param>
     private void AnsiedadRapidoConsejos(List<Advice> consejosDisponibles)
     {
         MainThread.BeginInvokeOnMainThread(() => {
@@ -163,7 +179,7 @@ public partial class ResultsPage : ContentPage
                 {
                     LblIntro.Text = Strings.str_ResultsPage_LblIntro_Low;
                 }
-                // CASO 1: Para TODO BIEN
+                #region CASO 1: Para TODO BIEN
                 if (_factor1.Puntuacion <= 14 && _factor3.Puntuacion <= 14 && _factor2.Puntuacion <= 1) {
                     AdviceCategory category = new AdviceCategory { ImagePath = "thumbsup_icon.png", Name = Strings.str_ResultsPage_Category_KeepItUp, Advices = new List<Advice>() };
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[12].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[12].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[12].Imagen });
@@ -172,7 +188,8 @@ public partial class ResultsPage : ContentPage
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[20].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[20].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[20].Imagen });
                     Categories.Add(category);
                 }
-                // CASO 2: PARA SOLO EL FACTOR COGNITIVO (FACTOR 1)
+                #endregion
+                #region CASO 2: PARA SOLO EL FACTOR COGNITIVO (FACTOR 1)
                 else if (_factor1.Puntuacion >= 15 && _factor3.Puntuacion <= 14 && _factor2.Puntuacion <= 1) {
                     AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[0].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[0].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[0].Imagen });
@@ -200,7 +217,8 @@ public partial class ResultsPage : ContentPage
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[15].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[15].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[15].Imagen });
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 }
-                // CASO 3: PARA SOLO EL FACTOR FISIOLÓGICO (FACTOR 3)
+                #endregion
+                #region CASO 3: PARA SOLO EL FACTOR FISIOLÓGICO (FACTOR 3)
                 else if (_factor1.Puntuacion >= 15 && _factor3.Puntuacion <= 14 && _factor2.Puntuacion <= 1) {
                     AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[5].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[5].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[5].Imagen });
@@ -224,7 +242,8 @@ public partial class ResultsPage : ContentPage
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                     Categories.Add(category);
                 }
-                // CASO 4: PARA EL FACTOR DE EVITACIÓN (FACTOR 2)
+                #endregion
+                #region CASO 4: PARA EL FACTOR DE EVITACIÓN (FACTOR 2)
                 else if (_factor1.Puntuacion <= 14 && _factor3.Puntuacion <= 14 && _factor2.Puntuacion >= 2) {
                     AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[5].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[5].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[5].Imagen });
@@ -246,7 +265,8 @@ public partial class ResultsPage : ContentPage
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                     Categories.Add(category);
                 }
-                // CASO 5: PARA LOS FACTORES COGNITIVO, FISIOLÓGICO Y EVITACIÓN (FACTOR 1, 2 Y 3)
+                #endregion
+                #region CASO 5: PARA LOS FACTORES COGNITIVO, FISIOLÓGICO Y EVITACIÓN (FACTOR 1, 2 Y 3)
                 else if (_factor1.Puntuacion >= 15 && _factor3.Puntuacion >= 15 && _factor2.Puntuacion >= 2) {
                     AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[5].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[5].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[5].Imagen });
@@ -270,7 +290,8 @@ public partial class ResultsPage : ContentPage
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                     Categories.Add(category);
                 }
-                // CASO 6: PARA FACTOR COGNITIVO Y FISIOLÓGICO (FACTORES 1 y 2)
+                #endregion
+                #region CASO 6: PARA FACTOR COGNITIVO Y FISIOLÓGICO (FACTORES 1 y 2)
                 else if (_factor1.Puntuacion >= 15 && _factor3.Puntuacion >= 15 && _factor2.Puntuacion <= 1) {
                     AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[5].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[5].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[5].Imagen });
@@ -295,7 +316,8 @@ public partial class ResultsPage : ContentPage
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                     Categories.Add(category);
                 }
-                // CASO 7: PARA FACTORES COGNITIVO Y EVITACION (FACTORES 1 y 3)
+                #endregion
+                #region CASO 7: PARA FACTORES COGNITIVO Y EVITACION (FACTORES 1 y 3)
                 else if (_factor1.Puntuacion >= 15 && _factor3.Puntuacion <= 14 && _factor2.Puntuacion >= 2) {
                     AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[5].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[5].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[5].Imagen });
@@ -319,7 +341,8 @@ public partial class ResultsPage : ContentPage
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                     Categories.Add(category);
                 }
-                // CASO 8: PARA FACTORES FISIOLÓGICO Y EVITACIÓN (FACTORES 2 y 3)
+                #endregion
+                #region CASO 8: PARA FACTORES FISIOLÓGICO Y EVITACIÓN (FACTORES 2 y 3)
                 else if (_factor1.Puntuacion <= 14 && _factor3.Puntuacion >= 15 && _factor2.Puntuacion >= 2) {
                     AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[5].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[5].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[5].Imagen });
@@ -342,6 +365,7 @@ public partial class ResultsPage : ContentPage
                     category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                     Categories.Add(category);
                 }
+                #endregion
 
                 // Estos se muestran siempre excepto para TODO BIEN
                 /*if (_factor1.Puntuacion > 14 && _factor3.Puntuacion > 14 && _factor2.Puntuacion > 1)
@@ -354,10 +378,14 @@ public partial class ResultsPage : ContentPage
         });
     }
 
-    // Método para mostratr los consejos de Ansiedad Completo
+    /// <summary>
+    /// Calcula y crea las categorías con los consejos asociados según los resultados del test de ansiedad completo realizado.
+    /// </summary>
+    /// <param name="consejosDisponibles">La lista con todos los consejos disponibles.</param>
     private void AnsiedadCompletoConsejos(List<Advice> consejosDisponibles)
     {
         MainThread.BeginInvokeOnMainThread(() => {
+            #region BAJO-BAJO-BAJO
             if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_LOW)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_Low_2;
                 AdviceCategory category = new AdviceCategory { ImagePath = "thumbsup_icon.png", Name = Strings.str_ResultsPage_Category_KeepItUp, Advices = new List<Advice>() };
@@ -367,6 +395,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[20].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[20].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[20].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region BAJO-BAJO-MEDIO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_Medium;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -396,6 +426,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region BAJO-BAJO-ALTO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_HIGH)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -425,6 +457,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region BAJO-MEDIO-BAJO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_LOW)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_Medium;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -447,6 +481,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region BAJO-MEDIO-MEDIO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_Medium;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -471,6 +507,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region BAJO-MEDIO-ALTO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_HIGH)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -495,6 +533,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region BAJO-ALTO-BAJO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_LOW)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -517,6 +557,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region BAJO-ALTO-MEDIO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -541,6 +583,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region BAJO-ALTO-ALTO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_HIGH)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -565,6 +609,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region MEDIO-BAJO-BAJO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_LOW)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_Medium;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -589,6 +635,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region MEDIO-BAJO-MEDIO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_Medium;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -614,6 +662,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region MEDIO-BAJO-ALTO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_HIGH)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -639,6 +689,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region MEDIO-MEDIO-BAJO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_LOW)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_Medium;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -662,6 +714,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region MEDIO-MEDIO-MEDIO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_Medium;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -686,6 +740,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region MEDIO-MEDIO-ALTO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_HIGH)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -710,6 +766,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region MEDIO-ALTO-BAJO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_LOW)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -733,6 +791,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region MEDIO-ALTO-MEDIO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -757,6 +817,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region MEDIO-ALTO-ALTO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_HIGH)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -781,6 +843,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region ALTO-BAJO-BAJO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_LOW)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -805,6 +869,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region ALTO-BAJO-MEDIO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -830,6 +896,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region ALTO-BAJO-ALTO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_LOW) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_HIGH)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -855,6 +923,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region ALTO-MEDIO-BAJO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_LOW)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -878,6 +948,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region ALTO-MEDIO-MEDIO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -902,6 +974,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region ALTO-MEDIO-ALTO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_HIGH)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -926,6 +1000,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region ALTO-ALTO-BAJO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_LOW)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -949,6 +1025,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region ALTO-ALTO-MEDIO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_MEDIUM)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -973,6 +1051,8 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
+            #region ALTO-ALTO-ALTO
             else if (_factor1.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor2.Nivel.Equals(App.FACTORS_LEVEL_HIGH) && _factor3.Nivel.Equals(App.FACTORS_LEVEL_HIGH)) {
                 LblIntro.Text = Strings.str_ResultsPage_LblIntro_High;
                 AdviceCategory category = new AdviceCategory { ImagePath = "advice_icon.png", Name = Strings.str_ResultsPage_Category_GeneralAdvice, Advices = new List<Advice>() };
@@ -997,10 +1077,13 @@ public partial class ResultsPage : ContentPage
                 category.Advices.Add(new Advice { Titulo = Strings.ResourceManager.GetString(consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture), Imagen = consejosDisponibles[16].Imagen });
                 Categories.Add(category);
             }
+            #endregion
         });
     }
 
-    // Método para mostrar los consejos de TCA
+    /// <summary>
+    /// Calcula y crea las categorías con los consejos asociados según los resultados del test de TCA realizado.
+    /// </summary>
     private void TCAConsejos()
     {
         MainThread.BeginInvokeOnMainThread(() => {

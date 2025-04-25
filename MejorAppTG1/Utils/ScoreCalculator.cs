@@ -5,6 +5,13 @@ namespace MejorAppTG1.Utils
 {
     public class ScoreCalculator
     {
+        /// <summary>
+        /// Calcula la puntuación obtenida y el nivel asociado de un factor concreto de un test realizado.
+        /// </summary>
+        /// <param name="preguntas">Las respuestas del test realizado.</param>
+        /// <param name="factor">El factor a calcular.</param>
+        /// <param name="tipoTest">El test realizado.</param>
+        /// <returns>Una instancia de Factor con la puntuación obtenida y el nivel obtenido.</returns>
         public static Factor CalculoFactores(List<Answer> preguntas, string factor, Test tipoTest)
         {
             int totalFactor = SumarPuntos(preguntas, factor, tipoTest);
@@ -13,6 +20,13 @@ namespace MejorAppTG1.Utils
             return new Factor(factor, totalFactor, nivel);
         }
 
+        /// <summary>
+        /// Suma la puntuación obtenida en un factor dado de un test realizado.
+        /// </summary>
+        /// <param name="preguntas">Las respuestas del test realizado.</param>
+        /// <param name="factor">El factor a calcular.</param>
+        /// <param name="tipoTest">El test realizado.</param>
+        /// <returns>La puntuación total obtenida por el usuario en el factor.</returns>
         private static int SumarPuntos(List<Answer> preguntas, string factor, Test tipoTest)
         {
             int totalFactor = 0;
@@ -51,6 +65,13 @@ namespace MejorAppTG1.Utils
             return totalFactor;
         }
 
+        /// <summary>
+        /// Obtiene el nivel equivalente a la puntuación obtenida en un factor concreto de un test realizado.
+        /// </summary>
+        /// <param name="tipoTest">El test realizado.</param>
+        /// <param name="factor">El factor a calcular.</param>
+        /// <param name="totalFactor">La puntuación total obtenida en el factor.</param>
+        /// <returns>El nivel obtenido.</returns>
         private static string CalcularNivel(Test tipoTest, string factor, int totalFactor)
         {
             string nivel = string.Empty;
@@ -68,6 +89,12 @@ namespace MejorAppTG1.Utils
             return nivel;
         }
 
+        /// <summary>
+        /// Calcula el nivel para un test de ansiedad rápido.
+        /// </summary>
+        /// <param name="totalFactor">La puntuación total obtenida en el factor.</param>
+        /// <param name="factor">El factor a calcular.</param>
+        /// <returns>El nivel obtenido.</returns>
         private static string NivelesRapido(int totalFactor, string factor)
         {
             string nivel = App.FACTORS_LEVEL_LOW;
@@ -88,16 +115,19 @@ namespace MejorAppTG1.Utils
             return nivel;
         }
 
+        /// <summary>
+        /// Calcula el nivel para un test de ansiedad completo.
+        /// </summary>
+        /// <param name="totalFactor">La puntuación total obtenida en el factor.</param>
+        /// <param name="factor">El factor a calcular.</param>
+        /// <returns>El nivel obtenido.</returns>
         private static string NivelesCompleto(int totalFactor, string factor, Test tipoTest)
         {
             string nivel = App.FACTORS_LEVEL_LOW;
             string genero = tipoTest.GeneroUser;
             int edad = tipoTest.EdadUser;
 
-            //##############################
-            //# CONDICIÓN PARA LAS MUJERES #
-            //##############################
-
+            #region MUJERES
             if (genero == App.GENDERS_FEMALE_KEY) {
                 if (edad <= 14) {
                     switch (factor) {
@@ -147,11 +177,9 @@ namespace MejorAppTG1.Utils
                     }
                 }
             }
+            #endregion
 
-            //##############################
-            //# CONDICIÓN PARA LOS HOMBRES #
-            //##############################
-
+            #region HOMBRES
             else if (genero == App.GENDERS_MALE_KEY) {
                 if (edad <= 14) {
                     switch (factor) {
@@ -201,11 +229,9 @@ namespace MejorAppTG1.Utils
                     }
                 }
             }
+            #endregion
 
-            //##############################
-            //# CONDICIÓN PARA NO BINARIOS #
-            //##############################
-
+            #region NO BINARIOS
             else if (genero == App.GENDERS_NB_KEY) {
                 if (edad <= 14) {
                     switch (factor) {
@@ -255,8 +281,15 @@ namespace MejorAppTG1.Utils
                     }
                 }
             }
+            #endregion
             return nivel;
         }
+
+        /// <summary>
+        /// Calcula el nivel para un test de TCA.
+        /// </summary>
+        /// <param name="totalFactores">La puntuación total obtenida.</param>
+        /// <returns>El nivel obtenido.</returns>
         private static string NivelesTCA(int totalFactores)
         {
             string nivel = App.FACTORS_LEVEL_LOW;

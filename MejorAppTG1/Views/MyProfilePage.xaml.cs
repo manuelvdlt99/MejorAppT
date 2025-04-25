@@ -24,11 +24,26 @@ public partial class MyProfilePage : ContentPage
     /*private DateTime? _dateFrom;
     private DateTime? _dateUntil;*/
 
+    /// <summary>
+    /// Permite recuperar o modificar el índice en el que el usuario está actualmente posicionado en la lista de tests realizados.
+    /// </summary>
+    /// <value>
+    /// El índice de la lista de tests realizados.
+    /// </value>
     public static int ResultIndex { get => _resultIndex; set => _resultIndex = value; }
+    /// <summary>
+    /// Permite recuperar o modificar la página en la que el usuario está actualmente posicionado en el historial paginado de tests realizados.
+    /// </summary>
+    /// <value>
+    /// La página del historial de tests.
+    /// </value>
     public static int CurrentPage { get => _currentPage; set => _currentPage = value; }
     #endregion
 
     #region Constructores
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="MyProfilePage"/>.
+    /// </summary>
     public MyProfilePage()
     {
         InitializeComponent();
@@ -43,6 +58,11 @@ public partial class MyProfilePage : ContentPage
     #endregion
 
     #region Eventos
+    /// <summary>
+    /// Maneja el evento de aparición de la pantalla. Muestra una pantalla de carga que dura mientras un hilo secundario carga los datos del usuario y los tests realizados.
+    /// </summary>
+    /// <param name="sender">La página que aparece.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void OnPageAppearing(object sender, EventArgs e)
     {
         try {
@@ -67,6 +87,11 @@ public partial class MyProfilePage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación sobre un test realizado en el historial. Pregunta al usuario si quiere consultarlo o eliminarlo.
+    /// </summary>
+    /// <param name="sender">El test pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void OnFrameTapped(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
@@ -88,6 +113,11 @@ public partial class MyProfilePage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Consultar último test. Abre la pantalla de consejos del último test terminado cronológicamente (el primero del historial).
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void BtnLastResult_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
@@ -105,6 +135,11 @@ public partial class MyProfilePage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Anteriores. Mueve la lista paginada 5 tests a la izquierda.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void BtnPreviousFive_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
@@ -120,6 +155,11 @@ public partial class MyProfilePage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Siguientes. Mueve la lista paginada 5 tests a la derecha.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private async void BtnNextFive_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
@@ -161,6 +201,11 @@ public partial class MyProfilePage : ContentPage
         await LoadResults();
     }*/
 
+    /// <summary>
+    /// Maneja el evento de pulsación de la pestaña de Historial de tests. Muestra la interfaz del historial.
+    /// </summary>
+    /// <param name="sender">La pestaña pulsada.</param>
+    /// <param name="e">La instancia <see cref="TappedEventArgs"/> que contiene los datos del evento.</param>
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         FrmTabResults.Stroke = (Color)Application.Current.Resources["HeaderColor1"];
@@ -171,6 +216,11 @@ public partial class MyProfilePage : ContentPage
         VslAnalysis.IsVisible = false;
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación de la pestaña de Análisis de resultados. Muestra la interfaz del análisis.
+    /// </summary>
+    /// <param name="sender">La pestaña pulsada.</param>
+    /// <param name="e">La instancia <see cref="TappedEventArgs"/> que contiene los datos del evento.</param>
     private async void TapGestureRecognizer_Tapped_1(object sender, TappedEventArgs e)
     {
         FrmTabAnalysis.Stroke = (Color)Application.Current.Resources["HeaderColor1"];
@@ -182,13 +232,21 @@ public partial class MyProfilePage : ContentPage
         VslAnalysis.IsVisible = true;
     }
 
+    /// <summary>
+    /// Maneja el evento de pulsación del botón de Crear gráfico.
+    /// </summary>
+    /// <param name="sender">El botón pulsado.</param>
+    /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void BtnCreateGraph_Clicked(object sender, EventArgs e)
     {
         CreateGraph();
     }
     #endregion
 
-    #region Métodos
+    #region Métodos    
+    /// <summary>
+    /// Actualiza los datos del usuario actual.
+    /// </summary>
     internal void UpdateUserLabels()
     {
         MainThread.BeginInvokeOnMainThread(() => {
@@ -207,6 +265,9 @@ public partial class MyProfilePage : ContentPage
         });
     }
 
+    /// <summary>
+    /// Actualiza la imagen de perfil del usuario actual.
+    /// </summary>
     internal void UpdateUserImage()
     {
         string image = App.CurrentUser.Imagen;
@@ -217,6 +278,9 @@ public partial class MyProfilePage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Muestra los siguientes cinco tests del historial.
+    /// </summary>
     private async Task LoadNextFiveTests()
     {
         MainThread.BeginInvokeOnMainThread(() => {
@@ -264,6 +328,9 @@ public partial class MyProfilePage : ContentPage
         });
     }
 
+    /// <summary>
+    /// Muestra el historial de tests.
+    /// </summary>
     private async Task LoadResults()
     {
         MainThread.BeginInvokeOnMainThread(async () => {
@@ -283,12 +350,20 @@ public partial class MyProfilePage : ContentPage
         });
     }
 
+    /// <summary>
+    /// Abre la pantalla de consejos del test seleccionado.
+    /// </summary>
+    /// <param name="sender">El Frame del test sobre el que se ha pulsado.</param>
     private async void ConsultarRegistro(object sender)
     {
         Test selectedTest = (Test)((Frame)sender).BindingContext;
         CalculateFactorsAndShowResults(selectedTest);
     }
 
+    /// <summary>
+    /// Calcula los factores de un test dado y muestra la pantalla con los consejos pertinentes.
+    /// </summary>
+    /// <param name="test">El test.</param>
     private async Task CalculateFactorsAndShowResults(Test test)
     {
         List<Answer> answers = await App.Database.GetAnswersByTestIdAsync(test.IdTest);
@@ -305,6 +380,10 @@ public partial class MyProfilePage : ContentPage
         await Navigation.PushAsync(new ResultsPage(factor1, factor2, factor3, test.Tipo), true);
     }
 
+    /// <summary>
+    /// Elimina el test seleccionado.
+    /// </summary>
+    /// <param name="sender">El Frame del test sobre el que se ha pulsado.</param>
     private async void EliminarRegistro(object sender)
     {
         bool answer = await DisplayAlert(Strings.str_ResultHistoryPage_BtnDelete_Question, Strings.str_ResultHistoryPage_BtnDelete_Msg, Strings.str_MainPage_BtnYes, Strings.str_MainPage_BtnNo);
@@ -323,6 +402,10 @@ public partial class MyProfilePage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Anima lateralmente el historial de tests.
+    /// </summary>
+    /// <param name="direction">La dirección ("Left" o "Right").</param>
     private async Task SlideCollectionView(string direction)
     {
         var offset = direction == "Left" ? -100 : 100;
@@ -330,6 +413,9 @@ public partial class MyProfilePage : ContentPage
         await CtvResults.TranslateTo(0, 0, 300, Easing.CubicOut);
     }
 
+    /// <summary>
+    /// Calcula los datos de los tests realizados del tipo seleccionado y muestra un gráfico con los datos obtenidos.
+    /// </summary>
     private async Task CreateGraph()
     {
         string selectedTest = PickTipos.SelectedItem.ToString();
@@ -372,6 +458,11 @@ public partial class MyProfilePage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Calcula y devuelve el nivel más apropiado según los factores obtenidos en un test. Si hay mayoría de un factor, se devuelve el nivel asociado a dicho factor. Si todos los factores son distintos, se devuelve el nivel del factor cuya puntuación sea más cercana a la media.
+    /// </summary>
+    /// <param name="factores">La lista de factores calculados del test actual.</param>
+    /// <returns>El nivel calculado.</returns>
     private string GetCategoria(List<Factor> factores)
     {
         if (factores.Count == 1) {
@@ -402,6 +493,12 @@ public partial class MyProfilePage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Calcula los factores de un test realizado.
+    /// </summary>
+    /// <param name="preguntas">Las respuestas del test.</param>
+    /// <param name="tipoTest">El test realizado.</param>
+    /// <returns>La lista de factores calculados.</returns>
     private List<Factor> GetFactores(List<Answer> preguntas, Test tipoTest)
     {
         List<Factor> factores = new();
