@@ -90,6 +90,18 @@ namespace MejorAppTG1
         /// Clave en recursos del nivel alto de resultado de test.
         /// </summary>
         public const string FACTORS_LEVEL_HIGH = "str_FACTORS_LEVEL_HIGH";
+        /// <summary>
+        /// Ruta del modelo entrenado de IA para calcular resultados generales de tests de ansiedad rápidos.
+        /// </summary>
+        public static readonly string AI_GENERAL_QUICK_TEST_PATH = Path.Combine(AppContext.BaseDirectory, "AI_Models", "model_general_quickTests.zip");
+        /// <summary>
+        /// Ruta del modelo entrenado de IA para calcular resultados generales de tests de ansiedad completos.
+        /// </summary>
+        public static readonly string AI_GENERAL_FULL_TEST_PATH = Path.Combine(AppContext.BaseDirectory, "AI_Models", "model_general_fullTests.zip");
+        /// <summary>
+        /// Ruta del modelo entrenado de IA para calcular resultados generales de tests de TCA.
+        /// </summary>
+        public static readonly string AI_GENERAL_TCA_TEST_PATH = Path.Combine(AppContext.BaseDirectory, "AI_Models", "model_general_TCATests.zip");
 
         /// <summary>
         /// Variable global para evitar que se puedan pulsar varios botones o el mismo botón varias veces y provocar errores inesperados. 

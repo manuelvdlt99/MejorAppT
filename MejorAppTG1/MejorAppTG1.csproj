@@ -97,6 +97,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="AI_Models\model_general_quickTests.zip" />
 	  <None Remove="Resources\Fonts\K2D-Regular.ttf" />
 	  <None Remove="Resources\Raw\FullAnxietyTestQuestions.json" />
 	  <None Remove="Resources\Images\flechaabajo.png" />
@@ -122,8 +123,13 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Microsoft.ML" Version="4.0.2" />
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.116.1" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Include="AI_Models\model_general_quickTests.zip" />
 	</ItemGroup>
 
 	<ItemGroup>

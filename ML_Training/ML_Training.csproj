@@ -140,16 +140,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnsiedadData.cs" />
-    <Compile Include="AnsiedadPrediction.cs" />
+    <Compile Include="AIData.cs" />
+    <Compile Include="AIPrediction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Training.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Resource Include="Data\data_quickTests.json" />
+    <Resource Include="Data\data_general_quickTests.json" />
+    <None Include="Data\data_general_fullTests.json" />
+    <None Include="Data\data_general_TCA.json" />
+    <None Include="Data\data_history_fullTests.json" />
+    <None Include="Data\data_history_quickTests.json" />
+    <None Include="Data\data_history_TCA.json" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

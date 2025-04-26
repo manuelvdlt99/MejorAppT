@@ -1,0 +1,368 @@
+﻿{
+  "-ODu0iJzGLqBPghBgXdy": {
+    "Edad": 22,
+    "Fecha": "2024-12-12T09:40:02.92193",
+    "Genero": "Mujer",
+    "Puntuacion": 30
+  },
+  "-OE-_Z2q1dGpqtzKv-Du": {
+    "Edad": 15,
+    "Fecha": "2024-12-13T16:14:27.9821655",
+    "Genero": "No binario",
+    "Puntuacion": 0
+  },
+  "-OE3mTKsBmDCuo8oaPJW": {
+    "Edad": 65,
+    "Fecha": "2024-12-14T11:47:12.0212238",
+    "Genero": "No binario",
+    "Puntuacion": 0
+  },
+  "-OE3pjdK88OWkyP8Ou7G": {
+    "Edad": 65,
+    "Fecha": "2024-12-14T11:51:21.0095486",
+    "Genero": "No binario",
+    "Puntuacion": 52
+  },
+  "-OE3r1TikJD68tt869DJ": {
+    "Edad": 25,
+    "Fecha": "2024-12-14T12:09:19.8397198",
+    "Genero": "Hombre",
+    "Puntuacion": 24
+  },
+  "-OE4C6gy7i9_iRzwOt9S": {
+    "Edad": 25,
+    "Fecha": "2024-12-14T12:06:19.0926376",
+    "Genero": "No binario",
+    "Puntuacion": 26
+  },
+  "-OE4H8rLDK3k23AAFe_C": {
+    "Edad": 25,
+    "Fecha": "2024-12-14T14:07:49.8850441",
+    "Genero": "Hombre",
+    "Puntuacion": 100
+  },
+  "-OE4viVjqwn5k7lamiT5": {
+    "Edad": 25,
+    "Fecha": "2024-12-14T17:06:32.6277917",
+    "Genero": "No binario",
+    "Puntuacion": 20
+  },
+  "-OE4viaqu0nbPOpZr1a7": {
+    "Edad": 25,
+    "Fecha": "2024-12-14T17:06:52.4664193",
+    "Genero": "No binario",
+    "Puntuacion": 0
+  },
+  "-OE4vicew2XILuk38kac": {
+    "Edad": 25,
+    "Fecha": "2024-12-14T17:07:13.8598698",
+    "Genero": "No binario",
+    "Puntuacion": 24
+  },
+  "-OE4vieMXB55xc6SGimJ": {
+    "Edad": 25,
+    "Fecha": "2024-12-14T17:07:35.3423209",
+    "Genero": "No binario",
+    "Puntuacion": 100
+  },
+  "-OE92UHgjdUkweEBwZBw": {
+    "Edad": 52,
+    "Fecha": "2024-12-15T12:21:56.9639125",
+    "Genero": "Mujer",
+    "Puntuacion": 23
+  },
+  "-OEAfXMy0p7RVf1N2tSJ": {
+    "Edad": 52,
+    "Fecha": "2024-12-15T19:56:14.5075892",
+    "Genero": "No binario",
+    "Puntuacion": 103
+  },
+  "-OEE3tYZRUKFdLzeBLaH": {
+    "Edad": 19,
+    "Fecha": "2024-12-16T11:46:16.83977",
+    "Genero": "Hombre",
+    "Puntuacion": 27
+  },
+  "-OEEMvqZJef7_iRx-VP-": {
+    "Edad": 71,
+    "Fecha": "2024-12-16T13:09:33.1656163",
+    "Genero": "Hombre",
+    "Puntuacion": 26
+  },
+  "-OGy52xy-P95Ks_YCSI-": {
+    "Edad": 21,
+    "Fecha": "2025-01-19T10:19:47.5348581",
+    "Genero": "Hombre",
+    "Puntuacion": 12
+  },
+  "-OH8gtGF5JJBPaDKylRy": {
+    "Edad": 52,
+    "Fecha": "2025-01-10T15:17:01.8000294",
+    "Genero": "No binario",
+    "Puntuacion": 24
+  },
+  "-OHRsSbyeiLmnbFvw78Y": {
+    "Edad": 16,
+    "Fecha": "2025-01-25T10:52:47.8705319",
+    "Genero": "Hombre",
+    "Puntuacion": 57
+  },
+  "-ONu6m3uMRFMdSC3kr8d": {
+    "Edad": 25,
+    "Fecha": "2025-04-15T17:36:08.2784248",
+    "Genero": "Hombre",
+    "Puntuacion": 0
+  },
+  "-OOMaaNm36IkW-0hANYt": {
+    "Edad": 25,
+    "Fecha": "2025-04-21T11:03:52.2485622",
+    "Genero": "Hombre",
+    "Puntuacion": 19
+  },
+  "-OOMeEd4VZmM-Oq95tKh": {
+    "Edad": 25,
+    "Fecha": "2025-04-21T11:21:59.0420149",
+    "Genero": "Hombre",
+    "Puntuacion": 100
+  },
+  "-NEW031": {
+    "Edad": 18,
+    "Fecha": "2025-04-26T10:45:00",
+    "Genero": "Mujer",
+    "Puntuacion": 78
+  },
+  "-NEW032": {
+    "Edad": 22,
+    "Fecha": "2025-04-26T10:46:00",
+    "Genero": "No binario",
+    "Puntuacion": 100
+  },
+  "-NEW033": {
+    "Edad": 15,
+    "Fecha": "2025-04-26T10:47:00",
+    "Genero": "Hombre",
+    "Puntuacion": 56
+  },
+  "-NEW034": {
+    "Edad": 29,
+    "Fecha": "2025-04-26T10:48:00",
+    "Genero": "Mujer",
+    "Puntuacion": 0
+  },
+  "-NEW035": {
+    "Edad": 20,
+    "Fecha": "2025-04-26T10:49:00",
+    "Genero": "No binario",
+    "Puntuacion": 35
+  },
+  "-NEW036": {
+    "Edad": 24,
+    "Fecha": "2025-04-26T10:50:00",
+    "Genero": "Hombre",
+    "Puntuacion": 100
+  },
+  "-NEW037": {
+    "Edad": 17,
+    "Fecha": "2025-04-26T10:51:00",
+    "Genero": "Mujer",
+    "Puntuacion": 18
+  },
+  "-NEW038": {
+    "Edad": 30,
+    "Fecha": "2025-04-26T10:52:00",
+    "Genero": "No binario",
+    "Puntuacion": 90
+  },
+  "-NEW039": {
+    "Edad": 14,
+    "Fecha": "2025-04-26T10:53:00",
+    "Genero": "Hombre",
+    "Puntuacion": 12
+  },
+  "-NEW040": {
+    "Edad": 23,
+    "Fecha": "2025-04-26T10:54:00",
+    "Genero": "Mujer",
+    "Puntuacion": 100
+  },
+  "-NEW041": {
+    "Edad": 16,
+    "Fecha": "2025-04-26T10:55:00",
+    "Genero": "Mujer",
+    "Puntuacion": 64
+  },
+  "-NEW042": {
+    "Edad": 18,
+    "Fecha": "2025-04-26T10:56:00",
+    "Genero": "Hombre",
+    "Puntuacion": 85
+  },
+  "-NEW043": {
+    "Edad": 14,
+    "Fecha": "2025-04-26T10:57:00",
+    "Genero": "No binario",
+    "Puntuacion": 19
+  },
+  "-NEW044": {
+    "Edad": 29,
+    "Fecha": "2025-04-26T10:58:00",
+    "Genero": "Hombre",
+    "Puntuacion": 100
+  },
+  "-NEW045": {
+    "Edad": 22,
+    "Fecha": "2025-04-26T10:59:00",
+    "Genero": "Mujer",
+    "Puntuacion": 77
+  },
+  "-NEW046": {
+    "Edad": 19,
+    "Fecha": "2025-04-26T11:00:00",
+    "Genero": "No binario",
+    "Puntuacion": 42
+  },
+  "-NEW047": {
+    "Edad": 17,
+    "Fecha": "2025-04-26T11:01:00",
+    "Genero": "Hombre",
+    "Puntuacion": 0
+  },
+  "-NEW048": {
+    "Edad": 21,
+    "Fecha": "2025-04-26T11:02:00",
+    "Genero": "Mujer",
+    "Puntuacion": 97
+  },
+  "-NEW049": {
+    "Edad": 23,
+    "Fecha": "2025-04-26T11:03:00",
+    "Genero": "No binario",
+    "Puntuacion": 50
+  },
+  "-NEW050": {
+    "Edad": 30,
+    "Fecha": "2025-04-26T11:04:00",
+    "Genero": "Hombre",
+    "Puntuacion": 35
+  },
+  "-NEW051": {
+    "Edad": 25,
+    "Fecha": "2025-04-26T11:05:00",
+    "Genero": "Mujer",
+    "Puntuacion": 100
+  },
+  "-NEW052": {
+    "Edad": 15,
+    "Fecha": "2025-04-26T11:06:00",
+    "Genero": "No binario",
+    "Puntuacion": 10
+  },
+  "-NEW053": {
+    "Edad": 20,
+    "Fecha": "2025-04-26T11:07:00",
+    "Genero": "Hombre",
+    "Puntuacion": 46
+  },
+  "-NEW054": {
+    "Edad": 27,
+    "Fecha": "2025-04-26T11:08:00",
+    "Genero": "Mujer",
+    "Puntuacion": 83
+  },
+  "-NEW055": {
+    "Edad": 13,
+    "Fecha": "2025-04-26T11:09:00",
+    "Genero": "No binario",
+    "Puntuacion": 7
+  },
+  "-NEW056": {
+    "Edad": 24,
+    "Fecha": "2025-04-26T11:10:00",
+    "Genero": "Hombre",
+    "Puntuacion": 58
+  },
+  "-NEW057": {
+    "Edad": 26,
+    "Fecha": "2025-04-26T11:11:00",
+    "Genero": "Mujer",
+    "Puntuacion": 100
+  },
+  "-NEW058": {
+    "Edad": 17,
+    "Fecha": "2025-04-26T11:12:00",
+    "Genero": "No binario",
+    "Puntuacion": 32
+  },
+  "-NEW059": {
+    "Edad": 28,
+    "Fecha": "2025-04-26T11:13:00",
+    "Genero": "Hombre",
+    "Puntuacion": 100
+  },
+  "-NEW060": {
+    "Edad": 18,
+    "Fecha": "2025-04-26T11:14:00",
+    "Genero": "Mujer",
+    "Puntuacion": 73
+  },
+  "-NEW061": {
+    "Edad": 29,
+    "Fecha": "2025-04-26T11:15:00",
+    "Genero": "No binario",
+    "Puntuacion": 60
+  },
+  "-NEW062": {
+    "Edad": 20,
+    "Fecha": "2025-04-26T11:16:00",
+    "Genero": "Hombre",
+    "Puntuacion": 49
+  },
+  "-NEW063": {
+    "Edad": 21,
+    "Fecha": "2025-04-26T11:17:00",
+    "Genero": "Mujer",
+    "Puntuacion": 88
+  },
+  "-NEW064": {
+    "Edad": 15,
+    "Fecha": "2025-04-26T11:18:00",
+    "Genero": "No binario",
+    "Puntuacion": 15
+  },
+  "-NEW065": {
+    "Edad": 16,
+    "Fecha": "2025-04-26T11:19:00",
+    "Genero": "Hombre",
+    "Puntuacion": 36
+  },
+  "-NEW066": {
+    "Edad": 24,
+    "Fecha": "2025-04-26T11:20:00",
+    "Genero": "Mujer",
+    "Puntuacion": 94
+  },
+  "-NEW067": {
+    "Edad": 19,
+    "Fecha": "2025-04-26T11:21:00",
+    "Genero": "No binario",
+    "Puntuacion": 0
+  },
+  "-NEW068": {
+    "Edad": 22,
+    "Fecha": "2025-04-26T11:22:00",
+    "Genero": "Hombre",
+    "Puntuacion": 84
+  },
+  "-NEW069": {
+    "Edad": 27,
+    "Fecha": "2025-04-26T11:23:00",
+    "Genero": "Mujer",
+    "Puntuacion": 100
+  },
+  "-NEW070": {
+    "Edad": 13,
+    "Fecha": "2025-04-26T11:24:00",
+    "Genero": "No binario",
+    "Puntuacion": 20
+  }
+}

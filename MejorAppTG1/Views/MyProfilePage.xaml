@@ -176,6 +176,7 @@
                         <Image Source="no_results_found_icon.png" WidthRequest="75"/>
                         <Label TextColor="{StaticResource FontColor1}" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblNoResults}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="16"/>
                     </VerticalStackLayout>
+                    <Label x:Name="LblPrediction" HorizontalTextAlignment="Center" TextColor="{StaticResource FontColor1}" FontSize="16"/>
                     <freakycontrols:FreakyButton HorizontalOptions="Center" VerticalOptions="Center" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnCreateGraph" Clicked="BtnCreateGraph_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnCreateGraph}" BackgroundColor="{StaticResource PrimaryColor}"/>
                 </VerticalStackLayout>
             </Grid>
