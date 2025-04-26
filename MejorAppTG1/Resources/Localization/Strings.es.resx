@@ -130,7 +130,7 @@
     <value>Mujer</value>
   </data>
   <data name="str_LoginPage_BtnLogIn" xml:space="preserve">
-    <value>Iniciar sesión</value>
+    <value>Seleccionar usuario</value>
   </data>
   <data name="str_LoginPage_BtnLogin_entryAgeError" xml:space="preserve">
     <value>Por favor, introduce una edad correcta.</value>
@@ -148,7 +148,7 @@
     <value>Edad:</value>
   </data>
   <data name="str_LoginPage_BtnSignUp_Gender" xml:space="preserve">
-    <value>Género:</value>
+    <value>Género</value>
   </data>
   <data name="str_LoginPage_BtnSignUp_Name" xml:space="preserve">
     <value>Nombre:</value>
@@ -269,10 +269,10 @@ Aun así, ¿seguro que quieres realizar el test?</value>
     <value>Selecciona tu género</value>
   </data>
   <data name="str_ResultHistoryPage_BtnSignUp_EntAge" xml:space="preserve">
-    <value>Introduce tu edad</value>
+    <value>Edad</value>
   </data>
   <data name="str_ResultHistoryPage_BtnSignUp_EntName" xml:space="preserve">
-    <value>Introduce tu nombre</value>
+    <value>Nombre</value>
   </data>
   <data name="str_ResultHistoryPage_ChooseOption_Question" xml:space="preserve">
     <value>¿Qué quieres hacer con este resultado?</value>
@@ -395,7 +395,7 @@ Pulsa cualquiera de las siguientes categorías para obtener más información.</
     <value>En la barra superior de navegación, podrás cambiar entre las dos pestañas principales que componen la aplicación: el menú principal y el perfil. Más abajo se entrará en detalle en cada una de estas pestañas.
 • Haciendo clic en (i), podrás ver información acerca de este proyecto, los desarrolladores implicados y los estudios que avalan esta aplicación.
 • Haciendo clic en (?), accederás a la ayuda de la aplicación, como ya habrás podido comprobar por tu cuenta.
-• Por último, si haces clic en el menú de kebab (los tres puntitos en la esquina superior derecha), se desplegará un menú con opciones que te permitirán cerrar sesión, modificar el usuario actual o eliminar el usuario y todos sus datos almacenados.</value>
+• Por último, si haces clic en el icono del engranaje, se abrirá un menú con opciones que te permitirán cerrar sesión, modificar el usuario actual, eliminar el usuario y todos sus datos almacenados, borrar tu historial de tests o incluso cambiar el idioma de la aplicación.</value>
   </data>
   <data name="str_Shell_HelpPage_MainMenu" xml:space="preserve">
     <value>Menú principal y tests</value>
@@ -410,9 +410,10 @@ En cada test, se presentará cada pregunta individualmente. Cada pregunta consta
 Una vez hayas respondido a todas las preguntas, se calculará el resultado final y se mostrarán en pantalla unos consejos acordes a tus respuestas. Tu test quedará guardado en el sistema para poder consultar estos mismos consejos desde tu perfil.</value>
   </data>
   <data name="str_Shell_HelpPage_MyProfile_Msg" xml:space="preserve">
-    <value>En la pestaña «Mi perfil», podrás ver los datos del perfil que ha iniciado sesión actualmente en la aplicación (nombre, edad y género). Recuerda que puedes cambiar estos datos o incluso crear un nuevo usuario desde el menú de la esquina superior derecha. También puedes cambiar tu foto de perfil haciendo clic en la propia imagen.
-Justo debajo, aparecerá un listado de los tests que has completado con este usuario ordenados cronológicamente, estando primero el más reciente. Si pulsas en cualquiera de ellos, se mostrarán los consejos asociados a tus respuestas en dicho test.
-Por último, puedes consultar de forma rápida y directa los consejos del último test realizado en el botón «Consultar último test» o borrar todo tu historial y empezar de cero en el botón «Borrar historial».</value>
+    <value>En la pestaña «Mi perfil», podrás ver los datos del perfil que ha iniciado sesión actualmente en la aplicación (foto, nombre, edad y género). Recuerda que puedes cambiar estos datos o incluso crear un nuevo usuario desde el menú de la esquina superior derecha.
+Justo debajo, verás dos pestañas: «Historial de tests» y «Análisis de resultados»:
+• En la primera pestaña, aparecerá un listado de los tests que has completado con este usuario ordenados cronológicamente, estando primero el más reciente. Si pulsas en cualquiera de ellos, se mostrarán los consejos asociados a tus respuestas en dicho test. Puedes consultar de forma rápida y directa los consejos del último test realizado en el botón «Consultar último test».
+• En la segunda pestaña, verás un gráfico de líneas que mostrará tu evolución real según los tests que hayas realizado. Selecciona un tipo en el desplegable pertinente y haz clic en el botón «Crear gráfico» para consultar tus datos. La información de cada test realizado se muestra de forma cronológica, y en la parte superior figurará un baremo general de tu estado. Asimismo, la aplicación cuenta con modelos de inteligencia artificial que te ayudarán a comprender tu situación respecto al público general y te ayudarán a saber si vas por buen camino o no según tus tendencias.</value>
   </data>
   <data name="str_Shell_ModifyPage_Apply" xml:space="preserve">
     <value>Aplicar</value>
@@ -788,7 +789,7 @@ Por último, puedes consultar de forma rápida y directa los consejos del últim
     <value>Empodérate</value>
   </data>
   <data name="str_AnxietyAdvice5_Content" xml:space="preserve">
-    <value>Estas sencillas posturas corporales dan seguridad y confianza al instante. Ver vídeo:
+    <value>Estas sencillas posturas corporales dan seguridad y confianza al instante.
 https://www.youtube.com/embed/jnOfzrDZYrA</value>
   </data>
   <data name="str_AnxietyAdvice6_Title" xml:space="preserve">
@@ -913,13 +914,13 @@ Resuelve con tu profesor todas las dudas de la materia.</value>
 Una ansiedad moderada puede ayudarnos a mantenernos concentrados en el estudio, siempre que no se mantenga de manera sostenida en el tiempo, ya que puede dar lugar a quedar fuera de nuestro control.</value>
   </data>
   <data name="str_ResultsPage_Category_Prevent" xml:space="preserve">
-    <value>Cosas que puedes hacer antes para no llegar a esta situación:</value>
+    <value>Cosas que puedes hacer antes para no llegar a esta situación</value>
   </data>
   <data name="str_ResultsPage_Category_SeeMore" xml:space="preserve">
     <value>¿Quieres ampliar?</value>
   </data>
   <data name="str_ResultsPage_Category_BadSituation" xml:space="preserve">
-    <value>Si la situación te sobrepasa:</value>
+    <value>Si la situación te sobrepasa</value>
   </data>
   <data name="str_ResultsPage_LblIntro_Low_2" xml:space="preserve">
     <value>A pesar de que algunas veces te encuentres más nervioso/a de lo habitual, tu respuesta ante estas situaciones es adecuada y está dentro de la media. Sigue así.
@@ -972,21 +973,21 @@ Una ansiedad moderada puede ayudarnos a mantenernos concentrados en el estudio, 
   </data>
   <data name="str_AnxietyAdvice21_Content" xml:space="preserve">
     <value>Esta técnica hawaiana busca limpiar memorias y emociones negativas que puedan afectar a nuestras vidas.
-hooponopono.mp3</value>
+https://www.youtube.com/embed/hV3A-BzfGZM?si=uQDjLgWi_8LJmmTV</value>
   </data>
   <data name="str_AnxietyAdvice22_Title" xml:space="preserve">
     <value>Sesión de meditación</value>
   </data>
   <data name="str_AnxietyAdvice22_Content" xml:space="preserve">
     <value>Relájate y conecta con tu interior con esta breve sesión de meditación guiada. Encuentra un lugar tranquilo, acomódate y deja que el audio te guíe hacia la calma interior.
-meditation.mp3</value>
+https://www.youtube.com/embed/C6bDxq1S7lw?si=eRZpZsPdmTRhGLxd</value>
   </data>
   <data name="str_AnxietyAdvice23_Title" xml:space="preserve">
     <value>Música de ambiente</value>
   </data>
   <data name="str_AnxietyAdvice23_Content" xml:space="preserve">
     <value>Música de ambiente creada por nuestro alumnado. Aconsejada para cualquiera de las meditaciones de otros consejos.
-audiorelax.mp3</value>
+https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87</value>
   </data>
   <data name="str_ResultHistoryPage_Loading" xml:space="preserve">
     <value>Espera, estamos recuperando tus datos.
@@ -1080,7 +1081,7 @@ audiorelax.mp3</value>
     <value>No hay usuarios disponibles.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnLogIn_Success" xml:space="preserve">
-    <value>Usuario {0} seleccionado. Iniciando sesión.</value>
+    <value>Usuario {0} seleccionado.</value>
   </data>
   <data name="str_SemanticProperties_ResultHistoryPage_ImgProfile" xml:space="preserve">
     <value>Esta es la imagen de perfil del usuario.</value>
@@ -1135,5 +1136,98 @@ audiorelax.mp3</value>
   </data>
   <data name="str_SemanticProperties_MainPage_Welcome" xml:space="preserve">
     <value>Te encuentras en el menú principal de la aplicación. Más abajo encontrarás los tres tipos de tests a realizar: test rápido de ansiedad (duración estimada: 2 minutos), test completo de ansiedad (duración estimada: 6 minutos), test para trastornos de la conducta alimentaria (duración estimada: 3 minutos).</value>
+  </data>
+  <data name="str_UserSelectPopup_ChooseUserToast" xml:space="preserve">
+    <value>Por favor, selecciona un usuario.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc" xml:space="preserve">
+    <value>Botón para iniciar sesión con el usuario que esté actualmente seleccionado.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint" xml:space="preserve">
+    <value>Haz clic aquí para acceder al menú principal con el usuario actualmente seleccionado.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected" xml:space="preserve">
+    <value>Género seleccionado: Hombre.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected" xml:space="preserve">
+    <value>Género seleccionado: Mujer.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected" xml:space="preserve">
+    <value>Género seleccionado: No binario.</value>
+  </data>
+  <data name="str_Shell_SettingsPage_Title" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="str_SettingsPage_BtnLanguage" xml:space="preserve">
+    <value>Cambiar idioma</value>
+  </data>
+  <data name="str_SettingsPage_LblLanguage" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="str_LanguagePopup_LblTitle" xml:space="preserve">
+    <value>Selecciona un idioma</value>
+  </data>
+  <data name="str_SettingsPage_LblData" xml:space="preserve">
+    <value>Gestión de datos</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Desc" xml:space="preserve">
+    <value>Selector de idioma.</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Hint" xml:space="preserve">
+    <value>Haz clic aquí para cambiar el idioma de visualización de la aplicación.</value>
+  </data>
+  <data name="str_ResultsPage_Category_KeepItUp" xml:space="preserve">
+    <value>Cosas que puedes hacer para seguir controlando la situación</value>
+  </data>
+  <data name="str_ResultsPage_Category_GeneralAdvice" xml:space="preserve">
+    <value>Consejos generales</value>
+  </data>
+  <data name="str_AdvicesPage_Loading" xml:space="preserve">
+    <value>Cargando consejos...</value>
+  </data>
+  <data name="str_AdvicesPage_BtnYoutube" xml:space="preserve">
+    <value>Ver en YouTube</value>
+  </data>
+  <data name="str_AdvicesPage_Alert_NoOpenVideo_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="str_AdvicesPage_Alert_NoOpenVideo_Desc" xml:space="preserve">
+    <value>Se ha producido un error al intentar abrir el vídeo en YouTube.</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblAnalysis" xml:space="preserve">
+    <value>Análisis de resultados</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_PickTipos_Desc" xml:space="preserve">
+    <value>Selector para elegir un tipo de test.</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_PickTipos_Hint" xml:space="preserve">
+    <value>Selecciona una opción: Ansiedad (rápido), Ansiedad (completo), Trastornos de la conducta alimentaria</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblTipo" xml:space="preserve">
+    <value>Tipo: </value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnCreateGraph" xml:space="preserve">
+    <value>Crear gráfico</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_LOW" xml:space="preserve">
+    <value>Bajo</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_LOW_MEDIUM" xml:space="preserve">
+    <value>Leve-Moderado</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_MEDIUM" xml:space="preserve">
+    <value>Medio</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_MEDIUM_HIGH" xml:space="preserve">
+    <value>Moderado-Alto</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_HIGH" xml:space="preserve">
+    <value>Alto</value>
+  </data>
+  <data name="str_Shell_HelpPage_Advices" xml:space="preserve">
+    <value>Página de consejos</value>
+  </data>
+  <data name="str_Shell_HelpPage_Advices_Msg" xml:space="preserve">
+    <value>Nada más finalizar un test, se mostrará una nueva pantalla con recomendaciones adaptadas a tu resultado en el mismo. En primer lugar, aparecerá una estimación general, y más adelante aparecerán una o varias categorías de consejos. Si haces clic en cualquiera de ellas, se te redirigirá a una nueva pantalla donde se mostrarán los consejos asociados a dicha categoría en formato carrusel (desplazándose de derecha a izquierda). Estos consejos incluyen imágenes relevantes o, en algunos casos, vídeos y audios para ayudarte en tu situación.</value>
   </data>
 </root>

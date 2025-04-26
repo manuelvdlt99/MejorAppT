@@ -1,6 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
 using PanCardView;
+using Maui.FreakyControls.Extensions;
+using Microcharts.Maui;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace MejorAppTG1
 {
@@ -14,6 +17,9 @@ namespace MejorAppTG1
                 .UseMauiCommunityToolkitMediaElement()
                 .UseCardsView()
                 .UseMauiCommunityToolkit()
+                .InitializeFreakyControls()
+                .UseMicrocharts()
+                .UseSkiaSharp()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -22,7 +28,7 @@ namespace MejorAppTG1
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

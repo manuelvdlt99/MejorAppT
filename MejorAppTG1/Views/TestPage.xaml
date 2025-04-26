@@ -23,7 +23,7 @@
     <Grid>
         <Image Source="main_menu_bg.png"
                Aspect="AspectFill"
-               Opacity="0.5"
+               Opacity="0.2"
                HorizontalOptions="FillAndExpand"
                VerticalOptions="FillAndExpand" />
 

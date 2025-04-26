@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
+               xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
+               x:Class="MejorAppTG1.Views.UserSelectPopup"
+               Color="Transparent"
+               x:Name="UserSelectPopupRoot"
+               CanBeDismissedByTappingOutsideOfPopup="False">
+    <Border Padding="0" HeightRequest="500"
+            WidthRequest="350"
+            Stroke="{StaticResource FontColor1}"
+            BackgroundColor="{StaticResource White}"
+            StrokeThickness="5">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="25"/>
+        </Border.StrokeShape>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <Label Text="{x:Static strings:Strings.str_LoginPage_LblSelectUser}"
+               FontSize="22"
+               Margin="0,20,0,5"
+               TextColor="{StaticResource FontColor1}"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               SemanticProperties.HeadingLevel="Level1"
+               SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_UsersPopup_Title}" />
+
+            <!-- Lista de usuarios -->
+            <CollectionView Grid.Row="1" x:Name="ClvUsuarios"
+                SelectionMode="Single"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                VerticalScrollBarVisibility="Always">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="{StaticResource ButtonColor2}"
+                               CornerRadius="10"
+                               Margin="10"
+                               Padding="10"
+                               BackgroundColor="{StaticResource GradientColor3}"
+                               WidthRequest="140"
+                               HeightRequest="140"
+                               BindingContext="{Binding .}"
+                               BindingContextChanged="Frame_BindingContextChanged" HasShadow="True">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Frame.GestureRecognizers>
+                            
+                            <VerticalStackLayout Spacing="2"
+                                         VerticalOptions="Center">
+                                <Image Grid.Column="1"
+                                    HeightRequest="40"
+                                    WidthRequest="40"
+                                    Source="{Binding Imagen, Converter={StaticResource NullToDefaultImageConverter}}"
+                                    Aspect="AspectFill"
+                                    BackgroundColor="Transparent"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"
+                                    SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_UsersPopup_Image}">
+                                    <Image.Clip>
+                                        <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20" />
+                                    </Image.Clip>
+                                </Image>
+
+                                <Label FontSize="20" x:Name="LblName"
+                               TextColor="{StaticResource FontColor4}"
+                               FontAttributes="Bold"
+                               Text="{Binding Nombre}" HorizontalTextAlignment="Center"
+                               SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_UsersPopup_Name}"/>
+
+                                <Label FontSize="15" x:Name="LblAge" BindingContextChanged="LblAge_BindingContextChanged"
+                               TextColor="{StaticResource FontColor5}"
+                               FontAttributes="Bold"
+                               Text="{Binding Edad}" HorizontalTextAlignment="Center"
+                               SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_UsersPopup_Age}"/>
+
+                                <Label FontSize="12" x:Name="LblGender" BindingContextChanged="LblGender_BindingContextChanged"
+                               TextColor="{StaticResource FontColor6}"
+                               FontAttributes="Bold"
+                               Text="{Binding Genero}" HorizontalTextAlignment="Center"
+                               SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_UsersPopup_Gender}"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <HorizontalStackLayout Margin="15" Spacing="10" HorizontalOptions="Center" Grid.Row="2">
+                <freakycontrols:FreakyButton Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnCancel}" x:Name="BtnCancel"
+                        BackgroundColor="{StaticResource ButtonColor2}"
+                        TextColor="{StaticResource FontColor2}"
+                        SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_SignUpPopup_BtnCancel}"
+                        Clicked="BtnCancel_Clicked"/>
+
+                <freakycontrols:FreakyButton Text="{x:Static strings:Strings.str_LoginPage_BtnConfirm}" x:Name="BtnConfirm"
+                        BackgroundColor="{StaticResource SecondaryColor1}" 
+                        BorderColor="{StaticResource ButtonColor1}"
+                        BorderWidth="2"
+                        CornerRadius="15"
+                        TextColor="{StaticResource FontColor2}"
+                        SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc}"
+                        SemanticProperties.Hint="{x:Static strings:Strings.str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint}"
+                        Clicked="BtnConfirm_Clicked"/>
+            </HorizontalStackLayout>
+
+        </Grid>
+    </Border>
+</toolkit:Popup>

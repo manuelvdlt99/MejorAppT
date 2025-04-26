@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MejorAppTG1.AdvicesPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
+             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+             xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
+             xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
+             Title="AdvicesPage" Shell.TabBarIsVisible="False" NavigationPage.HasBackButton="False" Shell.NavBarIsVisible="False"
+             Shell.BackgroundColor="{StaticResource SecondaryColor1}" Appearing="ContentPage_Appearing">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="{StaticResource GradientColor2}" Offset="0.1" />
+            <GradientStop Color="{StaticResource GradientColor3}" Offset="0.11" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid>
+        <StackLayout x:Name="StkLoading" 
+         IsVisible="True" 
+         VerticalOptions="Center" 
+         HorizontalOptions="Center" 
+         Spacing="10" Margin="20">
+            <ActivityIndicator IsRunning="True" Color="{StaticResource SecondaryColor1}" />
+            <Label x:Name="LblLoading" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_AdvicesPage_Loading}" FontSize="18" TextColor="{StaticResource FontColor1}" />
+        </StackLayout>
+        <Grid x:Name="GrdData">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <Grid Padding="15" RowDefinitions="60,10,*,50">
+                    <Label VerticalTextAlignment="Center" x:Name="LblTitle" TextColor="{StaticResource FontColor1}" FontFamily="K2D-Regular" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultsPage_Title}" FontSize="20" FontAttributes="Bold"/>
+                    <BoxView Grid.Row="1" HeightRequest="1" Color="{StaticResource FontColor1}"/>
+                    <cards:CarouselView IsPanSwipeEnabled="False" IsCyclical="False" ItemSwiped="ClvAdvices_ItemSwiped" IsVerticalSwipeEnabled="False" x:Name="ClvAdvices" Grid.Row="2" IndicatorView="indicatorView" ItemsSource="{Binding Advices}">
+                        <cards:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowDefinitions="Auto,Auto,Auto">
+                                    <Label Padding="5" FontSize="18" TextColor="{StaticResource FontColor1}" Text="{Binding Titulo}" FontAttributes="Bold"/>
+                                    <!-- Imagen -->
+                                    <Image IsVisible="{Binding HasImage}" WidthRequest="300" Margin="0,20" VerticalOptions="Center" Source="{Binding Imagen}" Grid.Row="1"/>
+                                    <!-- Enlaces -->
+                                    <CollectionView Grid.Row="1" IsVisible="{Binding HasLinks}" ItemsSource="{Binding Enlaces}" SelectionMode="Single"
+                                            VerticalOptions="FillAndExpand"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalScrollBarVisibility="Always">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Frame BorderColor="{StaticResource ButtonColor2}"
+                                                       CornerRadius="10"
+                                                       Margin="10"
+                                                       Padding="10"
+                                                       BackgroundColor="{StaticResource SecondaryColor3}"
+                                                       HeightRequest="70" HasShadow="True" BindingContextChanged="Frame_BindingContextChanged">
+                                                    <Frame.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                                    </Frame.GestureRecognizers>
+                                                    <Grid ColumnDefinitions="50,*" RowDefinitions="*,*">
+                                                        <Image Grid.RowSpan="2" Source="video_icon.png"/>
+                                                        <Label Margin="20,0,0,0" LineBreakMode="WordWrap" VerticalTextAlignment="Center" Grid.Column="1" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource FontColor1}"/>
+                                                        <Label Margin="20,0,0,0" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="1" TextDecorations="Underline" Text="{x:Static strings:Strings.str_AdvicesPage_BtnYoutube}" FontSize="14" TextColor="{StaticResource LinkColor1}"/>
+                                                    </Grid>
+                                                </Frame>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                    <!-- Audios -->
+                                    <Grid RowDefinitions="*,*" IsVisible="{Binding HasAudio}" VerticalOptions="Center" Grid.Row="1">
+                                        <cards:CarouselView ItemsSource="{Binding Audios}" IsVisible="{Binding HasAudio}" IndicatorView="indicatorViewAudio">
+                                            <cards:CarouselView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <toolkit:MediaElement HeightRequest="250" WidthRequest="350" MetadataArtworkUrl="https://c0.wallpaperflare.com/preview/685/967/619/healthy-lifestyle-meditating-nature.jpg" Source="{Binding ., Converter={StaticResource StringToMediaSourceConverter}}" ShouldLoopPlayback="True" />
+                                                </DataTemplate>
+                                            </cards:CarouselView.ItemTemplate>
+                                        </cards:CarouselView>
+
+                                        <IndicatorView Margin="0,15,0,10" x:Name="indicatorViewAudio" VerticalOptions="End"
+                                           Grid.Row="1"
+                                           IndicatorColor="{StaticResource ButtonColor4}"
+                                           SelectedIndicatorColor="{StaticResource ButtonColor1}"
+                                           HorizontalOptions="Center" />
+                                    </Grid>
+                                    <!-- Contenido general -->
+                                    <CollectionView ItemsSource="{Binding LineasTexto}" Grid.Row="2">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Label Padding="5" FontSize="16" Grid.Row="2" TextColor="{StaticResource FontColor1}" Text="{Binding .}"/>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </Grid>
+                            </DataTemplate>
+                        </cards:CarouselView.ItemTemplate>
+                    </cards:CarouselView>
+                    <ImageButton VerticalOptions="Center" IsEnabled="False" IsVisible="False" Clicked="BtnLeft_Clicked" x:Name="BtnLeft" MaximumWidthRequest="20" WidthRequest="20" Source="flechaderecha.png" RotationY="180" Grid.Row="3" HorizontalOptions="Start"/>
+                    <IndicatorView VerticalOptions="Center" x:Name="indicatorView"
+                                   Grid.Row="3"
+                                   IndicatorColor="{StaticResource ButtonColor4}"
+                                   SelectedIndicatorColor="{StaticResource ButtonColor1}"
+                                   HorizontalOptions="Center" />
+                    <ImageButton VerticalOptions="Center" Clicked="BtnRight_Clicked" x:Name="BtnRight" MaximumWidthRequest="20" WidthRequest="20" Source="flechaderecha.png" Grid.Row="3" HorizontalOptions="End"/>
+                </Grid>
+            </ScrollView>
+            <freakycontrols:FreakyButton Grid.Row="1" x:Name="BtnFinish" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" 
+                HeightRequest="40" Clicked="BtnFinish_Clicked" Text="{x:Static strings:Strings.str_ResultsPage_BtnFinish}" BackgroundColor="{StaticResource PrimaryColor}" Margin="30, 5, 30, 5" FontAttributes="Bold" VerticalOptions="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>

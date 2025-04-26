@@ -15,34 +15,11 @@
                          ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" Icon="main_menu_icon.png"
                          SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_Shell_MainMenu}"/>
             <ShellContent Title="{x:Static strings:Strings.str_Shell_MyProfileTab}" Shell.UnselectedColor="Green"
-                         ContentTemplate="{DataTemplate local:ResultHistoryPage}" Route="ResultHistoryPage" Icon="profile_icon.png" 
+                         ContentTemplate="{DataTemplate local:MyProfilePage}" Route="MyProfilePage" Icon="profile_icon.png" 
                          SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_Shell_ProfileTab}"/>
 
         </Tab>
     </TabBar>
-
-    <Shell.ToolbarItems>
-        <ToolbarItem x:Name="TbiLogOut" Text="{x:Static strings:Strings.str_Shell_TbiLogOut}" IconImageSource="logout_icon.png"
-                     Priority="0"
-                     Order="Secondary"
-                     Clicked="TbiLogOut_Clicked"
-                     SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_Shell_TbiLogOut_Desc}"
-                     AutomationProperties.HelpText="{x:Static strings:Strings.str_SemanticProperties_Shell_TbiLogOut_Help}" />
-
-        <ToolbarItem x:Name="TbiModifyProfile" Text="{x:Static strings:Strings.str_Shell_TbiModifyProfile}" IconImageSource="edit_icon.png"
-                     Priority="1"
-                     Order="Secondary"
-                     Clicked="TbiModifyProfile_Clicked"
-                     SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_Shell_TbiModify_Desc}"
-                     AutomationProperties.HelpText="{x:Static strings:Strings.str_SemanticProperties_Shell_TbiModify_Help}"/>
-
-        <ToolbarItem x:Name="TbiDeleteProfile" Text="{x:Static strings:Strings.str_Shell_TbiDeleteProfile}" IconImageSource="delete_icon.png"
-                     Priority="2"
-                     Order="Secondary"
-                     Clicked="TbiDeleteProfile_Clicked"
-                     SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_Shell_TbiDelete_Desc}"
-                     AutomationProperties.HelpText="{x:Static strings:Strings.str_SemanticProperties_Shell_TbiDelete_Help}"/>
-    </Shell.ToolbarItems>
 
     <Shell.TitleView>
         <toolkit:SemanticOrderView x:Name="SemanticOrderView">
@@ -62,18 +39,24 @@
                                VerticalOptions="Center" 
                                Spacing="10" 
                                Grid.Column="2">
-                  <ImageButton x:Name="BtnAbout" BackgroundColor="Transparent" WidthRequest="40"
+                    <ImageButton x:Name="BtnAbout" BackgroundColor="Transparent" WidthRequest="40"
                            Source="info_icon.png" 
                            Clicked="BtnAbout_Clicked"
                            SemanticProperties.Description="{x:Static strings:Strings.str_Shell_AboutPage_Title}"
                            ToolTipProperties.Text="{x:Static strings:Strings.str_Shell_AboutPage_Title}"/>
 
-                  <ImageButton x:Name="BtnHelp" BackgroundColor="Transparent" WidthRequest="40"
+                    <ImageButton x:Name="BtnHelp" BackgroundColor="Transparent" WidthRequest="40"
                            Source="help_icon.png" 
                            Clicked="BtnHelp_Clicked"
                            SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_Title}"
                            ToolTipProperties.Text="{x:Static strings:Strings.str_Shell_HelpPage_Title}"/>
-              </HorizontalStackLayout>
+
+                    <ImageButton x:Name="BtnSettings" BackgroundColor="Transparent" WidthRequest="40"
+                             Source="settings_icon.png" 
+                             Clicked="BtnSettings_Clicked"
+                             SemanticProperties.Description="{x:Static strings:Strings.str_Shell_SettingsPage_Title}"
+                             ToolTipProperties.Text="{x:Static strings:Strings.str_Shell_SettingsPage_Title}" Margin="0,0,10,0"/>
+                </HorizontalStackLayout>
             </Grid>
         </toolkit:SemanticOrderView>
     </Shell.TitleView>

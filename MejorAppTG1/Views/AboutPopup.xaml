@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
+               xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
+               x:Class="MejorAppTG1.Views.AboutPopup"
+               Color="Transparent"
+               x:Name="AboutPopupRoot">
+
+    <Border Padding="0"
+        MaximumWidthRequest="600"
+        MaximumHeightRequest="800"
+        Stroke="{StaticResource FontColor1}"
+        StrokeThickness="5">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="25"/>
+        </Border.StrokeShape>
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="{StaticResource GradientColor2}" Offset="0.1" />
+                <GradientStop Color="{StaticResource White}" Offset="0.8" />
+            </LinearGradientBrush>
+        </Border.Background>
+        
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="10">
+
+                <Label Text="{x:Static strings:Strings.str_Shell_AboutPage_Title}"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource FontColor1}"
+                       HorizontalOptions="Center"
+                       Margin="0,20,0,10"
+                       SemanticProperties.HeadingLevel="Level1"
+                       SemanticProperties.Description="{x:Static strings:Strings.str_Shell_AboutPage_Title}" />
+
+                <Label Text="{x:Static strings:Strings.str_Shell_AboutPage_LblIntro}"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource FontColor1}"
+                       HorizontalTextAlignment="Start"
+                       SemanticProperties.Description="{x:Static strings:Strings.str_Shell_AboutPage_LblIntro}" />
+
+                <!-- Expander 1 -->
+                <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
+                    <toolkit:Expander.Header>
+                        <Grid BackgroundColor="{StaticResource SecondaryColor1}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                            Text="{x:Static strings:Strings.str_Shell_AboutPage_ScientificBase}"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource FontColor3}"
+                            Padding="10"
+                            SemanticProperties.HeadingLevel="Level2"
+                            SemanticProperties.Description="{x:Static strings:Strings.str_Shell_AboutPage_ScientificBase}" />
+                            <Image Grid.Column="1" Source="flechaabajo.png" HorizontalOptions="End" HeightRequest="20" Margin="5"/>
+                        </Grid>
+                    </toolkit:Expander.Header>
+                    <Label
+                    Text="{x:Static strings:Strings.str_Shell_AboutPage_ScientificBase_Msg}"
+                    BackgroundColor="{StaticResource SecondaryColor2}"
+                    FontSize="16"
+                    TextColor="{StaticResource FontColor1}"
+                    HorizontalTextAlignment="Start"
+                    Padding="10"
+                    SemanticProperties.Description="{x:Static strings:Strings.str_Shell_AboutPage_ScientificBase_Msg}" />
+                </toolkit:Expander>
+
+                <!-- Expander 2 -->
+                <toolkit:Expander ExpandedChanged="Expander_ExpandedChanged">
+                    <toolkit:Expander.Header>
+                        <Grid BackgroundColor="{StaticResource SecondaryColor1}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                            Text="{x:Static strings:Strings.str_Shell_AboutPage_Credits}"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource FontColor3}"
+                            Padding="10"
+                            SemanticProperties.HeadingLevel="Level2"
+                            SemanticProperties.Description="{x:Static strings:Strings.str_Shell_AboutPage_Credits}" />
+                            <Image Grid.Column="1" Source="flechaabajo.png" HorizontalOptions="End" HeightRequest="20" Margin="5"/>
+                        </Grid>
+                    </toolkit:Expander.Header>
+                    <Label
+                    Text="{x:Static strings:Strings.str_Shell_AboutPage_Credits_Msg}"
+                    BackgroundColor="{StaticResource SecondaryColor2}"
+                    FontSize="16"
+                    TextColor="{StaticResource FontColor1}"
+                    HorizontalTextAlignment="Start"
+                    Padding="10"
+                    SemanticProperties.Description="{x:Static strings:Strings.str_Shell_AboutPage_Credits_Msg}" />
+                </toolkit:Expander>
+
+                <freakycontrols:FreakyButton x:Name="BtnClose" Text="{x:Static strings:Strings.str_Shell_BtnClose}"
+                        BackgroundColor="{StaticResource ButtonColor3}"
+                        TextColor="{StaticResource FontColor3}"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        CornerRadius="20"
+                        BorderWidth="2"
+                        BorderColor="{StaticResource BorderColor2}"
+                        Margin="0,20,0,0"
+                        SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_Shell_AboutPage_BtnClose}"
+                        Clicked="BtnClose_Clicked" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Border>
+</toolkit:Popup>

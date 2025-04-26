@@ -2,13 +2,13 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MejorAppTG1"
+             xmlns:converters="clr-namespace:MejorAppTG1.Utils.Converters"
              x:Class="MejorAppTG1.App">
     <Application.Resources>
         <ResourceDictionary>
-            <local:ContenidoToBackgroundColorConverter x:Key="ContenidoToBackgroundColorConverter" />
-            <local:ContenidoToFontColorConverter x:Key="ContenidoToFontColorConverter" />
-            <local:TranslationKeyConverter x:Key="TranslationKeyConverter" />
-            <local:StringToMediaSourceConverter x:Key="StringToMediaSourceConverter" />
+            <converters:TranslationKeyConverter x:Key="TranslationKeyConverter" />
+            <converters:StringToMediaSourceConverter x:Key="StringToMediaSourceConverter" />
+            <converters:NullToDefaultImageConverter x:Key="NullToDefaultImageConverter" />
             <Color x:Key="PrimaryColor">#92ed8b</Color>
             <Color x:Key="SecondaryColor1">#74c475</Color>
             <Color x:Key="SecondaryColor2">#b5f3a5</Color>
@@ -19,6 +19,7 @@
             <Color x:Key="ButtonColor2">Gray</Color>
             <Color x:Key="ButtonColor3">IndianRed</Color>
             <Color x:Key="ButtonColor4">DarkGrey</Color>
+            <Color x:Key="ButtonColor5">#d1adab</Color>
             <Color x:Key="BorderColor1">#009203</Color>
             <Color x:Key="BorderColor2">DarkRed</Color>
             <Color x:Key="BorderColor3">LightGray</Color>
@@ -33,6 +34,7 @@
             <Color x:Key="GradientColor1">#eff7d5</Color>
             <Color x:Key="GradientColor2">#d9fad9</Color>
             <Color x:Key="GradientColor3">#f6ffe3</Color>
+            <Color x:Key="LinkColor1">DarkBlue</Color>
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />

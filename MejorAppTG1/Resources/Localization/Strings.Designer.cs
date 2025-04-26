@@ -70,6 +70,42 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a An error has occurred while trying to open the video on YouTube..
+        /// </summary>
+        internal static string str_AdvicesPage_Alert_NoOpenVideo_Desc {
+            get {
+                return ResourceManager.GetString("str_AdvicesPage_Alert_NoOpenVideo_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error.
+        /// </summary>
+        internal static string str_AdvicesPage_Alert_NoOpenVideo_Title {
+            get {
+                return ResourceManager.GetString("str_AdvicesPage_Alert_NoOpenVideo_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Watch on YouTube.
+        /// </summary>
+        internal static string str_AdvicesPage_BtnYoutube {
+            get {
+                return ResourceManager.GetString("str_AdvicesPage_BtnYoutube", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Loading advices....
+        /// </summary>
+        internal static string str_AdvicesPage_Loading {
+            get {
+                return ResourceManager.GetString("str_AdvicesPage_Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Accept that you don&apos;t know everything and that it&apos;s perfectly fine to feel doubts during an exam. This will help you not overburden yourself..
         /// </summary>
         internal static string str_AnxietyAdvice1_Content {
@@ -112,7 +148,7 @@ namespace MejorAppTG1.Resources.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a Slowly read the following metaphor:
         ///&quot;Imagine you&apos;re at sea, a seemingly calm place, and suddenly, a massive wave appears. As it approaches you feel afraid and you instinctively run away from it, but by getting away, the wave becomes stronger and more frightening and seemingly continues to chase you.
-        ///The farther you run away from the wave, the bigger it becomes, and the farther you run away, the stronger it gets. However, if you don&apos;t avoid the wave, the crash will be strong at first, but you will eventual [resto de la cadena truncado]&quot;;.
+        ///The farther you run away from the wave, the bigger it becomes, and the farther you run away, the stronger it gets. However, if you don&apos;t avoid the wave, the crash will be strong at first, but you will eventually [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_AnxietyAdvice11_Content {
             get {
@@ -246,7 +282,7 @@ namespace MejorAppTG1.Resources.Localization {
         ///● When it happened: Monday, considering that I have 3 exams.
         ///● What I&apos;m feeling: Anxiety, trouble breathing...
         ///● Now see the situation from the outside (like in a third-person video game) and explain it.
-        ///● What I can do to cope with the situation: Focus on one exam and when you finish with another one...; help yourself  [resto de la cadena truncado]&quot;;.
+        ///● What I can do to cope with the situation: Focus on one exam and when you finish with another one...; help yourself with [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_AnxietyAdvice18_Content {
             get {
@@ -319,7 +355,7 @@ namespace MejorAppTG1.Resources.Localization {
         
         /// <summary>
         ///   Busca una cadena traducida similar a This Hawaiian technique seeks to clean negative memories and emotions that may affect our lives. Recording in Spanish:
-        ///hooponopono.mp3.
+        ///https://www.youtube.com/embed/hV3A-BzfGZM?si=uQDjLgWi_8LJmmTV.
         /// </summary>
         internal static string str_AnxietyAdvice21_Content {
             get {
@@ -338,7 +374,7 @@ namespace MejorAppTG1.Resources.Localization {
         
         /// <summary>
         ///   Busca una cadena traducida similar a Relax and connect with your inner self with this short guided meditation session. Find a quiet place, get comfortable and let the audio guide (in Spanish) you to inner calm.
-        ///meditation.mp3.
+        ///https://www.youtube.com/embed/C6bDxq1S7lw?si=eRZpZsPdmTRhGLxd.
         /// </summary>
         internal static string str_AnxietyAdvice22_Content {
             get {
@@ -357,7 +393,7 @@ namespace MejorAppTG1.Resources.Localization {
         
         /// <summary>
         ///   Busca una cadena traducida similar a Ambient music created by our students. Recommended for any of the meditations of other advices.
-        ///audiorelax.mp3.
+        ///https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87.
         /// </summary>
         internal static string str_AnxietyAdvice23_Content {
             get {
@@ -411,7 +447,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a These simple body postures give instant security and confidence. Watch this video (in Spanish):
+        ///   Busca una cadena traducida similar a These simple body postures give instant security and confidence.
         ///https://www.youtube.com/embed/jnOfzrDZYrA.
         /// </summary>
         internal static string str_AnxietyAdvice5_Content {
@@ -449,7 +485,7 @@ namespace MejorAppTG1.Resources.Localization {
         
         /// <summary>
         ///   Busca una cadena traducida similar a Slowly read this paragraph when you have an anxiety attack: &quot;All these symptoms you are currently feeling, even if they are unpleasant, ARE NOT DANGEROUS, YOU ARE NOT GOING TO DIE, NOR ARE YOU GOING TO LOSE CONTROL OF YOUR BREATHING. This crisis you are feeling has a beginning, a peak and an end. This means that whatever you do, it will end, even if you do nothing. So avoid trying to control or fight it, that will make it worse.
-        ///Instead, listen to your body and try to name whatever you are feeling right no [resto de la cadena truncado]&quot;;.
+        ///Instead, listen to your body and try to name whatever you are feeling right now [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_AnxietyAdvice7_Content {
             get {
@@ -842,6 +878,51 @@ namespace MejorAppTG1.Resources.Localization {
         internal static string str_EatingTest_Question9 {
             get {
                 return ResourceManager.GetString("str_EatingTest_Question9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a High.
+        /// </summary>
+        internal static string str_FACTORS_LEVEL_HIGH {
+            get {
+                return ResourceManager.GetString("str_FACTORS_LEVEL_HIGH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Low.
+        /// </summary>
+        internal static string str_FACTORS_LEVEL_LOW {
+            get {
+                return ResourceManager.GetString("str_FACTORS_LEVEL_LOW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Low-Moderate.
+        /// </summary>
+        internal static string str_FACTORS_LEVEL_LOW_MEDIUM {
+            get {
+                return ResourceManager.GetString("str_FACTORS_LEVEL_LOW_MEDIUM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Medium.
+        /// </summary>
+        internal static string str_FACTORS_LEVEL_MEDIUM {
+            get {
+                return ResourceManager.GetString("str_FACTORS_LEVEL_MEDIUM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Moderate-High.
+        /// </summary>
+        internal static string str_FACTORS_LEVEL_MEDIUM_HIGH {
+            get {
+                return ResourceManager.GetString("str_FACTORS_LEVEL_MEDIUM_HIGH", resourceCulture);
             }
         }
         
@@ -1314,6 +1395,15 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Select a language.
+        /// </summary>
+        internal static string str_LanguagePopup_LblTitle {
+            get {
+                return ResourceManager.GetString("str_LanguagePopup_LblTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Confirm.
         /// </summary>
         internal static string str_LoginPage_BtnConfirm {
@@ -1323,7 +1413,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Log in.
+        ///   Busca una cadena traducida similar a Select user.
         /// </summary>
         internal static string str_LoginPage_BtnLogIn {
             get {
@@ -1404,7 +1494,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Gender:.
+        ///   Busca una cadena traducida similar a Gender.
         /// </summary>
         internal static string str_LoginPage_BtnSignUp_Gender {
             get {
@@ -1885,6 +1975,15 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Create chart.
+        /// </summary>
+        internal static string str_ResultHistoryPage_BtnCreateGraph {
+            get {
+                return ResourceManager.GetString("str_ResultHistoryPage_BtnCreateGraph", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Delete.
         /// </summary>
         internal static string str_ResultHistoryPage_BtnDelete {
@@ -1930,7 +2029,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Enter your age.
+        ///   Busca una cadena traducida similar a Age.
         /// </summary>
         internal static string str_ResultHistoryPage_BtnSignUp_EntAge {
             get {
@@ -1939,7 +2038,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Enter your name.
+        ///   Busca una cadena traducida similar a Name.
         /// </summary>
         internal static string str_ResultHistoryPage_BtnSignUp_EntName {
             get {
@@ -2011,6 +2110,15 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Result analysis.
+        /// </summary>
+        internal static string str_ResultHistoryPage_LblAnalysis {
+            get {
+                return ResourceManager.GetString("str_ResultHistoryPage_LblAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Page 1/X.
         /// </summary>
         internal static string str_ResultHistoryPage_LblCurrentPage {
@@ -2074,6 +2182,15 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Type: .
+        /// </summary>
+        internal static string str_ResultHistoryPage_LblTipo {
+            get {
+                return ResourceManager.GetString("str_ResultHistoryPage_LblTipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Username.
         /// </summary>
         internal static string str_ResultHistoryPage_LblUsername {
@@ -2102,7 +2219,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a If you are in over your head:.
+        ///   Busca una cadena traducida similar a If you are in over your head.
         /// </summary>
         internal static string str_ResultsPage_Category_BadSituation {
             get {
@@ -2111,7 +2228,25 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Things you can do before getting to this situation:.
+        ///   Busca una cadena traducida similar a General advices.
+        /// </summary>
+        internal static string str_ResultsPage_Category_GeneralAdvice {
+            get {
+                return ResourceManager.GetString("str_ResultsPage_Category_GeneralAdvice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Things you can do to keep controlling the situation.
+        /// </summary>
+        internal static string str_ResultsPage_Category_KeepItUp {
+            get {
+                return ResourceManager.GetString("str_ResultsPage_Category_KeepItUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Things you can do before getting to this situation.
         /// </summary>
         internal static string str_ResultsPage_Category_Prevent {
             get {
@@ -2221,6 +2356,24 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Button to log in with the currently selected user..
+        /// </summary>
+        internal static string str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Click here to access the main menu with the currently selected user..
+        /// </summary>
+        internal static string str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Button to log in with an existing user..
         /// </summary>
         internal static string str_SemanticProperties_LoginPage_BtnLogIn_Desc {
@@ -2248,7 +2401,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a User {0} selected. Logging in..
+        ///   Busca una cadena traducida similar a User {0} selected..
         /// </summary>
         internal static string str_SemanticProperties_LoginPage_BtnLogIn_Success {
             get {
@@ -2361,6 +2514,33 @@ namespace MejorAppTG1.Resources.Localization {
         internal static string str_SemanticProperties_LoginPage_SignUpPopup_GenderError {
             get {
                 return ResourceManager.GetString("str_SemanticProperties_LoginPage_SignUpPopup_GenderError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gender selected: Female..
+        /// </summary>
+        internal static string str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gender selected: Male..
+        /// </summary>
+        internal static string str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gender selected: Non-binary..
+        /// </summary>
+        internal static string str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected", resourceCulture);
             }
         }
         
@@ -2527,11 +2707,47 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Picker to select a test type..
+        /// </summary>
+        internal static string str_SemanticProperties_ResultHistoryPage_PickTipos_Desc {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_ResultHistoryPage_PickTipos_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Select an option: Anxiety (quick), Anxiety (full), Eating disorders.
+        /// </summary>
+        internal static string str_SemanticProperties_ResultHistoryPage_PickTipos_Hint {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_ResultHistoryPage_PickTipos_Hint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a  Below you will find the advices we have prepared based on your answers to help you make the best possible approach to your health..
         /// </summary>
         internal static string str_SemanticProperties_ResultsPage_LblIntro {
             get {
                 return ResourceManager.GetString("str_SemanticProperties_ResultsPage_LblIntro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Language selector..
+        /// </summary>
+        internal static string str_SemanticProperties_SettingsPage_BtnLanguage_Desc {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_SettingsPage_BtnLanguage_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Click here to change the app&apos;s display language..
+        /// </summary>
+        internal static string str_SemanticProperties_SettingsPage_BtnLanguage_Hint {
+            get {
+                return ResourceManager.GetString("str_SemanticProperties_SettingsPage_BtnLanguage_Hint", resourceCulture);
             }
         }
         
@@ -2635,6 +2851,33 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Change language.
+        /// </summary>
+        internal static string str_SettingsPage_BtnLanguage {
+            get {
+                return ResourceManager.GetString("str_SettingsPage_BtnLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Data Management.
+        /// </summary>
+        internal static string str_SettingsPage_LblData {
+            get {
+                return ResourceManager.GetString("str_SettingsPage_LblData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Language.
+        /// </summary>
+        internal static string str_SettingsPage_LblLanguage {
+            get {
+                return ResourceManager.GetString("str_SettingsPage_LblLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Credits.
         /// </summary>
         internal static string str_Shell_AboutPage_Credits {
@@ -2677,7 +2920,7 @@ namespace MejorAppTG1.Resources.Localization {
         /// <summary>
         ///   Busca una cadena traducida similar a All the tests herein presented are adapted as closely as possible from the following studies:
         ///• &quot;Propiedades psicométricas de un cuestionario para la evaluación de la ansiedad ante los exámenes en adolescentes&quot;: Rosa Torrano-Martínez, Juan Manuel Ortigosa-Quiles, Antonio Riquelme-Marín and José Antonio López-Pina (University of Murcia).
-        ///• &quot;Comprendiendo el papel de la práctica física y el género en los trastornos alimentarios en estudiantes adolescentes españoles&quot;: Gema Sanchis-Soler, Irene León-Calero, S [resto de la cadena truncado]&quot;;.
+        ///• &quot;Comprendiendo el papel de la práctica física y el género en los trastornos alimentarios en estudiantes adolescentes españoles&quot;: Gema Sanchis-Soler, Irene León-Calero, Ser [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_Shell_AboutPage_ScientificBase_Msg {
             get {
@@ -2722,6 +2965,24 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Advices page.
+        /// </summary>
+        internal static string str_Shell_HelpPage_Advices {
+            get {
+                return ResourceManager.GetString("str_Shell_HelpPage_Advices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a As soon as you finish a test, a new screen will be displayed with recommendations adapted to your test result. First, a general estimate will appear, and then one or more categories of tips will appear. If you click on any of these, you will be redirected to a new screen where the tips associated with that category will be displayed in a carousel format (scrolling from right to left). These tips include relevant images or, in some cases, videos and audios to help you in your situation..
+        /// </summary>
+        internal static string str_Shell_HelpPage_Advices_Msg {
+            get {
+                return ResourceManager.GetString("str_Shell_HelpPage_Advices_Msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Welcome to MejorAppT! Here you can consult the most essential help to learn how to use and navigate the app. Click on any of the following categories to get more information..
         /// </summary>
         internal static string str_Shell_HelpPage_MainHeader {
@@ -2745,7 +3006,7 @@ namespace MejorAppTG1.Resources.Localization {
         ///• Complete anxiety test: consists of 48 questions and can be completed in approximately 6 minutes.
         ///• Eating disorders test: consists of 26 questions and can be completed in approximately 3 minutes.
         ///
-        ///In each test, each question will be presented individually. Each question consists of 5 possible answers, and you must select one to advance to the n [resto de la cadena truncado]&quot;;.
+        ///In each test, each question will be presented individually. Each question consists of 5 possible answers, and you must select one to advance to the next q [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_Shell_HelpPage_MainMenu_Msg {
             get {
@@ -2754,8 +3015,9 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a In the &quot;My profile&quot; tab, you can see the details of the profile currently logged in to the application (name, age and gender). Remember that you can change these details or even create a new user from the menu in the top right corner. You can also change your profile picture by clicking on the picture itself.
-        ///Just below, you will see a list of the tests you have completed with this user in chronological order, with the most recent one first. If you click on any of them, the tips associated with your answer [resto de la cadena truncado]&quot;;.
+        ///   Busca una cadena traducida similar a In the &quot;My profile&quot; tab, you can see the details of the profile currently logged in to the application (photo, name, age and gender). Remember that you can change these details or even create a new user from the menu in the top right corner.
+        ///Just below, you will see two tabs: &quot;Test history&quot; and &quot;Result analysis&quot;:
+        ///• In the first tab, you will see a list of the tests you have completed with this user in chronological order, with the most recent one first. If you click on any of them, the tips associated wit [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_Shell_HelpPage_MyProfile_Msg {
             get {
@@ -2785,7 +3047,7 @@ namespace MejorAppTG1.Resources.Localization {
         ///   Busca una cadena traducida similar a In the top navigation bar, you can change between the two main tabs that make up the app: the main menu and your profile. Below you&apos;ll find more details about each of these tabs.
         ///• By clicking on (i), you can see information about this project, the involved developers and the studies that endorse this app.
         ///• By clicking on (?), you can access the app&apos;s help, as you will have already been able to see for yourself.
-        ///• Finally, by clicking on the kebab menu (the three little dots in the top right corner), yo [resto de la cadena truncado]&quot;;.
+        ///• Finally, by clicking on the gear icon, a menu will open with options that will allow you to l [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string str_Shell_HelpPage_TopBar_Msg {
             get {
@@ -2794,7 +3056,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Main menu.
+        ///   Busca una cadena traducida similar a Main Menu.
         /// </summary>
         internal static string str_Shell_MainMenuTab {
             get {
@@ -2812,11 +3074,20 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a My profile.
+        ///   Busca una cadena traducida similar a My Profile.
         /// </summary>
         internal static string str_Shell_MyProfileTab {
             get {
                 return ResourceManager.GetString("str_Shell_MyProfileTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Settings.
+        /// </summary>
+        internal static string str_Shell_SettingsPage_Title {
+            get {
+                return ResourceManager.GetString("str_Shell_SettingsPage_Title", resourceCulture);
             }
         }
         
@@ -3016,6 +3287,15 @@ namespace MejorAppTG1.Resources.Localization {
         internal static string str_TestPage_QuestionCount {
             get {
                 return ResourceManager.GetString("str_TestPage_QuestionCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please select an user..
+        /// </summary>
+        internal static string str_UserSelectPopup_ChooseUserToast {
+            get {
+                return ResourceManager.GetString("str_UserSelectPopup_ChooseUserToast", resourceCulture);
             }
         }
     }

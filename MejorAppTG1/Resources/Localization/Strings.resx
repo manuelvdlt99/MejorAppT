@@ -130,7 +130,7 @@
     <value>Female</value>
   </data>
   <data name="str_LoginPage_BtnLogIn" xml:space="preserve">
-    <value>Log in</value>
+    <value>Select user</value>
   </data>
   <data name="str_LoginPage_BtnLogin_entryAgeError" xml:space="preserve">
     <value>Please enter a valid age.</value>
@@ -148,7 +148,7 @@
     <value>Age:</value>
   </data>
   <data name="str_LoginPage_BtnSignUp_Gender" xml:space="preserve">
-    <value>Gender:</value>
+    <value>Gender</value>
   </data>
   <data name="str_LoginPage_BtnSignUp_Name" xml:space="preserve">
     <value>Name:</value>
@@ -269,10 +269,10 @@ Still, are you sure you want to take the test?</value>
     <value>Select your gender</value>
   </data>
   <data name="str_ResultHistoryPage_BtnSignUp_EntAge" xml:space="preserve">
-    <value>Enter your age</value>
+    <value>Age</value>
   </data>
   <data name="str_ResultHistoryPage_BtnSignUp_EntName" xml:space="preserve">
-    <value>Enter your name</value>
+    <value>Name</value>
   </data>
   <data name="str_ResultHistoryPage_ChooseOption_Question" xml:space="preserve">
     <value>What would you like to do with this entry?</value>
@@ -341,10 +341,10 @@ Still, are you sure you want to take the test?</value>
     <value>Data synchronised with Firebase</value>
   </data>
   <data name="str_Shell_MainMenuTab" xml:space="preserve">
-    <value>Main menu</value>
+    <value>Main Menu</value>
   </data>
   <data name="str_Shell_MyProfileTab" xml:space="preserve">
-    <value>My profile</value>
+    <value>My Profile</value>
   </data>
   <data name="str_Shell_TbiLogOut" xml:space="preserve">
     <value>Log out</value>
@@ -395,7 +395,7 @@ Click on any of the following categories to get more information.</value>
     <value>In the top navigation bar, you can change between the two main tabs that make up the app: the main menu and your profile. Below you'll find more details about each of these tabs.
 • By clicking on (i), you can see information about this project, the involved developers and the studies that endorse this app.
 • By clicking on (?), you can access the app's help, as you will have already been able to see for yourself.
-• Finally, by clicking on the kebab menu (the three little dots in the top right corner), you will see a menu with options that allow you to log out, modify the current user or delete the user and all stored data.</value>
+• Finally, by clicking on the gear icon, a menu will open with options that will allow you to log out, modify the current user, delete the user and all stored data, delete your test history or even change the language of the application.</value>
   </data>
   <data name="str_Shell_HelpPage_MainMenu" xml:space="preserve">
     <value>Main menu and tests</value>
@@ -410,9 +410,10 @@ In each test, each question will be presented individually. Each question consis
 Once you have answered all the questions, the final result will be calculated and advices will be displayed on screen according to your answers. Your test will be saved in the system so that you can consult these same advices from your profile.</value>
   </data>
   <data name="str_Shell_HelpPage_MyProfile_Msg" xml:space="preserve">
-    <value>In the "My profile" tab, you can see the details of the profile currently logged in to the application (name, age and gender). Remember that you can change these details or even create a new user from the menu in the top right corner. You can also change your profile picture by clicking on the picture itself.
-Just below, you will see a list of the tests you have completed with this user in chronological order, with the most recent one first. If you click on any of them, the tips associated with your answers in that test will be displayed.
-Finally, you can quickly and directly consult the tips of the last test you took by clicking on the ‘Consult last test’ button or delete all your history and start from scratch by clicking on the "Delete history" button.</value>
+    <value>In the "My profile" tab, you can see the details of the profile currently logged in to the application (photo, name, age and gender). Remember that you can change these details or even create a new user from the menu in the top right corner.
+Just below, you will see two tabs: "Test history" and "Result analysis":
+• In the first tab, you will see a list of the tests you have completed with this user in chronological order, with the most recent one first. If you click on any of them, the tips associated with your answers in that test will be displayed. You can quickly and directly consult the tips of the last test you took by clicking on the "Consult last test" button.
+• In the second tab, you will see a line graph showing your actual evolution according to the tests you have taken. Select a type from the drop-down menu and click on the "Create chart" button to consult your data. The information for each test you have taken is displayed chronologically, and at the top you will see an overall rating of your status. The application also has artificial intelligence models that will help you understand where you stand in relation to the general public and help you know whether you are on track or not based on your trends.</value>
   </data>
   <data name="str_Shell_ModifyPage_Apply" xml:space="preserve">
     <value>Apply</value>
@@ -788,7 +789,7 @@ What to do with this attempt?</value>
     <value>Empower yourself</value>
   </data>
   <data name="str_AnxietyAdvice5_Content" xml:space="preserve">
-    <value>These simple body postures give instant security and confidence. Watch this video (in Spanish):
+    <value>These simple body postures give instant security and confidence.
 https://www.youtube.com/embed/jnOfzrDZYrA</value>
   </data>
   <data name="str_AnxietyAdvice6_Title" xml:space="preserve">
@@ -913,13 +914,13 @@ Solve all your doubts about the subject with your teacher.</value>
 Moderate anxiety can help you stay focused on your studies, so long as it is not sustained over time, as it can get out of your control.</value>
   </data>
   <data name="str_ResultsPage_Category_Prevent" xml:space="preserve">
-    <value>Things you can do before getting to this situation:</value>
+    <value>Things you can do before getting to this situation</value>
   </data>
   <data name="str_ResultsPage_Category_SeeMore" xml:space="preserve">
     <value>Would you like to know more?</value>
   </data>
   <data name="str_ResultsPage_Category_BadSituation" xml:space="preserve">
-    <value>If you are in over your head:</value>
+    <value>If you are in over your head</value>
   </data>
   <data name="str_ResultsPage_LblIntro_Low_2" xml:space="preserve">
     <value>Despite sometimes feeling more nervous than usual, your response to these situations is adequate and within the average. Keep it up. 
@@ -973,21 +974,21 @@ Even though you are not at risk, we believe it would be a good idea for you to s
   </data>
   <data name="str_AnxietyAdvice21_Content" xml:space="preserve">
     <value>This Hawaiian technique seeks to clean negative memories and emotions that may affect our lives. Recording in Spanish:
-hooponopono.mp3</value>
+https://www.youtube.com/embed/hV3A-BzfGZM?si=uQDjLgWi_8LJmmTV</value>
   </data>
   <data name="str_AnxietyAdvice22_Title" xml:space="preserve">
     <value>Meditation session</value>
   </data>
   <data name="str_AnxietyAdvice22_Content" xml:space="preserve">
     <value>Relax and connect with your inner self with this short guided meditation session. Find a quiet place, get comfortable and let the audio guide (in Spanish) you to inner calm.
-meditation.mp3</value>
+https://www.youtube.com/embed/C6bDxq1S7lw?si=eRZpZsPdmTRhGLxd</value>
   </data>
   <data name="str_AnxietyAdvice23_Title" xml:space="preserve">
     <value>Ambient music</value>
   </data>
   <data name="str_AnxietyAdvice23_Content" xml:space="preserve">
     <value>Ambient music created by our students. Recommended for any of the meditations of other advices.
-audiorelax.mp3</value>
+https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87</value>
   </data>
   <data name="str_ResultHistoryPage_Loading" xml:space="preserve">
     <value>Hold on, we're retrieving your data.
@@ -1081,7 +1082,7 @@ It will only take a moment!</value>
     <value>There are no users available.</value>
   </data>
   <data name="str_SemanticProperties_LoginPage_BtnLogIn_Success" xml:space="preserve">
-    <value>User {0} selected. Logging in.</value>
+    <value>User {0} selected.</value>
   </data>
   <data name="str_SemanticProperties_ResultHistoryPage_ImgProfile" xml:space="preserve">
     <value>This is the user's profile picture.</value>
@@ -1136,5 +1137,98 @@ It will only take a moment!</value>
   </data>
   <data name="str_SemanticProperties_MainPage_Welcome" xml:space="preserve">
     <value>You are in the app's main menu. Below you will find the three types of tests to take: quick anxiety test (estimated time: 2 minutes), complete anxiety test (estimated time: 6 minutes), eating disorders test (estimated time: 3 minutes).</value>
+  </data>
+  <data name="str_UserSelectPopup_ChooseUserToast" xml:space="preserve">
+    <value>Please select an user.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Desc" xml:space="preserve">
+    <value>Button to log in with the currently selected user.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_BtnLogIn_BtnConfirm_Hint" xml:space="preserve">
+    <value>Click here to access the main menu with the currently selected user.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderMaleSelected" xml:space="preserve">
+    <value>Gender selected: Male.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderFemaleSelected" xml:space="preserve">
+    <value>Gender selected: Female.</value>
+  </data>
+  <data name="str_SemanticProperties_LoginPage_SignUpPopup_GenderNBSelected" xml:space="preserve">
+    <value>Gender selected: Non-binary.</value>
+  </data>
+  <data name="str_Shell_SettingsPage_Title" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="str_SettingsPage_BtnLanguage" xml:space="preserve">
+    <value>Change language</value>
+  </data>
+  <data name="str_SettingsPage_LblLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="str_LanguagePopup_LblTitle" xml:space="preserve">
+    <value>Select a language</value>
+  </data>
+  <data name="str_SettingsPage_LblData" xml:space="preserve">
+    <value>Data Management</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Desc" xml:space="preserve">
+    <value>Language selector.</value>
+  </data>
+  <data name="str_SemanticProperties_SettingsPage_BtnLanguage_Hint" xml:space="preserve">
+    <value>Click here to change the app's display language.</value>
+  </data>
+  <data name="str_ResultsPage_Category_KeepItUp" xml:space="preserve">
+    <value>Things you can do to keep controlling the situation</value>
+  </data>
+  <data name="str_ResultsPage_Category_GeneralAdvice" xml:space="preserve">
+    <value>General advices</value>
+  </data>
+  <data name="str_AdvicesPage_Loading" xml:space="preserve">
+    <value>Loading advices...</value>
+  </data>
+  <data name="str_AdvicesPage_BtnYoutube" xml:space="preserve">
+    <value>Watch on YouTube</value>
+  </data>
+  <data name="str_AdvicesPage_Alert_NoOpenVideo_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="str_AdvicesPage_Alert_NoOpenVideo_Desc" xml:space="preserve">
+    <value>An error has occurred while trying to open the video on YouTube.</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblAnalysis" xml:space="preserve">
+    <value>Result analysis</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_PickTipos_Desc" xml:space="preserve">
+    <value>Picker to select a test type.</value>
+  </data>
+  <data name="str_SemanticProperties_ResultHistoryPage_PickTipos_Hint" xml:space="preserve">
+    <value>Select an option: Anxiety (quick), Anxiety (full), Eating disorders</value>
+  </data>
+  <data name="str_ResultHistoryPage_LblTipo" xml:space="preserve">
+    <value>Type: </value>
+  </data>
+  <data name="str_ResultHistoryPage_BtnCreateGraph" xml:space="preserve">
+    <value>Create chart</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_LOW" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_LOW_MEDIUM" xml:space="preserve">
+    <value>Low-Moderate</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_MEDIUM" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_MEDIUM_HIGH" xml:space="preserve">
+    <value>Moderate-High</value>
+  </data>
+  <data name="str_FACTORS_LEVEL_HIGH" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="str_Shell_HelpPage_Advices" xml:space="preserve">
+    <value>Advices page</value>
+  </data>
+  <data name="str_Shell_HelpPage_Advices_Msg" xml:space="preserve">
+    <value>As soon as you finish a test, a new screen will be displayed with recommendations adapted to your test result. First, a general estimate will appear, and then one or more categories of tips will appear. If you click on any of these, you will be redirected to a new screen where the tips associated with that category will be displayed in a carousel format (scrolling from right to left). These tips include relevant images or, in some cases, videos and audios to help you in your situation.</value>
   </data>
 </root>
