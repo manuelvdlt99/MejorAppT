@@ -1,0 +1,1302 @@
+﻿{
+  "Usuario_001": [
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2023-05-01T10:00:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2023-11-01T10:20:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2024-05-01T10:40:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2024-11-01T11:00:00",
+      "Puntuacion": 50
+    }
+  ],
+  "Usuario_002": [
+    {
+      "Edad": 22,
+      "Genero": "Hombre",
+      "Fecha": "2023-04-15T11:00:00",
+      "Puntuacion": 80
+    },
+    {
+      "Edad": 22,
+      "Genero": "Hombre",
+      "Fecha": "2023-10-15T11:20:00",
+      "Puntuacion": 75
+    },
+    {
+      "Edad": 22,
+      "Genero": "Hombre",
+      "Fecha": "2024-04-15T11:40:00",
+      "Puntuacion": 65
+    },
+    {
+      "Edad": 22,
+      "Genero": "Hombre",
+      "Fecha": "2024-10-15T12:00:00",
+      "Puntuacion": 70
+    }
+  ],
+  "Usuario_003": [
+    {
+      "Edad": 26,
+      "Genero": "No binario",
+      "Fecha": "2023-03-20T12:00:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 26,
+      "Genero": "No binario",
+      "Fecha": "2023-09-20T12:20:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 26,
+      "Genero": "No binario",
+      "Fecha": "2024-03-20T12:40:00",
+      "Puntuacion": 65
+    },
+    {
+      "Edad": 26,
+      "Genero": "No binario",
+      "Fecha": "2024-09-20T13:00:00",
+      "Puntuacion": 80
+    }
+  ],
+  "Usuario_004": [
+    {
+      "Edad": 19,
+      "Genero": "Mujer",
+      "Fecha": "2023-07-05T13:00:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 19,
+      "Genero": "Mujer",
+      "Fecha": "2024-01-05T13:20:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 19,
+      "Genero": "Mujer",
+      "Fecha": "2024-07-05T13:40:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 19,
+      "Genero": "Mujer",
+      "Fecha": "2025-01-05T14:00:00",
+      "Puntuacion": 60
+    }
+  ],
+  "Usuario_005": [
+    {
+      "Edad": 21,
+      "Genero": "Hombre",
+      "Fecha": "2023-05-25T14:00:00",
+      "Puntuacion": 30
+    },
+    {
+      "Edad": 21,
+      "Genero": "Hombre",
+      "Fecha": "2023-11-25T14:20:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 21,
+      "Genero": "Hombre",
+      "Fecha": "2024-05-25T14:40:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 21,
+      "Genero": "Hombre",
+      "Fecha": "2024-11-25T15:00:00",
+      "Puntuacion": 60
+    }
+  ],
+  "Usuario_006": [
+    {
+      "Edad": 28,
+      "Genero": "Mujer",
+      "Fecha": "2023-08-10T15:00:00",
+      "Puntuacion": 80
+    },
+    {
+      "Edad": 28,
+      "Genero": "Mujer",
+      "Fecha": "2024-02-10T15:20:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 28,
+      "Genero": "Mujer",
+      "Fecha": "2024-08-10T15:40:00",
+      "Puntuacion": 75
+    },
+    {
+      "Edad": 28,
+      "Genero": "Mujer",
+      "Fecha": "2025-02-10T16:00:00",
+      "Puntuacion": 85
+    }
+  ],
+  "Usuario_007": [
+    {
+      "Edad": 23,
+      "Genero": "No binario",
+      "Fecha": "2023-06-12T16:00:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 23,
+      "Genero": "No binario",
+      "Fecha": "2023-12-12T16:20:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 23,
+      "Genero": "No binario",
+      "Fecha": "2024-06-12T16:40:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 23,
+      "Genero": "No binario",
+      "Fecha": "2024-12-12T17:00:00",
+      "Puntuacion": 55
+    }
+  ],
+  "Usuario_008": [
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2023-09-01T17:00:00",
+      "Puntuacion": 65
+    },
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2024-03-01T17:20:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2024-09-01T17:40:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2025-03-01T18:00:00",
+      "Puntuacion": 80
+    }
+  ],
+  "Usuario_009": [
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2023-10-01T18:00:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2024-04-01T18:20:00",
+      "Puntuacion": 65
+    },
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2024-10-01T18:40:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2025-04-01T19:00:00",
+      "Puntuacion": 80
+    }
+  ],
+  "Usuario_010": [
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2023-07-10T19:00:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2023-12-10T19:20:00",
+      "Puntuacion": 35
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2024-07-10T19:40:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2024-12-10T20:00:00",
+      "Puntuacion": 40
+    }
+  ],
+  "Usuario_011": [
+    {
+      "Edad": 22,
+      "Genero": "Mujer",
+      "Fecha": "2023-01-15T10:00:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 22,
+      "Genero": "Mujer",
+      "Fecha": "2023-07-15T10:20:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 22,
+      "Genero": "Mujer",
+      "Fecha": "2024-01-15T10:40:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 22,
+      "Genero": "Mujer",
+      "Fecha": "2024-07-15T11:00:00",
+      "Puntuacion": 65
+    }
+  ],
+  "Usuario_012": [
+    {
+      "Edad": 24,
+      "Genero": "Hombre",
+      "Fecha": "2023-03-10T11:00:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 24,
+      "Genero": "Hombre",
+      "Fecha": "2023-09-10T11:20:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 24,
+      "Genero": "Hombre",
+      "Fecha": "2024-03-10T11:40:00",
+      "Puntuacion": 35
+    },
+    {
+      "Edad": 24,
+      "Genero": "Hombre",
+      "Fecha": "2024-09-10T12:00:00",
+      "Puntuacion": 50
+    }
+  ],
+  "Usuario_013": [
+    {
+      "Edad": 20,
+      "Genero": "No binario",
+      "Fecha": "2023-04-05T12:00:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 20,
+      "Genero": "No binario",
+      "Fecha": "2023-10-05T12:20:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 20,
+      "Genero": "No binario",
+      "Fecha": "2024-04-05T12:40:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 20,
+      "Genero": "No binario",
+      "Fecha": "2024-10-05T13:00:00",
+      "Puntuacion": 75
+    }
+  ],
+  "Usuario_014": [
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2023-02-15T13:00:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2023-08-15T13:20:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2024-02-15T13:40:00",
+      "Puntuacion": 65
+    },
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2024-08-15T14:00:00",
+      "Puntuacion": 75
+    }
+  ],
+  "Usuario_015": [
+    {
+      "Edad": 21,
+      "Genero": "Hombre",
+      "Fecha": "2023-05-25T14:00:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 21,
+      "Genero": "Hombre",
+      "Fecha": "2023-11-25T14:20:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 21,
+      "Genero": "Hombre",
+      "Fecha": "2024-05-25T14:40:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 21,
+      "Genero": "Hombre",
+      "Fecha": "2024-11-25T15:00:00",
+      "Puntuacion": 55
+    }
+  ],
+  "Usuario_016": [
+    {
+      "Edad": 26,
+      "Genero": "No binario",
+      "Fecha": "2023-03-20T12:00:00",
+      "Puntuacion": 30
+    },
+    {
+      "Edad": 26,
+      "Genero": "No binario",
+      "Fecha": "2023-09-20T12:20:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 26,
+      "Genero": "No binario",
+      "Fecha": "2024-03-20T12:40:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 26,
+      "Genero": "No binario",
+      "Fecha": "2024-09-20T13:00:00",
+      "Puntuacion": 35
+    }
+  ],
+  "Usuario_017": [
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2023-06-12T16:00:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2023-12-12T16:20:00",
+      "Puntuacion": 75
+    },
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2024-06-12T16:40:00",
+      "Puntuacion": 65
+    },
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2024-12-12T17:00:00",
+      "Puntuacion": 80
+    }
+  ],
+  "Usuario_018": [
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2023-07-01T17:00:00",
+      "Puntuacion": 80
+    },
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2024-01-01T17:20:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2024-07-01T17:40:00",
+      "Puntuacion": 75
+    },
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2025-01-01T18:00:00",
+      "Puntuacion": 85
+    }
+  ],
+  "Usuario_019": [
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2023-02-12T13:00:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2023-08-12T13:20:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2024-02-12T13:40:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2024-08-12T14:00:00",
+      "Puntuacion": 60
+    }
+  ],
+  "Usuario_020": [
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2023-05-15T14:00:00",
+      "Puntuacion": 30
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2023-11-15T14:20:00",
+      "Puntuacion": 25
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2024-05-15T14:40:00",
+      "Puntuacion": 20
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2024-11-15T15:00:00",
+      "Puntuacion": 40
+    }
+  ],
+  "Usuario_021": [
+    {
+      "Edad": 22,
+      "Genero": "No binario",
+      "Fecha": "2023-08-01T15:00:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 22,
+      "Genero": "No binario",
+      "Fecha": "2023-12-01T15:20:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 22,
+      "Genero": "No binario",
+      "Fecha": "2024-08-01T15:40:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 22,
+      "Genero": "No binario",
+      "Fecha": "2024-12-01T16:00:00",
+      "Puntuacion": 60
+    }
+  ],
+  "Usuario_022": [
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2023-03-12T14:00:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2023-09-12T14:20:00",
+      "Puntuacion": 75
+    },
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2024-03-12T14:40:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2024-09-12T15:00:00",
+      "Puntuacion": 65
+    }
+  ],
+  "Usuario_023": [
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2023-04-18T16:00:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2023-10-18T16:20:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2024-04-18T16:40:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2024-10-18T17:00:00",
+      "Puntuacion": 60
+    }
+  ],
+  "Usuario_024": [
+    {
+      "Edad": 28,
+      "Genero": "Hombre",
+      "Fecha": "2023-07-09T17:00:00",
+      "Puntuacion": 80
+    },
+    {
+      "Edad": 28,
+      "Genero": "Hombre",
+      "Fecha": "2023-12-09T17:20:00",
+      "Puntuacion": 85
+    },
+    {
+      "Edad": 28,
+      "Genero": "Hombre",
+      "Fecha": "2024-07-09T17:40:00",
+      "Puntuacion": 95
+    },
+    {
+      "Edad": 28,
+      "Genero": "Hombre",
+      "Fecha": "2024-12-09T18:00:00",
+      "Puntuacion": 90
+    }
+  ],
+  "Usuario_025": [
+    {
+      "Edad": 21,
+      "Genero": "Mujer",
+      "Fecha": "2023-02-25T13:00:00",
+      "Puntuacion": 30
+    },
+    {
+      "Edad": 21,
+      "Genero": "Mujer",
+      "Fecha": "2023-08-25T13:20:00",
+      "Puntuacion": 35
+    },
+    {
+      "Edad": 21,
+      "Genero": "Mujer",
+      "Fecha": "2024-02-25T13:40:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 21,
+      "Genero": "Mujer",
+      "Fecha": "2024-08-25T14:00:00",
+      "Puntuacion": 45
+    }
+  ],
+  "Usuario_026": [
+    {
+      "Edad": 30,
+      "Genero": "Hombre",
+      "Fecha": "2023-01-10T14:00:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 30,
+      "Genero": "Hombre",
+      "Fecha": "2023-07-10T14:20:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 30,
+      "Genero": "Hombre",
+      "Fecha": "2024-01-10T14:40:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 30,
+      "Genero": "Hombre",
+      "Fecha": "2024-07-10T15:00:00",
+      "Puntuacion": 60
+    }
+  ],
+  "Usuario_027": [
+    {
+      "Edad": 24,
+      "Genero": "No binario",
+      "Fecha": "2023-02-01T13:00:00",
+      "Puntuacion": 80
+    },
+    {
+      "Edad": 24,
+      "Genero": "No binario",
+      "Fecha": "2023-08-01T13:20:00",
+      "Puntuacion": 90
+    },
+    {
+      "Edad": 24,
+      "Genero": "No binario",
+      "Fecha": "2024-02-01T13:40:00",
+      "Puntuacion": 95
+    },
+    {
+      "Edad": 24,
+      "Genero": "No binario",
+      "Fecha": "2024-08-01T14:00:00",
+      "Puntuacion": 85
+    }
+  ],
+  "Usuario_028": [
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2023-03-25T14:00:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2023-09-25T14:20:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2024-03-25T14:40:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2024-09-25T15:00:00",
+      "Puntuacion": 65
+    }
+  ],
+  "Usuario_029": [
+    {
+      "Edad": 22,
+      "Genero": "Hombre",
+      "Fecha": "2023-01-01T13:00:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 22,
+      "Genero": "Hombre",
+      "Fecha": "2023-07-01T13:20:00",
+      "Puntuacion": 75
+    },
+    {
+      "Edad": 22,
+      "Genero": "Hombre",
+      "Fecha": "2024-01-01T13:40:00",
+      "Puntuacion": 80
+    },
+    {
+      "Edad": 22,
+      "Genero": "Hombre",
+      "Fecha": "2024-07-01T14:00:00",
+      "Puntuacion": 85
+    }
+  ],
+  "Usuario_030": [
+    {
+      "Edad": 25,
+      "Genero": "Mujer",
+      "Fecha": "2023-04-10T14:00:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 25,
+      "Genero": "Mujer",
+      "Fecha": "2023-10-10T14:20:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 25,
+      "Genero": "Mujer",
+      "Fecha": "2024-04-10T14:40:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 25,
+      "Genero": "Mujer",
+      "Fecha": "2024-10-10T15:00:00",
+      "Puntuacion": 45
+    }
+  ],
+  "Usuario_031": [
+    {
+      "Edad": 28,
+      "Genero": "Mujer",
+      "Fecha": "2023-06-14T10:00:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 28,
+      "Genero": "Mujer",
+      "Fecha": "2023-12-14T10:20:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 28,
+      "Genero": "Mujer",
+      "Fecha": "2024-06-14T10:40:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 28,
+      "Genero": "Mujer",
+      "Fecha": "2024-12-14T11:00:00",
+      "Puntuacion": 65
+    }
+  ],
+  "Usuario_032": [
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2023-05-15T11:00:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2023-11-15T11:20:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2024-05-15T11:40:00",
+      "Puntuacion": 75
+    },
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2024-11-15T12:00:00",
+      "Puntuacion": 90
+    }
+  ],
+  "Usuario_033": [
+    {
+      "Edad": 22,
+      "Genero": "Mujer",
+      "Fecha": "2023-01-12T12:00:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 22,
+      "Genero": "Mujer",
+      "Fecha": "2023-07-12T12:20:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 22,
+      "Genero": "Mujer",
+      "Fecha": "2024-01-12T12:40:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 22,
+      "Genero": "Mujer",
+      "Fecha": "2024-07-12T13:00:00",
+      "Puntuacion": 58
+    }
+  ],
+  "Usuario_034": [
+    {
+      "Edad": 26,
+      "Genero": "Hombre",
+      "Fecha": "2023-02-20T10:00:00",
+      "Puntuacion": 65
+    },
+    {
+      "Edad": 26,
+      "Genero": "Hombre",
+      "Fecha": "2023-08-20T10:20:00",
+      "Puntuacion": 72
+    },
+    {
+      "Edad": 26,
+      "Genero": "Hombre",
+      "Fecha": "2024-02-20T10:40:00",
+      "Puntuacion": 85
+    },
+    {
+      "Edad": 26,
+      "Genero": "Hombre",
+      "Fecha": "2024-08-20T11:00:00",
+      "Puntuacion": 90
+    }
+  ],
+  "Usuario_035": [
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2023-04-30T11:00:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2023-10-30T11:20:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2024-04-30T11:40:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2024-10-30T12:00:00",
+      "Puntuacion": 55
+    }
+  ],
+  "Usuario_036": [
+    {
+      "Edad": 21,
+      "Genero": "No binario",
+      "Fecha": "2023-01-05T09:00:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 21,
+      "Genero": "No binario",
+      "Fecha": "2023-07-05T09:20:00",
+      "Puntuacion": 58
+    },
+    {
+      "Edad": 21,
+      "Genero": "No binario",
+      "Fecha": "2024-01-05T09:40:00",
+      "Puntuacion": 62
+    },
+    {
+      "Edad": 21,
+      "Genero": "No binario",
+      "Fecha": "2024-07-05T10:00:00",
+      "Puntuacion": 65
+    }
+  ],
+  "Usuario_037": [
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2023-03-10T10:00:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2023-09-10T10:20:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2024-03-10T10:40:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2024-09-10T11:00:00",
+      "Puntuacion": 45
+    }
+  ],
+  "Usuario_038": [
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2023-01-17T12:00:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2023-07-17T12:20:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2024-01-17T12:40:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 29,
+      "Genero": "Mujer",
+      "Fecha": "2024-07-17T13:00:00",
+      "Puntuacion": 52
+    }
+  ],
+  "Usuario_039": [
+    {
+      "Edad": 22,
+      "Genero": "No binario",
+      "Fecha": "2023-05-06T14:00:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 22,
+      "Genero": "No binario",
+      "Fecha": "2023-11-06T14:20:00",
+      "Puntuacion": 75
+    },
+    {
+      "Edad": 22,
+      "Genero": "No binario",
+      "Fecha": "2024-05-06T14:40:00",
+      "Puntuacion": 80
+    },
+    {
+      "Edad": 22,
+      "Genero": "No binario",
+      "Fecha": "2024-11-06T15:00:00",
+      "Puntuacion": 85
+    }
+  ],
+  "Usuario_040": [
+    {
+      "Edad": 30,
+      "Genero": "Mujer",
+      "Fecha": "2023-02-12T11:00:00",
+      "Puntuacion": 65
+    },
+    {
+      "Edad": 30,
+      "Genero": "Mujer",
+      "Fecha": "2023-08-12T11:20:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 30,
+      "Genero": "Mujer",
+      "Fecha": "2024-02-12T11:40:00",
+      "Puntuacion": 75
+    },
+    {
+      "Edad": 30,
+      "Genero": "Mujer",
+      "Fecha": "2024-08-12T12:00:00",
+      "Puntuacion": 80
+    }
+  ],
+  "Usuario_041": [
+    {
+      "Edad": 26,
+      "Genero": "Mujer",
+      "Fecha": "2023-02-25T14:00:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 26,
+      "Genero": "Mujer",
+      "Fecha": "2023-08-25T14:20:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 26,
+      "Genero": "Mujer",
+      "Fecha": "2024-02-25T14:40:00",
+      "Puntuacion": 62
+    },
+    {
+      "Edad": 26,
+      "Genero": "Mujer",
+      "Fecha": "2024-08-25T15:00:00",
+      "Puntuacion": 65
+    }
+  ],
+  "Usuario_042": [
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2023-03-12T10:00:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2023-09-12T10:20:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2024-03-12T10:40:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 19,
+      "Genero": "Hombre",
+      "Fecha": "2024-09-12T11:00:00",
+      "Puntuacion": 65
+    }
+  ],
+  "Usuario_043": [
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2023-04-05T12:00:00",
+      "Puntuacion": 35
+    },
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2023-10-05T12:20:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2024-04-05T12:40:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 23,
+      "Genero": "Mujer",
+      "Fecha": "2024-10-05T13:00:00",
+      "Puntuacion": 58
+    }
+  ],
+  "Usuario_044": [
+    {
+      "Edad": 29,
+      "Genero": "No binario",
+      "Fecha": "2023-01-18T11:00:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 29,
+      "Genero": "No binario",
+      "Fecha": "2023-07-18T11:20:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 29,
+      "Genero": "No binario",
+      "Fecha": "2024-01-18T11:40:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 29,
+      "Genero": "No binario",
+      "Fecha": "2024-07-18T12:00:00",
+      "Puntuacion": 63
+    }
+  ],
+  "Usuario_045": [
+    {
+      "Edad": 30,
+      "Genero": "Hombre",
+      "Fecha": "2023-02-28T14:00:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 30,
+      "Genero": "Hombre",
+      "Fecha": "2023-08-28T14:20:00",
+      "Puntuacion": 65
+    },
+    {
+      "Edad": 30,
+      "Genero": "Hombre",
+      "Fecha": "2024-02-28T14:40:00",
+      "Puntuacion": 70
+    },
+    {
+      "Edad": 30,
+      "Genero": "Hombre",
+      "Fecha": "2024-08-28T15:00:00",
+      "Puntuacion": 75
+    }
+  ],
+  "Usuario_046": [
+    {
+      "Edad": 18,
+      "Genero": "Mujer",
+      "Fecha": "2023-05-03T10:00:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 18,
+      "Genero": "Mujer",
+      "Fecha": "2023-11-03T10:20:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 18,
+      "Genero": "Mujer",
+      "Fecha": "2024-05-03T10:40:00",
+      "Puntuacion": 53
+    },
+    {
+      "Edad": 18,
+      "Genero": "Mujer",
+      "Fecha": "2024-11-03T11:00:00",
+      "Puntuacion": 55
+    }
+  ],
+  "Usuario_047": [
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2023-06-22T12:00:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2023-12-22T12:20:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2024-06-22T12:40:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 25,
+      "Genero": "Hombre",
+      "Fecha": "2024-12-22T13:00:00",
+      "Puntuacion": 45
+    }
+  ],
+  "Usuario_048": [
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2023-07-01T13:00:00",
+      "Puntuacion": 80
+    },
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2023-12-01T13:20:00",
+      "Puntuacion": 85
+    },
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2024-07-01T13:40:00",
+      "Puntuacion": 90
+    },
+    {
+      "Edad": 27,
+      "Genero": "Mujer",
+      "Fecha": "2024-12-01T14:00:00",
+      "Puntuacion": 95
+    }
+  ],
+  "Usuario_049": [
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2023-03-02T10:00:00",
+      "Puntuacion": 50
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2023-09-02T10:20:00",
+      "Puntuacion": 45
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2024-03-02T10:40:00",
+      "Puntuacion": 40
+    },
+    {
+      "Edad": 20,
+      "Genero": "Hombre",
+      "Fecha": "2024-09-02T11:00:00",
+      "Puntuacion": 35
+    }
+  ],
+  "Usuario_050": [
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2023-01-15T14:00:00",
+      "Puntuacion": 55
+    },
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2023-07-15T14:20:00",
+      "Puntuacion": 60
+    },
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2024-01-15T14:40:00",
+      "Puntuacion": 65
+    },
+    {
+      "Edad": 24,
+      "Genero": "Mujer",
+      "Fecha": "2024-07-15T15:00:00",
+      "Puntuacion": 70
+    }
+  ]
+}

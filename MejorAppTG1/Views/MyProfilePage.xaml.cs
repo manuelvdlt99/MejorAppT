@@ -2,6 +2,7 @@ using MejorAppTG1.Models;
 using MejorAppTG1.Resources.Localization;
 using MejorAppTG1.Utils;
 using Microcharts;
+using Microsoft.ML;
 using SkiaSharp;
 using System.Collections.Generic;
 using System.Globalization;
@@ -414,7 +415,7 @@ public partial class MyProfilePage : ContentPage
     }
 
     /// <summary>
-    /// Calcula los datos de los tests realizados del tipo seleccionado y muestra un gráfico con los datos obtenidos.
+    /// Calcula los datos de los tests realizados del tipo seleccionado y muestra un gráfico con los datos obtenidos y un texto con una valoración del usuario utilizando modelos de IA.
     /// </summary>
     private async Task CreateGraph()
     {
@@ -426,6 +427,7 @@ public partial class MyProfilePage : ContentPage
 
         if (tests.Count > 0) {
             VslNoResultsGraph.IsVisible = false;
+            LblPrediction.IsVisible = true;
             BrdChartView.IsVisible = true;
 
             foreach (var test in tests) {
@@ -450,8 +452,40 @@ public partial class MyProfilePage : ContentPage
                 LabelOrientation = Orientation.Horizontal,
                 ValueLabelOrientation = Orientation.Horizontal
             };
+
+            if (tests.Count < 3) {
+                string path = string.Empty;
+                switch (selectedKey) {
+                    case App.QUICK_TEST_KEY:
+                        path = App.AI_GENERAL_QUICK_TEST_PATH;
+                        break;
+                    case App.FULL_TEST_KEY:
+                        path = App.AI_GENERAL_FULL_TEST_PATH;
+                        break;
+                    case App.TCA_TEST_KEY:
+                        path = App.AI_GENERAL_TCA_TEST_PATH;
+                        break;
+                }
+                var targetPath = Path.Combine(FileSystem.AppDataDirectory, path);
+
+                if (!File.Exists(targetPath)) {
+                    using var stream = await FileSystem.OpenAppPackageFileAsync(path);
+                    using var fileStream = File.Create(targetPath);
+                    await stream.CopyToAsync(fileStream);
+                }
+
+                AIData user = new AIData {
+                    EdadRango = GetAgeRange(tests.Last().EdadUser),
+                    Genero = tests.Last().GeneroUser
+                };
+                float prediction = AIService.GetAIPredictedAvgResult(new MLContext(), targetPath, user);
+                LblPrediction.Text = AIService.InterpretPrediction(prediction, entriesList.Last().Value);
+            } else {
+                LblPrediction.Text = "[Placeholder donde iría el análisis de IA de la evolución del usuario]";
+            }
         } else {
             VslNoResultsGraph.IsVisible = true;
+            LblPrediction.IsVisible = false;
             BrdChartView.IsVisible = false;
             await VslNoResultsGraph.ScaleTo(1.05, 300, Easing.BounceOut);
             await VslNoResultsGraph.ScaleTo(1, 300, Easing.BounceIn);
@@ -512,5 +546,19 @@ public partial class MyProfilePage : ContentPage
         return factores;
     }
 
+    /// <summary>
+    /// Convierte una edad en una edad simbólica de un rango determinado (14, 15 o 17) para facilitar el entrenamiento de la IA.
+    /// </summary>
+    /// <param name="age">La edad real.</param>
+    /// <returns>La edad representativa del rango al que pertenece la edad pasada (14, 15 o 17).</returns>
+    private static int GetAgeRange(int age)
+    {
+        if (age <= 14)
+            return 14;
+        else if (age <= 16)
+            return 15;
+        else
+            return 17;
+    }
     #endregion
 }
