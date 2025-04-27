@@ -97,7 +97,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="AI_Models\model_general_quickTests.zip" />
 	  <None Remove="Resources\Fonts\K2D-Regular.ttf" />
 	  <None Remove="Resources\Raw\FullAnxietyTestQuestions.json" />
 	  <None Remove="Resources\Images\flechaabajo.png" />
@@ -129,10 +128,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiAsset Include="AI_Models\model_general_quickTests.zip" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Compile Update="Resources\Localization\Strings.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
@@ -154,6 +149,18 @@
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>Strings.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Update="Resources\Raw\model_general_fullTests.zip">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\model_general_quickTests.zip">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </MauiAsset>
+	  <MauiAsset Update="Resources\Raw\model_general_TCATests.zip">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </MauiAsset>
 	</ItemGroup>
 
 	<ItemGroup>

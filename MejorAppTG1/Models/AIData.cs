@@ -1,6 +1,6 @@
 ﻿using Microsoft.ML.Data;
 
-namespace MejorAppTG1.AI_Models
+namespace MejorAppTG1.Models
 {
     /// <summary>
     /// Clase que utiliza el modelo de IA como entrada de datos

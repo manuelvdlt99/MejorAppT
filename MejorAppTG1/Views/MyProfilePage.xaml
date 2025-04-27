@@ -162,10 +162,11 @@
                 </VerticalStackLayout>
 
                 <VerticalStackLayout IsVisible="False" Grid.Row="3" x:Name="VslAnalysis" Spacing="10" Padding="10" VerticalOptions="Center">
-                    <HorizontalStackLayout VerticalOptions="Center" Spacing="10">
+                    <Grid ColumnDefinitions="40,*,Auto">
                         <Label TextColor="{StaticResource FontColor1}" VerticalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblTipo}"/>
-                        <Picker TitleColor="{StaticResource FontColor1}" TextColor="{StaticResource FontColor1}" x:Name="PickTipos" />
-                    </HorizontalStackLayout>
+                        <Picker HorizontalOptions="Start" WidthRequest="300" Grid.Column="1" TitleColor="{StaticResource FontColor1}" TextColor="{StaticResource FontColor1}" x:Name="PickTipos" />
+                        <freakycontrols:FreakyButton Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnCreateGraph" Clicked="BtnCreateGraph_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnCreateGraph}" BackgroundColor="{StaticResource PrimaryColor}"/>
+                    </Grid>
                     <Border x:Name="BrdChartView" Stroke="{StaticResource FontColor1}">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="25"/>
@@ -176,8 +177,7 @@
                         <Image Source="no_results_found_icon.png" WidthRequest="75"/>
                         <Label TextColor="{StaticResource FontColor1}" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblNoResults}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="16"/>
                     </VerticalStackLayout>
-                    <Label x:Name="LblPrediction" HorizontalTextAlignment="Center" TextColor="{StaticResource FontColor1}" FontSize="16"/>
-                    <freakycontrols:FreakyButton HorizontalOptions="Center" VerticalOptions="Center" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnCreateGraph" Clicked="BtnCreateGraph_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnCreateGraph}" BackgroundColor="{StaticResource PrimaryColor}"/>
+                    <Label x:Name="LblPrediction" HorizontalTextAlignment="Center" TextColor="{StaticResource FontColor1}" FontSize="18" Margin="10"/>
                 </VerticalStackLayout>
             </Grid>
         </Grid>

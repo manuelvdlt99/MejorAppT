@@ -1,4 +1,3 @@
-using MejorAppTG1.AI_Models;
 using MejorAppTG1.Models;
 using MejorAppTG1.Resources.Localization;
 using MejorAppTG1.Utils;
@@ -426,7 +425,7 @@ public partial class MyProfilePage : ContentPage
 
         var entriesList = new List<ChartEntry>();
 
-        if (tests.Any()) {
+        if (tests.Count > 0) {
             VslNoResultsGraph.IsVisible = false;
             LblPrediction.IsVisible = true;
             BrdChartView.IsVisible = true;
@@ -467,14 +466,22 @@ public partial class MyProfilePage : ContentPage
                         path = App.AI_GENERAL_TCA_TEST_PATH;
                         break;
                 }
+                var targetPath = Path.Combine(FileSystem.AppDataDirectory, path);
+
+                if (!File.Exists(targetPath)) {
+                    using var stream = await FileSystem.OpenAppPackageFileAsync(path);
+                    using var fileStream = File.Create(targetPath);
+                    await stream.CopyToAsync(fileStream);
+                }
+
                 AIData user = new AIData {
                     EdadRango = GetAgeRange(tests.Last().EdadUser),
                     Genero = tests.Last().GeneroUser
                 };
-                float prediction = AIService.GetAIPredictedAvgResult(new MLContext(), path, user);
+                float prediction = AIService.GetAIPredictedAvgResult(new MLContext(), targetPath, user);
                 LblPrediction.Text = AIService.InterpretPrediction(prediction, entriesList.Last().Value);
             } else {
-                LblPrediction.Text = "texto de prueba";
+                LblPrediction.Text = "[Placeholder donde iría el análisis de IA de la evolución del usuario]";
             }
         } else {
             VslNoResultsGraph.IsVisible = true;

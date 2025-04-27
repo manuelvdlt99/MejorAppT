@@ -91,17 +91,33 @@ namespace MejorAppTG1
         /// </summary>
         public const string FACTORS_LEVEL_HIGH = "str_FACTORS_LEVEL_HIGH";
         /// <summary>
-        /// Ruta del modelo entrenado de IA para calcular resultados generales de tests de ansiedad rápidos.
+        /// Archivo del modelo entrenado de IA para calcular resultados generales de tests de ansiedad rápidos.
         /// </summary>
-        public static readonly string AI_GENERAL_QUICK_TEST_PATH = Path.Combine(AppContext.BaseDirectory, "AI_Models", "model_general_quickTests.zip");
+        public const string AI_GENERAL_QUICK_TEST_PATH = "model_general_quickTests.zip";
         /// <summary>
-        /// Ruta del modelo entrenado de IA para calcular resultados generales de tests de ansiedad completos.
+        /// Archivo del modelo entrenado de IA para calcular resultados generales de tests de ansiedad completos.
         /// </summary>
-        public static readonly string AI_GENERAL_FULL_TEST_PATH = Path.Combine(AppContext.BaseDirectory, "AI_Models", "model_general_fullTests.zip");
+        public const string AI_GENERAL_FULL_TEST_PATH = "model_general_fullTests.zip";
         /// <summary>
-        /// Ruta del modelo entrenado de IA para calcular resultados generales de tests de TCA.
+        /// Archivo del modelo entrenado de IA para calcular resultados generales de tests de TCA.
         /// </summary>
-        public static readonly string AI_GENERAL_TCA_TEST_PATH = Path.Combine(AppContext.BaseDirectory, "AI_Models", "model_general_TCATests.zip");
+        public const string AI_GENERAL_TCA_TEST_PATH = "model_general_TCATests.zip";
+        /// <summary>
+        /// Archivo JSON con todas las preguntas del test de ansiedad rápido.
+        /// </summary>
+        public const string JSON_QUESTIONS_QUICK = "ShortAnxietyTestQuestions.json";
+        /// <summary>
+        /// Archivo JSON con todas las preguntas del test de ansiedad completo.
+        /// </summary>
+        public const string JSON_QUESTIONS_FULL = "FullAnxietyTestQuestions.json";
+        /// <summary>
+        /// Archivo JSON con todas las preguntas del test de TCA.
+        /// </summary>
+        public const string JSON_QUESTIONS_TCA = "EatingDisordersTestQuestions.json";
+        /// <summary>
+        /// Archivo JSON con todos los consejos para ansiedad.
+        /// </summary>
+        public const string JSON_ADVICES_FULL = "ConsejosParaAnsiedad.json";
 
         /// <summary>
         /// Variable global para evitar que se puedan pulsar varios botones o el mismo botón varias veces y provocar errores inesperados. 

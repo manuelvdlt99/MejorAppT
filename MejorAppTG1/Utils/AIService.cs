@@ -1,4 +1,5 @@
-﻿using MejorAppTG1.AI_Models;
+﻿using MejorAppTG1.Models;
+using MejorAppTG1.Resources.Localization;
 using Microsoft.ML;
 
 namespace MejorAppTG1.Utils
@@ -35,15 +36,16 @@ namespace MejorAppTG1.Utils
                 float margin = predicted * 0.15f;
 
                 if (Math.Abs(difference) <= margin)
-                    return "Dentro de la media";
+                    return Strings.str_AIPrediction_General_1;
                 else if (difference > margin && difference <= 2 * margin)
-                    return "Por encima de la media";
+                    return Strings.str_AIPrediction_General_2;
                 else if (difference > 2 * margin)
-                    return "Muy por encima de la media";
+                    return Strings.str_AIPrediction_General_3;
                 else if (difference < -margin && difference >= -2 * margin)
-                    return "Por debajo de la media";
+                    return Strings.str_AIPrediction_General_4;
                 else
-                    return "Muy por debajo de la media";
+                    return Strings.str_AIPrediction_General_5;
+
             }
             else {
                 return string.Empty;

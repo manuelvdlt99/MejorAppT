@@ -33,7 +33,7 @@ namespace MejorAppTG1
 
             try {
                 App.AnimateFrameInOut(sender);
-                var unfinishedTest = await App.Database.GetUnfinishedTestAsync(App.CurrentUser.IdUsuario, "str_QuickTest");
+                var unfinishedTest = await App.Database.GetUnfinishedTestAsync(App.CurrentUser.IdUsuario, App.QUICK_TEST_KEY);
 
                 if (unfinishedTest != null) {
                     var culture = CultureInfo.CurrentCulture;
@@ -41,7 +41,7 @@ namespace MejorAppTG1
                     bool resume = await DisplayAlert(Strings.str_MainPage_UnfinishedTest, string.Format(Strings.str_MainPage_UnfinishedTest_Msg, formattedDate), Strings.str_MainPage_BtnYes, Strings.str_MainPage_BtnNo);
 
                     if (resume) {
-                        await Navigation.PushAsync(new TestPage(unfinishedTest, await GetQuestionsFromJSON("ShortAnxietyTestQuestions.json"), true), true);
+                        await Navigation.PushAsync(new TestPage(unfinishedTest, await GetQuestionsFromJSON(App.JSON_QUESTIONS_QUICK), true), true);
                         return;
                     }
                     else {
@@ -53,13 +53,13 @@ namespace MejorAppTG1
                     IdUser = App.CurrentUser.IdUsuario,
                     EdadUser = App.CurrentUser.Edad,
                     GeneroUser = App.CurrentUser.Genero,
-                    Tipo = "str_QuickTest",
+                    Tipo = App.QUICK_TEST_KEY,
                     Fecha = DateTime.Now,
                     Terminado = false
                 };
 
                 await App.Database.AddTestAsync(newTest);
-                await Navigation.PushAsync(new TestPage(newTest, await GetQuestionsFromJSON("ShortAnxietyTestQuestions.json"), false), true);
+                await Navigation.PushAsync(new TestPage(newTest, await GetQuestionsFromJSON(App.JSON_QUESTIONS_QUICK), false), true);
             }
             finally {
                 App.ButtonPressed = false;
@@ -78,7 +78,7 @@ namespace MejorAppTG1
             try {
                 App.AnimateFrameInOut(sender);
                 // ¿Tiene el usuario algún test de este tipo sin terminar?
-                var unfinishedTest = await App.Database.GetUnfinishedTestAsync(App.CurrentUser.IdUsuario, "str_FullTest");
+                var unfinishedTest = await App.Database.GetUnfinishedTestAsync(App.CurrentUser.IdUsuario, App.FULL_TEST_KEY);
 
                 if (unfinishedTest != null) {
                     var culture = CultureInfo.CurrentCulture;
@@ -87,7 +87,7 @@ namespace MejorAppTG1
 
                     // Si el usuario quiere terminar el test a medias, inicia la página por donde se quedó
                     if (resume) {
-                        await Navigation.PushAsync(new TestPage(unfinishedTest, await GetQuestionsFromJSON("FullAnxietyTestQuestions.json"), true), true);
+                        await Navigation.PushAsync(new TestPage(unfinishedTest, await GetQuestionsFromJSON(App.JSON_QUESTIONS_FULL), true), true);
                         return;
                         // Si no, borra esa instancia de Test y empieza desde cero
                     }
@@ -101,14 +101,14 @@ namespace MejorAppTG1
                     IdUser = App.CurrentUser.IdUsuario,
                     EdadUser = App.CurrentUser.Edad,
                     GeneroUser = App.CurrentUser.Genero,
-                    Tipo = "str_FullTest",
+                    Tipo = App.FULL_TEST_KEY,
                     Fecha = DateTime.Now,
                     Terminado = false
                 };
 
                 await App.Database.AddTestAsync(newTest);
 
-                await Navigation.PushAsync(new TestPage(newTest, await GetQuestionsFromJSON("FullAnxietyTestQuestions.json"), false), true);
+                await Navigation.PushAsync(new TestPage(newTest, await GetQuestionsFromJSON(App.JSON_QUESTIONS_FULL), false), true);
             }
             finally {
                 App.ButtonPressed = false;
@@ -126,7 +126,7 @@ namespace MejorAppTG1
             App.ButtonPressed = true;
             try {
                 App.AnimateFrameInOut(sender);
-                var unfinishedTest = await App.Database.GetUnfinishedTestAsync(App.CurrentUser.IdUsuario, "str_EatingTest");
+                var unfinishedTest = await App.Database.GetUnfinishedTestAsync(App.CurrentUser.IdUsuario, App.TCA_TEST_KEY);
 
                 if (unfinishedTest != null) {
                     var culture = CultureInfo.CurrentCulture;
@@ -134,7 +134,7 @@ namespace MejorAppTG1
                     bool resume = await DisplayAlert(Strings.str_MainPage_UnfinishedTest, string.Format(Strings.str_MainPage_UnfinishedTest_Msg, formattedDate), Strings.str_MainPage_BtnYes, Strings.str_MainPage_BtnNo);
 
                     if (resume) {
-                        await Navigation.PushAsync(new TestPage(unfinishedTest, await GetQuestionsFromJSON("EatingDisordersTestQuestions.json"), true), true);
+                        await Navigation.PushAsync(new TestPage(unfinishedTest, await GetQuestionsFromJSON(App.JSON_QUESTIONS_TCA), true), true);
                         return;
                     }
                     else {
@@ -151,13 +151,13 @@ namespace MejorAppTG1
                         IdUser = App.CurrentUser.IdUsuario,
                         EdadUser = App.CurrentUser.Edad,
                         GeneroUser = App.CurrentUser.Genero,
-                        Tipo = "str_EatingTest",
+                        Tipo = App.TCA_TEST_KEY,
                         Fecha = DateTime.Now,
                         Terminado = false
                     };
 
                     await App.Database.AddTestAsync(newTest);
-                    await Navigation.PushAsync(new TestPage(newTest, await GetQuestionsFromJSON("EatingDisordersTestQuestions.json"), false), true);
+                    await Navigation.PushAsync(new TestPage(newTest, await GetQuestionsFromJSON(App.JSON_QUESTIONS_TCA), false), true);
                 }
             }
             finally {
