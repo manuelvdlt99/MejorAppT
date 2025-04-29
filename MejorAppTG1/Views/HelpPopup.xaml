@@ -3,7 +3,6 @@
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
                xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
-               xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
                x:Class="MejorAppTG1.Views.HelpPopup"
                Color="Transparent"
                x:Name="HelpPopupRoot">
@@ -160,7 +159,7 @@
                         SemanticProperties.Description="{x:Static strings:Strings.str_Shell_HelpPage_MyProfile_Msg}" />
                 </toolkit:Expander>
 
-                <freakycontrols:FreakyButton 
+                <Button 
                     Text="{x:Static strings:Strings.str_Shell_BtnClose}"
                     BackgroundColor="{StaticResource ButtonColor3}"
                     TextColor="{StaticResource FontColor3}"

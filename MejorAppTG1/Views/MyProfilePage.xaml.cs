@@ -124,6 +124,7 @@ public partial class MyProfilePage : ContentPage
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
         try {
+            App.AnimateButtonInOut(sender);
             if (_finishedTests == null || _finishedTests.Count == 0) {
                 await DisplayAlert(Strings.str_ResultHistoryPage_BtnCheck_NoResults, Strings.str_ResultHistoryPage_BtnCheck_Msg, Strings.str_ResultHistoryPage_BtnCheck_OK);
             }
@@ -146,6 +147,7 @@ public partial class MyProfilePage : ContentPage
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
         try {
+            App.AnimateButtonInOut(sender);
             _resultIndex -= 5;
             _currentPage--;
             await LoadNextFiveTests();
@@ -166,6 +168,7 @@ public partial class MyProfilePage : ContentPage
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
         try {
+            App.AnimateButtonInOut(sender);
             _resultIndex += 5;
             _currentPage++;
             await LoadNextFiveTests();
@@ -238,9 +241,16 @@ public partial class MyProfilePage : ContentPage
     /// </summary>
     /// <param name="sender">El botón pulsado.</param>
     /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
-    private void BtnCreateGraph_Clicked(object sender, EventArgs e)
+    private async void BtnCreateGraph_Clicked(object sender, EventArgs e)
     {
-        CreateGraph();
+        if (App.ButtonPressed) return;
+        App.ButtonPressed = true;
+        try {
+            App.AnimateButtonInOut(sender);
+            await CreateGraph();
+        } finally {
+            App.ButtonPressed = false;
+        }
     }
     #endregion
 

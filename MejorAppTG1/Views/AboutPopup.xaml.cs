@@ -30,6 +30,7 @@ public partial class AboutPopup : Popup
         if (_buttonPressed) return;
         _buttonPressed = true;
         try {
+            App.AnimateButtonInOut(sender);
             Close();
         }
         finally {

@@ -125,7 +125,7 @@
                 </HorizontalStackLayout>
 
                 <HorizontalStackLayout Margin="0,10,0,0" Spacing="10" HorizontalOptions="Center">
-                    <freakycontrols:FreakyButton 
+                    <Button 
                 x:Name="BtnCancel"
                 Clicked="BtnCancel_Clicked"
                 Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnCancel}" 
@@ -133,7 +133,7 @@
                 TextColor="{StaticResource FontColor2}"
                 SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_SignUpPopup_BtnCancel}" />
 
-                    <freakycontrols:FreakyButton 
+                    <Button 
                 x:Name="BtnConfirm"
                 Clicked="BtnConfirm_Clicked"
                 Text="{x:Static strings:Strings.str_LoginPage_BtnConfirm}" 

@@ -93,6 +93,7 @@ public partial class UserSelectPopup : Popup
         if (_buttonPressed) return;
         _buttonPressed = true;
         try {
+            App.AnimateButtonInOut(sender);
             Close(null);
         }
         finally {
@@ -110,6 +111,7 @@ public partial class UserSelectPopup : Popup
         if (_buttonPressed) return;
         _buttonPressed = true;
         try {
+            App.AnimateButtonInOut(sender);
             if (_selectedUser == null) {
                 Toast.Make(Strings.str_UserSelectPopup_ChooseUserToast, ToastDuration.Short).Show();
             }

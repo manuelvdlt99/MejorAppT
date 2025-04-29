@@ -6,7 +6,6 @@
              NavigationPage.HasNavigationBar="False"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
-             xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
              Title="" BackgroundImageSource="fondo_provisional1.jpeg">
         <ContentPage.Content>
             <toolkit:SemanticOrderView x:Name="SemanticOrderView">
@@ -17,10 +16,10 @@
                     <Label HorizontalOptions="Center" x:Name="LblUno" Text="{x:Static strings:Strings.str_LoginPage_Motto}" FontSize="17" FontAttributes="Italic" FontFamily="K2D-Regular" SemanticProperties.Description="{x:Static strings:Strings.str_LoginPage_Motto}"/>
                     <Label HorizontalOptions="Center" x:Name="LblDos" Text="{x:Static strings:Strings.str_LoginPage_Instructions}" FontSize="Body" Margin="0,0,0,20" SemanticProperties.Description="{x:Static strings:Strings.str_LoginPage_Instructions}"/>
                     <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="30">
-                        <freakycontrols:FreakyButton WidthRequest="150" BackgroundColor="{StaticResource ButtonColor1}" x:Name="BtnLogIn" Clicked="BtnLogIn_Clicked"  Text="{x:Static strings:Strings.str_LoginPage_BtnLogIn}" HorizontalOptions="Fill" FontAttributes="Bold" BorderColor="#009203" BorderWidth="2" CornerRadius="15"
+                        <Button WidthRequest="150" BackgroundColor="{StaticResource ButtonColor1}" x:Name="BtnLogIn" Clicked="BtnLogIn_Clicked"  Text="{x:Static strings:Strings.str_LoginPage_BtnLogIn}" HorizontalOptions="Fill" FontAttributes="Bold" BorderColor="#009203" BorderWidth="2" CornerRadius="15"
                                 SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_BtnLogIn_Desc}"
                                 SemanticProperties.Hint="{x:Static strings:Strings.str_SemanticProperties_LoginPage_BtnLogIn_Hint}" />
-                        <freakycontrols:FreakyButton WidthRequest="150" BackgroundColor="{StaticResource ButtonColor1}" x:Name="CrearUsuario" Clicked="CrearUsuario_Clicked"  Text="{x:Static strings:Strings.str_LoginPage_BtnSignUp}" HorizontalOptions="Fill" FontAttributes="Bold" BorderColor="#009203" BorderWidth="2" CornerRadius="15"
+                        <Button WidthRequest="150" BackgroundColor="{StaticResource ButtonColor1}" x:Name="CrearUsuario" Clicked="CrearUsuario_Clicked"  Text="{x:Static strings:Strings.str_LoginPage_BtnSignUp}" HorizontalOptions="Fill" FontAttributes="Bold" BorderColor="#009203" BorderWidth="2" CornerRadius="15"
                                 SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_LoginPage_BtnSignUp_Desc}"
                                 SemanticProperties.Hint="{x:Static strings:Strings.str_SemanticProperties_LoginPage_BtnSignUp_Hint}" />
                     </HorizontalStackLayout>
