@@ -37,6 +37,7 @@ public partial class LoginPage : ContentPage {
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
         try {
+            App.AnimateButtonInOut(sender);
             var popup = new SignUpPopup();
             var result = await Application.Current.MainPage.ShowPopupAsync(popup);
 
@@ -57,6 +58,7 @@ public partial class LoginPage : ContentPage {
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
         try {
+            App.AnimateButtonInOut(sender);
             var activeUsers = await App.Database.GetUsuariosAsync();
 
             if (activeUsers.Count == 0) {

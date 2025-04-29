@@ -47,6 +47,7 @@ public partial class SignUpPopup : Popup
         if (_buttonPressed) return;
         _buttonPressed = true;
         try {
+            App.AnimateButtonInOut(sender);
             Close(null);
         }
         finally {
@@ -64,6 +65,7 @@ public partial class SignUpPopup : Popup
         if (_buttonPressed) return;
         _buttonPressed = true;
         try {
+            App.AnimateButtonInOut(sender);
             bool entriesGoodToGo = true;
             int entryAgeNum = 0;
             if (String.IsNullOrWhiteSpace(EntryName.Text)) {

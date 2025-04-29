@@ -130,7 +130,7 @@
     <value>Femme</value>
   </data>
   <data name="str_LoginPage_BtnLogIn" xml:space="preserve">
-    <value>Sélectionner utilisateur</value>
+    <value>Choisir utilisateur</value>
   </data>
   <data name="str_LoginPage_BtnLogin_entryAgeError" xml:space="preserve">
     <value>Veuillez saisir le bon âge.</value>

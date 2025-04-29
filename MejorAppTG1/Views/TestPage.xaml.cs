@@ -90,6 +90,7 @@ namespace MejorAppTG1
         /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
         private void BtnAnterior_Clicked(object sender, EventArgs e)
         {
+            App.AnimateButtonInOut(sender);
             if (_index > 0) {
                 _index -= 1;
                 ActualizarProgreso();
@@ -107,6 +108,7 @@ namespace MejorAppTG1
             App.ButtonPressed = true;
 
             try {
+                App.AnimateButtonInOut(sender);
                 if (_selectedButton == null) {
                     await DisplayAlert(Strings.str_TestPage_EmptyAnswer, Strings.str_TestPage_EmptyAnswer_Msg, Strings.str_ResultHistoryPage_BtnCheck_OK);
                 }

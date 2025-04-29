@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MejorAppTG1.MyProfilePage"
              xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
-             xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
              xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
              Shell.BackgroundColor="{StaticResource SecondaryColor1}" Title="MejorAppT" Appearing="OnPageAppearing">
     <ContentPage.Background>
@@ -104,7 +103,7 @@
                     </FlexLayout>-->
 
                     <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="Center" Spacing="50">
-                        <freakycontrols:FreakyButton BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnLastResult" Clicked="BtnLastResult_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnLastTest}" BackgroundColor="{StaticResource PrimaryColor}"/>
+                        <Button BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnLastResult" Clicked="BtnLastResult_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnLastTest}" BackgroundColor="{StaticResource PrimaryColor}"/>
                     </HorizontalStackLayout>
 
                     <VerticalStackLayout x:Name="VslNoResults" IsVisible="False" Spacing="15">
@@ -155,17 +154,17 @@
                     </CollectionView>
 
                     <HorizontalStackLayout IsVisible="False" x:Name="HslNavigationBtns" HorizontalOptions="Center" VerticalOptions="Center">
-                        <freakycontrols:FreakyButton BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" Margin="0,0,30,0" HeightRequest="40" x:Name="BtnPreviousFive" Clicked="BtnPreviousFive_Clicked" Text="{x:Static strings:Strings.str_TestPage_BtnPrevious}" BackgroundColor="{StaticResource PrimaryColor}" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_BtnPrevious}"/>
+                        <Button BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" Margin="0,0,30,0" HeightRequest="40" x:Name="BtnPreviousFive" Clicked="BtnPreviousFive_Clicked" Text="{x:Static strings:Strings.str_TestPage_BtnPrevious}" BackgroundColor="{StaticResource PrimaryColor}" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_BtnPrevious}"/>
                         <Label x:Name="LblCurrentPage" VerticalTextAlignment="Center" TextColor="{StaticResource FontColor1}" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblCurrentPage}" FontSize="17" FontAttributes="Bold"/>
-                        <freakycontrols:FreakyButton BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" Margin="30,0,0,0" HeightRequest="40" x:Name="BtnNextFive" Clicked="BtnNextFive_Clicked" Text="{x:Static strings:Strings.str_TestPage_BtnNext}" BackgroundColor="{StaticResource PrimaryColor}" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_BtnNext}"/>
+                        <Button BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" Margin="30,0,0,0" HeightRequest="40" x:Name="BtnNextFive" Clicked="BtnNextFive_Clicked" Text="{x:Static strings:Strings.str_TestPage_BtnNext}" BackgroundColor="{StaticResource PrimaryColor}" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_BtnNext}"/>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
 
                 <VerticalStackLayout IsVisible="False" Grid.Row="3" x:Name="VslAnalysis" Spacing="10" Padding="10" VerticalOptions="Center">
                     <Grid ColumnDefinitions="40,*,Auto">
                         <Label TextColor="{StaticResource FontColor1}" VerticalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblTipo}"/>
-                        <Picker HorizontalOptions="Start" WidthRequest="300" Grid.Column="1" TitleColor="{StaticResource FontColor1}" TextColor="{StaticResource FontColor1}" x:Name="PickTipos" />
-                        <freakycontrols:FreakyButton Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnCreateGraph" Clicked="BtnCreateGraph_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnCreateGraph}" BackgroundColor="{StaticResource PrimaryColor}"/>
+                        <Picker HorizontalOptions="Start" MinimumWidthRequest="180" MaximumWidthRequest="300" Grid.Column="1" TitleColor="{StaticResource FontColor1}" TextColor="{StaticResource FontColor1}" x:Name="PickTipos" />
+                        <Button Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnCreateGraph" Clicked="BtnCreateGraph_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnCreateGraph}" BackgroundColor="{StaticResource PrimaryColor}" Margin="10,0,0,0"/>
                     </Grid>
                     <Border x:Name="BrdChartView" Stroke="{StaticResource FontColor1}">
                         <Border.StrokeShape>
