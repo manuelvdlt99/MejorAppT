@@ -3,7 +3,6 @@
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
                xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
-               xmlns:freakycontrols="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
                x:Class="MejorAppTG1.Views.AboutPopup"
                Color="Transparent"
                x:Name="AboutPopupRoot">
@@ -100,7 +99,7 @@
                     SemanticProperties.Description="{x:Static strings:Strings.str_Shell_AboutPage_Credits_Msg}" />
                 </toolkit:Expander>
 
-                <freakycontrols:FreakyButton x:Name="BtnClose" Text="{x:Static strings:Strings.str_Shell_BtnClose}"
+                <Button x:Name="BtnClose" Text="{x:Static strings:Strings.str_Shell_BtnClose}"
                         BackgroundColor="{StaticResource ButtonColor3}"
                         TextColor="{StaticResource FontColor3}"
                         FontAttributes="Bold"

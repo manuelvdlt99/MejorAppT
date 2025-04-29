@@ -126,6 +126,7 @@ namespace MejorAppTG1
         private static MejorAppTDatabase _database;
         private static FirebaseService _firebase;
         private bool _isSyncing = false;
+        private TaskCompletionSource<bool>? _internetTcs;
 
         /// <summary>
         /// Permite recuperar o modificar el usuario que ha iniciado sesión actualmente en la aplicación.
@@ -223,6 +224,16 @@ namespace MejorAppTG1
             await ((Frame)sender).ScaleTo(1, 100, Easing.CubicInOut);   // Volver al tamaño original
         }
 
+        /// <summary>
+        /// Método genérico que permite animar un componente Button que se le pase con un efecto de pulsación (reduce su tamaño y vuelve a su estado original).
+        /// </summary>
+        /// <param name="sender">El Button a animar.</param>
+        public static async void AnimateButtonInOut(object sender)
+        {
+            await ((Button)sender).ScaleTo(0.95, 100, Easing.CubicInOut);
+            await ((Button)sender).ScaleTo(1, 100, Easing.CubicInOut);
+        }
+
         protected override void OnStart()
         {
             base.OnStart();
@@ -260,29 +271,34 @@ namespace MejorAppTG1
         }
 
         /// <summary>
-        /// Comprueba la conexión a Internet cada cinco segundos y, cuando la detecta, inicia el proceso de sincronización de las bases de datos.
+        /// Se queda esperando una conexión a Internet y, cuando la detecta, inicia el proceso de sincronización de las bases de datos.
         /// </summary>
         /// <param name="cancellationToken">Token de cancelación utilizado para la interrupción del proceso.</param>
         public async Task WaitForInternetAndSync(CancellationToken cancellationToken)
         {
-            bool noInternet = true;
-            while (Connectivity.Current.NetworkAccess != NetworkAccess.Internet) {  // Bucle "infinito" hasta que no detecte conexión
-                if (noInternet) {
-                    var toast = Toast.Make(Strings.str_App_NoConnection, ToastDuration.Short, 14);
-                    await toast.Show(new CancellationTokenSource().Token);
-                    noInternet = false;
-                }
+            bool noInternet = Connectivity.Current.NetworkAccess != NetworkAccess.Internet;
+
+            if (noInternet) {
+                var toast = Toast.Make(Strings.str_App_NoConnection, ToastDuration.Short, 14);
+                await toast.Show(cancellationToken);
+                _internetTcs = new TaskCompletionSource<bool>();
+
+                Connectivity.ConnectivityChanged += OnConnectivityChanged;
+
                 try {
-                    await Task.Delay(5000, cancellationToken); // Espera 5 segundos
+                    using (cancellationToken.Register(() => _internetTcs.TrySetCanceled())) {
+                        await _internetTcs.Task;
+                    }
                 }
                 catch (TaskCanceledException) {
+                    Connectivity.ConnectivityChanged -= OnConnectivityChanged;
                     return;
                 }
-            }
 
-            if (!noInternet) {
-                var toast = Toast.Make(Strings.str_App_ConnectionBack, ToastDuration.Short, 14);
-                await toast.Show(new CancellationTokenSource().Token);
+                Connectivity.ConnectivityChanged -= OnConnectivityChanged;
+
+                var toastBack = Toast.Make(Strings.str_App_ConnectionBack, ToastDuration.Short, 14);
+                await toastBack.Show(cancellationToken);
             }
 
             var syncService = new SyncService(App.Firebase, App.Database);
@@ -292,7 +308,19 @@ namespace MejorAppTG1
         }
 
         /// <summary>
-        /// Compruba la conexión a Internet una única vez y, si la encuentra, inicia el proceso de sincronización de las bases de datos.
+        /// Manejador del evento ConnectivityChanged que se activa cuando cambia el estado de la conexión.
+        /// </summary>
+        /// <param name="sender">El emisor del evento (la clase Connectivity).</param>
+        /// <param name="e">La instancia <see cref="ConnectivityChangedEventArgs"/> que contiene los datos del evento.</param>
+        private void OnConnectivityChanged(object? sender, ConnectivityChangedEventArgs e)
+        {
+            if (e.NetworkAccess == NetworkAccess.Internet && _internetTcs != null && !_internetTcs.Task.IsCompleted) {
+                _internetTcs.TrySetResult(true);
+            }
+        }
+
+        /// <summary>
+        /// Comprueba la conexión a Internet una única vez y, si la encuentra, inicia el proceso de sincronización de las bases de datos.
         /// </summary>
         /// <param name="cancellationToken">Token de cancelación utilizado para la interrupción del proceso.</param>
         public async Task CheckInternetAndSync(CancellationToken cancellationToken)

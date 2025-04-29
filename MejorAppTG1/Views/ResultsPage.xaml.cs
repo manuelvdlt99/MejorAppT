@@ -90,6 +90,7 @@ public partial class ResultsPage : ContentPage
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
         try {
+            App.AnimateButtonInOut(sender);
             await Navigation.PopAsync(true);
         }
         finally {
