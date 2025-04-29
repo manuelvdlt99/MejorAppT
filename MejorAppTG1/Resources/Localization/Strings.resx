@@ -1231,4 +1231,19 @@ It will only take a moment!</value>
   <data name="str_Shell_HelpPage_Advices_Msg" xml:space="preserve">
     <value>As soon as you finish a test, a new screen will be displayed with recommendations adapted to your test result. First, a general estimate will appear, and then one or more categories of tips will appear. If you click on any of these, you will be redirected to a new screen where the tips associated with that category will be displayed in a carousel format (scrolling from right to left). These tips include relevant images or, in some cases, videos and audios to help you in your situation.</value>
   </data>
+  <data name="str_AIPrediction_General_1" xml:space="preserve">
+    <value>Your result is within the expected range according to your profile. No significant deviations from the average are observed.</value>
+  </data>
+  <data name="str_AIPrediction_General_2" xml:space="preserve">
+    <value>Your result is moderately above what is expected for your profile. It might be useful to observe this trend.</value>
+  </data>
+  <data name="str_AIPrediction_General_3" xml:space="preserve">
+    <value>Your result is considerably above expectations. We encourage you to reflect on this or seek guidance if you feel it is necessary.</value>
+  </data>
+  <data name="str_AIPrediction_General_4" xml:space="preserve">
+    <value>Your score is moderately below what is expected for your profile. This is good, it means that you are less prone to emotional disturbances or related difficulties.</value>
+  </data>
+  <data name="str_AIPrediction_General_5" xml:space="preserve">
+    <value>Your result is considerably below the expected average. This means that you are not at risk and everything seems to be going well, but don't let your guard down and try to stay that way.</value>
+  </data>
 </root>

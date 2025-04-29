@@ -1,0 +1,389 @@
+﻿{
+  "-ODqWMpFCQoFAz_67HdE": {
+    "Edad": 25,
+    "Factor01": 29,
+    "Factor02": 5,
+    "Factor03": 21,
+    "Factor04": 1,
+    "Fecha": "2024-12-11T17:15:04.8613527",
+    "Genero": "Mujer"
+  },
+  "-ODu0iEh_ac4yiHPOx4z": {
+    "Edad": 22,
+    "Factor01": 1,
+    "Factor02": 0,
+    "Factor03": 5,
+    "Factor04": 20,
+    "Fecha": "2024-12-12T09:38:02.3569625",
+    "Genero": "Mujer"
+  },
+  "-ODuG9YqAU4VS6huSABe": {
+    "Edad": 19,
+    "Factor01": 39,
+    "Factor02": 6,
+    "Factor03": 28,
+    "Factor04": 22,
+    "Fecha": "2024-12-12T10:47:58.8417927",
+    "Genero": "Hombre"
+  },
+  "-ODuWD-y38ZFdcUwN5Gi": {
+    "Edad": 19,
+    "Factor01": 15,
+    "Factor02": 3,
+    "Factor03": 12,
+    "Factor04": 10,
+    "Fecha": "2024-12-12T11:56:39.2930121",
+    "Genero": "Hombre"
+  },
+  "-ODuWDLbhjITI6Y4c1F4": {
+    "Edad": 19,
+    "Factor01": 20,
+    "Factor02": 3,
+    "Factor03": 14,
+    "Factor04": 11,
+    "Fecha": "2024-12-12T11:56:56.3610177",
+    "Genero": "Hombre"
+  },
+  "-ODuWDO46aAfgbkvlPD2": {
+    "Edad": 19,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Factor04": 0,
+    "Fecha": "2024-12-12T11:57:14.366297",
+    "Genero": "Hombre"
+  },
+  "-ODuWDQMh_cOf9UkODCZ": {
+    "Edad": 19,
+    "Factor01": 2,
+    "Factor02": 0,
+    "Factor03": 2,
+    "Factor04": 4,
+    "Fecha": "2024-12-12T11:57:35.2670721",
+    "Genero": "Hombre"
+  },
+  "-OE3mTZxuC0MvwVheo1C": {
+    "Edad": 65,
+    "Factor01": 80,
+    "Factor02": 12,
+    "Factor03": 56,
+    "Factor04": 44,
+    "Fecha": "2024-12-14T11:48:28.5010508",
+    "Genero": "No binario"
+  },
+  "-OE3pjgjajPICM-HQdSy": {
+    "Edad": 65,
+    "Factor01": 40,
+    "Factor02": 6,
+    "Factor03": 28,
+    "Factor04": 22,
+    "Fecha": "2024-12-14T11:52:12.1432465",
+    "Genero": "No binario"
+  },
+  "-OE8vwgqJ41s3rMoUCrA": {
+    "Edad": 52,
+    "Factor01": 20,
+    "Factor02": 5,
+    "Factor03": 9,
+    "Factor04": 0,
+    "Fecha": "2024-12-15T11:47:45.7726662",
+    "Genero": "Mujer"
+  },
+  "-OEE3tOEsocgiEvngbFU": {
+    "Edad": 19,
+    "Factor01": 21,
+    "Factor02": 3,
+    "Factor03": 16,
+    "Factor04": 0,
+    "Fecha": "2024-12-16T11:45:22.1528138",
+    "Genero": "Hombre"
+  },
+  "-OEFKMaPmt1N8JEuTAws": {
+    "Edad": 25,
+    "Factor01": 80,
+    "Factor02": 12,
+    "Factor03": 56,
+    "Factor04": 44,
+    "Fecha": "2024-12-16T17:36:55.0233745",
+    "Genero": "Hombre"
+  },
+  "-OI2Qap5bVj54mmVTnRa": {
+    "Edad": 20,
+    "Factor01": 15,
+    "Factor02": 1,
+    "Factor03": 28,
+    "Factor04": 14,
+    "Fecha": "2025-01-28T15:38:43.7827184",
+    "Genero": "Hombre"
+  },
+  "-NEW001": {
+    "Edad": 16,
+    "Factor01": 45,
+    "Factor02": 8,
+    "Factor03": 34,
+    "Factor04": 21,
+    "Fecha": "2025-04-26T10:15:00",
+    "Genero": "Mujer"
+  },
+  "-NEW002": {
+    "Edad": 29,
+    "Factor01": 80,
+    "Factor02": 12,
+    "Factor03": 56,
+    "Factor04": 44,
+    "Fecha": "2025-04-26T10:16:00",
+    "Genero": "Hombre"
+  },
+  "-NEW003": {
+    "Edad": 13,
+    "Factor01": 10,
+    "Factor02": 2,
+    "Factor03": 5,
+    "Factor04": 3,
+    "Fecha": "2025-04-26T10:17:00",
+    "Genero": "No binario"
+  },
+  "-NEW004": {
+    "Edad": 22,
+    "Factor01": 33,
+    "Factor02": 7,
+    "Factor03": 20,
+    "Factor04": 10,
+    "Fecha": "2025-04-26T10:18:00",
+    "Genero": "Hombre"
+  },
+  "-NEW005": {
+    "Edad": 27,
+    "Factor01": 80,
+    "Factor02": 12,
+    "Factor03": 30,
+    "Factor04": 18,
+    "Fecha": "2025-04-26T10:19:00",
+    "Genero": "Mujer"
+  },
+  "-NEW006": {
+    "Edad": 18,
+    "Factor01": 5,
+    "Factor02": 1,
+    "Factor03": 6,
+    "Factor04": 2,
+    "Fecha": "2025-04-26T10:20:00",
+    "Genero": "Hombre"
+  },
+  "-NEW007": {
+    "Edad": 24,
+    "Factor01": 60,
+    "Factor02": 10,
+    "Factor03": 56,
+    "Factor04": 44,
+    "Fecha": "2025-04-26T10:21:00",
+    "Genero": "No binario"
+  },
+  "-NEW008": {
+    "Edad": 30,
+    "Factor01": 22,
+    "Factor02": 5,
+    "Factor03": 28,
+    "Factor04": 15,
+    "Fecha": "2025-04-26T10:22:00",
+    "Genero": "Mujer"
+  },
+  "-NEW009": {
+    "Edad": 14,
+    "Factor01": 2,
+    "Factor02": 0,
+    "Factor03": 1,
+    "Factor04": 0,
+    "Fecha": "2025-04-26T10:23:00",
+    "Genero": "Hombre"
+  },
+  "-NEW010": {
+    "Edad": 20,
+    "Factor01": 80,
+    "Factor02": 12,
+    "Factor03": 56,
+    "Factor04": 44,
+    "Fecha": "2025-04-26T10:24:00",
+    "Genero": "No binario"
+  },
+  "-NEW011": {
+    "Edad": 15,
+    "Factor01": 12,
+    "Factor02": 4,
+    "Factor03": 18,
+    "Factor04": 7,
+    "Fecha": "2025-04-26T10:25:00",
+    "Genero": "Mujer"
+  },
+  "-NEW012": {
+    "Edad": 28,
+    "Factor01": 80,
+    "Factor02": 12,
+    "Factor03": 40,
+    "Factor04": 30,
+    "Fecha": "2025-04-26T10:26:00",
+    "Genero": "Hombre"
+  },
+  "-NEW013": {
+    "Edad": 17,
+    "Factor01": 9,
+    "Factor02": 2,
+    "Factor03": 14,
+    "Factor04": 4,
+    "Fecha": "2025-04-26T10:27:00",
+    "Genero": "No binario"
+  },
+  "-NEW014": {
+    "Edad": 26,
+    "Factor01": 35,
+    "Factor02": 6,
+    "Factor03": 22,
+    "Factor04": 13,
+    "Fecha": "2025-04-26T10:28:00",
+    "Genero": "Mujer"
+  },
+  "-NEW015": {
+    "Edad": 30,
+    "Factor01": 80,
+    "Factor02": 12,
+    "Factor03": 56,
+    "Factor04": 44,
+    "Fecha": "2025-04-26T10:29:00",
+    "Genero": "No binario"
+  },
+  "-NEW016": {
+    "Edad": 19,
+    "Factor01": 18,
+    "Factor02": 3,
+    "Factor03": 25,
+    "Factor04": 10,
+    "Fecha": "2025-04-26T10:30:00",
+    "Genero": "Hombre"
+  },
+  "-NEW017": {
+    "Edad": 23,
+    "Factor01": 70,
+    "Factor02": 11,
+    "Factor03": 50,
+    "Factor04": 35,
+    "Fecha": "2025-04-26T10:31:00",
+    "Genero": "Mujer"
+  },
+  "-NEW018": {
+    "Edad": 21,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Factor04": 0,
+    "Fecha": "2025-04-26T10:32:00",
+    "Genero": "Hombre"
+  },
+  "-NEW019": {
+    "Edad": 13,
+    "Factor01": 5,
+    "Factor02": 1,
+    "Factor03": 4,
+    "Factor04": 2,
+    "Fecha": "2025-04-26T10:33:00",
+    "Genero": "Mujer"
+  },
+  "-NEW020": {
+    "Edad": 27,
+    "Factor01": 80,
+    "Factor02": 12,
+    "Factor03": 56,
+    "Factor04": 44,
+    "Fecha": "2025-04-26T10:34:00",
+    "Genero": "Hombre"
+  },
+  "-NEW021": {
+    "Edad": 14,
+    "Factor01": 8,
+    "Factor02": 1,
+    "Factor03": 6,
+    "Factor04": 2,
+    "Fecha": "2025-04-26T10:35:00",
+    "Genero": "No binario"
+  },
+  "-NEW022": {
+    "Edad": 25,
+    "Factor01": 77,
+    "Factor02": 12,
+    "Factor03": 53,
+    "Factor04": 43,
+    "Fecha": "2025-04-26T10:36:00",
+    "Genero": "Mujer"
+  },
+  "-NEW023": {
+    "Edad": 18,
+    "Factor01": 22,
+    "Factor02": 4,
+    "Factor03": 17,
+    "Factor04": 9,
+    "Fecha": "2025-04-26T10:37:00",
+    "Genero": "Hombre"
+  },
+  "-NEW024": {
+    "Edad": 30,
+    "Factor01": 80,
+    "Factor02": 12,
+    "Factor03": 56,
+    "Factor04": 44,
+    "Fecha": "2025-04-26T10:38:00",
+    "Genero": "No binario"
+  },
+  "-NEW025": {
+    "Edad": 16,
+    "Factor01": 5,
+    "Factor02": 0,
+    "Factor03": 4,
+    "Factor04": 1,
+    "Fecha": "2025-04-26T10:39:00",
+    "Genero": "Mujer"
+  },
+  "-NEW026": {
+    "Edad": 20,
+    "Factor01": 48,
+    "Factor02": 7,
+    "Factor03": 33,
+    "Factor04": 20,
+    "Fecha": "2025-04-26T10:40:00",
+    "Genero": "Hombre"
+  },
+  "-NEW027": {
+    "Edad": 29,
+    "Factor01": 80,
+    "Factor02": 12,
+    "Factor03": 56,
+    "Factor04": 44,
+    "Fecha": "2025-04-26T10:41:00",
+    "Genero": "Mujer"
+  },
+  "-NEW028": {
+    "Edad": 17,
+    "Factor01": 3,
+    "Factor02": 1,
+    "Factor03": 6,
+    "Factor04": 2,
+    "Fecha": "2025-04-26T10:42:00",
+    "Genero": "No binario"
+  },
+  "-NEW029": {
+    "Edad": 19,
+    "Factor01": 66,
+    "Factor02": 9,
+    "Factor03": 42,
+    "Factor04": 31,
+    "Fecha": "2025-04-26T10:43:00",
+    "Genero": "Hombre"
+  },
+  "-NEW030": {
+    "Edad": 21,
+    "Factor01": 12,
+    "Factor02": 3,
+    "Factor03": 9,
+    "Factor04": 5,
+    "Fecha": "2025-04-26T10:44:00",
+    "Genero": "Mujer"
+  }
+}

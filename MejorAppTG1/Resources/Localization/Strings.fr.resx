@@ -1230,4 +1230,19 @@ Cela ne prendra qu'un instant !</value>
   <data name="str_Shell_HelpPage_Advices_Msg" xml:space="preserve">
     <value>Dès que vous avez terminé un test, un nouvel écran s'affiche avec des recommandations adaptées à votre résultat. Tout d'abord, une estimation générale apparaît, puis une ou plusieurs catégories de conseils. Si vous cliquez sur l'une d'entre elles, vous serez redirigé vers un nouvel écran où les conseils associés à cette catégorie seront affichés sous forme de carrousel (défilement de droite à gauche). Ces conseils comprennent des images pertinentes ou, dans certains cas, des vidéos et des audios pour vous aider dans votre situation.</value>
   </data>
+  <data name="str_AIPrediction_General_1" xml:space="preserve">
+    <value>Votre résultat se situe dans la fourchette attendue selon votre profil. Aucun écart significatif par rapport à la moyenne n'est observé.</value>
+  </data>
+  <data name="str_AIPrediction_General_2" xml:space="preserve">
+    <value>Votre résultat est modérément supérieur à ce qui est attendu pour votre profil. Il peut être utile d'observer cette tendance.</value>
+  </data>
+  <data name="str_AIPrediction_General_3" xml:space="preserve">
+    <value>Votre résultat dépasse largement les attentes. Nous vous encourageons à y réfléchir ou à demander conseil si vous le jugez nécessaire.</value>
+  </data>
+  <data name="str_AIPrediction_General_4" xml:space="preserve">
+    <value>Votre score est modérément inférieur à ce qui est attendu pour votre profil. C'est une bonne chose, car cela signifie que vous êtes moins sujet à des troubles émotionnels ou à des difficultés connexes.</value>
+  </data>
+  <data name="str_AIPrediction_General_5" xml:space="preserve">
+    <value>Votre résultat est nettement inférieur à la moyenne attendue. Cela signifie que vous ne courez aucun risque et que tout semble aller pour le mieux, mais ne baissez pas la garde et essayez de rester sur vos gardes.</value>
+  </data>
 </root>

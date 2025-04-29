@@ -1230,4 +1230,19 @@ https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87</value>
   <data name="str_Shell_HelpPage_Advices_Msg" xml:space="preserve">
     <value>Nada más finalizar un test, se mostrará una nueva pantalla con recomendaciones adaptadas a tu resultado en el mismo. En primer lugar, aparecerá una estimación general, y más adelante aparecerán una o varias categorías de consejos. Si haces clic en cualquiera de ellas, se te redirigirá a una nueva pantalla donde se mostrarán los consejos asociados a dicha categoría en formato carrusel (desplazándose de derecha a izquierda). Estos consejos incluyen imágenes relevantes o, en algunos casos, vídeos y audios para ayudarte en tu situación.</value>
   </data>
+  <data name="str_AIPrediction_General_1" xml:space="preserve">
+    <value>Tu resultado está dentro del rango esperado según tu perfil. No se observan desviaciones significativas respecto a la media.</value>
+  </data>
+  <data name="str_AIPrediction_General_2" xml:space="preserve">
+    <value>Tu resultado está moderadamente por encima de lo esperado para tu perfil. Podría ser útil observar esta tendencia.</value>
+  </data>
+  <data name="str_AIPrediction_General_3" xml:space="preserve">
+    <value>Tu resultado está considerablemente por encima de lo esperado. Te animamos a reflexionar sobre ello o buscar orientación si lo consideras necesario.</value>
+  </data>
+  <data name="str_AIPrediction_General_4" xml:space="preserve">
+    <value>Tu resultado está moderadamente por debajo de lo esperado para tu perfil. Esto es bueno, significa que tienes menor predisposición a padecer alteraciones emocionales o dificultades relacionadas.</value>
+  </data>
+  <data name="str_AIPrediction_General_5" xml:space="preserve">
+    <value>Tu resultado está considerablemente por debajo de la media esperada. Esto quiere decir que no estás en riesgo y que todo parece ir bien, pero no bajes la guardia y procura mantenerte así.</value>
+  </data>
 </root>

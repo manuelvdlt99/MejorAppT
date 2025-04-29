@@ -90,6 +90,34 @@ namespace MejorAppTG1
         /// Clave en recursos del nivel alto de resultado de test.
         /// </summary>
         public const string FACTORS_LEVEL_HIGH = "str_FACTORS_LEVEL_HIGH";
+        /// <summary>
+        /// Archivo del modelo entrenado de IA para calcular resultados generales de tests de ansiedad rápidos.
+        /// </summary>
+        public const string AI_GENERAL_QUICK_TEST_PATH = "model_general_quickTests.zip";
+        /// <summary>
+        /// Archivo del modelo entrenado de IA para calcular resultados generales de tests de ansiedad completos.
+        /// </summary>
+        public const string AI_GENERAL_FULL_TEST_PATH = "model_general_fullTests.zip";
+        /// <summary>
+        /// Archivo del modelo entrenado de IA para calcular resultados generales de tests de TCA.
+        /// </summary>
+        public const string AI_GENERAL_TCA_TEST_PATH = "model_general_TCATests.zip";
+        /// <summary>
+        /// Archivo JSON con todas las preguntas del test de ansiedad rápido.
+        /// </summary>
+        public const string JSON_QUESTIONS_QUICK = "ShortAnxietyTestQuestions.json";
+        /// <summary>
+        /// Archivo JSON con todas las preguntas del test de ansiedad completo.
+        /// </summary>
+        public const string JSON_QUESTIONS_FULL = "FullAnxietyTestQuestions.json";
+        /// <summary>
+        /// Archivo JSON con todas las preguntas del test de TCA.
+        /// </summary>
+        public const string JSON_QUESTIONS_TCA = "EatingDisordersTestQuestions.json";
+        /// <summary>
+        /// Archivo JSON con todos los consejos para ansiedad.
+        /// </summary>
+        public const string JSON_ADVICES_FULL = "ConsejosParaAnsiedad.json";
 
         /// <summary>
         /// Variable global para evitar que se puedan pulsar varios botones o el mismo botón varias veces y provocar errores inesperados. 

@@ -137,7 +137,7 @@ public partial class ResultsPage : ContentPage
         if (_loaded) return;
 
         if (_tipoTest == App.FULL_TEST_KEY || _tipoTest == App.QUICK_TEST_KEY) {
-            using var stream = await FileSystem.OpenAppPackageFileAsync("ConsejosParaAnsiedad.json");
+            using var stream = await FileSystem.OpenAppPackageFileAsync(App.JSON_ADVICES_FULL);
             using var reader = new StreamReader(stream);
             var contenido = await reader.ReadToEndAsync();
             _consejosDisponibles = JsonSerializer.Deserialize<List<Advice>>(contenido);
@@ -366,14 +366,6 @@ public partial class ResultsPage : ContentPage
                     Categories.Add(category);
                 }
                 #endregion
-
-                // Estos se muestran siempre excepto para TODO BIEN
-                /*if (_factor1.Puntuacion > 14 && _factor3.Puntuacion > 14 && _factor2.Puntuacion > 1)
-                {
-                    category.Advices.Add(new Consejo { Titulo = Strings.str_ResultsPage_Category_BadSituation, Contenido = null, Imagen = null });
-                    category.Advices.Add(new Consejo { Titulo = Strings.ResourceManager.GetString(_consejosDisponibles[15].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(_consejosDisponibles[15].Contenido, CultureInfo.CurrentUICulture) });
-                    category.Advices.Add(new Consejo { Titulo = Strings.ResourceManager.GetString(_consejosDisponibles[16].Titulo, CultureInfo.CurrentUICulture), Contenido = Strings.ResourceManager.GetString(_consejosDisponibles[16].Contenido, CultureInfo.CurrentUICulture) });
-                }*/
             }
         });
     }

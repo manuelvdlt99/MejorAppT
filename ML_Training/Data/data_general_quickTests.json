@@ -1,0 +1,899 @@
+{
+  "-ODoqylZsjxg4Z4fZv-U": {
+    "Edad": 25,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-11T09:28:22.1127494",
+    "Genero": "Mujer"
+  },
+  "-ODoyj5JNwLGaEsi1DVS": {
+    "Edad": 25,
+    "Factor01": 32,
+    "Factor02": 14,
+    "Factor03": 24,
+    "Fecha": "2024-12-11T10:05:09.5633473",
+    "Genero": "Mujer"
+  },
+  "-ODp18XT58jdqeD-nydr": {
+    "Edad": 15,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-10T18:22:24.039757",
+    "Genero": "No binario"
+  },
+  "-ODp196Cfw4tRz1wwCtP": {
+    "Edad": 15,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-10T18:23:00.7736132",
+    "Genero": "No binario"
+  },
+  "-ODp4C0xiS7qmUc7AOTZ": {
+    "Edad": 25,
+    "Factor01": 21,
+    "Factor02": 5,
+    "Factor03": 13,
+    "Fecha": "2024-12-11T10:37:25.8071315",
+    "Genero": "Mujer"
+  },
+  "-ODp8elaODcP2FBwTjmu": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-11T10:54:39.9754011",
+    "Genero": "Mujer"
+  },
+  "-ODpVm2o_sXqjvNnqI9E": {
+    "Edad": 15,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-11T11:05:30.7287125",
+    "Genero": "No binario"
+  },
+  "-ODpXCUi2c2J_9tEvY_T": {
+    "Edad": 15,
+    "Factor01": 30,
+    "Factor02": 12,
+    "Factor03": 22,
+    "Fecha": "2024-12-11T12:42:24.1267542",
+    "Genero": "No binario"
+  },
+  "-ODpXTmlFrw9wdecl2Kg": {
+    "Edad": 15,
+    "Factor01": 15,
+    "Factor02": 8,
+    "Factor03": 15,
+    "Fecha": "2024-12-11T12:44:53.3908995",
+    "Genero": "No binario"
+  },
+  "-ODpb3nY2prKAGzvHJIX": {
+    "Edad": 15,
+    "Factor01": 18,
+    "Factor02": 9,
+    "Factor03": 11,
+    "Fecha": "2024-12-11T12:48:47.3144853",
+    "Genero": "No binario"
+  },
+  "-ODpcV_NgEpWlkSPCr1z": {
+    "Edad": 15,
+    "Factor01": 18,
+    "Factor02": 13,
+    "Factor03": 17,
+    "Fecha": "2024-12-11T13:08:46.7031075",
+    "Genero": "No binario"
+  },
+  "-ODq4My3M4cH0ec90vAx": {
+    "Edad": 25,
+    "Factor01": 12,
+    "Factor02": 1,
+    "Factor03": 8,
+    "Fecha": "2024-12-11T11:11:56.1985654",
+    "Genero": "Mujer"
+  },
+  "-ODqWMdqlk3CPafi1Q4o": {
+    "Edad": 25,
+    "Factor01": 20,
+    "Factor02": 9,
+    "Factor03": 12,
+    "Fecha": "2024-12-11T17:08:52.6770612",
+    "Genero": "Mujer"
+  },
+  "-ODqWMvDINsPxW8qMw_p": {
+    "Edad": 25,
+    "Factor01": 9,
+    "Factor02": 4,
+    "Factor03": 7,
+    "Fecha": "2024-12-11T17:18:39.9488265",
+    "Genero": "Mujer"
+  },
+  "-ODqcGDjEXJXGk-ITusT": {
+    "Edad": 19,
+    "Factor01": 4,
+    "Factor02": 0,
+    "Factor03": 4,
+    "Fecha": "2024-12-11T17:50:21.270411"
+  },
+  "-ODqcGNdAbmC4FqN5pAI": {
+    "Edad": 19,
+    "Factor01": 4,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-11T17:50:26.1864425"
+  },
+  "-ODqcRHvpWo9drrE8Sja": {
+    "Edad": 25,
+    "Factor01": 13,
+    "Factor02": 5,
+    "Factor03": 13,
+    "Fecha": "2024-12-11T17:46:53.0303962",
+    "Genero": "Mujer"
+  },
+  "-ODqcsKMQ_D5L3jEOmjU": {
+    "Edad": 15,
+    "Factor01": 31,
+    "Factor02": 15,
+    "Factor03": 25,
+    "Fecha": "2024-12-11T13:24:16.1525409",
+    "Genero": "No binario"
+  },
+  "-ODqeJp8_ImuMdrukScs": {
+    "Edad": 15,
+    "Factor01": 25,
+    "Factor02": 12,
+    "Factor03": 18,
+    "Fecha": "2024-12-11T17:53:37.0581795",
+    "Genero": "No binario"
+  },
+  "-ODqeiQOMtTvEUa0U6CL": {
+    "Edad": 19,
+    "Factor01": 1,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-11T17:58:41.6463162"
+  },
+  "-ODqerxDfFx9KRJbaAzI": {
+    "Edad": 19,
+    "Factor01": 9,
+    "Factor02": 3,
+    "Factor03": 9,
+    "Fecha": "2024-12-11T18:01:38.1684434"
+  },
+  "-ODqgKtRmNxg9D_QxDqz": {
+    "Edad": 19,
+    "Factor01": 9,
+    "Factor02": 4,
+    "Factor03": 7,
+    "Fecha": "2024-12-11T18:07:52.6200448"
+  },
+  "-ODqgL3_QrmBtYM5cOzo": {
+    "Edad": 19,
+    "Factor01": 27,
+    "Factor02": 12,
+    "Factor03": 21,
+    "Fecha": "2024-12-11T18:08:10.339571"
+  },
+  "-ODqhc1QjeckD-1Ifffx": {
+    "Edad": 15,
+    "Factor01": 28,
+    "Factor02": 13,
+    "Factor03": 26,
+    "Fecha": "2024-12-11T18:11:43.8248667",
+    "Genero": "No binario"
+  },
+  "-ODqhwDahsPvXeIpr5Yz": {
+    "Edad": 19,
+    "Factor01": 27,
+    "Factor02": 12,
+    "Factor03": 21,
+    "Fecha": "2024-12-11T18:08:58.5733244"
+  },
+  "-ODqi8T-hep6erKuDzHm": {
+    "Edad": 25,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-11T18:07:04.349335",
+    "Genero": "Mujer"
+  },
+  "-ODqi8b_pRlJcmapaUd2": {
+    "Edad": 25,
+    "Factor01": 35,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-11T18:09:29.8174864",
+    "Genero": "Mujer"
+  },
+  "-ODrPvwn4egYC3eJULGT": {
+    "Edad": 25,
+    "Factor01": 4,
+    "Factor02": 2,
+    "Factor03": 1,
+    "Fecha": "2024-12-11T18:32:44.7399726",
+    "Genero": "Mujer"
+  },
+  "-ODrPw784X6j1nTdH91S": {
+    "Edad": 25,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-11T18:32:57.9722653",
+    "Genero": "Mujer"
+  },
+  "-ODrRWpcrWpuUSxjxr2z": {
+    "Edad": 25,
+    "Factor01": 6,
+    "Factor02": 0,
+    "Factor03": 9,
+    "Fecha": "2024-12-11T21:34:07.2094147",
+    "Genero": "Mujer"
+  },
+  "-ODtnMYNg2tIf9F6ME4m": {
+    "Edad": 23,
+    "Factor01": 22,
+    "Factor02": 8,
+    "Factor03": 17,
+    "Fecha": "2024-12-12T07:31:25.8064292",
+    "Genero": "Hombre"
+  },
+  "-ODtw9_-1Bqko8OLfu3H": {
+    "Edad": 19,
+    "Factor01": 12,
+    "Factor02": 4,
+    "Factor03": 7,
+    "Fecha": "2024-12-12T09:15:08.8100647",
+    "Genero": "Hombre"
+  },
+  "-ODu0hxqOj2CigjoK7dE": {
+    "Edad": 22,
+    "Factor01": 2,
+    "Factor02": 0,
+    "Factor03": 4,
+    "Fecha": "2024-12-12T09:33:53.452614",
+    "Genero": "Mujer"
+  },
+  "-ODuCrGsq5Wd0fo0mUW3": {
+    "Edad": 19,
+    "Factor01": 27,
+    "Factor02": 12,
+    "Factor03": 21,
+    "Fecha": "2024-12-12T10:33:33.9757771",
+    "Genero": "Hombre"
+  },
+  "-ODuGZxXqku3An6w1lI0": {
+    "Edad": 25,
+    "Factor01": 23,
+    "Factor02": 6,
+    "Factor03": 16,
+    "Fecha": "2024-12-12T10:46:29.559123",
+    "Genero": "Mujer"
+  },
+  "-ODuG_Qcc1RVIcSgsLAX": {
+    "Edad": 25,
+    "Factor01": 14,
+    "Factor02": 7,
+    "Factor03": 13,
+    "Fecha": "2024-12-12T10:47:06.7343345",
+    "Genero": "Mujer"
+  },
+  "-ODuXgeNC4Cm_YPnFqUW": {
+    "Edad": 15,
+    "Factor01": 35,
+    "Factor02": 16,
+    "Factor03": 27,
+    "Fecha": "2024-12-12T12:00:39.7844763",
+    "Genero": "No binario"
+  },
+  "-ODuXh5Tsje9NQdKiX5N": {
+    "Edad": 15,
+    "Factor01": 25,
+    "Factor02": 13,
+    "Factor03": 16,
+    "Fecha": "2024-12-12T12:02:25.8395904",
+    "Genero": "No binario"
+  },
+  "-ODuZkef6PNXM9md4VGE": {
+    "Edad": 36,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-12T12:11:09.5313684",
+    "Genero": "Hombre"
+  },
+  "-ODu_tcEt3MfDAq5NuHs": {
+    "Edad": 33,
+    "Factor01": 35,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T12:16:42.164161",
+    "Genero": "Mujer"
+  },
+  "-ODv15He1qABM1CR11gO": {
+    "Edad": 96,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T14:20:46.6405389",
+    "Genero": "Mujer"
+  },
+  "-ODvEjzGbjX8ZfkWz5P7": {
+    "Edad": 19,
+    "Factor01": 17,
+    "Factor02": 8,
+    "Factor03": 14,
+    "Fecha": "2024-12-12T15:21:05.8435676",
+    "Genero": "Hombre"
+  },
+  "-ODvKaHXI2DWVFxsF2kt": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T15:44:50.5885059",
+    "Genero": "Mujer"
+  },
+  "-ODvQna7komllAX9DADj": {
+    "Edad": 15,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T13:33:32.3266463",
+    "Genero": "No binario"
+  },
+  "-ODvQnvttJRsPy2LNypw": {
+    "Edad": 15,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T13:34:02.2575672",
+    "Genero": "No binario"
+  },
+  "-ODvR2aAwUEuyw9HB5yf": {
+    "Edad": 15,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T16:14:29.9319543",
+    "Genero": "No binario"
+  },
+  "-ODvb9f0B4qc0SeEfVag": {
+    "Edad": 25,
+    "Factor01": 7,
+    "Factor02": 0,
+    "Factor03": 3,
+    "Fecha": "2024-12-12T16:56:10.9634527",
+    "Genero": "Hombre"
+  },
+  "-ODvb9p2mQlWrJWL9NRh": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T16:57:00.2331379",
+    "Genero": "Hombre"
+  },
+  "-ODvsgGxYJKpJJ59BBpn": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T17:05:33.2336041",
+    "Genero": "Hombre"
+  },
+  "-ODvtCmP0U1IY5qQGSkf": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T18:20:54.5167285",
+    "Genero": "Hombre"
+  },
+  "-ODvumz8P7S7io2E4GuR": {
+    "Edad": 25,
+    "Factor01": 0,
+    "Factor02": 4,
+    "Factor03": 0,
+    "Fecha": "2024-12-12T18:23:23.9397719",
+    "Genero": "Hombre"
+  },
+  "-ODvupzNO6pIkzIHkeLE": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T18:28:23.3609693",
+    "Genero": "Hombre"
+  },
+  "-ODvvx_GbK77HX8EHZIZ": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T18:30:25.5599856",
+    "Genero": "Hombre"
+  },
+  "-ODw5Nfo8SrTvGlrIMqm": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T19:18:01.9333639",
+    "Genero": "Hombre"
+  },
+  "-ODwbHFIRWnDHN6-4pup": {
+    "Edad": 25,
+    "Factor01": 17,
+    "Factor02": 6,
+    "Factor03": 16,
+    "Fecha": "2024-12-12T21:42:46.3079672",
+    "Genero": "Hombre"
+  },
+  "-ODwlcpWpbVo2PlYBNFc": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T22:27:07.0175428",
+    "Genero": "Hombre"
+  },
+  "-ODwld00gVKVsX3Cxuec": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-12T22:27:37.0690376",
+    "Genero": "Hombre"
+  },
+  "-ODwy0q2POpkeQhHbX_x": {
+    "Edad": 65,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-12T23:21:33.960022",
+    "Genero": "No binario"
+  },
+  "-ODyfpsRsOMDTizaIlo0": {
+    "Edad": 25,
+    "Factor01": 32,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T07:20:53.9738253",
+    "Genero": "Hombre"
+  },
+  "-ODyfq24FjLWDWraaHfi": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T07:21:14.3539961",
+    "Genero": "Hombre"
+  },
+  "-ODyfq3jiw-K-zx8DPES": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T07:21:29.9409567",
+    "Genero": "Hombre"
+  },
+  "-ODyfq5kDM8Yb_1KC2ZQ": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T07:21:44.1288192",
+    "Genero": "Hombre"
+  },
+  "-ODyfq8e8VSPnabGx4EO": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T07:22:01.9234878",
+    "Genero": "Hombre"
+  },
+  "-ODyfqBmeh1jl-iCglec": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T07:22:15.1698485",
+    "Genero": "Hombre"
+  },
+  "-ODzept42XqTCna63JAc": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T11:56:05.6991372",
+    "Genero": "Hombre"
+  },
+  "-ODzmlYD5WeaMl7Bv8ae": {
+    "Edad": 19,
+    "Factor01": 16,
+    "Factor02": 8,
+    "Factor03": 14,
+    "Fecha": "2024-12-13T12:32:36.3917413",
+    "Genero": "Hombre"
+  },
+  "-OE-Jx_999OLqwInFxbp": {
+    "Edad": 25,
+    "Factor01": 30,
+    "Factor02": 10,
+    "Factor03": 24,
+    "Fecha": "2024-12-13T14:59:39.2792816",
+    "Genero": "Hombre"
+  },
+  "-OE-RCda1b3E83f1pd-w": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T15:27:58.849522",
+    "Genero": "Hombre"
+  },
+  "-OE-TPVQM07lBV3KtQwc": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T15:42:08.5532928",
+    "Genero": "Hombre"
+  },
+  "-OE-_AXsSE-W2Zkexnyp": {
+    "Edad": 22,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-12T12:13:49.8077081",
+    "Genero": "Mujer"
+  },
+  "-OE00wisyTcptpNpfCxJ": {
+    "Edad": 25,
+    "Factor01": 12,
+    "Factor02": 5,
+    "Factor03": 6,
+    "Fecha": "2024-12-13T18:17:11.1833295",
+    "Genero": "Hombre"
+  },
+  "-OE02FIr1W7RAR7_YNmH": {
+    "Edad": 25,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-13T18:24:17.252886",
+    "Genero": "Hombre"
+  },
+  "-OE03h0TE3AXNPYPvVSl": {
+    "Edad": 25,
+    "Factor01": 30,
+    "Factor02": 15,
+    "Factor03": 22,
+    "Fecha": "2024-12-13T18:28:47.0132236",
+    "Genero": "Hombre"
+  },
+  "-OE0UsFs6K75xVsYw6PA": {
+    "Edad": 25,
+    "Factor01": 10,
+    "Factor02": 5,
+    "Factor03": 11,
+    "Fecha": "2024-12-13T20:24:22.8600074",
+    "Genero": "No binario"
+  },
+  "-OE0UsOb27l2j7lmlBkO": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T20:27:39.9532566",
+    "Genero": "No binario"
+  },
+  "-OE0bVb45jcRdej47l-y": {
+    "Edad": 25,
+    "Factor01": 26,
+    "Factor02": 6,
+    "Factor03": 16,
+    "Fecha": "2024-12-13T21:01:50.7737124",
+    "Genero": "No binario"
+  },
+  "-OE0qFX_z8yqaDj4QUr4": {
+    "Edad": 22,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T22:06:51.1366032",
+    "Genero": "Mujer"
+  },
+  "-OE0sZYaAF5K2Y0LuBQ0": {
+    "Edad": 66,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-13T22:16:38.2637922",
+    "Genero": "No binario"
+  },
+  "-OE0sZdz72uQg4Gsj8a-": {
+    "Edad": 66,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-13T22:17:14.5655617",
+    "Genero": "No binario"
+  },
+  "-OE33SyKwwL85jY-24tM": {
+    "Edad": 25,
+    "Factor01": 2,
+    "Factor02": 1,
+    "Factor03": 4,
+    "Fecha": "2024-12-14T08:27:35.7657901",
+    "Genero": "No binario"
+  },
+  "-OE3bkUZAX7rMhcGyo71": {
+    "Edad": 65,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-14T10:51:21.6513516",
+    "Genero": "No binario"
+  },
+  "-OE3cOHjJU2X0vAAiyYj": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-14T11:03:59.4653433",
+    "Genero": "No binario"
+  },
+  "-OE3pjPXfrFHHIQOHDf4": {
+    "Edad": 65,
+    "Factor01": 9,
+    "Factor02": 4,
+    "Factor03": 7,
+    "Fecha": "2024-12-14T11:50:44.4437914",
+    "Genero": "No binario"
+  },
+  "-OE4DJD_0BFmkS6aUqtH": {
+    "Edad": 25,
+    "Factor01": 20,
+    "Factor02": 11,
+    "Factor03": 12,
+    "Fecha": "2024-12-14T13:48:50.4806055",
+    "Genero": "No binario"
+  },
+  "-OE4jiXx_hKEiB7wd8K8": {
+    "Edad": 65,
+    "Factor01": 9,
+    "Factor02": 1,
+    "Factor03": 8,
+    "Fecha": "2024-12-14T16:13:21.1525128",
+    "Genero": "No binario"
+  },
+  "-OE4jifdrIrh91fCGVae": {
+    "Edad": 65,
+    "Factor01": 8,
+    "Factor02": 2,
+    "Factor03": 7,
+    "Fecha": "2024-12-14T16:13:33.1124887",
+    "Genero": "No binario"
+  },
+  "-OE4jiignBXU8X8sys-I": {
+    "Edad": 65,
+    "Factor01": 11,
+    "Factor02": 4,
+    "Factor03": 8,
+    "Fecha": "2024-12-14T16:14:01.9209974",
+    "Genero": "No binario"
+  },
+  "-OE4jikrB7ndATFR-4SP": {
+    "Edad": 65,
+    "Factor01": 18,
+    "Factor02": 8,
+    "Factor03": 14,
+    "Fecha": "2024-12-14T16:14:25.0378545",
+    "Genero": "No binario"
+  },
+  "-OE4jimW_0B399OLEJJy": {
+    "Edad": 65,
+    "Factor01": 27,
+    "Factor02": 12,
+    "Factor03": 21,
+    "Fecha": "2024-12-14T16:14:42.5514909",
+    "Genero": "No binario"
+  },
+  "-OE4jioVcMIeFTQXxOuj": {
+    "Edad": 65,
+    "Factor01": 22,
+    "Factor02": 10,
+    "Factor03": 16,
+    "Fecha": "2024-12-14T16:15:00.0018198",
+    "Genero": "No binario"
+  },
+  "-OE5gJY-Ba_lbU81s8pU": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-14T14:09:11.8483512",
+    "Genero": "Hombre"
+  },
+  "-OE8uVvMCMI14GRze8Uc": {
+    "Edad": 52,
+    "Factor01": 18,
+    "Factor02": 8,
+    "Factor03": 14,
+    "Fecha": "2024-12-15T11:40:56.8395529",
+    "Genero": "Mujer"
+  },
+  "-OE94pezPVA7q-otI-VD": {
+    "Edad": 52,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-15T12:28:00.7279057",
+    "Genero": "Mujer"
+  },
+  "-OE94pnXbfICI6OYarOk": {
+    "Edad": 52,
+    "Factor01": 18,
+    "Factor02": 10,
+    "Factor03": 20,
+    "Fecha": "2024-12-15T12:30:24.6224663",
+    "Genero": "Mujer"
+  },
+  "-OE94ppQOYSEJuJcaCc0": {
+    "Edad": 52,
+    "Factor01": 27,
+    "Factor02": 8,
+    "Factor03": 16,
+    "Fecha": "2024-12-15T12:32:06.985771",
+    "Genero": "Mujer"
+  },
+  "-OE98SgnnAoEf1HoJJlk": {
+    "Edad": 52,
+    "Factor01": 17,
+    "Factor02": 12,
+    "Factor03": 11,
+    "Fecha": "2024-12-15T12:45:43.4398085",
+    "Genero": "No binario"
+  },
+  "-OEA_D2gHfpQMbhG7S4B": {
+    "Edad": 52,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-15T19:25:55.346758",
+    "Genero": "No binario"
+  },
+  "-OEAhFgp8UiK9DBz5Les": {
+    "Edad": 35,
+    "Factor01": 18,
+    "Factor02": 9,
+    "Factor03": 16,
+    "Fecha": "2024-12-15T12:42:37.6520126",
+    "Genero": "Hombre"
+  },
+  "-OEAiKshmGYy3e6elL5U": {
+    "Edad": 35,
+    "Factor01": 22,
+    "Factor02": 9,
+    "Factor03": 20,
+    "Fecha": "2024-12-15T20:05:53.385404",
+    "Genero": "Hombre"
+  },
+  "-OEAzUJqt7f6QUrmmxCW": {
+    "Edad": 52,
+    "Factor01": 7,
+    "Factor02": 6,
+    "Factor03": 4,
+    "Fecha": "2024-12-15T21:23:23.6047107",
+    "Genero": "No binario"
+  },
+  "-OEDewcvz9iNOfowP50q": {
+    "Edad": 22,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-16T08:55:47.2711331",
+    "Genero": "Mujer"
+  },
+  "-OEE3tWOr90nWO08O3K3": {
+    "Edad": 19,
+    "Factor01": 10,
+    "Factor02": 2,
+    "Factor03": 9,
+    "Fecha": "2024-12-16T11:46:03.0715859",
+    "Genero": "Hombre"
+  },
+  "-OEE7OYcnkxEvE-XnFdJ": {
+    "Edad": 35,
+    "Factor01": 0,
+    "Factor02": 0,
+    "Factor03": 0,
+    "Fecha": "2024-12-16T10:02:39.4105635",
+    "Genero": "No binario"
+  },
+  "-OEE7OkKHZgqGKQ-nMOs": {
+    "Edad": 35,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-16T10:04:12.935384",
+    "Genero": "No binario"
+  },
+  "-OEEF4YveFpElAqbFHA2": {
+    "Edad": 20,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-16T12:29:28.0506436",
+    "Genero": "Hombre"
+  },
+  "-OEFLEvnhenx1BKV3oFX": {
+    "Edad": 25,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-16T17:41:18.9132031",
+    "Genero": "Hombre"
+  },
+  "-OEFNeJ6OXcUsy1kBtvK": {
+    "Edad": 26,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-16T17:51:37.6056313",
+    "Genero": "No binario"
+  },
+  "-OEFO2fvK5oTcLYIUgEy": {
+    "Edad": 65,
+    "Factor01": 36,
+    "Factor02": 16,
+    "Factor03": 28,
+    "Fecha": "2024-12-16T17:53:31.3490898",
+    "Genero": "Mujer"
+  },
+  "-OEpwOtiyT-5tFckwWNU": {
+    "Edad": 71,
+    "Factor01": 28,
+    "Factor02": 12,
+    "Factor03": 20,
+    "Fecha": "2024-12-24T00:54:01.8665364",
+    "Genero": "Hombre"
+  },
+  "-OFFnTezt9KIiJR3tzSC": {
+    "Edad": 71,
+    "Factor01": 14,
+    "Factor02": 6,
+    "Factor03": 12,
+    "Fecha": "2024-12-29T06:04:12.6903252",
+    "Genero": "Hombre"
+  },
+  "-OGpRqweXFFX_d3E8DyU": {
+    "Edad": 17,
+    "Factor01": 6,
+    "Factor02": 3,
+    "Factor03": 4,
+    "Fecha": "2025-01-17T18:07:04.3078148",
+    "Genero": "Hombre"
+  },
+  "-OGy531gFvS6cYF2GF0u": {
+    "Edad": 21,
+    "Factor01": 8,
+    "Factor02": 9,
+    "Factor03": 8,
+    "Fecha": "2025-01-19T10:20:50.695825",
+    "Genero": "Hombre"
+  },
+  "-OHRruZ_SZlxT9EEF8DS": {
+    "Edad": 16,
+    "Factor01": 22,
+    "Factor02": 10,
+    "Factor03": 18,
+    "Fecha": "2025-01-25T10:50:49.3183983",
+    "Genero": "Hombre"
+  }
+}
