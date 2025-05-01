@@ -1245,4 +1245,25 @@ https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87</value>
   <data name="str_AIPrediction_General_5" xml:space="preserve">
     <value>Tu resultado está considerablemente por debajo de la media esperada. Esto quiere decir que no estás en riesgo y que todo parece ir bien, pero no bajes la guardia y procura mantenerte así.</value>
   </data>
+  <data name="str_AIPrediction_Evolution_1" xml:space="preserve">
+    <value>Creemos que tu situación actual es bastante favorable: los resultados no presentan grandes oscilaciones y te encuentras en un estado de malestar bajo. Es un buen indicio de bienestar. Sigue así; mantén hábitos positivos que te ayuden a mantener esta estabilidad.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_2" xml:space="preserve">
+    <value>Tu situación se mantiene bastante estable, pero te encuentras en un estado de malestar moderado. Maneja el estrés y cuida tu bienestar de manera constante. Si no consigues conseguir reducir tu nivel de malestar, al menos procura que no ascienda.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_3" xml:space="preserve">
+    <value>Tu situación se mantiene estable, pero en niveles muy elevados. Esto es una señal de que hay factores que están incrementando tu nivel de angustia, y sería útil que tomes medidas para gestionarlo antes de que se convierta en un problema más grande. No dudes en buscar ayuda profesional si la necesitas.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_4" xml:space="preserve">
+    <value>Prevemos un leve aumento en tu nivel de malestar. Este es un buen momento para poner atención a tu bienestar y considerar prácticas de autocuidado para reducir cualquier tensión.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_5" xml:space="preserve">
+    <value>Creemos que podrías estar experimentando un aumento significativo en tu malestar. Es importante que tomes medidas para gestionar estos sentimientos y que no dudes en buscar apoyo profesional si lo consideras necesario.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_6" xml:space="preserve">
+    <value>Según nuestra predicción, podrías estar experimentando una ligera mejora en tu bienestar, lo cual es una señal positiva. Sin embargo, sigue prestando atención a tus emociones y mantén tus hábitos de autocuidado.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_7" xml:space="preserve">
+    <value>Predecimos una mejora significativa en tu bienestar, lo cual es una excelente señal de progreso. ¡Sigue así con esas prácticas que te están ayudando a sentirte mejor y mantén el rumbo!</value>
+  </data>
 </root>

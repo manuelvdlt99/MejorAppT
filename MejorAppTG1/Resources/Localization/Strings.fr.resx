@@ -1245,4 +1245,25 @@ Cela ne prendra qu'un instant !</value>
   <data name="str_AIPrediction_General_5" xml:space="preserve">
     <value>Votre résultat est nettement inférieur à la moyenne attendue. Cela signifie que vous ne courez aucun risque et que tout semble aller pour le mieux, mais ne baissez pas la garde et essayez de rester sur vos gardes.</value>
   </data>
+  <data name="str_AIPrediction_Evolution_1" xml:space="preserve">
+    <value>Nous pensons que votre situation actuelle est plutôt favorable : vos résultats ne présentent pas de grandes fluctuations et vous êtes dans un état de faible inconfort. C'est un bon signe de bien-être. Ne lâchez pas, gardez des habitudes positives qui vous aideront à maintenir cette stabilité.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_2" xml:space="preserve">
+    <value>Votre situation reste assez stable, mais vous vous trouvez dans un état d'inconfort modéré. Gérez votre stress et veillez constamment à votre bien-être. Si vous ne parvenez pas à réduire votre niveau d'inconfort, essayez au moins de ne pas le laisser augmenter.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_3" xml:space="preserve">
+    <value>Votre situation reste stable, mais à des niveaux très élevés. C'est le signe qu'il y a des facteurs qui augmentent votre niveau de détresse et qu'il serait utile que vous preniez des mesures pour gérer cette situation avant qu'elle ne devienne un problème plus important. N'hésitez pas à demander une aide professionnelle si vous en avez besoin.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_4" xml:space="preserve">
+    <value>Nous prévoyons une légère augmentation de votre niveau d'inconfort. C'est le moment de faire attention à votre bien-être et d'envisager des pratiques d'autosoins pour réduire le stress.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_5" xml:space="preserve">
+    <value>Nous pensons que vous êtes peut-être en train de vivre une augmentation significative de votre détresse. Il est important que vous preniez des mesures pour gérer ces sentiments et que vous n'hésitiez pas à demander un soutien professionnel si vous le jugez nécessaire.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_6" xml:space="preserve">
+    <value>Selon nos prévisions, vous pourriez connaître une légère amélioration de votre bien-être, ce qui est un signe positif. Cependant, continuez à faire attention à vos émotions et à prendre soin de vous.</value>
+  </data>
+  <data name="str_AIPrediction_Evolution_7" xml:space="preserve">
+    <value>Nous prévoyons une amélioration significative de votre bien-être, ce qui est un excellent signe de progrès - continuez les pratiques qui vous aident à vous sentir mieux et gardez le cap !</value>
+  </data>
 </root>

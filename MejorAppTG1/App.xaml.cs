@@ -103,6 +103,18 @@ namespace MejorAppTG1
         /// </summary>
         public const string AI_GENERAL_TCA_TEST_PATH = "model_general_TCATests.zip";
         /// <summary>
+        /// Archivo del modelo entrenado de IA para procesar evoluciones del usuario de tests de ansiedad rápidos.
+        /// </summary>
+        public const string AI_HISTORY_QUICK_TEST_PATH = "model_history_quickTests.zip";
+        /// <summary>
+        /// Archivo del modelo entrenado de IA para procesar evoluciones del usuario de tests de ansiedad completos.
+        /// </summary>
+        public const string AI_HISTORY_FULL_TEST_PATH = "model_history_fullTests.zip";
+        /// <summary>
+        /// Archivo del modelo entrenado de IA para procesar evoluciones del usuario de tests de TCA.
+        /// </summary>
+        public const string AI_HISTORY_TCA_TEST_PATH = "model_history_TCATests.zip";
+        /// <summary>
         /// Archivo JSON con todas las preguntas del test de ansiedad rápido.
         /// </summary>
         public const string JSON_QUESTIONS_QUICK = "ShortAnxietyTestQuestions.json";

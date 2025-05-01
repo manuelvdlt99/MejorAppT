@@ -106,6 +106,69 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a We believe that your current situation is quite favourable: your results do not evidence big fluctuations and you are in a low state of discomfort. This is a good sign of well-being. Keep it up; maintain positive habits that will help you maintain this stability..
+        /// </summary>
+        internal static string str_AIPrediction_Evolution_1 {
+            get {
+                return ResourceManager.GetString("str_AIPrediction_Evolution_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your situation remains fairly stable, but you find yourself in a state of moderate discomfort. Manage your stress and take care of your well-being constantly. If you don&apos;t manage to reduce your level of discomfort, at least try not to let it rise..
+        /// </summary>
+        internal static string str_AIPrediction_Evolution_2 {
+            get {
+                return ResourceManager.GetString("str_AIPrediction_Evolution_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your situation remains stable, but at very high levels. This is a sign that there are factors that are increasing your level of distress, and it would be helpful for you to take steps to manage this before it becomes a bigger problem. Don&apos;t hesitate to seek professional help if you need it..
+        /// </summary>
+        internal static string str_AIPrediction_Evolution_3 {
+            get {
+                return ResourceManager.GetString("str_AIPrediction_Evolution_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a We anticipate a slight increase in your level of discomfort. This is a good time to pay attention to your well-being and consider self-care practices to reduce any stress..
+        /// </summary>
+        internal static string str_AIPrediction_Evolution_4 {
+            get {
+                return ResourceManager.GetString("str_AIPrediction_Evolution_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a We believe that you may be experiencing a significant increase in distress. It is important that you take steps to manage these feelings and that you do not hesitate to seek professional support if you feel it is necessary..
+        /// </summary>
+        internal static string str_AIPrediction_Evolution_5 {
+            get {
+                return ResourceManager.GetString("str_AIPrediction_Evolution_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a According to our prediction, you could be experiencing a slight improvement in your well-being, which is a positive sign. However, continue to pay attention to your emotions and maintain your self-care habits..
+        /// </summary>
+        internal static string str_AIPrediction_Evolution_6 {
+            get {
+                return ResourceManager.GetString("str_AIPrediction_Evolution_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a We predict a significant improvement in your wellbeing, which is an excellent sign of progress - keep up those practices that are helping you feel better and stay the course!.
+        /// </summary>
+        internal static string str_AIPrediction_Evolution_7 {
+            get {
+                return ResourceManager.GetString("str_AIPrediction_Evolution_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Your result is within the expected range according to your profile. No significant deviations from the average are observed..
         /// </summary>
         internal static string str_AIPrediction_General_1 {
