@@ -4,7 +4,6 @@ using MejorAppTG1.Utils;
 using Microcharts;
 using Microsoft.ML;
 using SkiaSharp;
-using System.Collections.Generic;
 using System.Globalization;
 
 namespace MejorAppTG1;
@@ -484,14 +483,45 @@ public partial class MyProfilePage : ContentPage
                     await stream.CopyToAsync(fileStream);
                 }
 
-                AIData user = new AIData {
+                AIData user = new() {
                     EdadRango = GetAgeRange(tests.Last().EdadUser),
                     Genero = tests.Last().GeneroUser
                 };
                 float prediction = AIService.GetAIPredictedAvgResult(new MLContext(), targetPath, user);
                 LblPrediction.Text = AIService.InterpretPrediction(prediction, entriesList.Last().Value);
             } else {
-                LblPrediction.Text = "[Placeholder donde iría el análisis de IA de la evolución del usuario]";
+                string path = string.Empty;
+                switch (selectedKey) {
+                    case App.QUICK_TEST_KEY:
+                        path = App.AI_HISTORY_QUICK_TEST_PATH;
+                        break;
+                    case App.FULL_TEST_KEY:
+                        path = App.AI_HISTORY_FULL_TEST_PATH;
+                        break;
+                    case App.TCA_TEST_KEY:
+                        path = App.AI_HISTORY_TCA_TEST_PATH;
+                        break;
+                }
+                var targetPath = Path.Combine(FileSystem.AppDataDirectory, path);
+
+                if (!File.Exists(targetPath)) {
+                    using var stream = await FileSystem.OpenAppPackageFileAsync(path);
+                    using var fileStream = File.Create(targetPath);
+                    await stream.CopyToAsync(fileStream);
+                }
+
+                var lastThree = entriesList.TakeLast(3).ToList();
+
+                AIProgressiveData user = new() {
+                    EdadRango = GetAgeRange(tests.Last().EdadUser),
+                    Genero = tests.Last().GeneroUser,
+                    P1 = lastThree[0].Value ?? 0,
+                    P2 = lastThree[1].Value ?? 0,
+                    P3 = lastThree[2].Value ?? 0
+                };
+
+                float prediction = AIService.GetAIPredictedEvolutionResult(new MLContext(), targetPath, user);
+                LblPrediction.Text = AIService.GetPredictionEvaluation(prediction, user.P3);
             }
         } else {
             VslNoResultsGraph.IsVisible = true;
@@ -503,37 +533,41 @@ public partial class MyProfilePage : ContentPage
     }
 
     /// <summary>
-    /// Calcula y devuelve el nivel más apropiado según los factores obtenidos en un test. Si hay mayoría de un factor, se devuelve el nivel asociado a dicho factor. Si todos los factores son distintos, se devuelve el nivel del factor cuya puntuación sea más cercana a la media.
+    /// Calcula y devuelve el nivel más apropiado según los factores obtenidos en un test. Se hacen condicionales para devolver el nivel más apropiado e intermedio entre los factores dados. Por ejemplo, una combinación de "Bajo" y "Alto" devuelve "Medio".
     /// </summary>
     /// <param name="factores">La lista de factores calculados del test actual.</param>
     /// <returns>El nivel calculado.</returns>
     private string GetCategoria(List<Factor> factores)
     {
-        if (factores.Count == 1) {
+        if (factores.Count == 1) {  // Pensado para TCA
             return factores[0].Nivel;
         }
 
         var grupos = factores
         .GroupBy(obj => obj.Nivel)
-        .Select(g => new { Nivel = g.Key, Frecuencia = g.Count() })
+        .Select(g => g.Key)
         .ToList();
 
-        int maxFrecuencia = grupos.Max(g => g.Frecuencia);
-        bool todosIguales = grupos.All(g => g.Frecuencia == maxFrecuencia);
-
-        if (!todosIguales) {
-            string categoriaMasComun = grupos
-                .OrderByDescending(g => g.Frecuencia)
-                .First()
-                .Nivel;
-
-            return categoriaMasComun;
+        if (grupos.Contains(App.FACTORS_LEVEL_LOW) && !grupos.Contains(App.FACTORS_LEVEL_MEDIUM) && !grupos.Contains(App.FACTORS_LEVEL_HIGH)) {
+            return App.FACTORS_LEVEL_LOW;
+        }
+        else if (grupos.Contains(App.FACTORS_LEVEL_LOW) && grupos.Contains(App.FACTORS_LEVEL_MEDIUM) && !grupos.Contains(App.FACTORS_LEVEL_HIGH)) {
+            return App.FACTORS_LEVEL_LOW_MEDIUM;
+        }
+        else if (grupos.Contains(App.FACTORS_LEVEL_LOW) && grupos.Contains(App.FACTORS_LEVEL_HIGH) && !grupos.Contains(App.FACTORS_LEVEL_MEDIUM)) {
+            return App.FACTORS_LEVEL_MEDIUM;
+        }
+        else if (grupos.Contains(App.FACTORS_LEVEL_MEDIUM) && !grupos.Contains(App.FACTORS_LEVEL_LOW) && !grupos.Contains(App.FACTORS_LEVEL_HIGH)) {
+            return App.FACTORS_LEVEL_MEDIUM;
+        }
+        else if (grupos.Contains(App.FACTORS_LEVEL_MEDIUM) && grupos.Contains(App.FACTORS_LEVEL_HIGH) && !grupos.Contains(App.FACTORS_LEVEL_LOW)) {
+            return App.FACTORS_LEVEL_MEDIUM_HIGH;
+        }
+        else if (grupos.Contains(App.FACTORS_LEVEL_HIGH) && !grupos.Contains(App.FACTORS_LEVEL_LOW) && !grupos.Contains(App.FACTORS_LEVEL_MEDIUM)) {
+            return App.FACTORS_LEVEL_HIGH;
         }
         else {
-            double avg = factores.Average(obj => obj.Puntuacion);
-            return factores
-                .OrderBy(obj => Math.Abs(obj.Puntuacion - avg))
-                .First().Nivel;
+            return App.FACTORS_LEVEL_MEDIUM;
         }
     }
 
