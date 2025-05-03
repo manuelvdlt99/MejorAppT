@@ -6,15 +6,6 @@ namespace MejorAppTG1;
 
 public partial class SettingsPage : ContentPage
 {
-    #region Variables
-    private readonly Dictionary<string, string> _availableLanguages = new()
-    {
-        { "Español", "es" },
-        { "English", "en" },
-        { "Français", "fr" }
-    };
-    #endregion
-
     #region Constructores
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="SettingsPage"/>.
@@ -40,7 +31,7 @@ public partial class SettingsPage : ContentPage
             var popup = new SignUpPopup(App.CurrentUser);
             var result = await Shell.Current.ShowPopupAsync(popup);
 
-            editUser(result);
+            EditUser(result);
         }
         finally {
             App.ButtonPressed = false;
@@ -138,7 +129,7 @@ public partial class SettingsPage : ContentPage
     /// Actualiza el usuario en la base de datos.
     /// </summary>
     /// <param name="result">El resultado del formulario de modificación de usuario.</param>
-    private async void editUser(object result)
+    private async void EditUser(object result)
     {
         if (result is ValueTuple<string, int, string, string> inputs) {
             App.CurrentUser.Nombre = inputs.Item1;

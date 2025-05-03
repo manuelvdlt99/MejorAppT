@@ -18,12 +18,12 @@ public partial class LanguagePopup : Popup
     {
         InitializeComponent();
 
-        _availableLanguages = new List<LanguageItem>
-        {
+        _availableLanguages =
+        [
             new LanguageItem("Español", "es", "🇪🇸"),
             new LanguageItem("English", "en", "🇬🇧"),
             new LanguageItem("Français", "fr", "🇫🇷")
-        };
+        ];
 
         ClvLanguages.ItemsSource = _availableLanguages;
     }
