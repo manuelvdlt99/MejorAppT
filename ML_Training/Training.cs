@@ -7,6 +7,9 @@ using System.Text.Json;
 
 namespace ML_Training
 {
+    /// <summary>
+    /// Clase que alberga todos los métodos relativos al entrenamiento de modelos de inteligencia artificial.
+    /// </summary>
     internal class Training
     {
         /// <summary>
@@ -50,7 +53,6 @@ namespace ML_Training
             mlContext.Model.Save(model, data.Schema, modelPath);
 
             Console.WriteLine($"Modelo entrenado y guardado en {modelPath}");
-            TestModel(mlContext, modelPath);
         }
 
         /// <summary>
@@ -92,26 +94,58 @@ namespace ML_Training
             mlContext.Model.Save(model, data.Schema, modelPath);
 
             Console.WriteLine($"Modelo entrenado y guardado en {modelPath}");
-            TestModel(mlContext, modelPath);
         }
 
-        /// <summary>
-        /// Método variable y no definitivo usado para realizar pruebas sencillas y temporales de modelos recién creados de IA.
-        /// </summary>
-        /// <param name="mlContext">El modelo de IA.</param>
-        /// <param name="modelPath">La ruta donde está el .zip del modelo.</param>
-        private static void TestModel(MLContext mlContext, string modelPath)
+        public static void TrainEvolutivo(string json, string modelPath)
         {
-            ITransformer trainedModel = mlContext.Model.Load(modelPath, out var modelInputSchema);
-            var predEngine = mlContext.Model.CreatePredictionEngine<AIData, AIPrediction>(trainedModel);
+            var mlContext = new MLContext();
 
-            var testInput = new AIData {
-                EdadRango = 17,
-                Genero = "Mujer"
-            };
+            var root = JsonDocument.Parse(json).RootElement;
 
-            var prediction = predEngine.Predict(testInput);
-            Console.WriteLine($"Predicción para la entrada de prueba: {prediction.PredictedResult}");
+            var trainingList = new List<AIProgressiveData>();
+
+            foreach (var user in root.EnumerateObject()) {
+                var testList = user.Value.EnumerateArray()
+                    .Select(entry => new {
+                        Edad = entry.GetProperty("Edad").GetInt32(),
+                        Genero = entry.GetProperty("Genero").GetString(),
+                        Puntuacion = entry.GetProperty("Puntuacion").GetInt32()
+                    })
+                    .ToList();
+
+                if (testList.Count < 4) continue;
+
+                for (int i = 0; i <= testList.Count - 4; i++) {
+                    var t1 = testList[i];
+                    var t2 = testList[i + 1];
+                    var t3 = testList[i + 2];
+                    var target = testList[i + 3];
+
+                    trainingList.Add(new AIProgressiveData {
+                        Genero = target.Genero,
+                        EdadRango = GetAgeRange(target.Edad),
+                        P1 = t1.Puntuacion,
+                        P2 = t2.Puntuacion,
+                        P3 = t3.Puntuacion,
+                        PuntuacionEvolucion = target.Puntuacion
+                    });
+                }
+            }
+
+            var data = mlContext.Data.LoadFromEnumerable(trainingList);
+
+            var pipeline = mlContext.Transforms.Categorical.OneHotEncoding("Genero")
+                .Append(mlContext.Transforms.Concatenate("Features", "Genero", "EdadRango", "P1", "P2", "P3"))
+                .Append(mlContext.Regression.Trainers.Sdca(labelColumnName: "Label", maximumNumberOfIterations: 100));
+
+            var model = pipeline.Fit(data);
+            string directory = Path.GetDirectoryName(modelPath);
+            if (!Directory.Exists(directory)) {
+                Directory.CreateDirectory(directory);
+            }
+            mlContext.Model.Save(model, data.Schema, modelPath);
+
+            Console.WriteLine($"Modelo evolutivo entrenado y guardado en {modelPath}");
         }
 
         /// <summary>
