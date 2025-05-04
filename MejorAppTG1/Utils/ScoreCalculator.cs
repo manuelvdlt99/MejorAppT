@@ -1,8 +1,10 @@
 ﻿using MejorAppTG1.Models;
-using System.Numerics;
 
 namespace MejorAppTG1.Utils
 {
+    /// <summary>
+    /// Clase que alberga todos los métodos relativos al cálculo de puntuaciones y factores para cada tipo de test.
+    /// </summary>
     public class ScoreCalculator
     {
         /// <summary>
@@ -104,12 +106,12 @@ namespace MejorAppTG1.Utils
                     else if (totalFactor > 21) nivel = App.FACTORS_LEVEL_HIGH;
                     break;
                 case App.FACTORS_2:
-                    if (totalFactor >= 15 && totalFactor <= 23) nivel = App.FACTORS_LEVEL_MEDIUM;
-                    else if (totalFactor > 23) nivel = App.FACTORS_LEVEL_HIGH;
-                    break;
-                case App.FACTORS_3:
                     if (totalFactor == 2 || totalFactor == 3) nivel = App.FACTORS_LEVEL_MEDIUM;
                     else if (totalFactor > 3) nivel = App.FACTORS_LEVEL_HIGH;
+                    break;
+                case App.FACTORS_3:
+                    if (totalFactor >= 15 && totalFactor <= 23) nivel = App.FACTORS_LEVEL_MEDIUM;
+                    else if (totalFactor > 23) nivel = App.FACTORS_LEVEL_HIGH;
                     break;
             }
             return nivel;

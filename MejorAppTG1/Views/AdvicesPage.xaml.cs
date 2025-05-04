@@ -81,7 +81,6 @@ public partial class AdvicesPage : ContentPage
     /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void BtnLeft_Clicked(object sender, EventArgs e)
     {
-        App.AnimateButtonInOut(sender);
         ClvAdvices_ItemSwiped(ClvAdvices, new ItemSwipedEventArgs(PanCardView.Enums.ItemSwipeDirection.Right, ClvAdvices.SelectedIndex, null));
         ClvAdvices.SelectedIndex -= 1;
     }
@@ -93,7 +92,6 @@ public partial class AdvicesPage : ContentPage
     /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
     private void BtnRight_Clicked(object sender, EventArgs e)
     {
-        App.AnimateButtonInOut(sender);
         ClvAdvices_ItemSwiped(ClvAdvices, new ItemSwipedEventArgs(PanCardView.Enums.ItemSwipeDirection.Left, ClvAdvices.SelectedIndex, null));
         ClvAdvices.SelectedIndex += 1;
     }

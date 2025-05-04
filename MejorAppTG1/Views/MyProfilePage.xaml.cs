@@ -14,15 +14,12 @@ public partial class MyProfilePage : ContentPage
     private static int _resultIndex = 0;
     private static int _currentPage = 1;
     private List<Test> _finishedTests;
-    private List<Test> _fiveTests = new();
-    private Dictionary<string,string> _tests = new Dictionary<string, string>
-        {
+    private List<Test> _fiveTests = [];
+    private readonly Dictionary<string,string> _tests = new() {
             { Strings.str_QuickTest, App.QUICK_TEST_KEY },
             { Strings.str_FullTest, App.FULL_TEST_KEY },
             { Strings.str_EatingTest, App.TCA_TEST_KEY }
         };
-    /*private DateTime? _dateFrom;
-    private DateTime? _dateUntil;*/
 
     /// <summary>
     /// Permite recuperar o modificar el índice en el que el usuario está actualmente posicionado en la lista de tests realizados.
@@ -177,32 +174,6 @@ public partial class MyProfilePage : ContentPage
             App.ButtonPressed = false;
         }
     }
-
-    /*private void DtpUntil_DateSelected(object sender, DateChangedEventArgs e)
-    {
-        _dateUntil = e.NewDate;
-    }
-
-    private void DtpFrom_DateSelected(object sender, DateChangedEventArgs e)
-    {
-        _dateFrom = e.NewDate;
-    }
-
-    private async void BtnFilter_Clicked(object sender, EventArgs e)
-    {
-        List<string> selectedTypes = [];
-        if (ChipQuick.IsSelected) {
-            selectedTypes.Add(App.QUICK_TEST_KEY);
-        }
-        if (ChipFull.IsSelected) {
-            selectedTypes.Add(App.FULL_TEST_KEY);
-        }
-        if (ChipTCA.IsSelected) {
-            selectedTypes.Add(App.TCA_TEST_KEY);
-        }
-        _finishedTests = await App.Database.GetFinishedTestsByUserFilteredAsync(App.CurrentUser.IdUsuario, _dateFrom ?? DateTime.MinValue, _dateUntil ?? DateTime.UtcNow, selectedTypes);
-        await LoadResults();
-    }*/
 
     /// <summary>
     /// Maneja el evento de pulsación de la pestaña de Historial de tests. Muestra la interfaz del historial.

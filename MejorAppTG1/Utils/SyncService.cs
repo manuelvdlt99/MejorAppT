@@ -1,5 +1,8 @@
 ﻿using MejorAppTG1.Data;
 
+/// <summary>
+/// Clase que alberga todos los métodos relativos a la sincronización de SQLite con Firebase.
+/// </summary>
 public class SyncService
 {
     private readonly FirebaseService _firebaseService;
