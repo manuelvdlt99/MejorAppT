@@ -16,14 +16,14 @@ using Microsoft.Maui.Controls;
 public partial class ResultsPage : ContentPage
 {
     #region Variables
-    private List<Advice> _consejosDisponibles = new();
+    private List<Advice> _consejosDisponibles = [];
     /// <summary>
     /// Permite recuperar o modificar las categorías de consejos que se mostrarán en la pantalla de recomendaciones.
     /// </summary>
     /// <value>
     /// Las categorías.
     /// </value>
-    public ObservableCollection<AdviceCategory> Categories { get; set; } = new();
+    public ObservableCollection<AdviceCategory> Categories { get; set; } = [];
 
     private Factor _factor1;
     private Factor _factor2;

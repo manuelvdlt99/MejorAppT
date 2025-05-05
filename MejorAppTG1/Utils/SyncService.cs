@@ -1,5 +1,7 @@
 ﻿using MejorAppTG1.Data;
 
+namespace MejorAppTG1.Utils;
+
 /// <summary>
 /// Clase que alberga todos los métodos relativos a la sincronización de SQLite con Firebase.
 /// </summary>

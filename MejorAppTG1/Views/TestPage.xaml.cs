@@ -8,11 +8,11 @@ namespace MejorAppTG1
     public partial class TestPage : ContentPage
     {
         #region Variables
-        private Button _selectedButton;
-        private List<Question> _questions;
+        private Button? _selectedButton;
+        private readonly List<Question> _questions;
         private int _index = 0;
-        private List<Answer> _answers;
-        private Test _test;
+        private List<Answer> _answers = [];
+        private readonly Test _test;
         #endregion
 
         #region Constructores        
@@ -29,12 +29,12 @@ namespace MejorAppTG1
             this._test = cuestionario;
             this._questions = questions;
 
-            if (cuestionario.Tipo == "str_EatingTest") {
+            if (cuestionario.Tipo == App.TCA_TEST_KEY) {
                 BtnOpcion2.Text = Strings.str_TestPage_BtnOption2_2;
                 BtnOpcion3.Text = Strings.str_TestPage_BtnOption3_2;
                 BtnOpcion4.Text = Strings.str_TestPage_BtnOption4_2;
             }
-            else if (cuestionario.Tipo == "str_QuickTest") {
+            else if (cuestionario.Tipo == App.QUICK_TEST_KEY) {
                 BtnOpcion2.Text = Strings.str_TestPage_BtnOption2_3;
                 BtnOpcion3.Text = Strings.str_TestPage_BtnOption3_2;
                 BtnOpcion4.Text = Strings.str_TestPage_BtnOption4_3;
@@ -44,7 +44,7 @@ namespace MejorAppTG1
                 _ = InitializeAsync();
             }
             else {
-                this._answers = new List<Answer>();
+                this._answers = [];
                 ContentPage_Loaded();
             }
         }
@@ -120,11 +120,11 @@ namespace MejorAppTG1
                     }
                     else {
                         Factor factor1 = null, factor2 = null, factor3 = null;
-                        if (_test.Tipo != "str_EatingTest") {
+                        if (_test.Tipo != App.TCA_TEST_KEY) {
                             var resultados = await Task.WhenAll(
-                                Task.Run(() => ScoreCalculator.CalculoFactores(_answers, "1", _test)),
-                                Task.Run(() => ScoreCalculator.CalculoFactores(_answers, "2", _test)),
-                                Task.Run(() => ScoreCalculator.CalculoFactores(_answers, "3", _test))
+                                Task.Run(() => ScoreCalculator.CalculoFactores(_answers, App.FACTORS_1, _test)),
+                                Task.Run(() => ScoreCalculator.CalculoFactores(_answers, App.FACTORS_2, _test)),
+                                Task.Run(() => ScoreCalculator.CalculoFactores(_answers, App.FACTORS_3, _test))
                             );
 
                             factor1 = resultados[0];
@@ -132,19 +132,12 @@ namespace MejorAppTG1
                             factor3 = resultados[2];
                         }
                         else {
-                            factor1 = ScoreCalculator.CalculoFactores(_answers, "1", _test);
+                            factor1 = ScoreCalculator.CalculoFactores(_answers, App.FACTORS_1, _test);
                         }
-
-                        // Guardar la página actual para borrarla después
-                        var paginaActual = Navigation.NavigationStack.LastOrDefault();
 
                         // Llamar a la ventana de resultados
+                        await Navigation.PopAsync();
                         await Navigation.PushAsync(new ResultsPage(factor1, factor2, factor3, _test.Tipo), true);
-
-                        // Borrar la página de cuestionarios
-                        if (paginaActual != null) {
-                            Navigation.RemovePage(paginaActual);
-                        }
 
                         _test.Terminado = true;
                         _test.Fecha = DateTime.Now;
@@ -162,7 +155,7 @@ namespace MejorAppTG1
         /// </summary>
         private void ContentPage_Loaded()
         {
-            LblTitulo.Text = Strings.ResourceManager.GetString(_test.Tipo, CultureInfo.CurrentUICulture); ;
+            LblTitulo.Text = Strings.ResourceManager.GetString(_test.Tipo, CultureInfo.CurrentUICulture);
             while (_answers.Count < _questions.Count) {
                 _answers.Add(new Answer {
                     ValorRespuesta = 5 // Valor predeterminado para cargar la lista y modificarla mas tarde
@@ -213,7 +206,7 @@ namespace MejorAppTG1
         private async Task InitializeAsync()
         {
             var savedAnswers = await GetSavedAnswers();
-            this._answers = savedAnswers.ToList();
+            this._answers = [.. savedAnswers];
 
             _index = savedAnswers.Count;
             progressBar.Progress = (double)savedAnswers.Count / _questions.Count;

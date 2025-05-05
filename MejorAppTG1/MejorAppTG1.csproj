@@ -41,6 +41,7 @@
 		<RepositoryUrl>https://github.com/manuelvdlt99/MejorAppT</RepositoryUrl>
 		<NeutralLanguage>en</NeutralLanguage>
 		<DefaultLanguage>en</DefaultLanguage>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">

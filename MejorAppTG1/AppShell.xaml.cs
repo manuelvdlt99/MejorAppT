@@ -1,12 +1,9 @@
 ﻿using CommunityToolkit.Maui.Views;
-using MejorAppTG1;
-using MejorAppTG1.Resources.Localization;
+using MejorAppTG1.Views;
+using Microsoft.Maui.Controls;
 
 namespace MejorAppTG1
 {
-    using MejorAppTG1.Views;
-    using Microsoft.Maui.Controls;
-
     public partial class AppShell : Shell
     {
         #region Constructores        
@@ -19,24 +16,15 @@ namespace MejorAppTG1
 
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
 
-
             // Verificar si los controles son accesibles
             var lblTitulo = this.FindByName<Label>("LblTituloApp");
             var btnAbout = this.FindByName<ImageButton>("BtnAbout");
             var btnHelp = this.FindByName<ImageButton>("BtnHelp");
 
-            if (lblTitulo != null && btnAbout != null && btnHelp != null) {
+            if (lblTitulo != null && btnAbout != null && btnHelp != null && DeviceInfo.Current.Platform != DevicePlatform.iOS) {
                 // Configurar el orden semántico
-                if (DeviceInfo.Current.Platform != DevicePlatform.iOS) {
-                    this.SemanticOrderView.ViewOrder = new List<View> { LblTituloApp, BtnAbout, BtnHelp };
-                }
-            }
-
-            /*lo que deberia ir de normal
-            if (DeviceInfo.Current.Platform != DevicePlatform.iOS) {
                 this.SemanticOrderView.ViewOrder = new List<View> { LblTituloApp, BtnAbout, BtnHelp };
             }
-            */
         }
         #endregion
 
@@ -46,7 +34,7 @@ namespace MejorAppTG1
         /// </summary>
         /// <param name="sender">El botón pulsado.</param>
         /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
-        private async void BtnHelp_Clicked(object sender, EventArgs e)
+        private static async void BtnHelp_Clicked(object sender, EventArgs e)
         {
             if (App.ButtonPressed) return;
             App.ButtonPressed = true;
@@ -63,7 +51,7 @@ namespace MejorAppTG1
         /// </summary>
         /// <param name="sender">El botón pulsado.</param>
         /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
-        private async void BtnAbout_Clicked(object sender, EventArgs e)
+        private static async void BtnAbout_Clicked(object sender, EventArgs e)
         {
             if (App.ButtonPressed) return;
             App.ButtonPressed = true;

@@ -1,5 +1,7 @@
 ﻿using SQLite;
 
+namespace MejorAppTG1.Models;
+
 public class Answer
 {
     // Este paquete de SQLite no admite claves primarias compuestas (en este caso sería IdPregunta + IdTest)

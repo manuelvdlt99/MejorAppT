@@ -1,8 +1,7 @@
 ﻿using SQLite;
-using System;
-using System.IO;
-using System.Threading.Tasks;
 using MejorAppTG1.Models;
+
+namespace MejorAppTG1.Data;
 
 public class MejorAppTDatabase
 {

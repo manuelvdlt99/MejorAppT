@@ -60,7 +60,8 @@ public partial class UserSelectPopup : Popup
             string translatedGender = user.Genero switch {
                 App.GENDERS_MALE_KEY => Strings.str_Genders_Man,
                 App.GENDERS_FEMALE_KEY => Strings.str_Genders_Woman,
-                App.GENDERS_NB_KEY => Strings.str_Genders_NB
+                App.GENDERS_NB_KEY => Strings.str_Genders_NB,
+                _ => throw new NotImplementedException()
             };
 
             generoLabel.Text = translatedGender;
@@ -72,7 +73,7 @@ public partial class UserSelectPopup : Popup
     /// </summary>
     /// <param name="sender">La tarjeta detectada.</param>
     /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
-    private void Frame_BindingContextChanged(object sender, EventArgs e)
+    private static void Frame_BindingContextChanged(object sender, EventArgs e)
     {
         var currentFrame = sender as Frame;
         if (currentFrame.BindingContext is User user) {
@@ -150,7 +151,7 @@ public partial class UserSelectPopup : Popup
     /// Restablece un Frame a sus colores iniciales.
     /// </summary>
     /// <param name="frame">El Frame a modificar.</param>
-    private void ResetFrameColor(Frame frame)
+    private static void ResetFrameColor(Frame frame)
     {
         frame.BorderColor = (Color)Application.Current.Resources["ButtonColor2"];
         frame.BackgroundColor = (Color)Application.Current.Resources["GradientColor3"];
@@ -160,7 +161,7 @@ public partial class UserSelectPopup : Popup
     /// Actualiza los colores del Frame del usuario seleccionado.
     /// </summary>
     /// <param name="selectedFrame">El Frame seleccionado.</param>
-    private void UpdateSelectedFrameBorder(Frame selectedFrame)
+    private static void UpdateSelectedFrameBorder(Frame selectedFrame)
     {
         selectedFrame.BorderColor = (Color)Application.Current.Resources["HeaderColor1"];
         selectedFrame.BackgroundColor = (Color)Application.Current.Resources["PrimaryColor"];

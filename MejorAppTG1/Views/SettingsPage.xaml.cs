@@ -23,7 +23,7 @@ public partial class SettingsPage : ContentPage
     /// </summary>
     /// <param name="sender">El botón pulsado.</param>
     /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
-    private async void BtnEditProfile_Clicked(object sender, EventArgs e)
+    private async static void BtnEditProfile_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
@@ -31,7 +31,7 @@ public partial class SettingsPage : ContentPage
             var popup = new SignUpPopup(App.CurrentUser);
             var result = await Shell.Current.ShowPopupAsync(popup);
 
-            EditUser(result);
+            await EditUser(result);
         }
         finally {
             App.ButtonPressed = false;
@@ -43,7 +43,7 @@ public partial class SettingsPage : ContentPage
     /// </summary>
     /// <param name="sender">El botón pulsado.</param>
     /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
-    private void BtnLogOut_Clicked(object sender, EventArgs e)
+    private static void BtnLogOut_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
@@ -129,7 +129,7 @@ public partial class SettingsPage : ContentPage
     /// Actualiza el usuario en la base de datos.
     /// </summary>
     /// <param name="result">El resultado del formulario de modificación de usuario.</param>
-    private async void EditUser(object result)
+    private async static Task EditUser(object result)
     {
         if (result is ValueTuple<string, int, string, string> inputs) {
             App.CurrentUser.Nombre = inputs.Item1;
