@@ -85,23 +85,6 @@
                 <BoxView Grid.Row="2" HeightRequest="2" Color="{StaticResource FontColor1}"/>
 
                 <VerticalStackLayout Grid.Row="3" x:Name="VslResults" Spacing="10" Padding="10" VerticalOptions="Center">
-                    <!--<HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="50">
-                        <VerticalStackLayout HorizontalOptions="Center">
-                            <Label Text="Desde"/>
-                            <DatePicker x:Name="DtpFrom" BackgroundColor="{StaticResource FontColor3}" DateSelected="DtpFrom_DateSelected"/>
-                        </VerticalStackLayout>
-                        <VerticalStackLayout HorizontalOptions="Center">
-                            <Label Text="Hasta"/>
-                            <DatePicker x:Name="DtpUntil" BackgroundColor="{StaticResource FontColor3}" DateSelected="DtpUntil_DateSelected"/>
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
-
-                    <FlexLayout Wrap="Wrap" JustifyContent="Center" AlignItems="Center" HorizontalOptions="Center" VerticalOptions="Center">
-                        <freakycontrols:FreakyChip Margin="2,0" FontSize="12" StrokeThickness="2" Stroke="{StaticResource ButtonColor2}" CornerRadius="25" UnselectedBackgroundColor="{StaticResource GradientColor3}" SelectedBackgroundColor="{StaticResource SecondaryColor2}" x:Name="ChipQuick" IsSelected="True" Text="{x:Static strings:Strings.str_QuickTest}" />
-                        <freakycontrols:FreakyChip Margin="2,0" FontSize="12" StrokeThickness="2" Stroke="{StaticResource ButtonColor2}" CornerRadius="25" UnselectedBackgroundColor="{StaticResource GradientColor3}" SelectedBackgroundColor="{StaticResource SecondaryColor2}" x:Name="ChipFull" IsSelected="True" Text="{x:Static strings:Strings.str_FullTest}" />
-                        <freakycontrols:FreakyChip Margin="2,0" FontSize="12" StrokeThickness="2" Stroke="{StaticResource ButtonColor2}" CornerRadius="25" UnselectedBackgroundColor="{StaticResource GradientColor3}" SelectedBackgroundColor="{StaticResource SecondaryColor2}" x:Name="ChipTCA" IsSelected="True" Text="{x:Static strings:Strings.str_EatingTest}" />
-                    </FlexLayout>-->
-
                     <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="Center" Spacing="50">
                         <Button BorderWidth="2" CornerRadius="15" BorderColor="{StaticResource SecondaryColor1}" TextColor="{StaticResource FontColor1}" HeightRequest="40" x:Name="BtnLastResult" Clicked="BtnLastResult_Clicked" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnLastTest}" BackgroundColor="{StaticResource PrimaryColor}"/>
                     </HorizontalStackLayout>
