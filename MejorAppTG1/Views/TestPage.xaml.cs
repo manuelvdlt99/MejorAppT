@@ -135,11 +135,10 @@ namespace MejorAppTG1
                             factor1 = ScoreCalculator.CalculoFactores(_answers, App.FACTORS_1, _test);
                         }
 
-                        // Llamar a la ventana de resultados
+                        // Guardar y eliminar la página actual tras la navegación
+                        var paginaActual = Navigation.NavigationStack[^1];
                         await Navigation.PushAsync(new ResultsPage(factor1, factor2, factor3, _test.Tipo), true);
-                        if (Navigation.NavigationStack.Count > 0) {
-                            Navigation.RemovePage(Navigation.NavigationStack[^1]);
-                        }
+                        Navigation.RemovePage(paginaActual);
 
                         _test.Terminado = true;
                         _test.Fecha = DateTime.Now;
