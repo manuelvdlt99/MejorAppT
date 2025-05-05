@@ -119,7 +119,7 @@ namespace MejorAppTG1
                         ActualizarProgreso();
                     }
                     else {
-                        Factor factor1 = null, factor2 = null, factor3 = null;
+                        Factor? factor1 = null, factor2 = null, factor3 = null;
                         if (_test.Tipo != App.TCA_TEST_KEY) {
                             var resultados = await Task.WhenAll(
                                 Task.Run(() => ScoreCalculator.CalculoFactores(_answers, App.FACTORS_1, _test)),
@@ -136,8 +136,10 @@ namespace MejorAppTG1
                         }
 
                         // Llamar a la ventana de resultados
-                        await Navigation.PopAsync();
                         await Navigation.PushAsync(new ResultsPage(factor1, factor2, factor3, _test.Tipo), true);
+                        if (Navigation.NavigationStack.Count > 0) {
+                            Navigation.RemovePage(Navigation.NavigationStack[^1]);
+                        }
 
                         _test.Terminado = true;
                         _test.Fecha = DateTime.Now;

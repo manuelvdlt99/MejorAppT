@@ -24,10 +24,9 @@ public partial class ResultsPage : ContentPage
     /// Las categorías.
     /// </value>
     public ObservableCollection<AdviceCategory> Categories { get; set; } = [];
-
-    private Factor _factor1;
-    private Factor _factor2;
-    private Factor _factor3;
+    private Factor? _factor1;
+    private Factor? _factor2;
+    private Factor? _factor3;
     private string _tipoTest;
     private int _puntuacionTotal = 0;
     private bool _loaded = false;
@@ -41,7 +40,7 @@ public partial class ResultsPage : ContentPage
     /// <param name="factor2">El factor 2 del test realizado.</param>
     /// <param name="factor3">El factor 3 del test realizado.</param>
     /// <param name="tipoTest">El tipo de test realizado.</param>
-    public ResultsPage(Factor factor1, Factor factor2, Factor factor3, string tipoTest)
+    public ResultsPage(Factor? factor1, Factor? factor2, Factor? factor3, string tipoTest)
     {
         _tipoTest = tipoTest;
         _factor1 = factor1;
