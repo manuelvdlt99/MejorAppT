@@ -1,5 +1,7 @@
 ﻿using SQLite;
 
+namespace MejorAppTG1.Models;
+
 public class Test
 {
     [PrimaryKey, AutoIncrement]

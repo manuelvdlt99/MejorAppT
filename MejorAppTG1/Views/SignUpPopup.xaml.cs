@@ -11,7 +11,7 @@ public partial class SignUpPopup : Popup
 {
     #region Variables
     private bool _buttonPressed = false;
-    private string _selectedGender;
+    private string? _selectedGender;
     private string? _localPfpPath;
     #endregion
 
@@ -81,7 +81,7 @@ public partial class SignUpPopup : Popup
                 entryAgeNum = Convert.ToInt32(EntryAge.Text);
                 UpdateValidTextInput(EntryAge);
             }
-            catch (FormatException exc) {
+            catch (FormatException) {
                 entriesGoodToGo = false;
                 Toast.Make(Strings.str_LoginPage_BtnLogin_entryAgeError, ToastDuration.Long).Show(new CancellationTokenSource().Token);
                 UpdateErrorTextInput(EntryAge);
@@ -226,7 +226,7 @@ public partial class SignUpPopup : Popup
     /// <param name="directory">El directorio donde se almacenará la imagen.</param>
     /// <param name="fileName">El nombre original del archivo de la imagen.</param>
     /// <returns>La ruta completa de la imagen con un nombre único en el sistema de archivos.</returns>
-    private string GetUniqueFilePath(string directory, string fileName)
+    private static string GetUniqueFilePath(string directory, string fileName)
     {
         string filePath = Path.Combine(directory, fileName);
         string fileExtension = Path.GetExtension(fileName);
@@ -259,7 +259,7 @@ public partial class SignUpPopup : Popup
     /// Actualiza un componente de entrada de texto dado si sus datos son incorrectos.
     /// </summary>
     /// <param name="entry">El componente de entrada de texto.</param>
-    private void UpdateErrorTextInput(FreakyTextInputLayout entry)
+    private static void UpdateErrorTextInput(FreakyTextInputLayout entry)
     {
         entry.BorderStroke = (Color)Application.Current.Resources["ErrorColor1"];
         entry.TitleColor = (Color)Application.Current.Resources["ErrorColor1"];
@@ -269,7 +269,7 @@ public partial class SignUpPopup : Popup
     /// Actualiza un componente de entrada de texto dado si sus datos son válidos.
     /// </summary>
     /// <param name="entry">El componente de entrada de texto.</param>
-    private void UpdateValidTextInput(FreakyTextInputLayout entry)
+    private static void UpdateValidTextInput(FreakyTextInputLayout entry)
     {
         entry.BorderStroke = (Color)Application.Current.Resources["ButtonColor2"];
         entry.TitleColor = (Color)Application.Current.Resources["ButtonColor2"];

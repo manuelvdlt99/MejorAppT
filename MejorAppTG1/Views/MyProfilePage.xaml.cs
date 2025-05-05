@@ -11,10 +11,8 @@ namespace MejorAppTG1;
 public partial class MyProfilePage : ContentPage
 {
     #region Variables
-    private static int _resultIndex = 0;
-    private static int _currentPage = 1;
-    private List<Test> _finishedTests;
-    private List<Test> _fiveTests = [];
+    private List<Test> _finishedTests = [];
+    private readonly List<Test> _fiveTests = [];
     private readonly Dictionary<string,string> _tests = new() {
             { Strings.str_QuickTest, App.QUICK_TEST_KEY },
             { Strings.str_FullTest, App.FULL_TEST_KEY },
@@ -27,14 +25,14 @@ public partial class MyProfilePage : ContentPage
     /// <value>
     /// El índice de la lista de tests realizados.
     /// </value>
-    public static int ResultIndex { get => _resultIndex; set => _resultIndex = value; }
+    public static int ResultIndex { get; set; } = 0;
     /// <summary>
     /// Permite recuperar o modificar la página en la que el usuario está actualmente posicionado en el historial paginado de tests realizados.
     /// </summary>
     /// <value>
     /// La página del historial de tests.
     /// </value>
-    public static int CurrentPage { get => _currentPage; set => _currentPage = value; }
+    public static int CurrentPage { get; set; } = 1;
     #endregion
 
     #region Constructores
@@ -45,8 +43,6 @@ public partial class MyProfilePage : ContentPage
     {
         InitializeComponent();
         ChartView.Chart = new LineChart();
-        /*DtpFrom.Date = DateTime.UtcNow.AddDays(-120);
-        DtpUntil.Date = DateTime.UtcNow;*/
         PickTipos.ItemsSource = _tests.Keys.ToList();
         PickTipos.SelectedIndex = 0;
         SemanticProperties.SetDescription(PickTipos, Strings.str_SemanticProperties_ResultHistoryPage_PickTipos_Desc);
@@ -71,7 +67,7 @@ public partial class MyProfilePage : ContentPage
             await Task.WhenAll(
                 Task.Run(UpdateUserImage),
                 Task.Run(UpdateUserLabels),
-                LoadResults()
+                Task.Run(LoadResults)
             );
         }
         finally {
@@ -144,8 +140,8 @@ public partial class MyProfilePage : ContentPage
         App.ButtonPressed = true;
         try {
             App.AnimateButtonInOut(sender);
-            _resultIndex -= 5;
-            _currentPage--;
+            ResultIndex -= 5;
+            CurrentPage--;
             await LoadNextFiveTests();
             await SlideCollectionView("Left");
         }
@@ -165,8 +161,8 @@ public partial class MyProfilePage : ContentPage
         App.ButtonPressed = true;
         try {
             App.AnimateButtonInOut(sender);
-            _resultIndex += 5;
-            _currentPage++;
+            ResultIndex += 5;
+            CurrentPage++;
             await LoadNextFiveTests();
             await SlideCollectionView("Right");
         }
@@ -234,13 +230,13 @@ public partial class MyProfilePage : ContentPage
             LblUsername.Text = App.CurrentUser.Nombre;
             LblUserAge.Text = string.Format(Strings.str_ResultHistoryPage_LblAge_Dyn, App.CurrentUser.Edad.ToString());
             LblUserGender.Text = Strings.ResourceManager.GetString(App.CurrentUser.Genero, CultureInfo.CurrentUICulture);
-            if (App.CurrentUser.Genero == "str_Genders_Man") {
+            if (App.CurrentUser.Genero == App.GENDERS_MALE_KEY) {
                 LblUserGenderIcon.Text = "♂";
             }
-            else if (App.CurrentUser.Genero == "str_Genders_Woman") {
+            else if (App.CurrentUser.Genero == App.GENDERS_FEMALE_KEY) {
                 LblUserGenderIcon.Text = "♀";
             }
-            else if (App.CurrentUser.Genero == "str_Genders_NB") {
+            else if (App.CurrentUser.Genero == App.GENDERS_NB_KEY) {
                 LblUserGenderIcon.Text = "🜬";
             }
         });
@@ -269,7 +265,7 @@ public partial class MyProfilePage : ContentPage
             _fiveTests.Clear();
 
             // No puede haber una página -1, evidentemente
-            if (_resultIndex == 0) {
+            if (ResultIndex == 0) {
                 BtnPreviousFive.IsEnabled = false;
                 BtnPreviousFive.BorderColor = (Color)Application.Current.Resources["BorderColor3"];
             }
@@ -278,7 +274,7 @@ public partial class MyProfilePage : ContentPage
                 BtnPreviousFive.BorderColor = (Color)Application.Current.Resources["SecondaryColor1"];
             }
 
-            for (int i = _resultIndex; i < _resultIndex + 5; i++) {
+            for (int i = ResultIndex; i < ResultIndex + 5; i++) {
                 if (i < _finishedTests.Count) {
                     Test currentTest = _finishedTests[i];
                     if (currentTest != null) {
@@ -305,14 +301,14 @@ public partial class MyProfilePage : ContentPage
                 }
             }
             CtvResults.ItemsSource = _fiveTests;
-            LblCurrentPage.Text = string.Format(Strings.str_ResultHistoryPage_LblCurrentPage_Dyn, _currentPage, (int)Math.Ceiling(_finishedTests.Count / 5.0));
+            LblCurrentPage.Text = string.Format(Strings.str_ResultHistoryPage_LblCurrentPage_Dyn, CurrentPage, (int)Math.Ceiling(_finishedTests.Count / 5.0));
         });
     }
 
     /// <summary>
     /// Muestra el historial de tests.
     /// </summary>
-    private async Task LoadResults()
+    private void LoadResults()
     {
         MainThread.BeginInvokeOnMainThread(async () => {
             if (_finishedTests == null || _finishedTests.Count == 0) {
@@ -326,7 +322,7 @@ public partial class MyProfilePage : ContentPage
                 VslNoResults.IsVisible = false;
                 HslNavigationBtns.IsVisible = true;
                 CtvResults.IsVisible = true;
-                await LoadNextFiveTests();
+                LoadNextFiveTests();
             }
         });
     }
@@ -335,10 +331,10 @@ public partial class MyProfilePage : ContentPage
     /// Abre la pantalla de consejos del test seleccionado.
     /// </summary>
     /// <param name="sender">El Frame del test sobre el que se ha pulsado.</param>
-    private async void ConsultarRegistro(object sender)
+    private async Task ConsultarRegistro(object sender)
     {
         Test selectedTest = (Test)((Frame)sender).BindingContext;
-        CalculateFactorsAndShowResults(selectedTest);
+        await CalculateFactorsAndShowResults(selectedTest);
     }
 
     /// <summary>
@@ -365,7 +361,7 @@ public partial class MyProfilePage : ContentPage
     /// Elimina el test seleccionado.
     /// </summary>
     /// <param name="sender">El Frame del test sobre el que se ha pulsado.</param>
-    private async void EliminarRegistro(object sender)
+    private async Task EliminarRegistro(object sender)
     {
         bool answer = await DisplayAlert(Strings.str_ResultHistoryPage_BtnDelete_Question, Strings.str_ResultHistoryPage_BtnDelete_Msg, Strings.str_MainPage_BtnYes, Strings.str_MainPage_BtnNo);
         
@@ -377,7 +373,7 @@ public partial class MyProfilePage : ContentPage
             LoadResults();
 
             // Si al eliminar este registro se queda la página vacía, vuelve una página para atrás
-            if (_resultIndex >= _finishedTests.Count && _resultIndex > 0) {
+            if (ResultIndex >= _finishedTests.Count && ResultIndex > 0) {
                 BtnPreviousFive_Clicked(null, null);
             }
         }
@@ -455,11 +451,11 @@ public partial class MyProfilePage : ContentPage
                 }
 
                 AIData user = new() {
-                    EdadRango = GetAgeRange(tests.Last().EdadUser),
-                    Genero = tests.Last().GeneroUser
+                    EdadRango = GetAgeRange(tests[^1].EdadUser),
+                    Genero = tests[^1].GeneroUser
                 };
                 float prediction = AIService.GetAIPredictedAvgResult(new MLContext(), targetPath, user);
-                LblPrediction.Text = AIService.InterpretPrediction(prediction, entriesList.Last().Value);
+                LblPrediction.Text = AIService.InterpretPrediction(prediction, entriesList[^1].Value);
             } else {
                 string path = string.Empty;
                 switch (selectedKey) {
@@ -484,8 +480,8 @@ public partial class MyProfilePage : ContentPage
                 var lastThree = entriesList.TakeLast(3).ToList();
 
                 AIProgressiveData user = new() {
-                    EdadRango = GetAgeRange(tests.Last().EdadUser),
-                    Genero = tests.Last().GeneroUser,
+                    EdadRango = GetAgeRange(tests[^1].EdadUser),
+                    Genero = tests[^1].GeneroUser,
                     P1 = lastThree[0].Value ?? 0,
                     P2 = lastThree[1].Value ?? 0,
                     P3 = lastThree[2].Value ?? 0
@@ -508,7 +504,7 @@ public partial class MyProfilePage : ContentPage
     /// </summary>
     /// <param name="factores">La lista de factores calculados del test actual.</param>
     /// <returns>El nivel calculado.</returns>
-    private string GetCategoria(List<Factor> factores)
+    private static string GetCategoria(List<Factor> factores)
     {
         if (factores.Count == 1) {  // Pensado para TCA
             return factores[0].Nivel;
@@ -548,9 +544,9 @@ public partial class MyProfilePage : ContentPage
     /// <param name="preguntas">Las respuestas del test.</param>
     /// <param name="tipoTest">El test realizado.</param>
     /// <returns>La lista de factores calculados.</returns>
-    private List<Factor> GetFactores(List<Answer> preguntas, Test tipoTest)
+    private static List<Factor> GetFactores(List<Answer> preguntas, Test tipoTest)
     {
-        List<Factor> factores = new();
+        List<Factor> factores = [];
         if (tipoTest.Tipo.Equals(App.QUICK_TEST_KEY) || tipoTest.Tipo.Equals(App.FULL_TEST_KEY)) {
             for (int i = 1; i <= 3; i++) {
                 factores.Add(ScoreCalculator.CalculoFactores(preguntas, i.ToString(), tipoTest));

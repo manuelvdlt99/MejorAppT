@@ -172,7 +172,7 @@ namespace MejorAppTG1
         /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
         private async void ContentPage_Appearing(object sender, EventArgs e)
         {
-            LoadUserName();
+            await LoadUserName();
             LblPrueba.Focus();
         }
         #endregion
@@ -181,7 +181,7 @@ namespace MejorAppTG1
         /// <summary>
         /// Anima los textos y los botones del menú principal.
         /// </summary>
-        private async void AnimateFrames()
+        private async Task AnimateFrames()
         {
             LblWelcome.TranslationY = 50;
             LblWelcome.Opacity = 0;
@@ -219,11 +219,9 @@ namespace MejorAppTG1
         /// <summary>
         /// Carga el nombre del usuario que ha iniciado sesióna ctualmente y lo muestra en pantalla.
         /// </summary>
-        internal async void LoadUserName()
+        internal async Task LoadUserName()
         {
-            if (App.CurrentUser == null) {
-                App.CurrentUser = await App.Database.GetUserByIdAsync(Preferences.Get(App.USER_ID_KEY, 0));
-            }
+            App.CurrentUser ??= await App.Database.GetUserByIdAsync(Preferences.Get(App.USER_ID_KEY, 0));
             LblWelcome.Text = string.Format(Strings.str_MainPage_LblWelcome_Dyn, App.CurrentUser.Nombre);
         }
 
@@ -232,7 +230,7 @@ namespace MejorAppTG1
         /// </summary>
         /// <param name="fileName">La ruta del fichero JSON con las preguntas.</param>
         /// <returns>Una lista de preguntas.</returns>
-        private async Task<List<Question>> GetQuestionsFromJSON(String fileName)
+        private async static Task<List<Question>> GetQuestionsFromJSON(String fileName)
         {
             using var stream = await FileSystem.OpenAppPackageFileAsync(fileName);
             using var reader = new StreamReader(stream);

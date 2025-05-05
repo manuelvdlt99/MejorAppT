@@ -7,7 +7,7 @@ namespace MejorAppTG1.Utils
     /// <summary>
     /// Clase que alberga todos los métodos relativos al uso de modelos de inteligencia artificial.
     /// </summary>
-    internal class AIService
+    internal static class AIService
     {
         /// <summary>
         /// Utilizando un modelo entrenado, predice el resultado medio que podría obtener un usuario en un test según su género y edad.

@@ -5,7 +5,7 @@ namespace MejorAppTG1.Utils
     /// <summary>
     /// Clase que alberga todos los métodos relativos al cálculo de puntuaciones y factores para cada tipo de test.
     /// </summary>
-    public class ScoreCalculator
+    public static class ScoreCalculator
     {
         /// <summary>
         /// Calcula la puntuación obtenida y el nivel asociado de un factor concreto de un test realizado.

@@ -3,6 +3,7 @@ using CommunityToolkit.Maui.Core;
 using MejorAppTG1.Data;
 using MejorAppTG1.Models;
 using MejorAppTG1.Resources.Localization;
+using MejorAppTG1.Utils;
 using System.Globalization;
 
 
@@ -130,11 +131,18 @@ namespace MejorAppTG1
         /// Archivo JSON con todos los consejos para ansiedad.
         /// </summary>
         public const string JSON_ADVICES_FULL = "ConsejosParaAnsiedad.json";
+        /// <summary>
+        /// URL de la base de datos de Firebase.
+        /// </summary>
+        public const string FIREBASE_URL = "https://mejorappt-g1-default-rtdb.europe-west1.firebasedatabase.app";
 
         /// <summary>
         /// Variable global para evitar que se puedan pulsar varios botones o el mismo botón varias veces y provocar errores inesperados. 
         /// </summary>
-        public static bool ButtonPressed = false;
+        /// <value>
+        /// Si se ha pulsado un botón y aún está realizando acciones.
+        /// </value>
+        public static bool ButtonPressed { get; set; }
         private static MejorAppTDatabase _database;
         private static FirebaseService _firebase;
         private bool _isSyncing = false;
@@ -157,10 +165,8 @@ namespace MejorAppTG1
         public static MejorAppTDatabase Database
         {
             get {
-                if (_database == null) {
-                    _database = new MejorAppTDatabase(Path.Combine(Environment.GetFolderPath(
+                _database ??= new MejorAppTDatabase(Path.Combine(Environment.GetFolderPath(
                     Environment.SpecialFolder.LocalApplicationData), "MejorAppT.db3"));
-                }
                 return _database;
             }
         }
@@ -174,9 +180,7 @@ namespace MejorAppTG1
         public static FirebaseService Firebase
         {
             get {
-                if (_firebase == null) {
-                    _firebase = new FirebaseService("https://mejorappt-g1-default-rtdb.europe-west1.firebasedatabase.app");
-                }
+                _firebase ??= new FirebaseService(App.FIREBASE_URL);
                 return _firebase;
             }
         }
@@ -202,7 +206,7 @@ namespace MejorAppTG1
             Thread.CurrentThread.CurrentUICulture = culture;
             InitializeComponent();
             if (Preferences.ContainsKey(USER_ID_KEY)){
-                GetCurrentUser();
+                App.GetCurrentUser();
                 MainPage = new AppShell();
             } else {
                 MainPage = new NavigationPage(new LoginPage());
@@ -221,7 +225,7 @@ namespace MejorAppTG1
         /// <summary>
         /// Almacena en CurrentUser el usuario que ha iniciado sesión y que está guardado en las preferencias de la aplicación.
         /// </summary>
-        public async void GetCurrentUser()
+        public static async Task GetCurrentUser()
         {
             App.CurrentUser = await App.Database.GetUserByIdAsync(Preferences.Get(USER_ID_KEY, 0));
         }
@@ -230,7 +234,7 @@ namespace MejorAppTG1
         /// Método genérico que permite animar un componente Frame que se le pase con un efecto de pulsación (reduce su tamaño y vuelve a su estado original).
         /// </summary>
         /// <param name="sender">El Frame a animar.</param>
-        public static async void AnimateFrameInOut(object sender)
+        public static async Task AnimateFrameInOut(object sender)
         {
             await ((Frame)sender).ScaleTo(0.95, 100, Easing.CubicInOut);    // Reducir un poco el tamaño
             await ((Frame)sender).ScaleTo(1, 100, Easing.CubicInOut);   // Volver al tamaño original
@@ -240,7 +244,7 @@ namespace MejorAppTG1
         /// Método genérico que permite animar un componente Button que se le pase con un efecto de pulsación (reduce su tamaño y vuelve a su estado original).
         /// </summary>
         /// <param name="sender">El Button a animar.</param>
-        public static async void AnimateButtonInOut(object sender)
+        public static async Task AnimateButtonInOut(object sender)
         {
             await ((Button)sender).ScaleTo(0.95, 100, Easing.CubicInOut);
             await ((Button)sender).ScaleTo(1, 100, Easing.CubicInOut);
@@ -249,23 +253,23 @@ namespace MejorAppTG1
         protected override void OnStart()
         {
             base.OnStart();
-            var cancellationTokenSource = new CancellationTokenSource();
-            StartSyncTask(cancellationTokenSource.Token, SYNC_MODE_OPEN);
+            using var cancellationTokenSource = new CancellationTokenSource();
+            _ = StartSyncTask(SYNC_MODE_OPEN, cancellationTokenSource.Token);
         }
 
         protected override void OnSleep()
         {
-            var cancellationTokenSource = new CancellationTokenSource();
-            StartSyncTask(cancellationTokenSource.Token, SYNC_MODE_CLOSE);
+            using var cancellationTokenSource = new CancellationTokenSource();
+            _ = StartSyncTask(SYNC_MODE_CLOSE, cancellationTokenSource.Token);
             base.OnSleep();
         }
 
         /// <summary>
         /// Inicia la tarea de sincronización de las bases de datos.
         /// </summary>
-        /// <param name="cancellationToken">Token de cancelación utilizado para la interrupción del proceso.</param>
         /// <param name="mode">La fase del ciclo de vida de la aplicación ("open" o "close") durante la que se realiza la sincronización.</param>
-        private async Task StartSyncTask(CancellationToken cancellationToken, string mode)
+        /// <param name="cancellationToken">Token de cancelación utilizado para la interrupción del proceso.</param>
+        private async Task StartSyncTask(string mode, CancellationToken cancellationToken)
         {
             if (_isSyncing) return;
 
@@ -274,7 +278,7 @@ namespace MejorAppTG1
                 if (mode == SYNC_MODE_OPEN) {
                     await WaitForInternetAndSync(cancellationToken);
                 } else {
-                    await CheckInternetAndSync(cancellationToken);
+                    await App.CheckInternetAndSync(cancellationToken);
                 }
             }
             finally {
@@ -335,7 +339,7 @@ namespace MejorAppTG1
         /// Comprueba la conexión a Internet una única vez y, si la encuentra, inicia el proceso de sincronización de las bases de datos.
         /// </summary>
         /// <param name="cancellationToken">Token de cancelación utilizado para la interrupción del proceso.</param>
-        public async Task CheckInternetAndSync(CancellationToken cancellationToken)
+        public static async Task CheckInternetAndSync(CancellationToken cancellationToken)
         {
             if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet) {
                 try {

@@ -1,6 +1,7 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
 using MejorAppTG1.Resources.Localization;
+using MejorAppTG1.Models;
 using System.Globalization;
 
 namespace MejorAppTG1.Data

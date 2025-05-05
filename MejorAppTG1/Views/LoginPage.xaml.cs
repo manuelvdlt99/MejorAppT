@@ -1,11 +1,7 @@
 using CommunityToolkit.Maui.Views;
 using MejorAppTG1.Models;
 using MejorAppTG1.Resources.Localization;
-using MejorAppTG1.Utils.Converters;
 using MejorAppTG1.Views;
-using Microsoft.Maui.Controls.Shapes;
-using Microsoft.Maui.Storage;
-using System.Globalization;
 
 namespace MejorAppTG1;
 
@@ -32,7 +28,7 @@ public partial class LoginPage : ContentPage {
     /// </summary>
     /// <param name="sender">El botón pulsado.</param>
     /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
-    private async void CrearUsuario_Clicked(object sender, EventArgs e)
+    private async static void CrearUsuario_Clicked(object sender, EventArgs e)
     {
         if (App.ButtonPressed) return;
         App.ButtonPressed = true;
@@ -41,7 +37,7 @@ public partial class LoginPage : ContentPage {
             var popup = new SignUpPopup();
             var result = await Application.Current.MainPage.ShowPopupAsync(popup);
 
-            createUser(result);
+            await CreateUser(result);
         }
         finally {
             App.ButtonPressed = false;
@@ -69,7 +65,7 @@ public partial class LoginPage : ContentPage {
                 var popup = new UserSelectPopup(activeUsers);
                 var selectedUser = await Application.Current.MainPage.ShowPopupAsync(popup) as User;
 
-                selectUser(selectedUser);
+                SelectUser(selectedUser);
             }
         }
         finally {
@@ -83,7 +79,7 @@ public partial class LoginPage : ContentPage {
     /// Almacena los datos del usuario en la base de datos, lo guarda como el usuario actual y abre el menú principal de la aplicación.
     /// </summary>
     /// <param name="result">El resultado del formulario de creación de usuario.</param>
-    private async void createUser(object result)
+    private async static Task CreateUser(object result)
     {
         if (result is ValueTuple<string, int, string, string> inputs) {
             string newName = inputs.Item1;
@@ -113,7 +109,7 @@ public partial class LoginPage : ContentPage {
     /// Guarda el usuario seleccionado como el actual y abre el menú principal de la aplicación.
     /// </summary>
     /// <param name="selectedUser">El usuario seleccionado.</param>
-    private async void selectUser(User selectedUser)
+    private static void SelectUser(User selectedUser)
     {
         if (selectedUser != null) {
             App.CurrentUser = selectedUser;

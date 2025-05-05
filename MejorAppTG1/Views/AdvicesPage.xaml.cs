@@ -8,7 +8,9 @@ namespace MejorAppTG1;
 public partial class AdvicesPage : ContentPage
 {
     #region Variables
-    private AdviceCategory _category;
+    [GeneratedRegex(@"<title>(.*?)</title>", RegexOptions.IgnoreCase, "es-ES")]
+    private static partial Regex YouTubeRegex();
+    private readonly AdviceCategory _category;
     #endregion
 
     #region Constructores    
@@ -39,9 +41,7 @@ public partial class AdvicesPage : ContentPage
 
             BindingContext = this;
 
-            await Task.WhenAll(
-                Task.Run(CargarConsejosAsync)
-            );
+            await Task.Run(CargarConsejosAsync);
         }
         finally {
             SemanticScreenReader.Announce(LblTitle.Text);
@@ -144,7 +144,7 @@ public partial class AdvicesPage : ContentPage
     /// </summary>
     /// <param name="sender">El botón detectado.</param>
     /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
-    private async void Frame_BindingContextChanged(object sender, EventArgs e)
+    private async static void Frame_BindingContextChanged(object sender, EventArgs e)
     {
         if (sender is not Frame frame || frame.BindingContext is not string url)
             return;
@@ -164,12 +164,13 @@ public partial class AdvicesPage : ContentPage
     /// <summary>
     /// Muestra los consejos de la categoría actual en la pantalla.
     /// </summary>
-    private async Task CargarConsejosAsync()
+    private Task CargarConsejosAsync()
     {
         MainThread.BeginInvokeOnMainThread(() => {
             LblTitle.Text = _category.Name;
             ClvAdvices.ItemsSource = _category.Advices;
         });
+        return Task.CompletedTask;
     }
 
     /// <summary>
@@ -177,20 +178,20 @@ public partial class AdvicesPage : ContentPage
     /// </summary>
     /// <param name="url">La URL del vídeo.</param>
     /// <returns></returns>
-    private async Task<string> GetYoutubeTitleAsync(string url)
+    private async static Task<string> GetYoutubeTitleAsync(string url)
     {
         try {
             using var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115.0.0.0 Safari/537.36");
 
             if (url.Contains("embed")) {
-                var videoId = url.Split("/").Last();
+                var videoId = url.Split("/").Length - 1;
                 url = $"https://www.youtube.com/watch?v={videoId}";
             }
 
             var html = await httpClient.GetStringAsync(url);
 
-            var match = Regex.Match(html, @"<title>(.*?)</title>", RegexOptions.IgnoreCase);
+            var match = YouTubeRegex().Match(html);
             if (match.Success) {
                 return match.Groups[1].Value.Replace("- YouTube", "").Replace("&#39;", "'").Trim();
             }

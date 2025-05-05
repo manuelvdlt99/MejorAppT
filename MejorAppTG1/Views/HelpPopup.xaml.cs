@@ -1,4 +1,3 @@
-using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Views;
 
 namespace MejorAppTG1.Views;
@@ -42,14 +41,11 @@ public partial class HelpPopup : Popup
     /// </summary>
     /// <param name="sender">El Expander que ha cambiado.</param>
     /// <param name="e">La instancia <see cref="EventArgs"/> que contiene los datos del evento.</param>
-    private void Expander_ExpandedChanged(object sender, EventArgs e)
+    private static void Expander_ExpandedChanged(object sender, EventArgs e)
     {
         if (sender is Expander expander && expander.Header is Layout headerLayout) {
             var image = headerLayout.GetVisualTreeDescendants().OfType<Image>().FirstOrDefault();
-
-            if (image != null) {
-                image.RotateTo(expander.IsExpanded ? 180 : 0, 200, Easing.CubicInOut);
-            }
+            image?.RotateTo(expander.IsExpanded ? 180 : 0, 200, Easing.CubicInOut);
         }
     }
 
