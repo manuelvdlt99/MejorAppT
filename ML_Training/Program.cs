@@ -5,7 +5,7 @@ using System.Text.Json.Nodes;
 
 namespace ML_Training
 {
-    class Program
+    internal static class Program
     {
         /// <summary>
         /// Define el punto de entrada de la aplicación. Permite al usuario elegir un tipo de entrenamiento y entrena el modelo seleccionado.
@@ -30,7 +30,7 @@ namespace ML_Training
                             cleanJson = CleanJSON(json);
                             solutionDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.Parent.FullName;
                             destinationPath = Path.Combine(solutionDir, "MejorAppTG1", "Resources", "Raw", "model_general_quickTests.zip");
-                            Training.Train(cleanJson, destinationPath);
+                            Training.TrainAverage(cleanJson, destinationPath);
                             break;
                         case 2:
                             valido = true;
@@ -46,7 +46,7 @@ namespace ML_Training
                             cleanJson = CleanJSON(json);
                             solutionDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.Parent.FullName;
                             destinationPath = Path.Combine(solutionDir, "MejorAppTG1", "Resources", "Raw", "model_general_fullTests.zip");
-                            Training.Train(cleanJson, destinationPath);
+                            Training.TrainAverage(cleanJson, destinationPath);
                             break;
                         case 4:
                             valido = true;
@@ -62,7 +62,7 @@ namespace ML_Training
                             cleanJson = CleanJSONTCA(json);
                             solutionDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.Parent.FullName;
                             destinationPath = Path.Combine(solutionDir, "MejorAppTG1", "Resources", "Raw", "model_general_TCATests.zip");
-                            Training.TrainTCA(cleanJson, destinationPath);
+                            Training.TrainAverage(cleanJson, destinationPath);
                             break;
                         case 6:
                             valido = true;
