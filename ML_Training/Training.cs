@@ -10,34 +10,44 @@ namespace ML_Training
     /// <summary>
     /// Clase que alberga todos los métodos relativos al entrenamiento de modelos de inteligencia artificial.
     /// </summary>
-    internal class Training
+    internal static class Training
     {
         /// <summary>
-        /// Entrena un modelo de IA para ansiedad a partir de los datos de un JSON dado y lo almacena en una ruta dada.
+        /// Entrena un modelo de IA para resultados promedios genéricos a partir de los datos de un JSON dado y lo almacena en una ruta dada.
         /// </summary>
         /// <param name="json">El JSON del dataset.</param>
         /// <param name="modelPath">La ruta donde se ha de guardar el modelo entrenado.</param>
-        public static void Train(string json, string modelPath)
+        public static void TrainAverage(string json, string modelPath)
         {
             var mlContext = new MLContext();
 
             var root = JsonDocument.Parse(json).RootElement;
 
             var dataList = new List<AIData>();
-            foreach (var item in root.EnumerateObject()) {
-                var entry = item.Value;
-                int edad = entry.GetProperty("Edad").GetInt32();
-                int rangoEdad = GetAgeRange(edad);
-
-                dataList.Add(new AIData {
-                    EdadRango = rangoEdad,
-                    Genero = entry.GetProperty("Genero").GetString(),
-                    Puntuacion = entry.GetProperty("Factor01").GetInt32()
-                                   + entry.GetProperty("Factor02").GetInt32()
-                                   + entry.GetProperty("Factor03").GetInt32()
-                });
+            if (modelPath.Contains("TCA")) {
+                dataList.AddRange(
+                    root.EnumerateObject()
+                        .Select(item => item.Value)
+                        .Select(entry => new AIData {
+                            EdadRango = GetAgeRange(entry.GetProperty("Edad").GetInt32()),
+                            Genero = entry.GetProperty("Genero").GetString(),
+                            Puntuacion = entry.GetProperty("Puntuacion").GetInt32()
+                        })
+                );
             }
-
+            else {
+                dataList.AddRange(
+                    root.EnumerateObject()
+                        .Select(item => item.Value)
+                        .Select(entry => new AIData {
+                            EdadRango = GetAgeRange(entry.GetProperty("Edad").GetInt32()),
+                            Genero = entry.GetProperty("Genero").GetString(),
+                            Puntuacion = entry.GetProperty("Factor01").GetInt32()
+                                       + entry.GetProperty("Factor02").GetInt32()
+                                       + entry.GetProperty("Factor03").GetInt32()
+                        })
+                );
+            }
 
             var data = mlContext.Data.LoadFromEnumerable(dataList);
 
@@ -56,46 +66,10 @@ namespace ML_Training
         }
 
         /// <summary>
-        /// Entrena un modelo de IA para TCA a partir de los datos de un JSON dado y lo almacena en una ruta dada.
+        /// Entrena un modelo de IA para evoluciones de usuario a partir de los datos de un JSON dado y lo almacena en una ruta dada.
         /// </summary>
         /// <param name="json">El JSON del dataset.</param>
         /// <param name="modelPath">La ruta donde se ha de guardar el modelo entrenado.</param>
-        public static void TrainTCA(string json, string modelPath)
-        {
-            var mlContext = new MLContext();
-
-            var root = JsonDocument.Parse(json).RootElement;
-
-            var dataList = new List<AIData>();
-            foreach (var item in root.EnumerateObject()) {
-                var entry = item.Value;
-                int edad = entry.GetProperty("Edad").GetInt32();
-                int rangoEdad = GetAgeRange(edad);
-
-                dataList.Add(new AIData {
-                    EdadRango = rangoEdad,
-                    Genero = entry.GetProperty("Genero").GetString(),
-                    Puntuacion = entry.GetProperty("Puntuacion").GetInt32()
-                });
-            }
-
-
-            var data = mlContext.Data.LoadFromEnumerable(dataList);
-
-            var pipeline = mlContext.Transforms.Categorical.OneHotEncoding("Genero")
-                .Append(mlContext.Transforms.Concatenate("Features", "Genero", "EdadRango"))
-                .Append(mlContext.Regression.Trainers.Sdca(labelColumnName: "Label", maximumNumberOfIterations: 100));
-
-            var model = pipeline.Fit(data);
-            string directory = Path.GetDirectoryName(modelPath);
-            if (!Directory.Exists(directory)) {
-                Directory.CreateDirectory(directory);
-            }
-            mlContext.Model.Save(model, data.Schema, modelPath);
-
-            Console.WriteLine($"Modelo entrenado y guardado en {modelPath}");
-        }
-
         public static void TrainEvolutivo(string json, string modelPath)
         {
             var mlContext = new MLContext();
