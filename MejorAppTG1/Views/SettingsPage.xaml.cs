@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui.Views;
 using MejorAppTG1.Resources.Localization;
 using MejorAppTG1.Views;
+using Plugin.LocalNotification;
 
 namespace MejorAppTG1;
 
@@ -13,7 +14,9 @@ public partial class SettingsPage : ContentPage
     public SettingsPage()
     {
         InitializeComponent();
+        grdNotifications.IsVisible = DeviceInfo.Platform != DevicePlatform.WinUI;
         BtnLanguage.Text = Thread.CurrentThread.CurrentUICulture.DisplayName;
+        SwtNotifications.IsToggled = Preferences.Get(App.USER_NOTIFICATIONS, true);
     }
     #endregion
 
@@ -49,6 +52,7 @@ public partial class SettingsPage : ContentPage
         App.ButtonPressed = true;
         try {
             Preferences.Remove(App.USER_ID_KEY);
+            CancelNotifications();
             MyProfilePage.ResultIndex = 0;
             MyProfilePage.CurrentPage = 1;
             App.CurrentUser = null;
@@ -75,6 +79,7 @@ public partial class SettingsPage : ContentPage
                 await App.Database.DeleteUsuarioAsync(App.CurrentUser);
                 App.CurrentUser = null;
                 Preferences.Remove(App.USER_ID_KEY);
+                CancelNotifications();
                 MyProfilePage.ResultIndex = 0;
                 MyProfilePage.CurrentPage = 1;
                 Application.Current.MainPage = new NavigationPage(new LoginPage());
@@ -122,6 +127,19 @@ public partial class SettingsPage : ContentPage
             App.ButtonPressed = false;
         }
     }
+
+    /// <summary>
+    /// Maneja el evento de marcado del switch de Activar notificaciones. Guarda en Preferences la decisión del usuario.
+    /// </summary>
+    /// <param name="sender">El switch pulsado.</param>
+    /// <param name="e">La instancia <see cref="ToggledEventArgs"/> que contiene los datos del evento.</param>
+    private static void SwtNotifications_Toggled(object sender, ToggledEventArgs e)
+    {
+        Preferences.Set(App.USER_NOTIFICATIONS, e.Value);
+        if (!e.Value) {
+            CancelNotifications();
+        }
+    }
     #endregion
 
     #region Métodos    
@@ -138,6 +156,14 @@ public partial class SettingsPage : ContentPage
             App.CurrentUser.Imagen = inputs.Item4;
             await App.Database.UpdateUsuarioAsync(App.CurrentUser);
         }
+    }
+
+    /// <summary>
+    /// Cancela todas las notificaciones programadas.
+    /// </summary>
+    private static void CancelNotifications()
+    {
+        LocalNotificationCenter.Current.CancelAll();
     }
     #endregion
 }

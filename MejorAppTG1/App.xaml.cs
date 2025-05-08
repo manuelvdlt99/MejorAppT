@@ -24,6 +24,10 @@ namespace MejorAppTG1
         /// </summary>
         public const string USER_LANGUAGE = "language";
         /// <summary>
+        /// La clave en las preferencias de si recibir notificaciones o no.
+        /// </summary>
+        public const string USER_NOTIFICATIONS = "notifications";
+        /// <summary>
         /// Modo de sincronización para cuando se inicia la aplicación.
         /// </summary>
         public const string SYNC_MODE_OPEN = "open";
@@ -135,6 +139,26 @@ namespace MejorAppTG1
         /// URL de la base de datos de Firebase.
         /// </summary>
         public const string FIREBASE_URL = "https://mejorappt-g1-default-rtdb.europe-west1.firebasedatabase.app";
+        /// <summary>
+        /// Archivo local de la base de datos de SQLite.
+        /// </summary>
+        public const string SQLITE_URI = "MejorAppT.db3";
+        /// <summary>
+        /// Id de notificaciones relativas a volver a hacer un test rápido de ansiedad.
+        /// </summary>
+        public const int NOTIFICATION_ID_QUICK_TEST = 1;
+        /// <summary>
+        /// Id de notificaciones relativas a volver a hacer un test completo de ansiedad.
+        /// </summary>
+        public const int NOTIFICATION_ID_FULL_TEST = 2;
+        /// <summary>
+        /// Id de notificaciones relativas a volver a hacer un test de TCA.
+        /// </summary>
+        public const int NOTIFICATION_ID_TCA_TEST = 3;
+        /// <summary>
+        /// Id de notificaciones que no tengan que ver con volver a hacer un test.
+        /// </summary>
+        public const int NOTIFICATION_ID_OTHERS = 0;
 
         /// <summary>
         /// Variable global para evitar que se puedan pulsar varios botones o el mismo botón varias veces y provocar errores inesperados. 
@@ -166,7 +190,7 @@ namespace MejorAppTG1
         {
             get {
                 _database ??= new MejorAppTDatabase(Path.Combine(Environment.GetFolderPath(
-                    Environment.SpecialFolder.LocalApplicationData), "MejorAppT.db3"));
+                    Environment.SpecialFolder.LocalApplicationData), App.SQLITE_URI));
                 return _database;
             }
         }
@@ -278,7 +302,7 @@ namespace MejorAppTG1
                 if (mode == SYNC_MODE_OPEN) {
                     await WaitForInternetAndSync(cancellationToken);
                 } else {
-                    await App.CheckInternetAndSync(cancellationToken);
+                    await App.CheckInternetAndSync();
                 }
             }
             finally {
@@ -338,8 +362,7 @@ namespace MejorAppTG1
         /// <summary>
         /// Comprueba la conexión a Internet una única vez y, si la encuentra, inicia el proceso de sincronización de las bases de datos.
         /// </summary>
-        /// <param name="cancellationToken">Token de cancelación utilizado para la interrupción del proceso.</param>
-        public static async Task CheckInternetAndSync(CancellationToken cancellationToken)
+        public static async Task CheckInternetAndSync()
         {
             if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet) {
                 try {

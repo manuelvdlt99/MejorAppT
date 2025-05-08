@@ -2,6 +2,7 @@ using System.Globalization;
 using MejorAppTG1.Models;
 using MejorAppTG1.Resources.Localization;
 using MejorAppTG1.Utils;
+using Plugin.LocalNotification;
 
 namespace MejorAppTG1
 {
@@ -135,6 +136,11 @@ namespace MejorAppTG1
                             factor1 = ScoreCalculator.CalculoFactores(_answers, App.FACTORS_1, _test);
                         }
 
+                        int totalPoints = (factor1?.Puntuacion ?? 0) + (factor2?.Puntuacion ?? 0) + (factor3?.Puntuacion ?? 0);
+                        if (DeviceInfo.Platform != DevicePlatform.WinUI) {
+                            ScheduleNotification(totalPoints);
+                        }
+
                         // Guardar y eliminar la página actual tras la navegación
                         var paginaActual = Navigation.NavigationStack[^1];
                         await Navigation.PushAsync(new ResultsPage(factor1, factor2, factor3, _test.Tipo), true);
@@ -235,7 +241,7 @@ namespace MejorAppTG1
         /// </summary>
         private void ActualizarProgreso()
         {
-            LblProgreso.Text = string.Format(Strings.str_TestPage_QuestionCount, (_index + 1), _questions.Count);
+            LblProgreso.Text = string.Format(Strings.str_TestPage_QuestionCount, _index + 1, _questions.Count);
             // Saco el ID del string de cada pregunta del JSON y lo busco en Resources para mostrarlo en la interfaz
             string locId = _questions[_index].Content;
             LblPregunta.Text = Strings.ResourceManager.GetString(locId, CultureInfo.CurrentUICulture);
@@ -245,7 +251,7 @@ namespace MejorAppTG1
 
             ConfigurarBotones();
 
-            SemanticScreenReader.Announce(string.Format(Strings.str_SemanticProperties_TestPage_QuestionCount, (_index + 1), _questions.Count));
+            SemanticScreenReader.Announce(string.Format(Strings.str_SemanticProperties_TestPage_QuestionCount, _index + 1, _questions.Count));
             SemanticScreenReader.Announce(Strings.ResourceManager.GetString(locId, CultureInfo.CurrentUICulture));
         }
 
@@ -279,6 +285,57 @@ namespace MejorAppTG1
                         btn.BackgroundColor = (Color)Application.Current.Resources["SecondaryColor2"];
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Programa una notificación para recordar al usuario que vuelva a realizar un test dependiendo de la gravedad de su último resultado (cuantos más puntos, antes aparecerá la notificación).
+        /// </summary>
+        /// <param name="totalPoints">El total de puntos obtenido en el test para determinar para dentro de cuántos días se programará un recordatorio.</param>
+        private void ScheduleNotification(int totalPoints)
+        {
+            if (Preferences.Get(App.USER_NOTIFICATIONS, true)) {
+                // Comprobar si hay alguna notificación pendiente para cancelarla y crear la nueva
+                int notificationId = _test.Tipo switch {
+                    App.QUICK_TEST_KEY => App.NOTIFICATION_ID_QUICK_TEST,
+                    App.FULL_TEST_KEY => App.NOTIFICATION_ID_FULL_TEST,
+                    App.TCA_TEST_KEY => App.NOTIFICATION_ID_TCA_TEST,
+                    _ => App.NOTIFICATION_ID_OTHERS
+                };
+
+                LocalNotificationCenter.Current.Cancel(notificationId);
+
+                // Calcular el tiempo hasta la próxima notificación (inversamente proporcional a la puntuación)
+                int daysUntilNotification = totalPoints switch {
+                    <= 25 => 30,    // 0–25 puntos > 1 mes
+                    <= 50 => 20,    // 26–50 puntos > 3 semanas
+                    <= 75 => 14,    // 51–75 puntos > 2 semanas
+                    _ => 7          // 76–100 puntos > 1 semana
+                };
+
+                var notification = new NotificationRequest {
+                    NotificationId = notificationId,
+                    Title = Strings.str_Notifications_Title_Monitoring,
+                    Subtitle = Strings.ResourceManager.GetString(_test.Tipo, CultureInfo.CurrentUICulture),
+                    Description = string.Format(Strings.str_Notifications_Message_Monitoring, Strings.ResourceManager.GetString(_test.Tipo, CultureInfo.CurrentUICulture)),
+                    CategoryType = NotificationCategoryType.Reminder,
+                    BadgeNumber = 42,
+                    Android = new Plugin.LocalNotification.AndroidOption.AndroidOptions {
+                        IconSmallName =
+                        {
+                            ResourceName = "noti_icon"
+                        }
+                    },
+                    iOS = new Plugin.LocalNotification.iOSOption.iOSOptions {
+                        PlayForegroundSound = true
+                    },
+                    Schedule = new NotificationRequestSchedule {
+                        NotifyTime = DateTime.Now.AddDays(daysUntilNotification),
+                        NotifyRepeatInterval = TimeSpan.FromDays(0)
+                    }
+                };
+
+                LocalNotificationCenter.Current.Show(notification);
             }
         }
         #endregion

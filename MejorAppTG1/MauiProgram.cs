@@ -4,6 +4,8 @@ using PanCardView;
 using Maui.FreakyControls.Extensions;
 using Microcharts.Maui;
 using SkiaSharp.Views.Maui.Controls.Hosting;
+using Plugin.LocalNotification;
+using Plugin.LocalNotification.AndroidOption;
 
 namespace MejorAppTG1
 {
@@ -20,6 +22,7 @@ namespace MejorAppTG1
                 .InitializeFreakyControls()
                 .UseMicrocharts()
                 .UseSkiaSharp()
+                .UseLocalNotification()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

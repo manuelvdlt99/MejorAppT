@@ -1822,6 +1822,42 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a It&apos;s been a while since you&apos;ve used the app - come back and resume your progress!.
+        /// </summary>
+        internal static string str_Notifications_Message_ComeBack {
+            get {
+                return ResourceManager.GetString("str_Notifications_Message_ComeBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a We recommend repeating the {0} to keep track of your status..
+        /// </summary>
+        internal static string str_Notifications_Message_Monitoring {
+            get {
+                return ResourceManager.GetString("str_Notifications_Message_Monitoring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ready to pick up where you left off?.
+        /// </summary>
+        internal static string str_Notifications_Title_ComeBack {
+            get {
+                return ResourceManager.GetString("str_Notifications_Title_ComeBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Welfare monitoring.
+        /// </summary>
+        internal static string str_Notifications_Title_Monitoring {
+            get {
+                return ResourceManager.GetString("str_Notifications_Title_Monitoring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Anxiety (quick).
         /// </summary>
         internal static string str_QuickTest {
@@ -2982,6 +3018,15 @@ namespace MejorAppTG1.Resources.Localization {
         internal static string str_SettingsPage_LblLanguage {
             get {
                 return ResourceManager.GetString("str_SettingsPage_LblLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enable notifications.
+        /// </summary>
+        internal static string str_SettingsPage_SwtNotifications {
+            get {
+                return ResourceManager.GetString("str_SettingsPage_SwtNotifications", resourceCulture);
             }
         }
         

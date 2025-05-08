@@ -16,27 +16,6 @@
         </ScrollView.Background>
         <VerticalStackLayout Spacing="10" Padding="10">
             <Label TextColor="{StaticResource FontColor1}" FontFamily="K2D-Regular" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_Shell_SettingsPage_Title}" FontSize="30" FontAttributes="Bold"/>
-            <!--<Frame CornerRadius="0" BorderColor="Transparent" BackgroundColor="Transparent">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="110"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image x:Name="ImgProfile" HorizontalOptions="Start" Grid.Column="0" Grid.RowSpan="3" Source="no_profile_icon.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" SemanticProperties.Description="{x:Static strings:Strings.str_SemanticProperties_ResultHistoryPage_ImgProfile}">
-                        <Image.Clip>
-                            <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
-                        </Image.Clip>
-                    </Image>
-                    <Label TextColor="{StaticResource FontColor1}" x:Name="LblUsername" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="0" FontAttributes="Bold" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblUsername}" FontSize="20" LineBreakMode="WordWrap" />
-                    <Label TextColor="{StaticResource FontColor1}" x:Name="LblUserAge" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="1" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblAge}" FontSize="20" />
-                    <Label TextColor="{StaticResource FontColor1}" x:Name="LblUserGender" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="2" Text="{x:Static strings:Strings.str_ResultHistoryPage_LblGender}" FontSize="20" />
-                </Grid>
-            </Frame>-->
             
             <!-- OPCIONES DE PERFIL -->
             <!--<BoxView HeightRequest="1" Color="{StaticResource FontColor1}"/> -->
@@ -72,6 +51,11 @@
             <BoxView HeightRequest="1" Color="{StaticResource FontColor1}"/>
             <Label TextColor="{StaticResource FontColor1}" FontFamily="K2D-Regular" Text="{x:Static strings:Strings.str_SettingsPage_LblData}" FontSize="20" FontAttributes="Bold"/>
             <VerticalStackLayout>
+                <Grid x:Name="grdNotifications" ColumnDefinitions="48,*,50" Margin="5,0,5,10">
+                    <Image Source="notifications_icon.png" WidthRequest="25" HorizontalOptions="Center"/>
+                    <Label VerticalTextAlignment="Center" Grid.Column="1" FontSize="15" TextColor="{StaticResource FontColor1}" HorizontalTextAlignment="Start" Text="{x:Static strings:Strings.str_SettingsPage_SwtNotifications}"/>
+                    <freakycontrols:FreakySwitch x:Name="SwtNotifications" Toggled="SwtNotifications_Toggled" VerticalOptions="Center" Grid.Column="2" HorizontalOptions="End"/>
+                </Grid>
                 <freakycontrols:FreakyButton Clicked="BtnDeleteTests_Clicked" x:Name="BtnDeleteTests" FontSize="15" BorderWidth="2" TextColor="{StaticResource BorderColor2}" BackgroundColor="{StaticResource ButtonColor5}" HorizontalTextAlignment="Start" Text="{x:Static strings:Strings.str_ResultHistoryPage_BtnClearHistory}" BorderColor="{StaticResource BorderColor2}">
                     <freakycontrols:FreakyButton.LeadingIcon>
                         <Image Source="delete_icon.png"/>
