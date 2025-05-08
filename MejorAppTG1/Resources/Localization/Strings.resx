@@ -1267,4 +1267,19 @@ It will only take a moment!</value>
   <data name="str_AIPrediction_Evolution_7" xml:space="preserve">
     <value>We predict a significant improvement in your wellbeing, which is an excellent sign of progress - keep up those practices that are helping you feel better and stay the course!</value>
   </data>
+  <data name="str_Notifications_Title_Monitoring" xml:space="preserve">
+    <value>Welfare monitoring</value>
+  </data>
+  <data name="str_Notifications_Message_Monitoring" xml:space="preserve">
+    <value>We recommend repeating the {0} to keep track of your status.</value>
+  </data>
+  <data name="str_SettingsPage_SwtNotifications" xml:space="preserve">
+    <value>Enable notifications</value>
+  </data>
+  <data name="str_Notifications_Title_ComeBack" xml:space="preserve">
+    <value>Ready to pick up where you left off?</value>
+  </data>
+  <data name="str_Notifications_Message_ComeBack" xml:space="preserve">
+    <value>It's been a while since you've used the app - come back and resume your progress!</value>
+  </data>
 </root>

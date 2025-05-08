@@ -1266,4 +1266,19 @@ Cela ne prendra qu'un instant !</value>
   <data name="str_AIPrediction_Evolution_7" xml:space="preserve">
     <value>Nous prévoyons une amélioration significative de votre bien-être, ce qui est un excellent signe de progrès - continuez les pratiques qui vous aident à vous sentir mieux et gardez le cap !</value>
   </data>
+  <data name="str_Notifications_Title_Monitoring" xml:space="preserve">
+    <value>Contrôle du bien-être</value>
+  </data>
+  <data name="str_Notifications_Message_Monitoring" xml:space="preserve">
+    <value>Nous vous recommandons de répéter le {0} pour garder une trace de votre statut.</value>
+  </data>
+  <data name="str_SettingsPage_SwtNotifications" xml:space="preserve">
+    <value>Activer les notifications</value>
+  </data>
+  <data name="str_Notifications_Title_ComeBack" xml:space="preserve">
+    <value>Prêt à reprendre là où vous vous étiez arrêté ?</value>
+  </data>
+  <data name="str_Notifications_Message_ComeBack" xml:space="preserve">
+    <value>Cela fait un moment que vous n'avez pas utilisé l'application - revenez et reprenez votre progression !</value>
+  </data>
 </root>

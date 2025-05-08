@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui.Views;
+using MejorAppTG1.Resources.Localization;
 using MejorAppTG1.Views;
-using Microsoft.Maui.Controls;
+using Plugin.LocalNotification;
 
 namespace MejorAppTG1
 {
@@ -20,10 +21,15 @@ namespace MejorAppTG1
             var lblTitulo = this.FindByName<Label>("LblTituloApp");
             var btnAbout = this.FindByName<ImageButton>("BtnAbout");
             var btnHelp = this.FindByName<ImageButton>("BtnHelp");
+            var btnSettings = this.FindByName<ImageButton>("BtnSettings");
 
-            if (lblTitulo != null && btnAbout != null && btnHelp != null && DeviceInfo.Current.Platform != DevicePlatform.iOS) {
+            if (lblTitulo != null && btnAbout != null && btnHelp != null && btnSettings != null && DeviceInfo.Current.Platform != DevicePlatform.iOS) {
                 // Configurar el orden semántico
-                this.SemanticOrderView.ViewOrder = new List<View> { LblTituloApp, BtnAbout, BtnHelp };
+                this.SemanticOrderView.ViewOrder = new List<View> { LblTituloApp, BtnAbout, BtnHelp, BtnSettings };
+            }
+
+            if (DeviceInfo.Current.Platform != DevicePlatform.WinUI) {
+                ScheduleNotification();
             }
         }
         #endregion
@@ -77,6 +83,43 @@ namespace MejorAppTG1
             }
             finally {
                 App.ButtonPressed = false;
+            }
+        }
+        #endregion
+
+        #region Métodos
+        /// <summary>
+        /// Programa una notificación cada 60 días para recordar al usuario que vuelva a usar la app.
+        /// </summary>
+        private static void ScheduleNotification()
+        {
+            if (Preferences.Get(App.USER_NOTIFICATIONS, true)) {
+                // Comprobar si hay alguna notificación pendiente para cancelarla y crear la nueva
+                LocalNotificationCenter.Current.Cancel(App.NOTIFICATION_ID_OTHERS);
+
+                var notification = new NotificationRequest {
+                    NotificationId = App.NOTIFICATION_ID_OTHERS,
+                    Title = Strings.str_Notifications_Title_ComeBack,
+                    Subtitle = Strings.str_Notifications_Title_Monitoring,
+                    Description = Strings.str_Notifications_Message_ComeBack,
+                    CategoryType = NotificationCategoryType.Reminder,
+                    BadgeNumber = 42,
+                    Android = new Plugin.LocalNotification.AndroidOption.AndroidOptions {
+                        IconSmallName =
+                        {
+                            ResourceName = "noti_icon"
+                        }
+                    },
+                    iOS = new Plugin.LocalNotification.iOSOption.iOSOptions {
+                        PlayForegroundSound = true
+                    },
+                    Schedule = new NotificationRequestSchedule {
+                        NotifyTime = DateTime.Now.AddDays(60),
+                        NotifyRepeatInterval = TimeSpan.FromDays(60)
+                    }
+                };
+
+                LocalNotificationCenter.Current.Show(notification);
             }
         }
         #endregion

@@ -1266,4 +1266,19 @@ https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87</value>
   <data name="str_AIPrediction_Evolution_7" xml:space="preserve">
     <value>Predecimos una mejora significativa en tu bienestar, lo cual es una excelente señal de progreso. ¡Sigue así con esas prácticas que te están ayudando a sentirte mejor y mantén el rumbo!</value>
   </data>
+  <data name="str_Notifications_Title_Monitoring" xml:space="preserve">
+    <value>Seguimiento de bienestar</value>
+  </data>
+  <data name="str_Notifications_Message_Monitoring" xml:space="preserve">
+    <value>Te recomendamos repetir el {0} para hacer seguimiento de tu estado.</value>
+  </data>
+  <data name="str_SettingsPage_SwtNotifications" xml:space="preserve">
+    <value>Activar notificaciones</value>
+  </data>
+  <data name="str_Notifications_Title_ComeBack" xml:space="preserve">
+    <value>¿Listo para seguir donde lo dejaste?</value>
+  </data>
+  <data name="str_Notifications_Message_ComeBack" xml:space="preserve">
+    <value>Hace tiempo que no usas la app. ¡Vuelve y retoma tu progreso!</value>
+  </data>
 </root>
