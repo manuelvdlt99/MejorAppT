@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MejorAppTG1.MyProfilePage"
              xmlns:strings="clr-namespace:MejorAppTG1.Resources.Localization"
-             xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
              Shell.BackgroundColor="{StaticResource SecondaryColor1}" Title="MejorAppT" Appearing="OnPageAppearing">
     <ContentPage.Background>
         <LinearGradientBrush EndPoint="0,1">
@@ -153,7 +152,6 @@
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="25"/>
                         </Border.StrokeShape>
-                        <micro:ChartView x:Name="ChartView" HeightRequest="400"/>
                     </Border>
                     <VerticalStackLayout x:Name="VslNoResultsGraph" IsVisible="False" Spacing="15">
                         <Image Source="no_results_found_icon.png" WidthRequest="75"/>
