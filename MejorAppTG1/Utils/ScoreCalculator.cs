@@ -10,56 +10,61 @@ namespace MejorAppTG1.Utils
         /// <summary>
         /// Calcula la puntuación obtenida y el nivel asociado de un factor concreto de un test realizado.
         /// </summary>
-        /// <param name="preguntas">Las respuestas del test realizado.</param>
+        /// <param name="respuestas">Las respuestas del test realizado.</param>
         /// <param name="factor">El factor a calcular.</param>
-        /// <param name="tipoTest">El test realizado.</param>
+        /// <param name="testRealizado">El test realizado.</param>
         /// <returns>Una instancia de Factor con la puntuación obtenida y el nivel obtenido.</returns>
-        public static Factor CalculoFactores(List<Answer> preguntas, string factor, Test tipoTest)
+        public static Factor CalculoFactores(List<Answer> respuestas, string factor, Test testRealizado)
         {
-            int totalFactor = SumarPuntos(preguntas, factor, tipoTest);
-            string nivel = CalcularNivel(tipoTest, factor, totalFactor);
+            int totalFactor = SumarPuntos(respuestas, factor, testRealizado);
+            string nivel = CalcularNivel(testRealizado, factor, totalFactor);
 
-            return new Factor(factor, totalFactor, nivel);
+            return new Factor
+            {
+                NumeroFactor = factor,
+                Puntuacion = totalFactor,
+                Nivel = nivel
+            };
         }
 
         /// <summary>
         /// Suma la puntuación obtenida en un factor dado de un test realizado.
         /// </summary>
-        /// <param name="preguntas">Las respuestas del test realizado.</param>
+        /// <param name="respuestas">Las respuestas del test realizado.</param>
         /// <param name="factor">El factor a calcular.</param>
-        /// <param name="tipoTest">El test realizado.</param>
+        /// <param name="testRealizado">El test realizado.</param>
         /// <returns>La puntuación total obtenida por el usuario en el factor.</returns>
-        private static int SumarPuntos(List<Answer> preguntas, string factor, Test tipoTest)
+        private static int SumarPuntos(List<Answer> respuestas, string factor, Test testRealizado)
         {
             int totalFactor = 0;
-            if (tipoTest.Tipo == App.TCA_TEST_KEY) {
-                for (int i = 0; i < preguntas.Count; i++) {
-                    if (preguntas[i].ValorRespuesta > 0) preguntas[i].ValorRespuesta -= 1;
+            if (testRealizado.Tipo == App.TCA_TEST_KEY) {
+                for (int i = 0; i < respuestas.Count; i++) {
+                    if (respuestas[i].ValorRespuesta > 0) respuestas[i].ValorRespuesta -= 1;
 
                     if (i == 24) {
-                        switch (preguntas[i].ValorRespuesta) {
+                        switch (respuestas[i].ValorRespuesta) {
                             case 0:
-                                preguntas[i].ValorRespuesta = 3;
+                                respuestas[i].ValorRespuesta = 3;
                                 break;
                             case 1:
-                                preguntas[i].ValorRespuesta = 2;
+                                respuestas[i].ValorRespuesta = 2;
                                 break;
                             case 2:
-                                preguntas[i].ValorRespuesta = 1;
+                                respuestas[i].ValorRespuesta = 1;
                                 break;
                             case 3:
                             case 4:
-                                preguntas[i].ValorRespuesta = 0;
+                                respuestas[i].ValorRespuesta = 0;
                                 break;
                         }
                     }
-                    totalFactor += preguntas[i].ValorRespuesta;
+                    totalFactor += respuestas[i].ValorRespuesta;
                 }
             }
             else {
-                for (int i = 0; i < preguntas.Count; i++) {
-                    if (factor == preguntas[i].Factor) {
-                        totalFactor += preguntas[i].ValorRespuesta;
+                for (int i = 0; i < respuestas.Count; i++) {
+                    if (factor == respuestas[i].Factor) {
+                        totalFactor += respuestas[i].ValorRespuesta;
                     }
                 }
             }
@@ -70,19 +75,19 @@ namespace MejorAppTG1.Utils
         /// <summary>
         /// Obtiene el nivel equivalente a la puntuación obtenida en un factor concreto de un test realizado.
         /// </summary>
-        /// <param name="tipoTest">El test realizado.</param>
+        /// <param name="testRealizado">El test realizado.</param>
         /// <param name="factor">El factor a calcular.</param>
         /// <param name="totalFactor">La puntuación total obtenida en el factor.</param>
         /// <returns>El nivel obtenido.</returns>
-        private static string CalcularNivel(Test tipoTest, string factor, int totalFactor)
+        private static string CalcularNivel(Test testRealizado, string factor, int totalFactor)
         {
             string nivel = string.Empty;
-            switch (tipoTest.Tipo) {
+            switch (testRealizado.Tipo) {
                 case App.QUICK_TEST_KEY:
                     nivel = NivelesRapido(totalFactor, factor);
                     break;
                 case App.FULL_TEST_KEY:
-                    nivel = NivelesCompleto(totalFactor, factor, tipoTest);
+                    nivel = NivelesCompleto(totalFactor, factor, testRealizado);
                     break;
                 case App.TCA_TEST_KEY:
                     nivel = NivelesTCA(totalFactor);
@@ -102,16 +107,16 @@ namespace MejorAppTG1.Utils
             string nivel = App.FACTORS_LEVEL_LOW;
             switch (factor) {
                 case App.FACTORS_1:
-                    if (totalFactor >= 15 && totalFactor <= 21) nivel = App.FACTORS_LEVEL_MEDIUM;
-                    else if (totalFactor > 21) nivel = App.FACTORS_LEVEL_HIGH;
+                    if (totalFactor >= 15 && totalFactor <= 23) nivel = App.FACTORS_LEVEL_MEDIUM;
+                    else if (totalFactor > 23) nivel = App.FACTORS_LEVEL_HIGH;
                     break;
                 case App.FACTORS_2:
                     if (totalFactor == 2 || totalFactor == 3) nivel = App.FACTORS_LEVEL_MEDIUM;
                     else if (totalFactor > 3) nivel = App.FACTORS_LEVEL_HIGH;
                     break;
                 case App.FACTORS_3:
-                    if (totalFactor >= 15 && totalFactor <= 23) nivel = App.FACTORS_LEVEL_MEDIUM;
-                    else if (totalFactor > 23) nivel = App.FACTORS_LEVEL_HIGH;
+                    if (totalFactor >= 15 && totalFactor <= 21) nivel = App.FACTORS_LEVEL_MEDIUM;
+                    else if (totalFactor > 21) nivel = App.FACTORS_LEVEL_HIGH;
                     break;
             }
             return nivel;
@@ -123,11 +128,11 @@ namespace MejorAppTG1.Utils
         /// <param name="totalFactor">La puntuación total obtenida en el factor.</param>
         /// <param name="factor">El factor a calcular.</param>
         /// <returns>El nivel obtenido.</returns>
-        private static string NivelesCompleto(int totalFactor, string factor, Test tipoTest)
+        private static string NivelesCompleto(int totalFactor, string factor, Test testRealizado)
         {
             string nivel = App.FACTORS_LEVEL_LOW;
-            string genero = tipoTest.GeneroUser;
-            int edad = tipoTest.EdadUser;
+            string genero = testRealizado.GeneroUser;
+            int edad = testRealizado.EdadUser;
 
             #region MUJERES
             if (genero == App.GENDERS_FEMALE_KEY) {
@@ -150,7 +155,7 @@ namespace MejorAppTG1.Utils
                     switch (factor) {
                         case App.FACTORS_1:
                             if (totalFactor > 22 && totalFactor <= 27) nivel = App.FACTORS_LEVEL_MEDIUM;
-                            else if (totalFactor > 17) nivel = App.FACTORS_LEVEL_HIGH;
+                            else if (totalFactor > 27) nivel = App.FACTORS_LEVEL_HIGH;
                             break;
                         case App.FACTORS_2:
                             if (totalFactor == 1) nivel = App.FACTORS_LEVEL_MEDIUM;

@@ -185,7 +185,7 @@ public partial class AdvicesPage : ContentPage
             httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/115.0.0.0 Safari/537.36");
 
             if (url.Contains("embed")) {
-                var videoId = url.Split("/").Length - 1;
+                var videoId = url.Split("/")[^1];
                 url = $"https://www.youtube.com/watch?v={videoId}";
             }
 

@@ -1,7 +1,11 @@
 using MejorAppTG1.Models;
 using MejorAppTG1.Resources.Localization;
 using MejorAppTG1.Utils;
+#if !NO_CHARTS
 using Microcharts;
+using Microcharts.Maui;
+
+#endif
 using Microsoft.ML;
 using SkiaSharp;
 using System.Globalization;
@@ -42,7 +46,6 @@ public partial class MyProfilePage : ContentPage
     public MyProfilePage()
     {
         InitializeComponent();
-        ChartView.Chart = new LineChart();
         PickTipos.ItemsSource = _tests.Keys.ToList();
         PickTipos.SelectedIndex = 0;
         SemanticProperties.SetDescription(PickTipos, Strings.str_SemanticProperties_ResultHistoryPage_PickTipos_Desc);
@@ -395,11 +398,15 @@ public partial class MyProfilePage : ContentPage
     /// </summary>
     private async Task CreateGraph()
     {
+#if !NO_CHARTS
         string selectedTest = PickTipos.SelectedItem.ToString();
         string selectedKey = _tests.FirstOrDefault(x => x.Key == selectedTest).Value;
         var tests = await App.Database.GetFinishedTestsByUserFilteredAsync(App.CurrentUser.IdUsuario, selectedKey);
 
         var entriesList = new List<ChartEntry>();
+        var chart = new ChartView {
+            HeightRequest = 400
+        };
 
         if (tests.Count > 0) {
             VslNoResultsGraph.IsVisible = false;
@@ -419,7 +426,7 @@ public partial class MyProfilePage : ContentPage
                 entriesList.Add(entry);
             }
 
-            ChartView.Chart = new LineChart {
+            chart.Chart = new LineChart {
                 Entries = [.. entriesList],
                 BackgroundColor = SKColor.Parse("#f6ffe3"),
                 LineMode = LineMode.Straight,
@@ -428,6 +435,8 @@ public partial class MyProfilePage : ContentPage
                 LabelOrientation = Orientation.Horizontal,
                 ValueLabelOrientation = Orientation.Horizontal
             };
+
+            BrdChartView.Content = chart;
 
             if (tests.Count < 3) {
                 string path = string.Empty;
@@ -497,6 +506,7 @@ public partial class MyProfilePage : ContentPage
             await VslNoResultsGraph.ScaleTo(1.05, 300, Easing.BounceOut);
             await VslNoResultsGraph.ScaleTo(1, 300, Easing.BounceIn);
         }
+#endif
     }
 
     /// <summary>

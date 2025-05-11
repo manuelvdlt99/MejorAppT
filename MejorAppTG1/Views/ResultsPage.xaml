@@ -34,7 +34,7 @@
                     <Label TextColor="{StaticResource FontColor1}" FontFamily="K2D-Regular" HorizontalTextAlignment="Center" Text="{x:Static strings:Strings.str_ResultsPage_Title}" FontSize="30" FontAttributes="Bold"/>
                     <Label Padding="10" x:Name="LblIntro" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="{StaticResource FontColor1}" FontSize="15"/>
                     <BoxView HeightRequest="1" Color="{StaticResource FontColor1}"/>
-                    <CollectionView x:Name="ClvCategories" SelectionMode="None" ItemsSource="{Binding Categories}">
+                    <CollectionView x:Name="ClvCategories" SelectionMode="None">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <freakycontrols:FreakyButton Margin="5" HeightRequest="70" VerticalTextAlignment="Center" LineBreakMode="WordWrap" Padding="10" CornerRadius="12" BackgroundColor="{StaticResource GradientColor2}" FontSize="15" BorderWidth="2" TextColor="{StaticResource FontColor1}" HorizontalTextAlignment="Start" Text="{Binding Name}" BorderColor="{StaticResource FontColor6}" Clicked="FreakyButton_Clicked">

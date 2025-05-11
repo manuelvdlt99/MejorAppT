@@ -2,10 +2,11 @@
 using CommunityToolkit.Maui;
 using PanCardView;
 using Maui.FreakyControls.Extensions;
+#if !NO_CHARTS
 using Microcharts.Maui;
+#endif
 using SkiaSharp.Views.Maui.Controls.Hosting;
 using Plugin.LocalNotification;
-using Plugin.LocalNotification.AndroidOption;
 
 namespace MejorAppTG1
 {
@@ -20,7 +21,9 @@ namespace MejorAppTG1
                 .UseCardsView()
                 .UseMauiCommunityToolkit()
                 .InitializeFreakyControls()
+#if !NO_CHARTS
                 .UseMicrocharts()
+#endif
                 .UseSkiaSharp()
                 .UseLocalNotification()
                 .ConfigureFonts(fonts =>
