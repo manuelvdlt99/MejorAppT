@@ -54,7 +54,7 @@
 		<ApplicationTitle>MejorAppT</ApplicationTitle>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-maccatalyst|AnyCPU'">
 		<ApplicationTitle>MejorAppT</ApplicationTitle>
 		<RuntimeIdentifier>maccatalyst-x64</RuntimeIdentifier>
 	</PropertyGroup>
