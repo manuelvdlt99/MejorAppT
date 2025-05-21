@@ -6,14 +6,14 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity Name="maui-package-name-placeholder" Publisher="CN=User Name" Version="0.0.0.0" />
+  <Identity Name="IESGregorioPrieto.MejorAppT" Publisher="CN=583C1BBE-763D-47BC-9BF5-007F8E4DFC1C" Version="2.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="583C1BBE-763D-47BC-9BF5-007F8E4DFC1C" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>$placeholder$</DisplayName>
+    <DisplayName>MejorAppT</DisplayName>
     <PublisherDisplayName>IES Gregorio Prieto</PublisherDisplayName>
-    <Logo>$placeholder$.png</Logo>
+    <Logo>iconoappStoreLogo.scale-400.png</Logo>
   </Properties>
 
   <Dependencies>
@@ -24,18 +24,19 @@
   <Resources>
     <Resource Language="en" />
     <Resource Language="es" />
+    <Resource Language="fr" />
   </Resources>
 
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="$placeholder$"
+        DisplayName="MejorAppT"
         Description="Aplicación para evaluar el bienestar mental de estudiantes de instituto"
-        Square150x150Logo="$placeholder$.png"
-        Square44x44Logo="$placeholder$.png"
+        Square150x150Logo="iconoappMediumTile.scale-100.png"
+        Square44x44Logo="iconoappLogo.scale-100.png"
         BackgroundColor="transparent">
-        <uap:DefaultTile Square71x71Logo="$placeholder$.png" Wide310x150Logo="$placeholder$.png" Square310x310Logo="$placeholder$.png" />
-        <uap:SplashScreen Image="$placeholder$.png" />
+        <uap:DefaultTile Square71x71Logo="iconoappSmallTile.scale-100.png" Wide310x150Logo="iconoappWideTile.scale-100.png" Square310x310Logo="iconoappLargeTile.scale-100.png" />
+        <uap:SplashScreen Image="splashSplashScreen.scale-150.png" />
         <uap:InitialRotationPreference>
           <uap:Rotation Preference="landscape"/>
           <uap:Rotation Preference="portrait"/>
