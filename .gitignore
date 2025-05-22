@@ -37,6 +37,7 @@ local.properties
 *.keystore
 **/local.properties
 **/*.keystore
+*.jks
 
 # Xamarin/MAUI para iOS
 *.ipa
