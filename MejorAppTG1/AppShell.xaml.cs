@@ -103,7 +103,6 @@ namespace MejorAppTG1
                     Subtitle = Strings.str_Notifications_Title_Monitoring,
                     Description = Strings.str_Notifications_Message_ComeBack,
                     CategoryType = NotificationCategoryType.Reminder,
-                    BadgeNumber = 42,
                     Android = new Plugin.LocalNotification.AndroidOption.AndroidOptions {
                         IconSmallName =
                         {

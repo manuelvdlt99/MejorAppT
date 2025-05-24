@@ -319,7 +319,6 @@ namespace MejorAppTG1
                     Subtitle = Strings.ResourceManager.GetString(_test.Tipo, CultureInfo.CurrentUICulture),
                     Description = string.Format(Strings.str_Notifications_Message_Monitoring, Strings.ResourceManager.GetString(_test.Tipo, CultureInfo.CurrentUICulture)),
                     CategoryType = NotificationCategoryType.Reminder,
-                    BadgeNumber = 42,
                     Android = new Plugin.LocalNotification.AndroidOption.AndroidOptions {
                         IconSmallName =
                         {
