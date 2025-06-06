@@ -1831,7 +1831,7 @@ namespace MejorAppTG1.Resources.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a We recommend repeating the {0} to keep track of your status..
+        ///   Busca una cadena traducida similar a We recommend repeating the {0} test to keep track of your status..
         /// </summary>
         internal static string str_Notifications_Message_Monitoring {
             get {

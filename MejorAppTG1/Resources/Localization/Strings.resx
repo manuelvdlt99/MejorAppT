@@ -1271,7 +1271,7 @@ It will only take a moment!</value>
     <value>Welfare monitoring</value>
   </data>
   <data name="str_Notifications_Message_Monitoring" xml:space="preserve">
-    <value>We recommend repeating the {0} to keep track of your status.</value>
+    <value>We recommend repeating the {0} test to keep track of your status.</value>
   </data>
   <data name="str_SettingsPage_SwtNotifications" xml:space="preserve">
     <value>Enable notifications</value>

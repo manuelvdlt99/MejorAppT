@@ -12,6 +12,7 @@ build/
 [Bb]uild/
 [Bb]in/
 [Oo]bj/
+Release/
 
 # .NET MAUI: paquetes NuGet descargados
 packages/

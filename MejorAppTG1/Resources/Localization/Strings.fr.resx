@@ -1270,7 +1270,7 @@ Cela ne prendra qu'un instant !</value>
     <value>Contrôle du bien-être</value>
   </data>
   <data name="str_Notifications_Message_Monitoring" xml:space="preserve">
-    <value>Nous vous recommandons de répéter le {0} pour garder une trace de votre statut.</value>
+    <value>Nous vous recommandons de répéter le test de {0} pour garder une trace de votre statut.</value>
   </data>
   <data name="str_SettingsPage_SwtNotifications" xml:space="preserve">
     <value>Activer les notifications</value>

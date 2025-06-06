@@ -1270,7 +1270,7 @@ https://www.youtube.com/embed/R5Ji-rDCCh0?si=2w1zvhL1QPskLS87</value>
     <value>Seguimiento de bienestar</value>
   </data>
   <data name="str_Notifications_Message_Monitoring" xml:space="preserve">
-    <value>Te recomendamos repetir el {0} para hacer seguimiento de tu estado.</value>
+    <value>Te recomendamos repetir el test de {0} para hacer seguimiento de tu estado.</value>
   </data>
   <data name="str_SettingsPage_SwtNotifications" xml:space="preserve">
     <value>Activar notificaciones</value>
